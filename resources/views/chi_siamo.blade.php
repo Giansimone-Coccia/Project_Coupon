@@ -3,6 +3,7 @@
 @section('title', 'Chi Siamo')
 
 @section('content')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 <div class="container_chi_siamo">
     <div class="image">
         <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="descrizione dell'immagine">

@@ -27,9 +27,7 @@ Route::get('/dashboard', function () {
 */
 require __DIR__.'/auth.php';
 
-Route::get('/', function () {
-    return view('public');
-});
+Route::view('/', 'layouts/public');
 
 Route::view('/chi_siamo', 'chi_siamo')
         ->name('chi_siamo');

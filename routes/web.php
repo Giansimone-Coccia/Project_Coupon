@@ -26,3 +26,6 @@ Route::get('/dashboard', function () {
 
 */
 require __DIR__.'/auth.php';
+
+Route::view('/chi_siamo', 'chi_siamo')
+        ->name('chi_siamo');

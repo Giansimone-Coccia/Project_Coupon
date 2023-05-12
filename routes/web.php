@@ -40,3 +40,12 @@ Route::view('/FAQ', 'FAQ')
 
 Route::view('/login', 'login')
         ->name('login');
+
+Route::view('/modifica_profilo_utente', 'modifica_profilo_utente')
+        ->name('modifica_profilo_utente');
+
+Route::view('/lista_coupon', 'lista_coupon')
+        ->name('lista_coupon');
+
+Route::view('/area_personale_utente', 'area_personale_utente')
+        ->name('area_personale_utente');

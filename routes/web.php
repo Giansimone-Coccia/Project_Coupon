@@ -37,3 +37,6 @@ Route::view('/start', 'start')
 
 Route::view('/FAQ', 'FAQ')
         ->name('FAQ');
+
+Route::view('/login', 'login')
+        ->name('login');

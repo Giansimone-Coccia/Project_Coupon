@@ -9,7 +9,7 @@
     @guest
     <li class="button bar-item right" onclick="window.location.href = '{{ route('login') }}';">Login</li>
     @endguest-->
-    <li class="button bar-item right" onclick="window.location.href = '/';">Login</li>
+    <li class="button bar-item right" onclick="window.location.href = '{{ route('login') }}';">Login</li>
     <li class="button bar-item  right" onclick="window.location.href = '{{ route('FAQ') }}';">FAQ</li>
     <li class="button bar-item  right" onclick="window.location.href = '{{ route('chi_siamo') }}';">Chi siamo</li>
 </ul>

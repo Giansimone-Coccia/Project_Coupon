@@ -21,6 +21,7 @@ class CreateCouponsTable extends Migration
             $table->date('dataScad');
             $table->string('offPromo',20)->primary();
             $table->string('utente',20)->primary();
+            $table->string('azienda',20);
             $table->foreign('azienda')->references('codiceA')->on('aziende');
             $table->foreign('utente')->references('username')->on('utenti');
         });

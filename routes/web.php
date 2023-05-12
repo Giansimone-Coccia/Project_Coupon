@@ -31,3 +31,21 @@ Route::view('/', 'layouts/public');
 
 Route::view('/chi_siamo', 'chi_siamo')
         ->name('chi_siamo');
+
+Route::view('/start', 'start')
+        ->name('start');
+
+Route::view('/FAQ', 'FAQ')
+        ->name('FAQ');
+
+Route::view('/login', 'login')
+        ->name('login');
+
+Route::view('/modifica_profilo_utente', 'modifica_profilo_utente')
+        ->name('modifica_profilo_utente');
+
+Route::view('/lista_coupon', 'lista_coupon')
+        ->name('lista_coupon');
+
+Route::view('/area_personale_utente', 'area_personale_utente')
+        ->name('area_personale_utente');

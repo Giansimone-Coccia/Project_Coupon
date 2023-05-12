@@ -31,3 +31,9 @@ Route::view('/', 'layouts/public');
 
 Route::view('/chi_siamo', 'chi_siamo')
         ->name('chi_siamo');
+
+Route::view('/start', 'start')
+        ->name('start');
+
+Route::view('/FAQ', 'FAQ')
+        ->name('FAQ');

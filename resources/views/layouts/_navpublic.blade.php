@@ -1,6 +1,6 @@
 <ul class= "left listnone">
     <li class="bar-item vectorlogo" >
-        <img src="{{ asset('images/logo/coupon-logo.svg' ) }}" alt="Logo" class="width100 height100" onclick="window.location.href = '/';">
+        <img src="{{ asset('images/logo/coupon-logo.svg' ) }}" alt="Logo" class="width100 height100" onclick="window.location.href = '{{ route('start') }}';">
     </li>
     <!--@auth
     <li class="button bar-item right" onclick="window.location.href = '/';">Profilo</li>
@@ -10,8 +10,8 @@
     <li class="button bar-item right" onclick="window.location.href = '{{ route('login') }}';">Login</li>
     @endguest-->
     <li class="button bar-item right" onclick="window.location.href = '/';">Login</li>
-    <li class="button bar-item  right" onclick="window.location.href = '/';">FAQ</li>
-    <li class="button bar-item  right" onclick="window.location.href = '/';">Chi siamo</li>
+    <li class="button bar-item  right" onclick="window.location.href = '{{ route('FAQ') }}';">FAQ</li>
+    <li class="button bar-item  right" onclick="window.location.href = '{{ route('chi_siamo') }}';">Chi siamo</li>
 </ul>
 <ul class= "right listnone"> 
     <li class="bar-item max-heigth52" >

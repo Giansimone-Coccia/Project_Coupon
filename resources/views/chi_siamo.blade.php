@@ -1,8 +1,8 @@
+@extends('layouts.public')
 
 @section('title', 'Chi Siamo')
 
 @section('content')
-
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 
 <div class="container_chi_siamo">

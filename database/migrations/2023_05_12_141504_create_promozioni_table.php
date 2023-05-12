@@ -17,7 +17,7 @@ class CreatePromozioniTable extends Migration
             $table->string('idPromoAb', 20)->primary();
             $table->string('codOff',20);
             $table->date('dataScad');
-            $table->int('percSconto');
+            $table->integer('percSconto');
             $table->string('utente',20);
             $table->foreign('utente')->references('username')->on('utenti');
         });

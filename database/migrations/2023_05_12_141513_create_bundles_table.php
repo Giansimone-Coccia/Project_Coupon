@@ -15,9 +15,9 @@ class CreateBundlesTable extends Migration
     {
         Schema::create('bundles', function (Blueprint $table) {
             $table->string('promoAbb', 20)->primary();
-            $table->string('offfertaPromo',20)->primary();
+            $table->string('offertaPromo',20);
             $table->foreign('promoAbb')->references('idPromoAb')->on('promozioni');
-            $table->foreign('offfertaPromo')->references('codOfferta')->on('offerte');
+            $table->foreign('offertaPromo')->references('codOfferta')->on('offerte');
         });
     }
 

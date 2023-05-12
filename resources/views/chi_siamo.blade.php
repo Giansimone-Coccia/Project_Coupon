@@ -1,7 +1,13 @@
+
+@section('title', 'Chi Siamo')
+
 @section('content')
+
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+
 <div class="container_chi_siamo">
             <div class="image">
-                <img src="images/Conad-logo.png" alt="descrizione dell'immagine">
+                <img src="public/images/companies/Conad-logo.png" alt="descrizione dell'immagine">
             </div>
             <div class="text">
                 <h2 style="font-size: 80px; font-weight: bold; " >About Us</h2>

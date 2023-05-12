@@ -22,7 +22,7 @@
       <a href="#" class="link">Hai dimenticato la password?</a>
     </div>
     <div class="action">
-      <button onclick="location.href = 'register_page.html';">Registrati</button>
+      <button onclick="location.href = '{{ route('register') }}';">Registrati</button>
       <button >Accedi</button>
     </div>
   </form>

@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-        <title>LaProj1 | @yield('title', 'Catalogo')</title>
-    </head>
-    <body>
-        <div id="wrapper">
-            <div id="header">
-                <div id="logo">
-                    <h1><a href="">ACME S.p.A  </a></h1>
-                    <p>i migliori prodotti alla portata di un click</p>
-                </div>
-            </div>
+<head>
+<title>Coupon4U</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+    .bar-item {padding:20px}
+</style>
 
             <!-- end #header -->
-            <div id="menu">
-                @include('layouts/_navpublic')
-            </div>
+            <nav class="top">
+                <div class="white xlarge bar topmenu">
+                    @include('layouts/_navpublic')
+                </div>
+            </nav>
 
             <!-- end #menu -->
             <div id="page">
                 <div id="page-bgtop">
                     <div id="page-bgbtm">
-                        @yield('content')
+                        <!-- @yield('content') -->
+                        <p>Prova</p>
                         <div style="clear: both;">&nbsp;</div>
                     </div>
                 </div>

@@ -3,7 +3,8 @@
 @section('title', 'Area personale utente')
 
 @section('content')
-<body class="body_area_personale_utente">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+<div class="body_area_personale_utente">
     <div class="container_area_utente">
         <h1>Area Personale</h1>
         <h2>Informazioni personali</h2>
@@ -24,5 +25,5 @@
         <p> <a href="{{ route('lista_coupon') }}" class="parola_click"> Clicca qui </a> per visualizzare tutti i coupon riscattati</p>
 
     </div>
-</body>
+</div>
 @endsection

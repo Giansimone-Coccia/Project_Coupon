@@ -3,7 +3,7 @@
 @section('title', 'lista_coupon')
 
 @section('content')
-
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 <div class="main content padding" style="max-width: 1300px; margin-top: 150px;">
     <div class="couponlist">
         <h1 style="font-weight: 300">Lista coupon riscattati:</h1>

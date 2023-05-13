@@ -3,7 +3,8 @@
 @section('title', 'modifica profilo utente')
 
 @section('content')
-<body class="body_modProfile">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+<div class="body_modProfile">
     <div class="container-register">
         <div class="title">Modifica dati personali e password</div>
         <div class="content">
@@ -72,5 +73,5 @@
             <a href="login_page.html" class="link">Hai già un account? Effettua il login</a>
         </div>
     </div>
-</body>
+</div>
 @endsection

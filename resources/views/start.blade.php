@@ -13,7 +13,7 @@
         <div class="quarter" >
             <div class="inline-block">
                 <div class="centerimages">
-                    <img src="images/logo-oasi.jpg" alt="Oasi" class="width100">              
+                    <img src="{{ asset('images/companies/logo-oasi.jpg' ) }}" alt="Oasi" class="width100">              
                 </div>
             </div>
             <h3>Oasi</h3>
@@ -22,7 +22,7 @@
         <div class="quarter">
             <div class="inline-block">
                 <div class="centerimages">
-                    <img src="images/Apple-Logo.png" alt="Apple" class="width100">
+                    <img src="{{ asset('images/companies/Apple-Logo.png' ) }}" alt="Apple" class="width100">
                 </div>
             </div>
             <h3>Apple</h3>
@@ -31,7 +31,7 @@
         <div class="quarter">
             <div class="inline-block">
                 <div class="centerimages">
-                    <img src="images/Conad-logo.png" alt="Conad" class="width100">
+                    <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad" class="width100">
                 </div>
             </div>
             <h3>Conad</h3>
@@ -40,7 +40,7 @@
         <div class="quarter">
             <div class="inline-block">
                 <div class="centerimages">
-                    <img src="images/samsung-logo.jpg" alt="Samsung" class="width100">
+                    <img src="{{ asset('images/companies/samsung-logo.jpg' ) }}" alt="Samsung" class="width100">
                 </div>
             </div>
             <h3>Samsung</h3>
@@ -54,7 +54,7 @@
         <div class="quarter" >
             <div class="inline-block">
                 <div class="centerimages">
-                    <img src="images/Timberland-Logo.png" alt="Timberland" class="width100">
+                    <img src="{{ asset('images/companies/Timberland-Logo.png' ) }}" alt="Timberland" class="width100">
                 </div>
             </div>
             <h3>Timberland</h3>
@@ -63,7 +63,7 @@
         <div class="quarter " >
             <div class="inline-block">
                 <div class="centerimages">
-                    <img src="images/logo-puma.png" alt="Puma" class="width100">
+                    <img src="{{ asset('images/companies/logo-puma.png' ) }}" alt="Puma" class="width100">
                 </div>
             </div>
             <h3>Puma</h3>
@@ -72,7 +72,7 @@
         <div class="quarter " >
             <div class="inline-block">
                 <div class="centerimages">
-                    <img src="images/Coop-logo.png" class="width100" alt="Coop" >
+                    <img src="{{ asset('images/companies/Coop-logo.png' ) }}" class="width100" alt="Coop" >
                 </div>
             </div>
             <h3>Coop</h3> 
@@ -81,7 +81,7 @@
         <div class="quarter" >
             <div class="inline-block">
                 <div class="centerimages">
-                    <img src="images/HP_logo.png" class="width100" alt="HP" >
+                    <img src="{{ asset('images/companies/HP_logo.png' ) }}" class="width100" alt="HP" >
                 </div>
             </div>              
             <h3>HP</h3>

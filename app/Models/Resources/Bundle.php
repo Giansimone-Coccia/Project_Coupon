@@ -1,11 +1,23 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Resources;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Bundle extends Model
 {
-    use HasFactory;
+    protected $table = 'bundles';
+    protected $primaryKey = ['promoAbb','offertaPromo'];
+    
+    public $timestamps = false;
+    
+    
+    public function bundlePromo() {
+      return $this->hasOne(Promozione::class, 'idPromoAb', 'promoAbb');
+    }
+    
+    public function bundleOfferta() {
+      return $this->hasOne(Offerta::class, 'codOfferta', 'offertaPromo');
+    }
 }

@@ -17,7 +17,7 @@ class CreateCouponsTable extends Migration
             $table->string('codCoupon', 20);
             $table->string('utenteRich',30);
             $table->string('modFruiz', 30);
-            $table->string('descProdOff',50);
+            $table->string('descProdOff',255);
             $table->date('dataScad');
             $table->string('offPromo',20)->primary();
             $table->string('utente',20)->primary();

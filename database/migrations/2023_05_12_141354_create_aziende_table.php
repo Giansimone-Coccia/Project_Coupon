@@ -19,7 +19,7 @@ class CreateAziendeTable extends Migration
             $table->string('localizzazione', 40);
             $table->string('ragSoc', 10);
             $table->text('image');
-            $table->integer('tipologia');
+            $table->string('tipologia',20);
             $table->string('descAzienda', 255);
             $table->string('utente');
             $table->foreign('utente')->references('username')->on('utenti');

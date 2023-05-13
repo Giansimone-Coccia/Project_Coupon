@@ -29,8 +29,9 @@ require __DIR__.'/auth.php';
 
 Route::view('/', 'layouts/public');
 
-Route::view('/', 'start')
+Route::get('/', [PublicController::class, 'allAziende'])
         ->name('start');
+
 
 Route::view('/FAQ', 'FAQ')
         ->name('FAQ');

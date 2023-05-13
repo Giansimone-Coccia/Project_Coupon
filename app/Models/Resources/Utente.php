@@ -1,11 +1,15 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Resources;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Utente extends Model
 {
-    use HasFactory;
+    protected $table = 'utenti';
+    protected $primaryKey = 'username';
+    
+    protected $guarded = ['username'];
+    
+    public $timestamps = false;
 }

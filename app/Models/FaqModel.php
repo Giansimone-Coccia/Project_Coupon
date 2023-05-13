@@ -12,7 +12,7 @@ class FaqModel
         return Faq::get()->paginate($paged);
     }*/
     
-    public function getFaq( ) { 
+    public function getFaq() { 
         return Faq::get();
     }
 }

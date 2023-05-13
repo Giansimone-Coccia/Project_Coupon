@@ -36,7 +36,7 @@ Route::get('/', [PublicController::class, 'allAziende'])
         ->name('start');
 
 Route::get('/FAQ', [FAQController::class, 'allFAQ'])
-        ->name('FAQ');   
+        ->name('FAQ');
 
 Route::get('/offerte_azienda/{aziendaId}', [PublicController::class, 'getPromo'])
         ->name('offerte_azienda');  
@@ -48,8 +48,7 @@ Route::get('/area_personale_utente/{username}', [UtenteController::class, 'getIn
         ->name('area_personale_utente');  
 
 Route::get('/area_personale_utente/{username}/lista_Coupon/{usernameUtente}', [UtenteController::class, 'getCouponUtente'])
-        ->name('lista_Coupon');  
-
+        ->name('lista_Coupon');
 
 Route::view('/chi_siamo', 'chi_siamo')
         ->name('chi_siamo');

@@ -22,22 +22,23 @@
                 <!-- ***** FAQ Start ***** -->
                 <div class="offset-md-3">
                     <div class="faq" id="accordion">
+                        @isset($allFaq)
+                        @foreach($allFaq as $faq)
                         <div class="card">
                             <div class="card-header" id="faqHeading-1">
                                 <div class="mb-0">
-                                    <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-1" data-aria-expanded="true" data-aria-controls="faqCollapse-1"><span class="badge">1</span>What is Lorem Ipsum?</h5>
+                                    <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-1" data-aria-expanded="true" data-aria-controls="faqCollapse-1"><span class="badge">1</span>{{$faq->domanda}}</h5>
                                 </div>
                             </div>
                             <div id="faqCollapse-1" class="collapse" aria-labelledby="faqHeading-1" data-parent="#accordion">
                                 <div class="card-body">
-                                    <p>
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                                        and scrambled it to make a type specimen book.
-                                    </p>
+                                    <p>{{$faq->risposta}}</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
+                        @endforeach
+                        @endisset
+                        <!--<div class="card">
                             <div class="card-header" id="faqHeading-2">
                                 <div class="mb-0">
                                     <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-2" data-aria-expanded="false" data-aria-controls="faqCollapse-2"><span class="badge">2</span> Where does it come from?</h5>
@@ -123,6 +124,7 @@
                                 </div>
                             </div>
                         </div>
+                        -->
                     </div>
                 </div>
             </div>

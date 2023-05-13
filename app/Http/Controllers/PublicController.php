@@ -22,16 +22,18 @@ class PublicController extends Controller
                         ->with('allAziende', $aziende);
     }
     
-    public function showInfoUtente() {
+    public function getPromo($aziendaId){
         
-        //$data = "Vediamo se funziona";
-        //$user = $this->_utenteModel->getInfoUtente('UC0001');
-        //dd($user);
+        $promos= $this->_catalogModel->getPromo($aziendaId);
 
-        return view('catalog')
-                        ->with('topCategories', $topCats);
-
-        return view('prova')
-                    ->with('data', $data);
+        return view('offerte_azienda')
+                        ->with('offerte_azienda', $promos);
     }
+    
+    public function getPromoDetails($promoId){
+        $promoDetails= $this->_catalogModel->getPromo($promoId);
+        return view('dettaglio_offerta')
+                        ->with('dettaglio_offerta', $promoDetails);
+    }
+   
 }

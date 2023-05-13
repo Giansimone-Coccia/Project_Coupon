@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class FaqModel 
 {
-    public function getFaq($paged = 7) { 
+   /*public function getFaq($paged ) { 
         return Faq::get()->paginate($paged);
+    }*/
+    
+    public function getFaq( ) { 
+        return Faq::get();
     }
 }

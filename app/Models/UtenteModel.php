@@ -60,6 +60,6 @@ class UtenteModel
     }
     
     public function getCouponUtente($usernameUtente) {
-        return Coupon::whereIn('utente', $usernameUtente)->get();
+        return Coupon::where('utente', $usernameUtente)->get();
     }
 }

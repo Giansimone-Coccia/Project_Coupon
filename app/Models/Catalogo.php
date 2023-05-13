@@ -9,8 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Catalogo
 {
-    public function getAzienda(){
+    public function getAllAziende(){
         return Azienda:: get();
+    }
+    
+    public function getAziendaById($aziendaId){
+        return Azienda::where('codiceA',$aziendaId);
     }
     
     public function getPromo($aziendaId) {

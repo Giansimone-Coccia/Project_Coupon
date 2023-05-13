@@ -16,19 +16,22 @@ class PublicController extends Controller
     
     public function allAziende(){
         
-        $aziende = $this->_catalogModel-> getAzienda();
+        $aziende = $this->_catalogModel-> getAllAziende();
 
         return view('start')
                         ->with('allAziende', $aziende);
     }
     
-    public function getPromo($aziendaId){
+    public function getAzienda($aziendaId){
         
+        $azienda = $this->_catalogModel-> getAziendaById($aziendaId);
         $promos= $this->_catalogModel->getPromo($aziendaId);
 
         return view('offerte_azienda')
-                        ->with('offerte_azienda', $promos);
+                        ->with('azienda', $azienda)
+                        ->with('promos', $promos);
     }
+    
     
     public function getPromoDetails($promoId){
         $promoDetails= $this->_catalogModel->getPromo($promoId);

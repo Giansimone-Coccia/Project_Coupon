@@ -17,8 +17,8 @@
         @foreach ($allAziende as $azienda)
         <div class="quarter" >
             <div class="inline-block">
-                <div class="centerimages">
-                    <img src="{{ asset('images/companies/' . $azienda->image) }}" class="width100">              
+                <div onclick="window.location.href = '{{ route('offerte_azienda', [$azienda->codiceA]) }}';" class="centerimages">
+                    <img  src="{{ asset('images/companies/' . $azienda->image) }}" class="width100">              
                 </div>
             </div>
             <h3>{{$azienda->nome}}</h3>

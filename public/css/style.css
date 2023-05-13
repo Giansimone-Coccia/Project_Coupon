@@ -94,8 +94,17 @@ h6{
 }
 .dimentioncontent{
     max-width:1200px;
-    margin-top:50px
+    margin-top:100px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
+
+.dimentioncontent h1 {
+	font-size: 32px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+        border-bottom: 2px solid #ccc;
+        padding: 20px 0;
+	}
 .container{
     padding:0.01em 16px
 }
@@ -129,6 +138,10 @@ h6{
 }
 .margin-top-16{
     margin-top: 16px
+}
+
+.margin-top-62{
+    margin-top: 62px
 }
 .padding{
     padding:8px 16px!important
@@ -415,7 +428,7 @@ button{
 }
 
 /*coupon.css*/
-.coupon {
+.coupon-page {
     border: 5px dotted #bbb; /* Dotted border */
     width: 80%;
     border-radius: 15px; /* Rounded border */
@@ -461,7 +474,7 @@ button{
     float: left;
     margin-right: 180px; /* aggiunge un margine destro per separare l'immagine dal testo */
     margin-left: 50px;
-    margin-top: 110px;
+    margin-top: 100px;
 }
 
 .image img {
@@ -534,7 +547,7 @@ footerF{
     color: #fff;
 }
 .footer-content{
-    margin-top: 100px;
+    margin-top: 62px;
     background: #394867;
     display: flex;
     align-items: center;
@@ -941,6 +954,7 @@ footerF{
 
 .body_modProfile{
     height: 100vh;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1086,9 +1100,8 @@ form .button input:hover{
 
 /*area_personale_utente.css*/
 
-.bodyarea_personale_utente {
+.body_area_personale_utente {
 	font-family: Arial, sans-serif;
-	background-color: #f2f2f2;
 	margin: 0;
 	padding: 0;
 		}
@@ -1140,3 +1153,31 @@ form .button input:hover{
             text-decoration: underline;
             float: right;
         }
+        
+/*modifica_profilo_utente*/
+.container-modify-profile{
+    max-width: 700px;
+    margin-top: 100px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.container-modify-profile .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.container-modify-profile.title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: rgb(33,42,62);
+    background: linear-gradient(135deg, rgba(33,42,62,1) 0%, rgba(57,72,103,1) 18%, rgba(241,246,249,1) 100%);
+}

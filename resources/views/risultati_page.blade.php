@@ -2,8 +2,10 @@
 
 @section('title', 'risultati page')
 
-@section('content'
-<div class="main content padding" style="max-width: 1300px; margin-top: 150px;">
+@section('content')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+
+<div class="main content padding" style="max-width: 1300px; margin-top: 70px;">
     <div class="row-offerte">
         <h1 style="font-weight: 500">Hai ricercato: conad 3x2</h1>
     </div>

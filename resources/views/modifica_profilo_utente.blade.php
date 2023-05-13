@@ -5,7 +5,7 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 <div class="body_modProfile">
-    <div class="container-register">
+    <div class="container-modify-profile">
         <div class="title">Modifica dati personali e password</div>
         <div class="content">
             <form action="#">

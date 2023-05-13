@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-<title>Coupon4U</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <title>Coupon4U</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Bootstrap -->
+        <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="{{ asset('res/css/style.css') }}" >
-<style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
-    .bar-item {padding:20px}
-</style>
+        <link rel="stylesheet" type="text/css" href="{{ asset('res/css/style.css') }}" >
+        <style>
+            body,h1,h2,h3,h4,h5,h6 {
+                font-family: "Karma", sans-serif
+            }
+            .bar-item {
+                padding:20px
+            }
+        </style>
 
-            <!-- end #header -->
-            <nav class="top">
-                <div class="white xlarge bar topmenu">
-                    @include('layouts/_navpublic')
-                </div>
-            </nav>
+        <!-- end #header -->
+    <nav class="top">
+        <div class="white xlarge bar topmenu">
+            @include('layouts/_navpublic')
+        </div>
+    </nav>
 
-            <!-- end #menu -->
-            <div>
-                @yield('content')
-            </div>
+    <!-- end #menu -->
+    <div class="margin-top-62">
+        @yield('content')
+    </div>
 
-            <!-- end #content -->
-            <footer>
+    <!-- end #content -->
+    <footer>
         <div class="footer-content">
             <br>
             <img src="images/coupon-logo.svg" alt="logo" width="150" height="150">
@@ -43,18 +47,18 @@
         </div>
         <div class="footer-bottom">
             <p>Copyright 2023. All Rights Reserved. <a href="#">Coupon4U</a>  </p>
-                    <div class="footer-menu">
-                      <ul class="f-menu">
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="">Blog</a></li>
-                      </ul>
-                    </div>
+            <div class="footer-menu">
+                <ul class="f-menu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Blog</a></li>
+                </ul>
+            </div>
         </div>
 
     </footer>
-            <!-- end #footer -->
-        </div>
-    </body>
+    <!-- end #footer -->
+</div>
+</body>
 </html>

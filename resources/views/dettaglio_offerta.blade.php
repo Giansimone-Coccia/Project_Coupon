@@ -3,6 +3,8 @@
 @section('title', 'Dettaglio offerta')
 
 @section('content')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+
 <div class="container_dettaglio_offerta">
     <div class="image">
         <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Nome Offerta">

@@ -5,7 +5,9 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 
-<div class="main content padding dimentioncontent">
+<div class="main content padding dimentioncontent" >
+    
+    <h1 class="center">Le nostre aziende</h1>
 
     <!-- First Photo Grid-->
     <div class="row-padding padding-16 center">
@@ -100,19 +102,6 @@
         <a href="#" class="bar-item button hover-black">3</a>
         <a href="#" class="bar-item button hover-black">4</a>
         <a href="#" class="bar-item button hover-black">»</a>
-    </div>
-</div>
-
-<hr id="about">
-
-<!-- About Section -->
-<div class="container padding-32 center">  
-    <h3>About Me, The Food Man</h3><br>
-    <img src="/w3images/chef.jpg" alt="Me" class="imageunder" style="display:block;margin:auto" width="800" height="533">
-    <div class="padding-32">
-        <h4><b>I am Who I Am!</b></h4>
-        <h6><i>With Passion For Real, Good Food</i></h6>
-        <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
     </div>
 </div>
 @endsection

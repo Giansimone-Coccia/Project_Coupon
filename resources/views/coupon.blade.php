@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
     </head>
     <body>
-        <div class="coupon">
+        <div class="coupon-page">
             <div class="container-coupon">
                 <h3>Conad</h3>
             </div>

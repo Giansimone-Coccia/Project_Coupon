@@ -29,6 +29,10 @@ class Catalogo
         return Offerta::where('codOfferta', $promoId) -> get();
     }
     
+    /*public function getPromoPerOfferta($offerta){
+        return Promozione::where('codOff', $offerta) -> get();
+    }*/
+    
     public function createCoupon($codCoupon, $utenteRich, $modFruiz, $descProd, $dataScad, $offPromo, $utente, $azienda) {
         Buono::create([
             'codCoupon' => $codCoupon,

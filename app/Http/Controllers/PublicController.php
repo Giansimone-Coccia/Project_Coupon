@@ -36,7 +36,6 @@ class PublicController extends Controller
     }
     
     
-    
     public function getPromoDetails($promoId){
         $promoDetails= $this->_catalogModel->getPromo($promoId);
         return view('dettaglio_offerta')

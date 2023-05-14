@@ -36,7 +36,8 @@
                     <div class="single-offerta">
                         <div class="inline-block">
                             <div class="centerimagesoffers">
-                                <img class = "rounded-corners" src="{{ asset('images/products/' . $promo->logoOff) }}" alt=""/>
+                                <img class = "rounded-corners" onclick="window.location.href = '{{ route('dettaglio_offerta', [$azienda->codiceA, 'AB001']) }}';" 
+                                     src="{{ asset('images/products/' . $promo->logoOff) }}" alt="Offerta azienda"/>
                             </div>
                             <h3>{{$promo->nomeOff}}</h3>
                         </div> 
@@ -44,46 +45,6 @@
                     @endforeach
                     @endisset
                 </div>
-
-
-                <!-- comment <div class="column-offerte">
-    
-                    <div class="single-offerta">
-                        <div class="inline-block">
-                            <div class="centerimagesoffers">
-                                <img src="images/Apple-Logo.png" alt="Apple"/>
-                            </div>
-                            <h3>3x2 iphone</h3>
-                        </div> 
-                    </div>
-    
-                    <div class="single-offerta">
-                        <div class="inline-block">
-                            <div class="centerimagesoffers">
-                                <img src="images/HP_logo.png" alt="Apple"/>
-                            </div>
-                            <h3>3x2 iphone</h3>
-                        </div> 
-                    </div>
-    
-                    <div class="single-offerta">
-                        <div class="inline-block">
-                            <div class="centerimagesoffers">
-                                <img src="images/Conad-logo.png" alt="Apple"/>
-                            </div>
-                            <h3>3x2 iphone</h3>
-                        </div> 
-                    </div>
-    
-                    <div class="single-offerta">
-                        <div class="inline-block">
-                            <div class="centerimagesoffers">
-                                <img src="images/Apple-Logo.png" alt="Apple"/>
-                            </div>
-                            <h3>3x2 iphone</h3>
-                        </div> 
-                    </div>
-                </div>-->
             </div>
         </div>
 

@@ -500,6 +500,19 @@ button{
     padding: 20px;
 }/*$*/
 
+
+
+.image-about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.image-dimension{
+    width:200px;
+    height:200px;
+}
+
 .image {
     flex: 1;
     float: left;
@@ -830,9 +843,6 @@ footerF{
     display: flex;
     justify-content: center;
     align-items: center;
-    /*margin-right: 100px; /* aggiunge un margine destro per separare l'immagine dal testo */
-    /*margin-left: 100px;
-    margin-top: 100px;*/
 }
 
 

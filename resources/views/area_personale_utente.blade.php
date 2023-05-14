@@ -10,14 +10,14 @@
         <h2>Informazioni personali</h2>
         @isset($utenti)
         <div class="section_area_utente">
-            <p>Nome Utente: {{$utenti->username}}</p>
-            <p>Email: {{$utenti->email}}</p>
-            <p>Nome: {{$utenti->nome}}</p>
-            <p>Genere: {{$utenti->genere}} </p>
-            <p>Password: {{$utenti->password}}</p>
-            <p>Telefono: {{$utenti->telefono}}</p>
-            <p>Cognome: {{$utenti->cognome}}</p>
-            <p>Data Nascita: {{$utenti->dataNascita}}</p>
+            <p><strong>Nome Utente:</strong> {{$utenti->username}}</p>
+            <p><strong>Email:</strong> {{$utenti->email}}</p>
+            <p><strong>Nome:</strong> {{$utenti->nome}}</p>
+            <p><strong>Genere:</strong> {{$utenti->genere}} </p>
+            <p><strong>Password:</strong> {{$utenti->password}}</p>
+            <p><strong>Telefono:</strong> {{$utenti->telefono}}</p>
+            <p><strong>Cognome:</strong> {{$utenti->cognome}}</p>
+            <p><strong>Data Nascita:</strong> {{$utenti->dataNascita}}</p>
             <a href="{{ route('modifica_profilo_utente') }}" class="parola_click1" > Modifica dati personali </a>
         </div>
         @endisset

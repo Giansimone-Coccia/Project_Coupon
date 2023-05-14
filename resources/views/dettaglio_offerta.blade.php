@@ -14,9 +14,9 @@
     <div class="info">
         <h2>{{$offerta->nomeOff}}</h2>
         <p>{{$offerta->oggettoOff}}</p>
-        <div class="price">PROMOZIONE: {{$offerta->codOfferta}}</div>
-        <div class="price"  style="color:#CC0000">Data Scadenza: {{$offerta->tempoFruiz}}</div>
-        <div class="price">Modalità di fruizione: {{$offerta->modalita}}</div>
+        <div class="price"><strong>PROMOZIONE:</strong> {{$offerta->codOfferta}}</div>
+        <div class="price"  style="color:#CC0000"><strong>Data Scadenza:</strong> {{$offerta->tempoFruiz}}</div>
+        <div class="price"><strong>Modalità di fruizione:</strong> {{$offerta->modalita}}</div>
         <button> Riscatta </button>
     </div>
 </div>

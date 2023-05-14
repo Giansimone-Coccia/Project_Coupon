@@ -16,6 +16,7 @@ class DomandeController extends Controller
     public function allFAQ(){
         
         $FAQs = $this->_FAQModel->getAllFaq();
+        
 
         return view('FAQ')
                 ->with('FAQs', $FAQs);

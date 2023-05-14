@@ -24,7 +24,7 @@ class PublicController extends Controller
     
     public function getAzienda($aziendaId){
         
-        $azienda = $this->_catalogModel-> getAziendaById($aziendaId);
+        $azienda = $this->_catalogModel-> getAziendaById($aziendaId)->first();
         $promos= $this->_catalogModel->getPromo($aziendaId);
 
         return view('offerte_azienda')

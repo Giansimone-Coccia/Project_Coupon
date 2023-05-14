@@ -34,15 +34,23 @@
                         <input type="text" placeholder="Inserisci numero" required>
                     </div>
                     <div class="input-box">
+                        <span class="details">Nuovo numero</span>
+                        <input type="text" placeholder="Inserisci nuovo numero" required>
+                    </div>
+                    <div class="input-box">
                         <span class="details">Data di nascita</span>
                         <input type="text" placeholder="Inserisci data di nascita" required>
                     </div>
                     <div class="input-box">
-                        <span class="details">Password</span>
+                        <span class="details">Nuova data di nascita</span>
+                        <input type="text" placeholder="Inserisci nuova data" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password attuale</span>
                         <input type="text" placeholder="Inserisci la tua password" required>
                     </div>
                     <div class="input-box">
-                        <span class="details">Conferma Password</span>
+                        <span class="details">Conferma nuova password</span>
                         <input type="text" placeholder="Conferma password" required>
                     </div>
                 </div>
@@ -70,7 +78,7 @@
                     <input type="submit" value="Registrati">
                 </div>
             </form>
-            <a href="login_page.html" class="link">Hai già un account? Effettua il login</a>
+            <a onclick="window.location.href = '{{ route('login') }}';" class="link">Hai già un account? Effettua il login</a>
         </div>
     </div>
 </div>

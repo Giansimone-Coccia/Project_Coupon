@@ -32,7 +32,7 @@ class UtenteController extends Controller
         $couponUtente = $this->_UtenteModel->getCouponUtente($usernameUtente);
         
         foreach ($couponUtente as $coupon) {
-        $couponOfferta = $this->_Catalogo->getOffertaById($coupon->offPromo);
+            $couponOfferta = $this->_Catalogo->getOffertaById($coupon->offPromo);  //con questo si lega ad ogni coupon la corrispettiva offerta
         }
         
         

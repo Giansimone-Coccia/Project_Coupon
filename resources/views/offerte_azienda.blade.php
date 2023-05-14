@@ -12,7 +12,7 @@
             <div class="image-azienda">
                 <div class="inline-block">
                     <div class="centerimagesoffers">
-                        <img src="{{ asset('images/companies/'. $azienda->image) }}"  alt="$azienda->nome"/>                        
+                        <img class = "rounded-corners" src="{{ asset('images/companies/'. $azienda->image) }}"  alt="$azienda->nome"/>                        
                     </div>
                 </div>
             </div>
@@ -20,8 +20,8 @@
                 <div>
                     <h2 style="font-size: 30px; font-weight: bold; " class="title-azienda" >{{$azienda->nome}}</h2>
                     <p>{{$azienda->descAzienda}}</p>
-                    <p>{{$azienda->localizzazione}}</p>
-                    <p>{{$azienda->tipologia}}</p></div>
+                    <p>Localizzazione: {{$azienda->localizzazione}}</p>
+                    <p>Tipologia di azienda: {{$azienda->tipologia}}</p></div>
             </div>
         </div>
         @endisset
@@ -36,7 +36,7 @@
                     <div class="single-offerta">
                         <div class="inline-block">
                             <div class="centerimagesoffers">
-                                <img src="{{ asset('images/companies/' . $promo->logoOff) }}" alt="$promo->nomeOff"/>
+                                <img class = "rounded-corners" src="{{ asset('images/companies/' . $promo->logoOff) }}" alt="$promo->nomeOff"/>
                             </div>
                             <h3>{{$promo->nomeOff}}</h3>
                         </div> 

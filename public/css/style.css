@@ -820,6 +820,13 @@ footerF{
     height: auto;
 }
 
+.rounded-corners{
+
+  border-radius: 10px; /* Imposta il valore appropriato per arrotondare completamente l'immagine */
+
+}
+
+
 .border-top-grey{
     border-top: 2px solid #ccc;
 }

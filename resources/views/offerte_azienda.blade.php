@@ -17,8 +17,8 @@
             </div>
         </div>
         <div class="text">
-            <h2 style="font-size: 30px; font-weight: bold; " class="title-azienda" >Apple</h2>
-            <p>$azienda->descAzienda</p>
+            <h2 style="font-size: 30px; font-weight: bold; " class="title-azienda" >{{$azienda->nome}}</h2>
+            <p>{{$azienda->descAzienda}}</p>
             <!--aggiungere altri valori di azienda-->
         </div>
     </div>
@@ -36,7 +36,7 @@
                         <div class="centerimagesoffers">
                             <img src="{{ asset('images/companies/' . $promo->logoOff) }}" alt="$promo->nomeOff"/>
                         </div>
-                        <h3>$promo->nomeOff</h3>
+                        <h3>{{$promo->nomeOff}}</h3>
                     </div> 
                 </div>
                 

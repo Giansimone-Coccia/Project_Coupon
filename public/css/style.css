@@ -189,6 +189,22 @@ h6{
 .padding-top-16{
     padding-top:16px!important
 }
+
+.padding-bottom-64{
+    padding-bottom:64px!important
+}
+.padding-bottom-48{
+    padding-bottom:48px!important
+}
+.padding-bottom-32{
+    padding-bottom:32px!important
+}
+.padding-bottom-24{
+    padding-bottom:24px!important
+}
+.padding-bottom-16{
+    padding-bottom:16px!important
+}
 footer,header,main,nav{
     display:block
 }

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use App\Models\Resources\Azienda;
 use App\Models\Resources\Offerta;
+use App\Models\Resources\Buono;
+use DateTime;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -29,16 +31,26 @@ class Catalogo
         return Offerta::where('codOfferta', $promoId) -> get();
     }
     
-    /*public function getPromoPerOfferta($offerta){
-        return Promozione::where('codOff', $offerta) -> get();
-    }*/
+    public function getBuono($buonoId){
+        return Buono::where('codCoupon', $buonoId) -> get();
+    }
     
-    public function createCoupon($codCoupon, $utenteRich, $modFruiz, $descProd, $dataScad, $offPromo, $utente, $azienda) {
+    public function createCoupon($codCoupon, $utenteRich, $dataScad, $offPromo) {
         Buono::create([
             'codCoupon' => $codCoupon,
             'utenteRich' => $utenteRich,
             'dataScad' => $dataScad,
             'offPromo' => $offPromo
         ]);
+    }
+    
+    public function generaCodBuono(){
+        return $id = uniqid('C');
+    }
+    
+    public function generaDataScadenzaBuono(){
+        $date = new DateTime();
+        $date->modify('+1 month');
+        return $date->format('Y-m-d');
     }
 }

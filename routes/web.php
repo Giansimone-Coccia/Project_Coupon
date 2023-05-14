@@ -50,14 +50,13 @@ Route::get('/area_personale_utente/{username}', [UtenteController::class, 'getIn
 Route::get('/area_personale_utente/{username}/lista_coupon/{usernameUtente}', [UtenteController::class, 'getCouponUtente'])
         ->name('lista_coupon');
 
-
+Route::get('/coupon/{codOfferta}', [PublicController::class, 'getBuono'])
+        ->name('coupon');
 
 
 Route::view('/chi_siamo', 'chi_siamo')
         ->name('chi_siamo');
 
-Route::view('/coupon', 'coupon')
-        ->name('coupon');
 
 Route::view('/login', 'login')
         ->name('login');

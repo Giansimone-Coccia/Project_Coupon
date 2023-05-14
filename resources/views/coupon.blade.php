@@ -9,22 +9,24 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
     </head>
     <body>
+        @isset($buono)
+        @isset($offerta)
         <div class="coupon-page">
             <div class="container-coupon">
-                <h3>Conad</h3>
+                <h3>{{$offerta->nomeOff}}</h3>
             </div>
-            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="logo-conad" style="width:100%;">
+            <img src="{{ asset('images/companies/'.$offerta->logoOff ) }}" alt="logo.{{$offerta->nomeOff}}" style="width:100%;">
             <div class="container-coupon" style="background-color:white">
-                <h2><b>CONAD 20% OFF</b></h2>
-                <p>20% di sconto applicabile in qualsiasi reparto tra i negozi Conad aderenti all'iniziativa</p>
+                <h2><b>{{$offerta->nomeOff}}</b></h2>
+                <p>{{$offerta->oggettoOff}}</p>
             </div>
             <div class="modalita">
-                <p>Modalità di fruizione: Negozio fisico</p>
+                <p>Modalità di fruizione: {{$offerta->modalita}}</p>
             </div>
-            <p class="utente">Utente richiedente: Mario Rossi</p>
+            <p class="utente">Utente richiedente: {{$offerta->utenteRich}}</p>
             <div class="container-coupon">
-                <p>Codice promozione: <span class="promo">BOH232</span></p>
-                <p class="expire">Scade: 03 Gen, 2024</p>
+                <p>Codice promozione: <span class="promo">{{$offerta->codOfferta}}</span></p>
+                <p class="expire">Scade: {{$buono->dataScad}}</p>
             </div>
         </div>
     </body>

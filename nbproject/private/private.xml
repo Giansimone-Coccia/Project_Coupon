@@ -2,17 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Models/Catalogo.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/routes/console.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Models/Resources/Offerta.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Models/UtenteModel.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Models/FaqModel.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/routes/channels.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Controllers/PublicController.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/database/migrations/2023_05_12_141433_create_utenti_table.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Controllers/Controller.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/routes/web.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

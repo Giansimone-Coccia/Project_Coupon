@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use App\Models\Resources\Faq;
+use App\Models\Resources\Domanda;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FaqModel 
+class DomandaModel 
 {
 
     public function getAllFaq(){ 
-        return Faq:: get();
+        return Domanda:: get();
     }
 }

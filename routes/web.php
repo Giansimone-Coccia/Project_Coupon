@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
-use App\Http\Controllers\FaqsController;
+use App\Http\Controllers\DomandeController;
 use App\Http\Controllers\UtenteController;
 
 
@@ -35,7 +35,7 @@ Route::view('/', 'layouts/public');
 Route::get('/', [PublicController::class, 'allAziende'])
         ->name('start');
 
-Route::get('/FAQ', [FaqsController::class, 'allFAQ'])
+Route::get('/FAQ', [DomandeController::class, 'allFAQ'])
         ->name('FAQ');
 
 Route::get('/offerte_azienda/{aziendaId}', [PublicController::class, 'getAzienda'])

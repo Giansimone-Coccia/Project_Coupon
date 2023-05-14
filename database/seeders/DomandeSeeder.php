@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class FaqsSeeder extends Seeder
+class DomandeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class FaqsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('faqs')->insert([
+        DB::table('domande')->insert([
             ['idFaq' => "F0001", 'domanda' => "Come si può riscattare un coupon?", 'risposta' => "Per riscattare un'offerta devi essere registrato al sito e poi premere il tasto 'riscatta' che trovi nella pagina con le informazioni sulla promozione",
                 'dataPub' => "2023-04-24 17:15", 'utente' => 'UC0002'],
             ['idFaq' => "F0002", 'domanda' => "Come posso cercare una promozione?", 'risposta' => "Puoi cercare una promozione utilizzando la barra di ricerca che trovi nella parte alta del sito", 

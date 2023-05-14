@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FaqModel;
+use App\Models\DomandaModel;
 use Illuminate\Http\Request;
 
-class FaqsController extends Controller
+class DomandeController extends Controller
 {
     protected $_FAQModel;
 
     public function __construct() {
-        $this->_FAQModel = new FaqModel;
+        $this->_FAQModel = new DomandaModel;
     }
     
     public function allFAQ(){
@@ -18,6 +18,6 @@ class FaqsController extends Controller
         $FAQs = $this->_FAQModel->getAllFaq();
 
         return view('FAQ')
-                ->with('TutteFAQ', $FAQs);
+                ->with('FAQs', $FAQs);
     }
 }

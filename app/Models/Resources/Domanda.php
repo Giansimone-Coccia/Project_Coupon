@@ -5,9 +5,9 @@ namespace App\Models\Resources;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Faq extends Model
+class Domanda extends Model
 {
-    protected $table = 'faqs';
+    protected $table = 'domande';
     protected $primaryKey = 'idFaq';
     public $timestamps = false;
     

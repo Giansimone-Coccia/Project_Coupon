@@ -10,7 +10,7 @@
         @isset($couponUtente)
         @foreach($couponUtente as $coupon)
         <div class="coupon">
-            <img src="{{ asset('images/companies/Conad.png') }}" alt="Logo offerta">
+            <img src="{{ asset('images/companies/Conad.png') }}" class = "rounded-corners" alt="Logo offerta">
             <h3><span>Nome offerta:</span> {{$couponOfferta->nomeOff}}</h3>
             <ul>
                 <li><strong>Scadenza:</strong> {{$coupon -> dataScad}} </li>

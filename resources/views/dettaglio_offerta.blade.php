@@ -9,7 +9,7 @@
 @foreach($dettaglio_offerta as $offerta)
 <div class="container_dettaglio_offerta">
     <div class="image">
-        <img src="{{ asset('images/products/'.$offerta->logoOff ) }}" alt="Nome Offerta">
+        <img src="{{ asset('images/products/'.$offerta->logoOff ) }}" class="rounded-corners" alt="Nome Offerta">
     </div>
     <div class="info">
         <h2>{{$offerta->nomeOff}}</h2>

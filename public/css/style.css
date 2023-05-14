@@ -954,15 +954,11 @@ footerF{
     width: 100%;
 }
 .single-offerta {
-    transition: .4s ease;
     border: 6px solid transparent;
 }
 .single-offerta:hover{
     opacity: 0.8;
-    border: 7px solid #394867;
-    border-radius: 30px;
     background-color: #d0ddf7;
-    transition: .4s ease;
 }
 .container-azienda {
     position: relative;

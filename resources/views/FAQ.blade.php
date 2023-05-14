@@ -29,7 +29,6 @@
                         <div class="card">
                             <div class="card-header" id="faqHeading-{{$faq->idFaq}}">
                                 <div class="mb-0">
-
                                     <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-{{$faq->idFaq}}" data-aria-expanded="true" data-aria-controls="faqCollapse-{{$faq->idFaq}}">{{$faq->domanda}}</h5>
                                 </div>
                             </div>

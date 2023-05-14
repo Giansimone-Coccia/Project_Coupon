@@ -36,7 +36,7 @@
                     <div class="single-offerta">
                         <div class="inline-block">
                             <div class="centerimagesoffers">
-                                <img class = "rounded-corners" src="{{ asset('images/companies/' . $promo->logoOff) }}" alt="$promo->nomeOff"/>
+                                <img class = "rounded-corners" src="{{ asset('images/products/' . $promo->logoOff) }}" alt=""/>
                             </div>
                             <h3>{{$promo->nomeOff}}</h3>
                         </div> 

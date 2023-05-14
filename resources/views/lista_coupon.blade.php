@@ -7,8 +7,8 @@
 <div class="main content padding" style="max-width: 1300px; margin-top: 150px;">
     <div class="couponlist">
         <h1 style="font-weight: 300">Lista coupon riscattati:</h1>
-        @isset($getCouponUtente)
-        @foreach($getCouponUtente as $coupon)
+        @isset($couponUtente)
+        @foreach($couponUtente as $coupon)
         <div class="coupon">
             <img src="{{ asset('images/companies/' . $coupon->azienda->image) }}" alt="Logo offerta">
             <h3><span>Nome offerta:</span> $coupon->descProdOff</h3>
@@ -18,8 +18,8 @@
                 <li><strong>Codice coupon:</strong> $coupon->codCoupon</li>
             </ul>
         </div>
-        @endforeach()
-        @endisset()
+        @endforeach
+        @endisset
     </div>
     <!-- End page content -->
 </div>

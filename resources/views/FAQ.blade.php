@@ -22,8 +22,8 @@
                 <!-- ***** FAQ Start ***** -->
                 <div class="offset-md-3">
                     <div class="faq" id="accordion">
-                        @isset($allFaq)
-                        @foreach($allFaq as $faq)
+                        @isset($TutteFaq)
+                        @foreach($TutteFaq as $faq)
                         <div class="card">
                             <div class="card-header" id="faqHeading-1">
                                 <div class="mb-0">

@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\FaqModel;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Http\Request;
 
-
-class FAQController extends Controller
+class FaqsController extends Controller
 {
     protected $_FAQModel;
 
@@ -16,10 +15,9 @@ class FAQController extends Controller
     
     public function allFAQ(){
         
-        $FAQs = $this->_FAQModel->getFAQ();
+        $FAQs = $this->_FAQModel->getAllFaq();
 
         return view('FAQ')
-                        ->with('allFAQ', $FAQs);
+                ->with('TutteFAQ', $FAQs);
     }
-   
 }

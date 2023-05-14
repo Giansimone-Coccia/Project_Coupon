@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
-use App\Http\Controllers\FAQController;
+use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\UtenteController;
 
 
@@ -35,7 +35,7 @@ Route::view('/', 'layouts/public');
 Route::get('/', [PublicController::class, 'allAziende'])
         ->name('start');
 
-Route::get('/FAQ', [FAQController::class, 'allFAQ'])
+Route::get('/FAQ', [FaqsController::class, 'allFAQ'])
         ->name('FAQ');
 
 Route::get('/offerte_azienda/{aziendaId}', [PublicController::class, 'getAzienda'])
@@ -47,8 +47,8 @@ Route::get('/offerte_azienda/{aziendaId}/dettaglio_offerta/{promoId}', [PublicCo
 Route::get('/area_personale_utente/{username}', [UtenteController::class, 'getInfoUtente'])
         ->name('area_personale_utente');  
 
-Route::get('/area_personale_utente/{username}/lista_Coupon/{usernameUtente}', [UtenteController::class, 'getCouponUtente'])
-        ->name('lista_Coupon');
+Route::get('/area_personale_utente/{username}/lista_coupon/{usernameUtente}', [UtenteController::class, 'getCouponUtente'])
+        ->name('lista_coupon');
 
 
 

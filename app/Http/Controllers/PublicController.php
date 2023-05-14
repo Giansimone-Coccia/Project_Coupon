@@ -3,17 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Catalogo;
+use App\Models\FaqModel;
 use Illuminate\Support\Facades\Log;
 
 
 class PublicController extends Controller
 {
     protected $_catalogModel;
+        
 
     public function __construct() {
         $this->_catalogModel = new Catalogo;
     }
     
+   
     public function allAziende(){
         
         $aziende = $this->_catalogModel-> getAllAziende();

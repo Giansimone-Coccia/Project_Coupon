@@ -16,10 +16,10 @@ class UtenteController extends Controller
     
     public function getInfoUtente($username){
         
-        $utenti = $this->_UtenteModel->getInfoUtente($username);
+        $utenti = $this->_UtenteModel->getInfoUtente($username)->first();
 
         return view('area_personale_utente')
-                        ->with('getInfoUtente', $utenti);
+                        ->with('utenti', $utenti);
     }
     
     public function getCouponUtente($usernameUtente){
@@ -27,7 +27,7 @@ class UtenteController extends Controller
         $couponUtente = $this->_UtenteModel->getCouponUtente($usernameUtente);
 
         return view('lista_Coupon')
-                        ->with('getCouponUtente', $couponUtente);
+                        ->with('couponUtente', $couponUtente);
     }
    
 }

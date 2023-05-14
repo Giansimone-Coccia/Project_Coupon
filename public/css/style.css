@@ -30,6 +30,10 @@
     font-family: 'Karma',sans-serif;
 }
 
+.box-shadow{
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
 /*home.css*/
 
 .centerimages{
@@ -139,6 +143,9 @@ h6{
 }
 .margin-top-16{
     margin-top: 16px
+}
+.margin-top-32{
+    margin-top: 32px
 }
 
 .margin-top-62{
@@ -422,9 +429,11 @@ button{
 
 }
 
-.text {
-    margin-top: 110px;
-    margin-right: 50px;
+.description {
+    display: flex;
+  justify-content: center;
+   /* margin-top: 50px;
+    margin-right: 50px;*/
     /* stile per il testo nella parte destra della griglia */
 }
 
@@ -797,11 +806,12 @@ footerF{
 }
 
 .image-azienda {
-    flex:1;
-    float: left;
-    margin-right: 100px; /* aggiunge un margine destro per separare l'immagine dal testo */
-    margin-left: 100px;
-    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*margin-right: 100px; /* aggiunge un margine destro per separare l'immagine dal testo */
+    /*margin-left: 100px;
+    margin-top: 100px;*/
 }
 
 

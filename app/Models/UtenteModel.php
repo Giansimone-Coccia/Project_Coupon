@@ -62,4 +62,5 @@ class UtenteModel
     public function getCouponUtente($usernameUtente) {
         return Buono::where('utenteRich', $usernameUtente)->get();
     }
+    
 }

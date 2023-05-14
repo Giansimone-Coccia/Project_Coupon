@@ -11,8 +11,9 @@ class Buono extends Model
     
     public $timestamps = false;
     
-    public function couponAzienda() {
-        return $this->hasOne(Azienda::class, 'codiceA', 'azienda'); //Il secondo della classe corrente
+    
+    public function couponOfferta() {
+        return $this->hasOne(Offerta::class, 'codOfferta', 'offPromo'); //Il secondo della classe corrente
     }
     
     public function couponUtente() {

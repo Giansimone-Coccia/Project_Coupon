@@ -21,6 +21,10 @@ class Catalogo
         return Offerta::where('azienda', $aziendaId)->get();
     }
     
+     public function getOffertaById($offertaId){
+        return Offerta::where('codOfferta',$offertaId)->first();
+    }
+    
     public function getPromoDetails($promoId){
         return Offerta::where('codOfferta', $promoId) -> get();
     }

@@ -12,7 +12,7 @@
         <div class="image-azienda">
             <div class="inline-block">
                 <div class="centerimagesoffers">
-                    <img src="{{ asset('images/companies/' . $azienda->image) }}"  alt="$azienda->nome"/>                        
+                    <img src="{{ asset('images/companies/'. $azienda->image) }}"  alt="$azienda->nome"/>                        
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
                     </div> 
                 </div>
                 
-                endforeach
+                @endforeach
                 @endisset
 
             </div>

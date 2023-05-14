@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Azienda extends Model
 {
     protected $table = 'aziende';
-    protected $primaryKey = 'codiceA';
-    
-    protected $guarded = ['codiceA'];
-    
+    //protected $primaryKey = 'codiceA';
+        
     public $timestamps = false;
     
     

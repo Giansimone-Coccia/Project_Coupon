@@ -116,7 +116,14 @@ h6{
 .quarter{
     float:left;
     width:100%
+    transition: .4s ease;
 }
+
+.quarter:hover{
+          opacity: 0.8;
+          background-color: #d0ddf7;
+          transition: .4s ease;
+      }
 
 @media (min-width:601px){
     .quarter{
@@ -889,7 +896,7 @@ footerF{
       
       .coupon:hover{
           opacity: 0.8;
-          border: 6px solid #394867;
+          border: 7px solid #394867;
           border-radius: 30px;
           background-color: #d0ddf7;
           transition: .4s ease;
@@ -952,7 +959,7 @@ footerF{
 }
 .single-offerta:hover{
     opacity: 0.8;
-    border: 12px solid #394867;
+    border: 7px solid #394867;
     border-radius: 30px;
     background-color: #d0ddf7;
     transition: .4s ease;

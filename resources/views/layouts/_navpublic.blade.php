@@ -1,4 +1,4 @@
-<ul class="left listnone">
+<ul class="left listnone margin-top-10">
     <li class="bar-item vectorlogo">
         <img src="{{ asset('images/logo/coupon-logo.svg' ) }}" alt="Logo" class="width100 height100" onclick="window.location.href = '{{ route('start') }}';">
     </li>
@@ -16,7 +16,7 @@
     <li class="button bar-item right" onclick="window.location.href = '{{ route('FAQ') }}';">FAQ</li>
     <li class="button bar-item right" onclick="window.location.href = '{{ route('chi_siamo') }}';">Chi siamo</li>
 </ul>
-<ul class="right listnone"> 
+<ul class="right listnone margin-top-10"> 
     <li class="bar-item max-heigth52" >
         <input placeholder="Search.." class="searchbar height36" name="search">
     </li>

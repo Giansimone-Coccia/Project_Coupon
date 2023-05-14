@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Catalogo;
-use App\Models\FaqModel;
+use App\Models\DomandaModel;
 use Illuminate\Support\Facades\Log;
 
 

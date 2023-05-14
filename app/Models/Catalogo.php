@@ -26,15 +26,11 @@ class Catalogo
     }
     
     public function createCoupon($codCoupon, $utenteRich, $modFruiz, $descProd, $dataScad, $offPromo, $utente, $azienda) {
-        Coupon::create([
+        Buono::create([
             'codCoupon' => $codCoupon,
             'utenteRich' => $utenteRich,
-            'modFruiz' => $modFruiz,
-            'descProdOff' => $descProd,
             'dataScad' => $dataScad,
-            'offPromo' => $offPromo,
-            'utente' => $utente,
-            'azienda' => $azienda
+            'offPromo' => $offPromo
         ]);
     }
 }

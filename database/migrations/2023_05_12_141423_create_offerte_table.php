@@ -15,7 +15,7 @@ class CreateOfferteTable extends Migration
     {
         Schema::create('offerte', function (Blueprint $table) {
             $table->string('codOfferta', 20)->primary();
-            $table->string('oggettoOff',30);
+            $table->string('oggettoOff',250);
             $table->string('modalita', 30);
             $table->string('tempoFruiz',30);
             $table->string('luogoFruiz',30);

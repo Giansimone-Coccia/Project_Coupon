@@ -4,10 +4,10 @@ namespace App\Models\Resources;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Coupon extends Model
+class Buono extends Model
 {
-    protected $table = 'coupons';
-    protected $primaryKey = ['offPromo','utente'];
+    protected $table = 'buoni';
+    //protected $primaryKey = ['offPromo','utenteRich'];
     
     public $timestamps = false;
     
@@ -16,6 +16,6 @@ class Coupon extends Model
     }
     
     public function couponUtente() {
-        return $this->hasOne(Utente::class, 'username', 'utente'); //Il secondo della classe corrente
+        return $this->hasOne(Utente::class, 'username', 'utenteRich'); //Il secondo della classe corrente
     }
 }

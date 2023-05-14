@@ -26,7 +26,7 @@ class UtenteController extends Controller
         
         $couponUtente = $this->_UtenteModel->getCouponUtente($usernameUtente);
 
-        return view('lista_Coupon')
+        return view('lista_coupon')
                         ->with('couponUtente', $couponUtente);
     }
    

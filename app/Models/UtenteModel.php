@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Models\Resources\Utente;
-use App\Models\Resources\Coupon;
+use App\Models\Resources\Buono;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -60,6 +60,6 @@ class UtenteModel
     }
     
     public function getCouponUtente($usernameUtente) {
-        return Coupon::where('utente', $usernameUtente)->get();
+        return Buono::where('utenteRich', $usernameUtente)->get();
     }
 }

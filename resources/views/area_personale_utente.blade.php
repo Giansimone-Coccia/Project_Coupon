@@ -20,11 +20,10 @@
             <p><strong>Data Nascita:</strong> {{$utenti->dataNascita}}</p>
             <a href="{{ route('modifica_profilo_utente') }}" class="parola_click1" > Modifica dati personali </a>
         </div>
-        @endisset
 
         <h2>Coupon Riscattati</h2>
-        <p> <a href = '#'; class="parola_click"> Clicca qui </a> per visualizzare tutti i coupon riscattati</p>
-
+        <p> <a onclick="window.location.href = '{{ route('lista_coupon', [$utenti->username, $utenti->username]) }}';" class="parola_click"> Clicca qui </a> per visualizzare tutti i coupon riscattati</p>
+        @endisset
     </div>
 </div>
 @endsection

@@ -15,7 +15,7 @@
             <div class="container-coupon">
                 <h3>{{$offerta->nomeOff}}</h3>
             </div>
-            <img src="{{ asset('images/companies/'.$offerta->logoOff ) }}" alt="logo.{{$offerta->nomeOff}}" style="width:100%;">
+            <img src="{{ asset('images/products/'.$offerta->logoOff ) }}" alt="logo.{{$offerta->nomeOff}}" style="width:100%;">
             <div class="container-coupon" style="background-color:white">
                 <h2><b>{{$offerta->nomeOff}}</b></h2>
                 <p>{{$offerta->oggettoOff}}</p>
@@ -25,9 +25,11 @@
             </div>
             <p class="utente">Utente richiedente: {{$offerta->utenteRich}}</p>
             <div class="container-coupon">
-                <p>Codice promozione: <span class="promo">{{$offerta->codOfferta}}</span></p>
-                <p class="expire">Scade: {{$buono->dataScad}}</p>
+                <p>Codice promozione: <span class="promo">{{$buono->dataScad}}</span></p>
+<!--ricorda di inserire data scadenza e codice coupon -->
             </div>
         </div>
+        @endisset
+        @endisset
     </body>
 </html>

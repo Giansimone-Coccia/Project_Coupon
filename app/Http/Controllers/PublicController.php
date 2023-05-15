@@ -46,9 +46,10 @@ class PublicController extends Controller
         $offertaDetails=$this->_catalogModel->getOffertaById($offertaId);
         $codiceBuono = $this->_catalogModel->generaCodBuono();
         $dataScad = $this->_catalogModel->generaDataScadenzaBuono();
-        $buonoDetails= $this->_catalogModel->createCoupon($codiceBuono, 'UC0001', $dataScad, $offertaDetails->codOfferta);
+        //$buonoDetails= $this->_catalogModel->createCoupon($codiceBuono, 'UC0002', $dataScad, $offertaDetails->codOfferta);
+        $buono = $this->_catalogModel->getBuono('C0001');
         return view('coupon')
-                        ->with('buono', $buonoDetails)
+                        ->with('buono', $buono)
                         ->with('offerta', $offertaDetails);
     }
    

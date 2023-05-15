@@ -82,7 +82,8 @@ h6{
 }
 
 .row-padding,.row-padding>.quarter{
-    padding:0 8px
+    padding:0 8px;
+    cursor: pointer;
 }
 .container:after,.container:before,.row-padding:after,.row-padding:before,.bar:before,.bar:after{
     content:"";
@@ -230,6 +231,10 @@ footer,header,main,nav{
 
 .listnone{
     list-style-type:none
+}
+
+.listnone li{
+    cursor:pointer
 }
 
 .searchbar
@@ -683,6 +688,7 @@ footerF{
     padding: 20px;
     padding-bottom: 40px;
     text-align: center;
+    cursor: pointer;
 }
 .footer-bottom p{
     float: left;
@@ -1216,6 +1222,7 @@ form .button input:hover{
         
 .parola_click{
             text-decoration: underline;
+            cursor: pointer;
         }
 
 .parola_click1{

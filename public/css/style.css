@@ -1,26 +1,26 @@
 /*language*/
 @font-face {
-  font-family: 'Karma';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/karma/v16/va9I4kzAzMZRGLBpQeNHkQ.woff2) format('woff2');
-  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF;
+    font-family: 'Karma';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/karma/v16/va9I4kzAzMZRGLBpQeNHkQ.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF;
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Karma';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/karma/v16/va9I4kzAzMZRGLBmQeNHkQ.woff2) format('woff2');
-  unicode-range: U+0100-02AF, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    font-family: 'Karma';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/karma/v16/va9I4kzAzMZRGLBmQeNHkQ.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'Karma';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/karma/v16/va9I4kzAzMZRGLBoQeM.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-family: 'Karma';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/karma/v16/va9I4kzAzMZRGLBoQeM.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 *{
@@ -104,26 +104,26 @@ h6{
 }
 
 .dimentioncontent h1 {
-	font-size: 32px;
-	margin-top: 0px;
-	margin-bottom: 0px;
-        border-bottom: 2px solid #ccc;
-        padding: 20px 0;
-	}
+    font-size: 32px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-bottom: 2px solid #ccc;
+    padding: 20px 0;
+}
 .container{
     padding:0.01em 16px
 }
 .quarter{
     float:left;
     width:100%
-    transition: .4s ease;
+        transition: .4s ease;
 }
 
 .quarter:hover{
-          opacity: 0.8;
-          background-color: #d0ddf7;
-          transition: .4s ease;
-      }
+    opacity: 0.8;
+    background-color: #d0ddf7;
+    transition: .4s ease;
+}
 
 @media (min-width:601px){
     .quarter{
@@ -153,7 +153,7 @@ h6{
     display:none;
 }
 .open-faq{
-        cursor: pointer;
+    cursor: pointer;
 }
 
 .margin-top-10{
@@ -468,9 +468,9 @@ button{
 
 .description {
     display: flex;
-  justify-content: center;
-   /* margin-top: 50px;
-    margin-right: 50px;*/
+    justify-content: center;
+    /* margin-top: 50px;
+     margin-right: 50px;*/
     /* stile per il testo nella parte destra della griglia */
 }
 
@@ -489,8 +489,8 @@ button{
 }
 
 .container-coupon {
-  padding: 2px 16px;
-  background-color: #f1f1f1;
+    padding: 2px 16px;
+    background-color: #f1f1f1;
 }
 
 
@@ -516,12 +516,15 @@ button{
     padding: 20px;
 }/*$*/
 
+.display-flex{
+    display: flex;
 
+}
 
 .image-about-us {
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
 .image-dimension{
@@ -869,7 +872,7 @@ footerF{
 
 .rounded-corners{
 
-  border-radius: 10px; /* Imposta il valore appropriato per arrotondare completamente l'immagine */
+    border-radius: 10px; /* Imposta il valore appropriato per arrotondare completamente l'immagine */
 
 }
 
@@ -887,66 +890,66 @@ footerF{
 
 .couponlist h1{
     margin: 0 0 1.5em 2em;
-    text-align: left; 
+    text-align: left;
 }
 
 .coupon {
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /*elementi distribuiti uniformemente lungo l'asse orizzonatale'*/
-        margin-bottom: 20px;
-        padding: 10px;
-        width: 80%;
-        max-width: 800px;
-        transition: .4s ease;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      }
-      
-      .coupon:hover{
-          opacity: 0.8;
-          background-color: #d0ddf7;
-          transition: .4s ease;
-      }
-      
-      .coupon img {
-        width: 10em;
-        height: 10em;
-        margin-right: 1em;
-        flex-basis: 6em;    /*dimensione standart*/
-        vertical-align: middle;
-        object-fit: contain;    /*adatta l'immagine al contenitore senza deformarla'*/
-      }
-      
-      .coupon h3 {
-        margin: 0.5em;
-        font-size: 1.5em;
-        font-weight: normal;
-        flex-basis: 50%;
-        display: flex;
-        flex-direction: column; /*costringe ad andare a capo*/
-      }
-      
-      .coupon h3 span {
-        font-weight: bold;
-      }
-      
-      .coupon ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        font-size: 1.2em;
-        flex-basis: 40%;
-      }
-      
-      .coupon ul li {
-        margin-bottom: 0.5em;
-      }
-      
-      .coupon ul li strong {
-        display: inline-block;
-        width: 10em;
-        font-weight: bold;
-      }
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*elementi distribuiti uniformemente lungo l'asse orizzonatale'*/
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 80%;
+    max-width: 800px;
+    transition: .4s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.coupon:hover{
+    opacity: 0.8;
+    background-color: #d0ddf7;
+    transition: .4s ease;
+}
+
+.coupon img {
+    width: 10em;
+    height: 10em;
+    margin-right: 1em;
+    flex-basis: 6em;    /*dimensione standart*/
+    vertical-align: middle;
+    object-fit: contain;    /*adatta l'immagine al contenitore senza deformarla'*/
+}
+
+.coupon h3 {
+    margin: 0.5em;
+    font-size: 1.5em;
+    font-weight: normal;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column; /*costringe ad andare a capo*/
+}
+
+.coupon h3 span {
+    font-weight: bold;
+}
+
+.coupon ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2em;
+    flex-basis: 40%;
+}
+
+.coupon ul li {
+    margin-bottom: 0.5em;
+}
+
+.coupon ul li strong {
+    display: inline-block;
+    width: 10em;
+    font-weight: bold;
+}
 
 /* Create four equal columns that sits next to each other */
 .column-offerte {
@@ -1012,7 +1015,7 @@ footerF{
 
 .body_modProfile{
     height: 100vh;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1159,59 +1162,59 @@ form .button input:hover{
 /*area_personale_utente.css*/
 
 .body_area_personale_utente {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-		}
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 .container_area_utente {
-	max-width: 800px;
-	margin: 0 auto;
-        margin-top: 100px;
-	padding: 20px;
-	background-color: #fff;
-	box-shadow: 0 0 10px rgba(0,0,0,0.3);
-        margin-bottom: 60px;
-	}
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin-bottom: 60px;
+}
 .container_area_utente h1 {
-	font-size: 32px;
-	font-weight: bold;
-	text-align: center;
-	margin: 0;
-	padding: 20px 0;
-	}
-        
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+}
+
 .container_area_utente h2 {
-	font-size: 24px;
-	margin-top: 10px;
-	margin-bottom: 0px;
-        border-top: 2px solid #ccc;
-        padding: 20px 0;
-	}
-        
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    border-top: 2px solid #ccc;
+    padding: 20px 0;
+}
+
 .section_area_utente {
-	margin: 5px 0;
-	padding: 20px;
-	background-color: #f9f9f9;
-	border-radius: 5px;
-        column-count: 2;
-	column-gap: 40px;
-	}
+    margin: 5px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    column-count: 2;
+    column-gap: 40px;
+}
 
 .section_area_utente p {
-	font-size: 16px;
-	margin-top: 0;
-	margin-bottom: 0;
-	}
-        
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .parola_click{
-            text-decoration: underline;
-        }
+    text-decoration: underline;
+}
 
 .parola_click1{
-            text-decoration: underline;
-            float: right;
-        }
-        
+    text-decoration: underline;
+    float: right;
+}
+
 /*modifica_profilo_utente*/
 .container-modify-profile{
     max-width: 700px;
@@ -1244,89 +1247,133 @@ form .button input:hover{
 /*pagination*/
 
 .pagination-button{
-      background-color: #394867;
-      color: #F1F6F9;
-    }
+    background-color: #394867;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0px;
+    float: right;
+}
 .pagination-button:hover {
     background-color: #F1F6F9;
     color: #394867;
-  }
+}
 
 
-  .creazioneOfferta{
-      font-family: Arial, sans-serif;
-    
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
+.creazioneOfferta{
+    font-family: Arial, sans-serif;
 
-   .productForm h1{
-      color: #394867;
-      text-align: center;
- 
-    }
-    
-    .productForm hr{
-      border-width: 3px;
-      border-color:#394867;
- 
-    }
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
 
-    .productForm{
-      max-width: 800px;
-      margin: 100px auto;
-      padding: 30px;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-      overflow: auto; /* Aggiunge lo scroll se il contenuto è più grande del form */
-      margin-bottom: 20px;
-    }
+.productForm h1{
+    color: #394867;
+    text-align: center;
 
-    .creazioneOfferta label{
-      display: block;
-      margin-top: 10px;
-    }
+}
 
-    .creazioneOfferta input[type="text"],
-    select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      box-sizing: border-box;
-      font-size: 16px;
-      margin-top: 5px;
-    }
+.productForm hr{
+    border-width: 3px;
+    border-color:#394867;
 
-    .creazioneOfferta textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      box-sizing: border-box;
-      font-size: 16px;
-      margin-top: 5px;
-      resize: vertical; /* Consenti il ridimensionamento verticale */
-      min-height: 100px; /* Altezza minima per evitare di sforare il bordo */
-      overflow-y: auto; /* Aggiungi scroll interno quando necessario */
-    }
+}
 
-    .creazioneOfferta input[type="submit"] {
-      background-color: #394867;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-top: 0px;
-      float: right; /* Sposta il pulsante a destra */
-    }
+.productForm{
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    overflow: auto; /* Aggiunge lo scroll se il contenuto è più grande del form */
+    margin-bottom: 20px;
+}
 
-    .creazioneOfferta input[type="submit"]:hover {
-        background-color: #F1F6F9;
-        color: #394867;
-      }
+.creazioneOfferta label{
+    display: block;
+    margin-top: 10px;
+}
+
+.creazioneOfferta input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.creazioneOfferta textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-top: 5px;
+    resize: vertical; /* Consenti il ridimensionamento verticale */
+    min-height: 100px; /* Altezza minima per evitare di sforare il bordo */
+    overflow-y: auto; /* Aggiungi scroll interno quando necessario */
+}
+
+.creazioneOfferta input[type="submit"] {
+    background-color: #394867;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0px;
+    float: right; /* Sposta il pulsante a destra */
+}
+
+.creazioneOfferta input[type="submit"]:hover {
+    background-color: #F1F6F9;
+    color: #394867;
+}
+
+
+/*area-personale staff*/
+
+.pulsanti_staff {
+    background-color: #394867;
+    color: #fff;
+    border: none;
+    padding: 0px;
+    width: 250px;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0px;
+}
+
+.pulsanti_staff:hover {
+    background-color: #F1F6F9;
+    color: #394867;
+}
+
+.container_pulsanti_staff {
+    display: grid;
+    border-top: 2px solid #ccc;
+    padding: 16px 8px;
+    grid-template-columns: 1fr 1fr; /* crea una griglia con due colonne */
+    justify-content: center;
+    align-items: center;
+}
+
+.text-align-right{
+    text-align:right
+}
+.text-align-left{
+    text-align:left
+}
 

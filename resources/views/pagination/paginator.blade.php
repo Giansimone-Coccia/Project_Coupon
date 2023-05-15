@@ -6,7 +6,7 @@
 
 
     @if (!$paginator->onFirstPage())
-        <a href="{{ $paginator->url(1) }}">Inizio</a> |
+        <a href="{{ $paginator->url(1) }}" >Inizio</a> |
     @else
         Inizio |
     @endif

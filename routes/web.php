@@ -75,6 +75,12 @@ Route::view('/register', 'register')
 Route::view('/risultati_page', 'risultati_page')
         ->name('risultati_page');
 
+Route::view('/area_personale_staff', 'area_personale_staff')
+        ->name('area_personale_staff');
+
+Route::view('/mostra_aziende_staff', 'mostra_aziende_staff')
+        ->name('mostra_aziende_staff');
+
 
 
 

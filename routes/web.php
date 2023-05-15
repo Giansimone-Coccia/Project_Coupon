@@ -57,6 +57,8 @@ Route::view('/crea_offerta', 'crea_offerta')
         ->name('crea_offerta');
 
 
+
+
 Route::view('/chi_siamo', 'chi_siamo')
         ->name('chi_siamo');
 

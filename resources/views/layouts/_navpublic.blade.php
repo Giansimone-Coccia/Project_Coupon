@@ -16,6 +16,7 @@
     <li class="button bar-item right" onclick="window.location.href = '{{ route('FAQ') }}';">FAQ</li>
     <li class="button bar-item right" onclick="window.location.href = '{{ route('chi_siamo') }}';">Chi siamo</li>
 </ul>
+@if (!empty($allAziende) || !empty($promos))
 <ul class="right listnone margin-top-10"> 
     <li class="bar-item max-heigth52" >
         <input placeholder="Search.." class="searchbar height36" name="search">
@@ -24,4 +25,5 @@
         <img src="{{ asset('images/icons/search_icon.svg' ) }}" alt="Search" class="width100">
     </li>
 </ul>
+@endif
 

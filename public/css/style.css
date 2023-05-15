@@ -149,6 +149,13 @@ h6{
     max-width:980px
 }
 
+.display-none{
+    display:none;
+}
+.open-faq{
+        cursor: pointer;
+}
+
 .margin-top-10{
     margin-top: 10px
 }
@@ -368,6 +375,8 @@ button{
     background: none;
     border-bottom: 1px dashed #F1F6F9;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        margin-top: 10px;
+    margin-bottom: 10px
 
 }
 
@@ -431,6 +440,7 @@ button{
     line-height: 28px;
     letter-spacing: 1px;
     border-top: 1px solid #F3F8FF;
+
 }
 
 .faq .card .card-body p {
@@ -887,17 +897,14 @@ footerF{
         justify-content: space-between; /*elementi distribuiti uniformemente lungo l'asse orizzonatale'*/
         margin-bottom: 20px;
         padding: 10px;
-        background-color: #e6edfa;
         width: 80%;
         max-width: 800px;
         transition: .4s ease;
-        border: 6px solid transparent;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
       
       .coupon:hover{
           opacity: 0.8;
-          border: 7px solid #394867;
-          border-radius: 30px;
           background-color: #d0ddf7;
           transition: .4s ease;
       }

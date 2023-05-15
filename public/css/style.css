@@ -149,6 +149,13 @@ h6{
     max-width:980px
 }
 
+.display-none{
+    display:none;
+}
+.open-faq{
+        cursor: pointer;
+}
+
 .margin-top-10{
     margin-top: 10px
 }
@@ -368,6 +375,8 @@ button{
     background: none;
     border-bottom: 1px dashed #F1F6F9;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        margin-top: 10px;
+    margin-bottom: 10px
 
 }
 
@@ -431,6 +440,7 @@ button{
     line-height: 28px;
     letter-spacing: 1px;
     border-top: 1px solid #F3F8FF;
+
 }
 
 .faq .card .card-body p {

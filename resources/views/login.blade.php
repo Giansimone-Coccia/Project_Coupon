@@ -14,7 +14,6 @@
     <h1>Login</h1>
     <div class="content">
       <div class="input-field">
-          <input type="username" placeholder="Username" autocomplete="on">
           <input type="text" id="username" name ="username" placeholder="Username" autocomplete="on" value="{{ old('username') }}">
           @if ($errors->first('username'))
                 <ul class="errors">

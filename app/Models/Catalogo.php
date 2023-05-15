@@ -10,11 +10,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Catalogo
-{
-    public function getAllAziende(){
-        return Azienda:: get();
+ {
+
+    public function getAllAziende($paged = 8) {
+        $azienda = Azienda::paginate($paged);
+        return $azienda;
     }
-    
+
     public function getAziendaById($aziendaId){
         return Azienda::where('codiceA',$aziendaId);
     }

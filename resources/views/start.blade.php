@@ -24,23 +24,15 @@
             <h3>{{$azienda->nome}}</h3>
         </div>
         @endforeach
-        @endisset
-
 
     </div>
+    @include('pagination.paginator', ['paginator' => $allAziende])
+    @endisset
 </div>
 
 
-<!-- Pagination -->
-<div class="center padding-32">
-    <div class="bar">
-        <a href="#" class="bar-item button hover-black">«</a>
-        <a href="#" class="bar-item black button">1</a>
-        <a href="#" class="bar-item button hover-black">2</a>
-        <a href="#" class="bar-item button hover-black">3</a>
-        <a href="#" class="bar-item button hover-black">4</a>
-        <a href="#" class="bar-item button hover-black">»</a>
-    </div>
-</div>
+
+
+
 @endsection
 

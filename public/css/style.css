@@ -373,9 +373,8 @@ button{
 .faq .card {
     border: none;
     background: none;
-    border-bottom: 1px dashed #F1F6F9;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
-        margin-top: 10px;
+    margin-top: 10px;
     margin-bottom: 10px
 
 }
@@ -1250,4 +1249,199 @@ form .button input:hover{
     border-radius: 5px;
     background: rgb(33,42,62);
     background: linear-gradient(135deg, rgba(33,42,62,1) 0%, rgba(57,72,103,1) 18%, rgba(241,246,249,1) 100%);
+}
+
+
+  .creazioneOfferta{
+      font-family: Arial, sans-serif;
+    
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+   .productForm h1{
+      color: #394867;
+      text-align: center;
+ 
+    }
+    
+    .productForm hr{
+      border-width: 3px;
+      border-color:#394867;
+ 
+    }
+
+    .productForm{
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+      overflow: auto; /* Aggiunge lo scroll se il contenuto è più grande del form */
+      margin-bottom: 20px;
+    }
+
+    .creazioneOfferta label{
+      display: block;
+      margin-top: 10px;
+    }
+
+    .creazioneOfferta input[type="text"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    .creazioneOfferta textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+      margin-top: 5px;
+      resize: vertical; /* Consenti il ridimensionamento verticale */
+      min-height: 100px; /* Altezza minima per evitare di sforare il bordo */
+      overflow-y: auto; /* Aggiungi scroll interno quando necessario */
+    }
+
+    .creazioneOfferta input[type="submit"] {
+      background-color: #394867;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 0px;
+      float: right; /* Sposta il pulsante a destra */
+    }
+
+    .creazioneOfferta input[type="submit"]:hover {
+      background-color: #F1F6F9;
+      color: #394867;
+    }
+    
+.modificaOfferta {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.modOffertaForm h1 {
+  color: #394867;
+  text-align: center;
+}
+
+.modOffertaForm hr {
+  border-width: 3px;
+  border-color: #394867;
+}
+
+.modOffertaForm {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  overflow: auto; /* Aggiunge lo scroll se il contenuto è più grande del form */
+  margin-bottom: 20px;
+}
+
+.modOffertaForm .button {
+  background-color: #394867;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 19px;
+  float: right; /* Sposta il pulsante a destra */
+  margin-left: 15px;
+}
+
+.modOffertaForm .button:hover {
+  background-color: #F1F6F9;
+  color: #394867;
+}
+
+.modificaOfferta label {
+  display: block;
+  margin-top: 10px;
+}
+
+.modificaOfferta input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.modificaOfferta textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-top: 5px;
+  resize: vertical; /* Consenti il ridimensionamento verticale */
+  min-height: 100px; /* Altezza minima per evitare di sforare il bordo */
+  overflow-y: auto; /* Aggiungi scroll interno quando necessario */
+}
+
+.modificaOfferta input[type="file"] {
+  margin-top: 5px;
+}
+
+.modificaOfferta input[type="submit"] {
+  background-color: #394867;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  float: right; /* Sposta il pulsante a destra */
+}
+
+.modificaOfferta input[type="submit"]:hover {
+  background-color: #F1F6F9;
+  color: #394867;
+}
+
+.image-mod-off {
+  text-align: center;
+}
+
+.image-mod-off img {
+  width: 80%;
+  height: auto;
+  border: 2px solid #9BA4B5;
+  padding: 10px;
+}
+
+.image-mod-off label {
+  display: block;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.image-mod-off input[type="file"] {
+  margin-top: 5px;
 }

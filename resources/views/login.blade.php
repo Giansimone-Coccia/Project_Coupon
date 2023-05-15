@@ -10,14 +10,29 @@
 <body class="bodylogin">
 <!-- partial:index.partial.html -->
 <div class="login-form">
-  <form>
+  <form id="login" name="login" method="post" action="{{ route('start') }}">
     <h1>Login</h1>
     <div class="content">
       <div class="input-field">
           <input type="username" placeholder="Username" autocomplete="on">
+          <input type="text" id="username" name ="username" placeholder="Username" autocomplete="on" value="{{ old('username') }}">
+          @if ($errors->first('username'))
+                <ul class="errors">
+                    @foreach ($errors->get('username') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+          @endif
       </div>
       <div class="input-field">
-        <input type="password" placeholder="Password" autocomplete="new-password">
+        <input type="password" id="password_input" name ="password_input" placeholder="Password" autocomplete="new-password" value="{{ old('password_input') }}">
+        @if ($errors->first('password_input'))
+                <ul class="errors">
+                    @foreach ($errors->get('password_input') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+        @endif
       </div>
       <a href="#" class="link">Hai dimenticato la password?</a>
     </div>

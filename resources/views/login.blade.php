@@ -14,7 +14,7 @@
     <h1>Login</h1>
     <div class="content">
       <div class="input-field">
-          <input type="email" placeholder="Email" autocomplete="on">
+          <input type="username" placeholder="Username" autocomplete="on">
       </div>
       <div class="input-field">
         <input type="password" placeholder="Password" autocomplete="new-password">

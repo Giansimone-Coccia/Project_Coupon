@@ -1012,8 +1012,7 @@ footerF{
 }
 
 .body_modProfile{
-    height: 100vh;
-    
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1111,7 +1110,7 @@ form input[type="radio"]{
 }
 form .button{
     height: 45px;
-    margin: 35px 0
+    margin: 35px 0;
 }
 form .button input{
     height: 100%;
@@ -1132,13 +1131,25 @@ form .button input:hover{
     transform: scale(0.98);
     background-color: #4f5f80
 }
+.user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; /* Aggiungi questa riga per centrare verticalmente gli elementi */
+  margin: 20px 0 12px 0;
+}
+
+.user-details .button {
+  width: 100%;
+  text-align: right; /* Allinea il contenuto a destra */
+}
 @media(max-width: 584px){
     .container-register{
         max-width: 100%;
     }
-    form .user-details .input-box{
+    form .user-details .input-box {
         margin-bottom: 15px;
-        width: 100%;
+        width: calc(50% - 10px); /* Modifica la larghezza per creare spazio tra gli input */
     }
     form .category{
         width: 100%;
@@ -1215,7 +1226,7 @@ form .button input:hover{
         
 /*modifica_profilo_utente*/
 .container-modify-profile{
-    max-width: 700px;
+    max-width: 1000px;
     margin-top: 100px;
     width: 100%;
     background-color: #fff;

@@ -28,15 +28,15 @@
 
         <div class="container-azienda border-top-grey margin-top-16" >
             <div class="row-offerte padding-top-16">
-                <div class="column-offerte">
+                <div class="quarter">
 
                     @isset($promos)
                     @foreach ($promos as $promo)
 
-                    <div class="single-offerta" onclick="window.location.href = '{{ route('dettaglio_offerta', [$azienda->codiceA, 'AB001']) }}';">
+                    <div class="single-offerta " onclick="window.location.href = '{{ route('dettaglio_offerta', [$azienda->codiceA, 'AB001']) }}';">
                         <div class="inline-block">
                             <div class="centerimagesoffers">
-                                <img class = "rounded-corners" src="{{ asset('images/products/' . $promo->logoOff) }}" alt="Offerta azienda"/>
+                                <img class = "rounded-corners width100" src="{{ asset('images/products/' . $promo->logoOff) }}" alt="Offerta azienda"/>
                             </div>
                             <h3>{{$promo->nomeOff}}</h3>
                         </div> 

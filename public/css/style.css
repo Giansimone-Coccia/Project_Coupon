@@ -1239,3 +1239,14 @@ form .button input:hover{
     background: rgb(33,42,62);
     background: linear-gradient(135deg, rgba(33,42,62,1) 0%, rgba(57,72,103,1) 18%, rgba(241,246,249,1) 100%);
 }
+
+/*pagination*/
+
+.pagination-button{
+      background-color: #394867;
+      color: #F1F6F9;
+    }
+.pagination-button:hover {
+      background-color: #F1F6F9;
+      color: #394867;
+    }

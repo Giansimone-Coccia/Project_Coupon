@@ -56,8 +56,8 @@ Route::get('/coupon/{codOfferta}', [PublicController::class, 'getBuono'])
 Route::view('/crea_offerta', 'crea_offerta')
         ->name('crea_offerta');
 
-
-
+Route::view('/modifica_offerta', 'modifica_offerta')
+        ->name('modifica_offerta');
 
 Route::view('/chi_siamo', 'chi_siamo')
         ->name('chi_siamo');

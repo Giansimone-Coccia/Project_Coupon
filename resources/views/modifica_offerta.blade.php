@@ -4,29 +4,32 @@
 
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-<div class="container">
-    <div class="image-section">
-      <img src="path_to_your_image.jpg" alt="Offerta">
-      <button class="button">Modifica Immagine</button>
+<div class="modificaOfferta">
+  <form class="modOffertaForm">
+    <h1>Modifica dati offerta</h1>
+    <hr>
+    <div class="image-mod-off">
+        <label for="offertaImage"><strong>Immagine:</strong></label>
+      <img class="rounded-corners" src="{{ asset('images/products/Adidas-abbigliamento.png') }}" alt="Offerta da modificare" />
+      <input type="file" id="offertaImage" name="offertaImage" accept="image/*" required>
     </div>
+
     <div class="form-section">
-      <h2>Modifica Offerta</h2>
-      <form>
-        <label for="descrizione">Descrizione:</label>
-        <input type="text" id="descrizione" name="descrizione" placeholder="Inserisci la descrizione dell'offerta" required>
-        
-        <label for="modalita">Modalità di fruizione:</label>
-        <input type="text" id="modalita" name="modalita" placeholder="Inserisci la modalità di fruizione" required>
-        
-        <label for="scadenza">Scadenza:</label>
-        <input type="date" id="scadenza" name="scadenza" required>
-        
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" placeholder="Inserisci il nome dell'offerta" required>
-        
-        <button class="button">Salva</button>
-        <button class="button">Annulla</button>
-      </form>
+      <label for="offertaDescrizione">Descrizione:</label>
+      <textarea id="offertaDescrizione" name="offertaDescrizione" required></textarea>
+
+      <label for="offertaModalita">Modalità di fruizione:</label>
+      <input type="text" id="offertaModalita" name="offertaModalita" required>
+
+      <label for="offertaScadenza">Scadenza:</label>
+      <input type="date" id="offertaScadenza" name="offertaScadenza" required>
+
+      <label for="offertaNome">Nome:</label>
+      <input type="text" id="offertaNome" name="offertaNome" required>
+
+      <button class="button">Elimina</button>
+      <input type="submit" id="buttonOfferta" value="Modifica dati">
     </div>
-  </div>
+  </form>
+</div>
 @endsection

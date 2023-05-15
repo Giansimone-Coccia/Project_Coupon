@@ -10,11 +10,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Catalogo
-{
-    public function getAllAziende(){
-        return Azienda:: get();
+ {
+
+    public function getAllAziende($paged = 8) {
+        $azienda = Azienda::paginate($paged);
+        return $azienda;
     }
-    
+
     public function getAziendaById($aziendaId){
         return Azienda::where('codiceA',$aziendaId);
     }
@@ -32,16 +34,18 @@ class Catalogo
     }
     
     public function getBuono($buonoId){
-        return Buono::where('codCoupon', $buonoId) -> get();
+        return Buono::where('codCoupon', $buonoId) -> get()->first();
     }
     
     public function createCoupon($codCoupon, $utenteRich, $dataScad, $offPromo) {
-        Buono::create([
+       Buono::create([
             'codCoupon' => $codCoupon,
             'utenteRich' => $utenteRich,
             'dataScad' => $dataScad,
             'offPromo' => $offPromo
         ]);
+        
+         return Buono::where('codCoupon', $codCoupon) -> get();
     }
     
     public function generaCodBuono(){

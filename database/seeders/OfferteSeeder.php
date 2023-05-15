@@ -15,7 +15,7 @@ class OfferteSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('offerte')->insert([ //tempoFruizione espresso in num di settimane
+        DB::table('offerte')->insert([
             ['codOfferta' => 'O0001', 'oggettoOff' => 'Coupon 20% usufruibile presso il banco salumi', 'modalita' => 'Online', 'tempoFruiz' => '2 mesi', 'luogoFruiz' => 'Ancona', 'nomeOff' => '3x2', 'logoOff' => 'Conad-salumi.png','azienda' => 'A0001', 'utente' => 'US0001'],
             ['codOfferta' => 'O0002', 'oggettoOff' => 'Coupon 3x2 prendi tre e paghi due', 'modalita' => 'Online', 'tempoFruiz' => '1 mese', 'luogoFruiz' => 'Bologna', 'nomeOff' => 'tutto 20', 'logoOff' => 'Coal-latte.png','azienda' => 'A0005', 'utente' => 'US0002'],
             ['codOfferta' => 'O0003', 'oggettoOff' => 'Coupon 15% da applicare nel reparto calzature', 'modalita' => 'In negozio', 'tempoFruiz' => '3', 'luogoFruiz' => 'Milano', 'nomeOff' => '-30', 'logoOff' => 'Nike-calzature.png','azienda' => 'A0002', 'utente' => 'US0003'],

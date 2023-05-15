@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class NewProductRequest extends FormRequest {
+class NuovaOffertaRequest extends FormRequest {
 
     /**
      * Determine if the user is authorized to make this request.
@@ -25,14 +25,12 @@ class NewProductRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'name' => 'required|max:25',
-            'catId' => 'required',
-            'descShort' => 'required|max:30',
-            'image' => 'image|max:1024',
-            'price' => 'required|numeric|min:0',
-            'discountPerc' => 'required|integer|min:0|max:100',
-            'discounted' => 'required',
-            'descLong' => 'required|max:2500'
+            'productName' => 'required|max:25',
+            'productDescription' => 'required|max:250',
+            'azienda' => 'required',
+            'productExpiration' => 'required',
+            'productMode' => 'required',
+            'productImage' => 'required|image',
         ];
     }
 

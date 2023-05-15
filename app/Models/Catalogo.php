@@ -36,7 +36,7 @@ class Catalogo
     public function getBuono($buonoId){
         return Buono::where('codCoupon', $buonoId) -> get()->first();
     }
-    
+        
     public function createCoupon($codCoupon, $utenteRich, $dataScad, $offPromo) {
        Buono::create([
             'codCoupon' => $codCoupon,

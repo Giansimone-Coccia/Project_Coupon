@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Catalogo;
 use App\Models\DomandaModel;
 use Illuminate\Support\Facades\Log;
+use App\Http\Requests\NuovaOffertaRequest;
 
 
 class PublicController extends Controller
@@ -16,6 +17,10 @@ class PublicController extends Controller
         $this->_catalogModel = new Catalogo;
     }
     
+        public function HomePage() {
+        return view('start');
+    }
+    
    
     public function allAziende(){
         
@@ -24,6 +29,8 @@ class PublicController extends Controller
         return view('start')
                         ->with('allAziende', $aziende);
     }
+    
+
     
     public function getAzienda($aziendaId){
         
@@ -52,5 +59,32 @@ class PublicController extends Controller
                         ->with('buono', $buono)
                         ->with('offerta', $offertaDetails);
     }
+    
+    
+    public function addOfferta(){
+        
+        $aziende = $this->_catalogModel-> getAllAziende();
+
+        return view('crea_offerta')
+                        ->with('aziende', $aziende);
+    }
+    
+    
+    public function storeOfferta(NuovaOffertaRequest $offerta) {
+
+        $imageName = $image->getClientOriginalName();
+
+        $offerta = new Offerta;
+        $offerta->fill($request->validated());
+        $offerta->image = $imageName;
+        $offerta->save();
+
+        $destinationPath = public_path() . '/images/products';
+        $image->move($destinationPath, $imageName);
+
+
+        return redirect()->action([PublicController::class, 'HomePage']);
+    }
+    
    
 }

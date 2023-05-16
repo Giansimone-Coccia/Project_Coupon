@@ -70,6 +70,17 @@ class PublicController extends Controller
                         ->with('aziende', $aziende);
     }
     
+    public function ricercaPromo($azienda = null,$parola= null) {
+        
+        $promos = $this->_catalogModel->ricercaPromo($azienda,$parola);
+        
+        if(!is_null($promos)){
+            return view('risultati_page')
+                        ->with('promos', $promos);
+        }
+    }
+
+
     
     public function storeOfferta(NuovaOffertaRequest $request) {
         

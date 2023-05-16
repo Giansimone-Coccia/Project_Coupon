@@ -19,7 +19,10 @@
 @if (!empty($allAziende) || !empty($promos))
 <ul class="right listnone margin-top-10"> 
     <li class="bar-item max-heigth52" >
-        <input placeholder="Search.." class="searchbar height36" name="search">
+        <form lass="contact-form" id="ricercaPromo" name="ricercaPromo" enctype="multipart/form-data" method="post" action="{{ route('newproduct.store')  }}">
+            <input placeholder="Search Azienda" class="searchbar height36" name="search">
+            <input placeholder="Search Descrizione" class="searchbar height36" name="search">
+        </form>
     </li>
     <li class="button bar-item" >
         <img src="{{ asset('images/icons/search_icon.svg' ) }}" alt="Search" class="width100">

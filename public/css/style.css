@@ -911,6 +911,12 @@ footerF{
     transition: .4s ease;
 }
 
+.coupon-no-hover:hover{
+    opacity: 1;
+    background-color: #FFF;
+    transition: 0s;
+}
+
 .coupon img {
     width: 10em;
     height: 10em;
@@ -1370,6 +1376,13 @@ select {
 .pulsanti_staff:hover {
     background-color: #F1F6F9;
     color: #394867;
+}
+
+ .pulsanti_staff{
+    width: 150px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 50px;
 }
 
 .container_pulsanti_staff {

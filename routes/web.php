@@ -85,8 +85,8 @@ Route::view('/risultati_page', 'risultati_page')
 Route::view('/area_personale_staff', 'area_personale_staff')
         ->name('area_personale_staff');
 
-Route::view('/mostra_aziende_staff', 'mostra_aziende_staff')
-        ->name('mostra_aziende_staff');
+Route::view('/mostra_aziende_area_personale', 'mostra_aziende_area_personale')
+        ->name('mostra_aziende_area_personale');/*con gli helper usiamo questa pagina sia per admin che staff*/
 
 
 

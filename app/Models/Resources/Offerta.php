@@ -20,4 +20,9 @@ class Offerta extends Model
     public function offUtente() {
         return $this->hasOne(Utente::class, 'username', 'utente'); //Il secondo della classe corrente
     }
+    
+    public function generaCodOfferta(){
+        return $id = uniqid('O');
+    }
+    
 }

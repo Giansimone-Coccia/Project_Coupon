@@ -19,7 +19,7 @@ class PublicController extends Controller
     }
     
     public function index() {
-        return view('start');
+        return view('area_personale_utente');
     }
     
    
@@ -85,10 +85,10 @@ class PublicController extends Controller
 
 
         $destinationPath = public_path() . '/images/products';
-        //$image->move($destinationPath, $imageName);
+        $image->move($destinationPath, $imageName);
 
 
-        //return redirect()->action([PublicController::class, 'index']);
+        return redirect('/');
     }
     
    

@@ -33,6 +33,20 @@ class Catalogo
         return Offerta::where('codOfferta', $promoId) -> get();
     }
     
+    public function ricercaPromo($azienda = null, $parola = null) {
+
+        if(!is_null($azienda) && !is_null($parola)) {
+            return Offerta::where('oggettoOff', 'LIKE', '%' . $parola . '%')->andWhere('azienda','LIKE', '%' .  $azienda . '%')->get();
+        } else if (!is_null($azienda) && is_null($parola)) {
+            return Offerta::where('azienda','LIKE', '%' .  $azienda . '%')->get();
+        } else if (is_null($azienda) && !is_null($parola)) {
+            return Offerta::where('oggettoOff', 'LIKE', '%' . $parola . '%')->get();
+        }
+        else{
+            return null;
+        }
+    }
+
     public function getBuono($buonoId){
         return Buono::where('codCoupon', $buonoId) -> get()->first();
     }

@@ -38,6 +38,10 @@ Route::get('/', [PublicController::class, 'allAziende'])
 Route::get('/FAQ', [DomandeController::class, 'allFAQ'])
         ->name('FAQ');
 
+Route::get('/risultati_page/{azienda}&{parola}', [PublicController::class, 'ricercaPromo'])
+        ->name('risultati_page');
+
+
 Route::get('/offerte_azienda/{aziendaId}', [PublicController::class, 'getAzienda'])
         ->name('offerte_azienda');  
 

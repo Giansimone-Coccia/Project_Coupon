@@ -1387,11 +1387,17 @@ select {
 
 .container_pulsanti_staff {
     display: grid;
-    border-top: 2px solid #ccc;
-    padding: 16px 8px;
+    padding: 36px 16px;
     grid-template-columns: 1fr 1fr; /* crea una griglia con due colonne */
     justify-content: center;
     align-items: center;
+    margin-left: 15px;
+}
+
+.area_admin{
+    border:0;
+    border-top:2px solid #828282;
+    margin:20px 0
 }
 
 .text-align-right{

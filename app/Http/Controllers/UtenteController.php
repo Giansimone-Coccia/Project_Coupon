@@ -25,6 +25,14 @@ class UtenteController extends Controller
                         ->with('utenti', $utenti);
     }
     
+    public function getInfoAdmin($username){
+        
+        $admin = $this->_UtenteModel->getInfoUtente($username)->first();
+
+        return view('area_personale_admin')
+                        ->with('admin', $admin);
+    }
+    
     
     
     public function getCouponUtente($usernameUtente){

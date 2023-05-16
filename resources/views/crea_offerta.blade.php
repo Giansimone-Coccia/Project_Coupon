@@ -7,35 +7,35 @@
 
 
     <div class="creazioneOfferta">
-      <form class="productForm">
+      <form class="productForm" id="addproduct" name="addproduct" enctype="multipart/form-data" method="post" action="{{route('crea_offerta.store')}}">
         @csrf
-        <h1>Aggiungi la tua offerta </h1>
+        <h1>Aggiungi la tua offerta</h1>
         <hr>
 
         <label for="productName">Nome prodotto:</label>
-        <input type="text" id="nomeOff" name="nomeOff" value="{{old('nomeOff')}}" required>
+        <input type="text" id="nomeOff" name="nomeOff" value="{{old('nomeOff')}}" >
         
-        @if ($errors->first('productName'))
+        @if ($errors->first('nomeOff'))
             <ul class="errors">
-            @foreach ($errors->get('productName') as $message)
+            @foreach ($errors->get('nomeOff') as $message)
                 <li>{{ $message }}</li>
             @endforeach
             </ul>
         @endif
 
         <label for="productDescription">Descrizione:</label>
-        <textarea id="oggettoOff" name="oggettoOff" value="{{old('oggettoOff')}}" required></textarea>
+        <textarea id="oggettoOff" name="oggettoOff" value="{{old('oggettoOff')}}" ></textarea>
         
-        @if ($errors->first('productDescription'))
+        @if ($errors->first('oggettoOff'))
             <ul class="errors">
-            @foreach ($errors->get('productDescription') as $message)
+            @foreach ($errors->get('oggettoOff') as $message)
                 <li>{{ $message }}</li>
             @endforeach
             </ul>
         @endif
         
         <label for="productMode">Azienda di riferimento:</label>
-        <select id="azienda" name="azienda" value="{{old('azienda')}}" required>
+        <select id="azienda" name="azienda" value="{{old('azienda')}}" >
           <option value="">Seleziona azienda</option>
           @foreach ($aziende as $azienda)
           <option value="{{ $azienda->codiceA }}" {{ old('codiceA') == $azienda->codiceA ? 'selected' : '' }} > {{$azienda->nome}} </option>
@@ -44,30 +44,41 @@
         </select>
 
         <label for="productExpiration">Scadenza:</label>
-        <input type="date" id="tempoFruiz" name="tempoFruiz" value="{{old('tempoFruiz')}}" required>
+        <input type="date" id="tempoFruiz" name="tempoFruiz" value="{{old('tempoFruiz')}}" >
         
-        @if ($errors->first('productExpiration'))
+        @if ($errors->first('tempoFruiz'))
             <ul class="errors">
-            @foreach ($errors->get('productExpiration') as $message)
+            @foreach ($errors->get('tempoFruiz') as $message)
                 <li>{{ $message }}</li>
             @endforeach
             </ul>
         @endif
 
         <label for="productMode">Modalità di fruizione:</label>
-        <select id="modalita" name="modalita" value="{{old('modalita')}}" required>
+        <select id="modalita" name="modalita" value="{{old('modalita')}}" >
           <option value="">Seleziona modalità</option>
           <option value="Modalità 1"> Online </option>
           <option value="Modalità 2"> In Negozio </option>
 
         </select>
+        
+        <label for="productName">Luogo di fruizione:</label>
+        <input type="text" id="luogoFruiz" name="luogoFruiz" value="{{old('luogoFruiz')}}" >
+        
+        @if ($errors->first('luogoFruiz'))
+            <ul class="errors">
+            @foreach ($errors->get('luogoFruiz') as $message)
+                <li>{{ $message }}</li>
+            @endforeach
+            </ul>
+        @endif
 
         <label for="productImage">Immagine:</label>
-        <input type="file" id="logoOff" name="logoOff" value="{{old('logoOff')}}" accept="image/*" required>
+        <input type="file" id="logoOff" name="logoOff" accept="image/*" >
         
-        @if ($errors->first('productImage'))
+        @if ($errors->first('logoOff'))
             <ul class="errors">
-            @foreach ($errors->get('productImage') as $message)
+            @foreach ($errors->get('logoOff') as $message)
                 <li>{{ $message }}</li>
             @endforeach
             </ul>

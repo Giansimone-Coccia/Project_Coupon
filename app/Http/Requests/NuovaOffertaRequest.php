@@ -25,12 +25,13 @@ class NuovaOffertaRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'productName' => 'required|max:25',
-            'productDescription' => 'required|max:250',
+            'nomeOff' => 'required|max:20',
+            'oggettoOff' => 'required|max:250',
             'azienda' => 'required',
-            'productExpiration' => 'required',
-            'productMode' => 'required',
-            'productImage' => 'required|image',
+            'tempoFruiz' => 'required',
+            'luogoFruiz'=> 'required',
+            'modalita' => 'required',
+            'logoOff' => 'required|image',
         ];
     }
 

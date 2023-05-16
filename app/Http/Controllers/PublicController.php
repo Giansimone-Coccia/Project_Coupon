@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Catalogo;
 use App\Models\DomandaModel;
+use App\Models\Resources\Offerta;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\NuovaOffertaRequest;
 
@@ -17,8 +18,8 @@ class PublicController extends Controller
         $this->_catalogModel = new Catalogo;
     }
     
-        public function HomePage() {
-        return view('start');
+    public function index() {
+        return view('area_personale_utente');
     }
     
    
@@ -80,20 +81,25 @@ class PublicController extends Controller
     }
 
 
-    public function storeOfferta(NuovaOffertaRequest $offerta) {
-
+    
+    public function storeOfferta(NuovaOffertaRequest $request) {
+        
+        $image = $request->file('logoOff');
         $imageName = $image->getClientOriginalName();
 
         $offerta = new Offerta;
         $offerta->fill($request->validated());
-        $offerta->image = $imageName;
+        $offerta->logoOff = $imageName;
+        $offerta->codOfferta = $offerta->generaCodOfferta();
+        $offerta->utente = 'US0005';
         $offerta->save();
+
 
         $destinationPath = public_path() . '/images/products';
         $image->move($destinationPath, $imageName);
 
 
-        return redirect()->action([PublicController::class, 'HomePage']);
+        return redirect('/');
     }
     
    

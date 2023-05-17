@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\UtenteModel;
 use App\Models\Catalogo;
 use Illuminate\Support\Facades\Log;
+use App\Http\Requests\ModificaProfiloUtenteRequest;
 
 
 class UtenteController extends Controller
@@ -48,5 +49,13 @@ class UtenteController extends Controller
                 ->with('couponUtente', $couponUtente)
                 ->with('couponOfferta', $couponOfferta); 
         }
+        
+    public function modificaProfiloUtente($username, ModificaProfiloUtenteRequest $request) {
+        $utente = $this->_UtenteModel->getInfoUtente($username);
+        $utente->fill($request->validated());
+        $utente->save();
+
+        return redirect('/');
+    }
    
 }

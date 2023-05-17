@@ -72,6 +72,9 @@ Route::get('/modifica_offerta/{offertaId}', [PublicController::class, 'viewOffer
 Route::post('/modifica_offerta/{offertaId}', [PublicController::class, 'modificaOfferta'])
         ->name('modifica_offerta.store');
 
+Route::post('/modifica_profilo_utente/{username}', [UtenteController::class, 'modificaProfiloUtente'])
+        ->name('modifica_profilo_utente.store');
+
 
 
 Route::view('/modifica_offerta', 'modifica_offerta')

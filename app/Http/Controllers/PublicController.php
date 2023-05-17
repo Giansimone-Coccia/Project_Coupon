@@ -40,7 +40,7 @@ class PublicController extends Controller
     
     public function getAzienda($aziendaId){
         
-        $azienda = $this->_catalogModel-> getAziendaById($aziendaId)->first();
+        $azienda = $this->_catalogModel-> getAziende($aziendaId)->first();
         $promos= $this->_catalogModel->getPromo($aziendaId);
 
         return view('offerte_azienda')
@@ -60,7 +60,7 @@ class PublicController extends Controller
         $codiceBuono = $this->_catalogModel->generaCodBuono();
         $dataScad = $this->_catalogModel->generaDataScadenzaBuono();
         //$buonoDetails= $this->_catalogModel->createCoupon($codiceBuono, 'UC0002', $dataScad, $offertaDetails->codOfferta);
-        $buono = $this->_catalogModel->getBuono('C0001');
+        $buono = $this->_catalogModel->getBuono('1');
         return view('coupon')
                         ->with('buono', $buono)
                         ->with('offerta', $offertaDetails);
@@ -100,9 +100,9 @@ class PublicController extends Controller
         $offerta = new Offerta;
         $offerta->fill($request->validated());
         $offerta->logoOff = $imageName;
-        $offerta->codOfferta = $offerta->generaCodOfferta();
         $offerta->utente = 'US0005';
         $offerta->save();
+       
 
 
         $destinationPath = public_path() . '/images/products';
@@ -126,6 +126,8 @@ class PublicController extends Controller
         
         $requestVal = $request->validated();
         $offerta ->update($requestVal);
+        $offerta->logoOff = $imageName;
+        $offerta->save();
 
         $destinationPath = public_path() . '/images/products';
         $image->move($destinationPath, $imageName);
@@ -149,12 +151,11 @@ class PublicController extends Controller
         $azienda = new Azienda;
         $azienda->fill($request->validated());
         $azienda->image = $imageName;
-        $azienda->codiceA = $azienda->generaCodAzienda();
         $azienda->utente = 'US0001';
         $azienda->save();
 
 
-        $destinationPath = public_path() . '/images/products';
+        $destinationPath = public_path() . '/images/companies';
         $image->move($destinationPath, $imageName);
 
         return redirect('/');
@@ -171,12 +172,13 @@ class PublicController extends Controller
         $azienda = $this->_catalogModel->getAziendaById($codiceA);
         $image = $request->file('image');
         $imageName = $image->getClientOriginalName();
-        
 
         $requestVal = $request->validated();
-        $azienda ->update($requestVal);
+        $azienda->update($requestVal);
+        $azienda->image = $imageName;
+        $azienda->save();
 
-        $destinationPath = public_path() . '/images/products';
+        $destinationPath = public_path() . '/images/companies';
         $image->move($destinationPath, $imageName);
         
         return redirect('/');

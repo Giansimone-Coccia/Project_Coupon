@@ -13,7 +13,7 @@ class UtenteModel
         return Utente::where('username', $username)->get();
     }
     
-    public function setNewDatiUtente($username, $password = "", $nome = "", $cognome = "", $genere = "", $dataNascita = "1900-01-01", $email="", $telefono=""){
+    public function setNewDatiUtente($username, $password = "", $nome = "", $cognome = "", $genere = "", $dataNascita = "1900-01-01", $email="", $telefono="", $ruolo=""){
             
         if ($password!=""){ 
             Utente::where('username', $username)->update([
@@ -55,6 +55,12 @@ class UtenteModel
         if ($telefono!=""){ 
             Utente::where('username', $username)->update([
                 'telefono' => $telefono
+            ]);
+        }
+        
+        if ($ruolo!=""){ 
+            Utente::where('username', $username)->update([
+                'ruolo' => $ruolo
             ]);
         }
     }

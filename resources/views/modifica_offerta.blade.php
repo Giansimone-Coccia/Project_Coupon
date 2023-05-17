@@ -5,7 +5,7 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 <div class="modificaOfferta">
-    <form class="modOffertaForm" id="viewOfferta" name="viewOfferta" enctype="multipart/form-data" method="post" action="{{route('modifica_offerta.store', ['offertaId' => $offerta->codOfferta])}}">
+    <form class="modOffertaForm" id="viewOfferta" name="viewOfferta" enctype="multipart/form-data" method="post" action="{{route('modifica_offerta.store', ['offertaId' => $offerta->id])}}">
         @csrf
         <h1>Modifica dati offerta</h1>
         <hr>

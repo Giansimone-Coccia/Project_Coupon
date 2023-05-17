@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Buono extends Model
 {
     protected $table = 'buoni';
-    //protected $primaryKey = ['offPromo','utenteRich'];
+    protected $primaryKey = ['offPromo','utenteRich'];
+    public $incrementing = false;  //serve per dire a laravel di non aspettarsi un valore interp incrementale come chiave primaria
+    
     
     public $timestamps = false;
     protected $fillable = ['codCoupon','utenteRich', 'dataScad', 'offPromo'];

@@ -18,7 +18,10 @@ class Catalogo
     }
 
     public function getAziendaById($aziendaId){
-        return Azienda::where('codiceA',$aziendaId)->first();
+        return Azienda::where('id',$aziendaId)->first();
+    }
+    public function getAziende($aziendaId){
+        return Azienda::where('id',$aziendaId);
     }
     
     public function getPromo($aziendaId) {
@@ -26,11 +29,11 @@ class Catalogo
     }
     
      public function getOffertaById($offertaId){
-        return Offerta::where('codOfferta',$offertaId)->first();
+        return Offerta::where('id',$offertaId)->first();
     }
     
     public function getPromoDetails($promoId){
-        return Offerta::where('codOfferta', $promoId) -> get();
+        return Offerta::where('id', $promoId) -> get();
     }
     
     /*public function ricercaPromo($azienda = null, $descrizione = null) {

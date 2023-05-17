@@ -38,7 +38,7 @@
         <select id="azienda" name="azienda" value="{{old('azienda')}}" >
           <option value="">Seleziona azienda</option>
           @foreach ($aziende as $azienda)
-          <option value="{{ $azienda->codiceA }}" {{ old('codiceA') == $azienda->codiceA ? 'selected' : '' }} > {{$azienda->nome}} </option>
+          <option value="{{ $azienda->id }}" {{ old('azienda') == $azienda->id ? 'selected' : '' }} > {{$azienda->nome}} </option>
           @endforeach
 
         </select>

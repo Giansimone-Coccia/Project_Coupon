@@ -14,10 +14,10 @@ class Bundle extends Model
     
     
     public function bundlePromo() {
-      return $this->hasOne(Promozione::class, 'idPromoAb', 'promoAbb');
+      return $this->hasOne(Promozione::class, 'id', 'promoAbb');
     }
     
     public function bundleOfferta() {
-      return $this->hasOne(Offerta::class, 'codOfferta', 'offertaPromo');
+      return $this->hasOne(Offerta::class, 'id', 'offertaPromo');
     }
 }

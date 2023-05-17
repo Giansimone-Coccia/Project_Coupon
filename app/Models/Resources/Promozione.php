@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Promozione extends Model
 {
     protected $table = 'promozioni';
-    protected $primaryKey = 'idPromoAb';
+    protected $primaryKey = 'id';
     
-    protected $guarded = ['idPromoAb'];
+    protected $guarded = ['id'];
     
     public $timestamps = false;
     

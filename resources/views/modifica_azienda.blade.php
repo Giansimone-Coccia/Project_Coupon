@@ -7,7 +7,7 @@
 
 
     <div class="creazioneOfferta">
-      <form class="productForm" id="addproduct" name="addproduct" enctype="multipart/form-data" method="post" action="{{route('modifica_azienda.store', ['codiceA' => $azienda->codiceA])}}">
+      <form class="productForm" id="addproduct" name="addproduct" enctype="multipart/form-data" method="post" action="{{route('modifica_azienda.store', [$azienda->id])}}">
         @csrf
         <h1>Modifica azienda</h1>
         <hr>

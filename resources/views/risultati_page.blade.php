@@ -7,168 +7,28 @@
 
 <div class="main content padding" style="max-width: 1300px; margin-top: 70px;">
     <div class="row-offerte">
-        <h1 style="font-weight: 500">Hai ricercato: conad 3x2</h1>
+        @isset($message)
+        <h1 style="font-weight: 500">{{$message}}</h1>
+        @endisset
     </div>
     <div class="container-azienda">
         <div class="row-offerte">
-            <div class="column-offerte">
 
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
+            @isset($promos)
+            @foreach ($promos as $promo)
 
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
-
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
-
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
-
+            <div class="single-offerta " onclick="window.location.href = '{{ route('dettaglio_offerta', [$azienda->codiceA, 'AB001']) }}';">
+                <div class="inline-block">
+                    <div class="centerimagesoffers">
+                        <img class = "rounded-corners width100" src="{{ asset('images/products/' . $promo->logoOff) }}" alt="Offerta azienda"/>
+                    </div>
+                    <h3>{{$promo->nomeOff}}</h3>
+                </div> 
             </div>
+            
+            @endforeach
+            @endisset
 
-            <div class="column-offerte">
-
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
-
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
-
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
-
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
-
-            </div>
-
-            <div class="column-offerte">
-
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
-
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
-
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
-
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
-
-            </div>
-
-            <div class="column-offerte">
-
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
-
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
-
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
-
-                <div class="single-offerta">
-                    <div class="inline-block">
-                        <div class="centerimagesoffers">
-                            <img src="images/{{ asset('images/companies/Conad-logo.png' ) }}" alt="Conad"/>
-                        </div>
-                        <h3>conad 3x2</h3>
-                    </div> 
-                </div>
-            </div>
         </div>
     </div>
 

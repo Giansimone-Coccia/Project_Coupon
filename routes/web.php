@@ -38,7 +38,7 @@ Route::get('/', [PublicController::class, 'allAziende'])
 Route::get('/FAQ', [DomandeController::class, 'allFAQ'])
         ->name('FAQ');
 
-Route::get('/risultati_page/{azienda}&{parola}', [PublicController::class, 'ricercaPromo'])
+Route::get('/risultati_page', [PublicController::class, 'ricercaPromo'])
         ->name('risultati_page');
 
 
@@ -82,10 +82,6 @@ Route::view('/modifica_profilo_utente', 'modifica_profilo_utente')
 
 Route::view('/register', 'register')
         ->name('register');
-
-Route::view('/risultati_page', 'risultati_page')
-        ->name('risultati_page');
-
 Route::view('/area_personale_staff', 'area_personale_staff')
         ->name('area_personale_staff');
 

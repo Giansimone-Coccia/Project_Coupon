@@ -33,16 +33,31 @@ class Catalogo
         return Offerta::where('codOfferta', $promoId) -> get();
     }
     
-    public function ricercaPromo($azienda = null, $parola = null) {
+    /*public function ricercaPromo($azienda = null, $descrizione = null) {
 
-        if(!is_null($azienda) && !is_null($parola)) {
-            return Offerta::where('oggettoOff', 'LIKE', '%' . $parola . '%')->andWhere('azienda','LIKE', '%' .  $azienda . '%')->get();
-        } else if (!is_null($azienda) && is_null($parola)) {
-            return Offerta::where('azienda','LIKE', '%' .  $azienda . '%')->get();
-        } else if (is_null($azienda) && !is_null($parola)) {
-            return Offerta::where('oggettoOff', 'LIKE', '%' . $parola . '%')->get();
+        if(!is_null($azienda) && !is_null($descrizione)) {
+            return Offerta::where([['oggettoOff', 'LIKE', '%' . $descrizione . '%'],['azienda','LIKE', '%' .  $azienda . '%']])->get();
+        } else if (!is_null($azienda) && is_null($descrizione)) {
+            return Offerta::where('azienda','LIKE', '%' . $azienda . '%')->get();
+        } else if (is_null($azienda) && !is_null($descrizione)) {
+            return Offerta::where('oggettoOff', 'LIKE', '%' . $descrizione . '%')->get();
         }
         else{
+            return null;
+        }
+    }*/
+    
+    public function ricercaPromo($azienda = "", $descrizione = "") {
+
+        if ($azienda != "" && $descrizione != "") {
+            Offerta::where('oggettoOff', 'LIKE', '%' . $descrizione . '%')
+                    ->where('azienda', 'LIKE', '%' . $azienda . '%')
+                    ->get();
+        } else if ($azienda != "" && $descrizione == "") {
+            return Offerta::where('azienda', 'LIKE', '%' . $azienda . '%')->get();
+        } else if ($azienda == "" && $descrizione != "") {
+            return Offerta::where('oggettoOff', 'LIKE', '%' . $descrizione . '%')->get();
+        } else {
             return null;
         }
     }
@@ -50,7 +65,7 @@ class Catalogo
     public function getBuono($buonoId){
         return Buono::where('codCoupon', $buonoId) -> get()->first();
     }
-        
+    
     public function createCoupon($codCoupon, $utenteRich, $dataScad, $offPromo) {
        Buono::create([
             'codCoupon' => $codCoupon,

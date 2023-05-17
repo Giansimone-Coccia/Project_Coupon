@@ -19,13 +19,13 @@
 @if (!empty($allAziende) || !empty($promos))
 <ul class="right listnone margin-top-10"> 
     <li class="bar-item max-heigth52" >
-        <form lass="contact-form" id="ricercaPromo" name="ricercaPromo" enctype="multipart/form-data" method="post" action="{{ route('newproduct.store')  }}">
-            <input placeholder="Search Azienda" class="searchbar height36" name="search">
-            <input placeholder="Search Descrizione" class="searchbar height36" name="search">
+        <form method="GET" action="{{ route('risultati_page') }}">
+            <button type="submit" class="button bar-item"  >
+                <img src="{{ asset('images/icons/search_icon.svg' ) }}" alt="Search" class="width100">
+            </button>
+            <input type="text" name="azienda" placeholder="Search Azienda" class="searchbar height36" name="search">
+            <input type="text" name="descrizione" placeholder="Search Descrizione" class="searchbar height36" name="search">
         </form>
-    </li>
-    <li class="button bar-item" >
-        <img src="{{ asset('images/icons/search_icon.svg' ) }}" alt="Search" class="width100">
     </li>
 </ul>
 @endif

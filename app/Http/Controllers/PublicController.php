@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Catalogo;
+use Illuminate\Http\Request;
 use App\Models\DomandaModel;
 use App\Models\Resources\Offerta;
 use Illuminate\Support\Facades\Log;
@@ -70,18 +71,23 @@ class PublicController extends Controller
                         ->with('aziende', $aziende);
     }
     
-    public function ricercaPromo($azienda = null,$parola= null) {
-        
-        $promos = $this->_catalogModel->ricercaPromo($azienda,$parola);
-        
-        if(!is_null($promos)){
+    public function ricercaPromo(Request $request) {
+ 
+        $descrizione = $request->input('descrizione');
+        $azienda = $request->input('azienda');
+
+        $promos = $this->_catalogModel->ricercaPromo($azienda, $descrizione);
+
+        if (!($promos->isEmpty())) {
             return view('risultati_page')
-                        ->with('promos', $promos);
+                            ->with('promos', $promos);
+        } 
+        else{
+            return view('risultati_page')
+                            ->with('message', 'Nessuna promozione trovata.');
         }
     }
 
-
-    
     public function storeOfferta(NuovaOffertaRequest $request) {
         
         $image = $request->file('logoOff');

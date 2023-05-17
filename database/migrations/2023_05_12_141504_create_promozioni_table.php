@@ -14,7 +14,7 @@ class CreatePromozioniTable extends Migration
     public function up()
     {
         Schema::create('promozioni', function (Blueprint $table) {
-            $table->string('idPromoAb', 20)->primary();
+            $table->bigIncrements('id')->unsigned()->index();
             $table->string('codOff',20);
             $table->date('dataScad');
             $table->integer('percSconto');

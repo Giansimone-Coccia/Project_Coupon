@@ -15,7 +15,7 @@
     <div class="row-padding padding-16 center">
         @isset($allAziende)
         @foreach ($allAziende as $azienda)
-        <div class="quarter" onclick="window.location.href = '{{ route('offerte_azienda', [$azienda->codiceA]) }}';">
+        <div class="quarter" onclick="window.location.href = '{{ route('offerte_azienda', [$azienda->id]) }}';">
             <div class="inline-block">
                 <div class="centerimages">
                     <img src="{{ asset('images/companies/' . $azienda->image) }}" class="width100 rounded-corners">              

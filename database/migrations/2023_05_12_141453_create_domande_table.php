@@ -14,7 +14,7 @@ class CreateDomandeTable extends Migration
     public function up()
     {
         Schema::create('domande', function (Blueprint $table) {
-            $table->string('idFaq', 20)->primary();
+            $table->bigIncrements('id')->unsigned()->index();
             $table->string('domanda',100);
             $table->string('risposta', 255);
             $table->date('dataPub');

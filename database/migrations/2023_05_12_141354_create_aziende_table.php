@@ -14,7 +14,7 @@ class CreateAziendeTable extends Migration
     public function up()
     {
         Schema::create('aziende', function (Blueprint $table) {
-            $table->string('codiceA', 20)->primary();
+            $table->bigIncrements('id')->unsigned()->index();
             $table->string('nome', 30);
             $table->string('localizzazione', 40);
             $table->string('ragSoc', 10);

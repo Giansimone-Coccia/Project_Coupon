@@ -911,7 +911,7 @@ footerF{
     margin-bottom: 20px;
     padding: 10px;
     width: 80%;
-    max-width: 800px;
+    max-width: 900px;
     transition: .4s ease;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -1242,6 +1242,7 @@ form .button input:hover{
 
 .parola_click{
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .parola_click1{

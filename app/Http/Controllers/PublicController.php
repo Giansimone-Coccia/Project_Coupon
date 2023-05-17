@@ -36,8 +36,6 @@ class PublicController extends Controller
                         ->with('allAziende', $aziende);
     }
     
-
-    
     public function getAzienda($aziendaId){
         
         $azienda = $this->_catalogModel-> getAziendaById($aziendaId)->first();
@@ -54,7 +52,13 @@ class PublicController extends Controller
         return view('dettaglio_offerta')
                         ->with('dettaglio_offerta', $promoDetails);
     }
-     
+    
+    public function getOffertaById($promoId){
+        $promoDetails= $this->_catalogModel->getOffertaById($promoId);
+        return view('dettaglio_offerta')
+                        ->with('dettaglio_offerta_ricerca', $promoDetails);
+    }
+    
     public function getBuono($offertaId){
         $offertaDetails=$this->_catalogModel->getOffertaById($offertaId);
         $codiceBuono = $this->_catalogModel->generaCodBuono();
@@ -78,15 +82,16 @@ class PublicController extends Controller
     public function ricercaPromo(Request $request) {
  
         $descrizione = $request->input('descrizione');
-        $azienda = $request->input('azienda');
+        $aziendaName = $request->input('azienda');
+        
+        $aziendeId = $this->_catalogModel->getSimilarAziende($aziendaName);
+        $promos = $this->_catalogModel->ricercaPromo($aziendeId, $descrizione);
 
-        $promos = $this->_catalogModel->ricercaPromo($azienda, $descrizione);
-
-        if (!($promos->isEmpty())) {
+        if ($promos!=null) {
             return view('risultati_page')
                             ->with('promos', $promos);
         } 
-        else{
+        if ($promos ==null) {
             return view('risultati_page')
                             ->with('message', 'Nessuna promozione trovata.');
         }

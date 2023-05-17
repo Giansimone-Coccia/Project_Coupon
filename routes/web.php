@@ -48,6 +48,9 @@ Route::get('/offerte_azienda/{aziendaId}', [PublicController::class, 'getAzienda
 Route::get('/offerte_azienda/{aziendaId}/dettaglio_offerta/{promoId}', [PublicController::class, 'getPromoDetails'])
         ->name('dettaglio_offerta');
 
+Route::get('/dettaglio_offerta/{promoId}', [PublicController::class, 'getOffertaById'])
+        ->name('dettaglio_offerta_ricerca');
+
 Route::get('/area_personale_utente/{username}', [UtenteController::class, 'getInfoUtente'])
         ->name('area_personale_utente');  
 

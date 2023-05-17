@@ -13,11 +13,14 @@
     </div>
     <div class="container-azienda">
         <div class="row-offerte">
+            
+            
 
             @isset($promos)
             @foreach ($promos as $promo)
+            
 
-            <div class="single-offerta " onclick="window.location.href = '{{ route('dettaglio_offerta', [$azienda->codiceA, 'AB001']) }}';">
+            <div class="single-offerta " onclick="window.location.href = '{{ route('dettaglio_offerta_ricerca', [$promo->codOfferta]) }}';">
                 <div class="inline-block">
                     <div class="centerimagesoffers">
                         <img class = "rounded-corners width100" src="{{ asset('images/products/' . $promo->logoOff) }}" alt="Offerta azienda"/>

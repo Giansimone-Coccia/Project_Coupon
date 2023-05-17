@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Offerta extends Model
 {
     protected $table = 'offerte';
-    //protected $primaryKey = 'codOfferta';
+    //sprotected $primaryKey = 'codOfferta';
+    //senza la definizione di primary key non va la modifica
+        
     
     protected $guarded = ['codOfferta'];
     

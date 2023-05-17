@@ -6,8 +6,12 @@ use App\Models\Catalogo;
 use Illuminate\Http\Request;
 use App\Models\DomandaModel;
 use App\Models\Resources\Offerta;
+use App\Models\Resources\Azienda;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\NuovaOffertaRequest;
+use App\Http\Requests\ModificaOffertaRequest;
+use App\Http\Requests\NuovaAziendaRequest;
+use App\Http\Requests\ModificaAziendaRequest;
 
 
 class PublicController extends Controller
@@ -108,5 +112,69 @@ class PublicController extends Controller
         return redirect('/');
     }
     
+    public function viewOfferta($offertaId) {
+        $offerta= $this->_catalogModel->getOffertaById($offertaId);
+        return view('modifica_offerta')
+                        ->with('offerta', $offerta);
+    }
+    
+    public function modificaOfferta($offertaId, ModificaOffertaRequest $request) {
+        $offerta = $this->_catalogModel->getOffertaById($offertaId);
+        $requestVal = $request->validated();
+        $offerta ->update($requestVal);
+        $image = $request->file('logoOff');
+        $imageName = $image->getClientOriginalName();
+        $destinationPath = public_path() . '/images/products';
+        $image->move($destinationPath, $imageName);
+        
+        return redirect('/');
+        //senza la definizione di primary key non va la modifica
+        
+    }
+    
+    public function addAzienda(){
+
+        return view('crea_azienda');
+                        
+    }
+    
+    public function storeAzienda(NuovaAziendaRequest $request) {
+        
+        $image = $request->file('image');
+        $imageName = $image->getClientOriginalName();
+
+        $azienda = new Azienda;
+        $azienda->fill($request->validated());
+        $azienda->image = $imageName;
+        $azienda->codiceA = $azienda->generaCodAzienda();
+        $azienda->utente = 'US0001';
+        $azienda->save();
+
+
+        $destinationPath = public_path() . '/images/products';
+        $image->move($destinationPath, $imageName);
+
+        return redirect('/');
+    }
    
+    
+    public function viewAzienda($codiceA) {
+        $azienda= $this->_catalogModel->getAziendaById($codiceA);
+        return view('modifica_azienda')
+                        ->with('azienda', $azienda);
+    }
+    
+    public function modificaAzienda($codiceA, ModificaAziendaRequest $request) {
+        $azienda = $this->_catalogModel->getAziendaById($codiceA);
+        $requestVal = $request->validated();
+        $azienda ->update($requestVal);
+        $image = $request->file('image');
+        $imageName = $image->getClientOriginalName();
+        $destinationPath = public_path() . '/images/products';
+        $image->move($destinationPath, $imageName);
+        
+        return redirect('/');
+        //senza la definizione di primary key non va la modifica
+        
+    }
 }

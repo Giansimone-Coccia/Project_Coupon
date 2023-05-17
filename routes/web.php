@@ -60,9 +60,29 @@ Route::get('/coupon/{codOfferta}', [PublicController::class, 'getBuono'])
 Route::get('/crea_offerta', [PublicController::class, 'addOfferta'])
         ->name('crea_offerta');
 
+Route::get('/area_personale_admin/{username}', [UtenteController::class, 'getInfoAdmin'])
+        ->name('area_personale_admin');
 
 Route::post('/crea_offerta', [PublicController::class, 'storeOfferta'])
         ->name('crea_offerta.store');
+
+Route::get('/modifica_offerta/{offertaId}', [PublicController::class, 'viewOfferta'])
+        ->name('modifica_offerta');
+
+Route::post('/modifica_offerta/{offertaId}', [PublicController::class, 'modificaOfferta'])
+        ->name('modifica_offerta.store');
+
+Route::get('/crea_azienda', [PublicController::class, 'addAzienda'])
+        ->name('crea_azienda');
+
+Route::post('/crea_azienda', [PublicController::class, 'storeAzienda'])
+        ->name('crea_azienda.store');
+
+Route::get('/modifica_azienda/{codiceA}', [PublicController::class, 'viewAzienda'])
+        ->name('modifica_azienda');
+
+Route::post('/modifica_azienda/{codiceA}', [PublicController::class, 'modificaAzienda'])
+        ->name('modifica_azienda.store');
 
 
 
@@ -84,6 +104,9 @@ Route::view('/register', 'register')
         ->name('register');
 Route::view('/area_personale_staff', 'area_personale_staff')
         ->name('area_personale_staff');
+
+Route::view('/area_personale_admin', 'area_personale_admin')
+        ->name('area_personale_admin');
 
 Route::view('/mostra_aziende_area_personale', 'mostra_aziende_area_personale')
         ->name('mostra_aziende_area_personale');/*con gli helper usiamo questa pagina sia per admin che staff*/

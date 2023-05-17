@@ -17,12 +17,7 @@
                 <li><strong>Info:</strong>Irubare</li>
                 <li><strong>Info:</strong> 123456</li>
             </ul>
-            <!--<ul>
-                <li><button class="pulsanti_staff">Elimina</button></li>
-                <li><button class="pulsanti_staff">Modifica</button></li>
-            </ul>-->
-            
-        </div>
+
        
     </div>
 </div>

@@ -18,7 +18,7 @@ class Catalogo
     }
 
     public function getAziendaById($aziendaId){
-        return Azienda::where('codiceA',$aziendaId);
+        return Azienda::where('codiceA',$aziendaId)->first();
     }
     
     public function getPromo($aziendaId) {

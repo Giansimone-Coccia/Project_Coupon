@@ -24,7 +24,7 @@
         @endif
 
         <label for="productDescription">Descrizione:</label>
-        <textarea id="oggettoOff" name="oggettoOff" value="{{old('oggettoOff')}}" ></textarea>
+        <input id="oggettoOff" type="text" name="oggettoOff" value="{{old('oggettoOff')}}" ></input>
         
         @if ($errors->first('oggettoOff'))
             <ul class="errors">
@@ -84,7 +84,7 @@
             </ul>
         @endif
 
-        <input type="submit" id="buttonOfferta" value="Crea prodotto">
+        <input type="submit" id="buttonOfferta" value="Crea Offerta">
       </form>
 
     </div>

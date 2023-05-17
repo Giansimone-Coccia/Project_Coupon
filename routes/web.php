@@ -72,6 +72,18 @@ Route::get('/modifica_offerta/{offertaId}', [PublicController::class, 'viewOffer
 Route::post('/modifica_offerta/{offertaId}', [PublicController::class, 'modificaOfferta'])
         ->name('modifica_offerta.store');
 
+Route::get('/crea_azienda', [PublicController::class, 'addAzienda'])
+        ->name('crea_azienda');
+
+Route::post('/crea_azienda', [PublicController::class, 'storeAzienda'])
+        ->name('crea_azienda.store');
+
+Route::get('/modifica_azienda/{codiceA}', [PublicController::class, 'viewAzienda'])
+        ->name('modifica_azienda');
+
+Route::post('/modifica_azienda/{codiceA}', [PublicController::class, 'modificaAzienda'])
+        ->name('modifica_azienda.store');
+
 
 
 Route::view('/modifica_offerta', 'modifica_offerta')

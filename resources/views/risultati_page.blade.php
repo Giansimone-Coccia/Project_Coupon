@@ -17,7 +17,7 @@
             @isset($promos)
             @foreach ($promos as $promo)
 
-            <div class="single-offerta " onclick="window.location.href = '{{ route('dettaglio_offerta', [$azienda->codiceA, 'AB001']) }}';">
+            <div class="single-offerta " onclick="window.location.href = '{{ route('dettaglio_offerta', [$azienda->id, '1']) }}';">
                 <div class="inline-block">
                     <div class="centerimagesoffers">
                         <img class = "rounded-corners width100" src="{{ asset('images/products/' . $promo->logoOff) }}" alt="Offerta azienda"/>

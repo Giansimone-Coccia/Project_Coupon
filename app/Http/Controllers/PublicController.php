@@ -7,6 +7,7 @@ use App\Models\DomandaModel;
 use App\Models\Resources\Offerta;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\NuovaOffertaRequest;
+use App\Http\Requests\ModificaOffertaRequest;
 
 
 class PublicController extends Controller
@@ -102,5 +103,24 @@ class PublicController extends Controller
         return redirect('/');
     }
     
+    public function viewOfferta($offertaId) {
+        $offerta= $this->_catalogModel->getOffertaById($offertaId);
+        return view('modifica_offerta')
+                        ->with('offerta', $offerta);
+    }
+    
+    public function modificaOfferta($offertaId, ModificaOffertaRequest $request) {
+        $offerta = $this->_catalogModel->getOffertaById($offertaId);
+        $requestVal = $request->validated();
+        $offerta ->update($requestVal);
+        $image = $request->file('logoOff');
+        $imageName = $image->getClientOriginalName();
+        $destinationPath = public_path() . '/images/products';
+        $image->move($destinationPath, $imageName);
+        
+        return redirect('/');
+        //senza la definizione di primary key non va la modifica
+        
+    }
    
 }

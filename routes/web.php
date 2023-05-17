@@ -63,10 +63,14 @@ Route::get('/crea_offerta', [PublicController::class, 'addOfferta'])
 Route::get('/area_personale_admin/{username}', [UtenteController::class, 'getInfoAdmin'])
         ->name('area_personale_admin');
 
-
-
 Route::post('/crea_offerta', [PublicController::class, 'storeOfferta'])
         ->name('crea_offerta.store');
+
+Route::get('/modifica_offerta/{offertaId}', [PublicController::class, 'viewOfferta'])
+        ->name('modifica_offerta');
+
+Route::post('/modifica_offerta/{offertaId}', [PublicController::class, 'modificaOfferta'])
+        ->name('modifica_offerta.store');
 
 
 

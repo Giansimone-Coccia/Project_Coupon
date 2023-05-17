@@ -5,27 +5,76 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 <div class="modificaOfferta">
-    <form class="modOffertaForm">
+    <form class="modOffertaForm" id="viewOfferta" name="viewOfferta" enctype="multipart/form-data" method="post" action="{{route('modifica_offerta.store', ['codOfferta' => $offerta->codOfferta])}}">
+        @csrf
         <h1>Modifica dati offerta</h1>
         <hr>
         <div class="image-mod-off">
             <label for="offertaImage"><strong>Immagine:</strong></label>
-            <img class="rounded-corners" src="{{ asset('images/products/Adidas-abbigliamento.png') }}" alt="Offerta da modificare" />
-            <input type="file" id="offertaImage" name="offertaImage" accept="image/*" required>
+            <img class="rounded-corners" src="{{ asset('images/products/'.$offerta->logoOff ) }}" alt="Offerta da modificare" />
+            <input type="file" id="logoOff" name="logoOff" accept="image/*" >
         </div>
+        
+        @if ($errors->first('logoOff'))
+            <ul class="errors">
+            @foreach ($errors->get('logoOff') as $message)
+                <li>{{ $message }}</li>
+            @endforeach
+            </ul>
+        @endif
 
         <div class="form-section">
             <label for="offertaDescrizione">Descrizione:</label>
-            <textarea id="offertaDescrizione" name="offertaDescrizione" required></textarea>
+            <input type="text" id="oggettoOff" name="oggettoOff" value="{{$offerta->oggettoOff}}"></input>
+            
+            @if ($errors->first('oggettoOff'))
+                <ul class="errors">
+                @foreach ($errors->get('oggettoOff') as $message)
+                    <li>{{ $message }}</li>
+                @endforeach
+                </ul>
+            @endif
 
             <label for="offertaModalita">Modalità di fruizione:</label>
-            <input type="text" id="offertaModalita" name="offertaModalita" required>
+            <select id="modalita" name="modalita" value="{{$offerta->modalita}}" >
+                <option value="">Seleziona modalità</option>
+                <option value="Modalità 1"> Online </option>
+                <option value="Modalità 2"> In Negozio </option>
+             </select>
 
             <label for="offertaScadenza">Scadenza:</label>
-            <input type="date" id="offertaScadenza" name="offertaScadenza" required>
+            <input type="date" id="tempoFruiz" name="tempoFruiz" value="{{$offerta->tempoFruiz}}" >
+            @if ($errors->first('tempoFruiz'))
+                <ul class="errors">
+                @foreach ($errors->get('tempoFruiz') as $message)
+                    <li>{{ $message }}</li>
+                @endforeach
+                </ul>
+            @endif
+
 
             <label for="offertaNome">Nome:</label>
-            <input type="text" id="offertaNome" name="offertaNome" required>
+            <input type="text" id="nomeOff" name="nomeOff" value="{{$offerta->nomeOff}}">
+            @if ($errors->first('nomeOff'))
+                <ul class="errors">
+                @foreach ($errors->get('nomeOff') as $message)
+                    <li>{{ $message }}</li>
+                @endforeach
+                </ul>
+            @endif
+            
+            <label for="productName">Luogo di fruizione:</label>
+        <input type="text" id="luogoFruiz" name="luogoFruiz" value="{{$offerta->luogoFruiz}}" >
+        
+        @if ($errors->first('luogoFruiz'))
+            <ul class="errors">
+            @foreach ($errors->get('luogoFruiz') as $message)
+                <li>{{ $message }}</li>
+            @endforeach
+            </ul>
+        @endif
+            
+            
 
             <button class="button">Elimina</button>
             <input type="submit" id="buttonOfferta" value="Modifica dati">

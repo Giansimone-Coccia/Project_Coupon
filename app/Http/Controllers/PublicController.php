@@ -120,10 +120,13 @@ class PublicController extends Controller
     
     public function modificaOfferta($offertaId, ModificaOffertaRequest $request) {
         $offerta = $this->_catalogModel->getOffertaById($offertaId);
-        $requestVal = $request->validated();
-        $offerta ->update($requestVal);
+        
         $image = $request->file('logoOff');
         $imageName = $image->getClientOriginalName();
+        
+        $requestVal = $request->validated();
+        $offerta ->update($requestVal);
+
         $destinationPath = public_path() . '/images/products';
         $image->move($destinationPath, $imageName);
         
@@ -166,10 +169,13 @@ class PublicController extends Controller
     
     public function modificaAzienda($codiceA, ModificaAziendaRequest $request) {
         $azienda = $this->_catalogModel->getAziendaById($codiceA);
-        $requestVal = $request->validated();
-        $azienda ->update($requestVal);
         $image = $request->file('image');
         $imageName = $image->getClientOriginalName();
+        
+
+        $requestVal = $request->validated();
+        $azienda ->update($requestVal);
+
         $destinationPath = public_path() . '/images/products';
         $image->move($destinationPath, $imageName);
         

@@ -5,13 +5,12 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 <div class="modificaOfferta">
-    <form class="modOffertaForm" id="viewOfferta" name="viewOfferta" enctype="multipart/form-data" method="post" action="{{route('modifica_offerta.store', ['codOfferta' => $offerta->codOfferta])}}">
+    <form class="modOffertaForm" id="viewOfferta" name="viewOfferta" enctype="multipart/form-data" method="post" action="{{route('modifica_offerta.store', ['offertaId' => $offerta->codOfferta])}}">
         @csrf
         <h1>Modifica dati offerta</h1>
         <hr>
         <div class="image-mod-off">
             <label for="offertaImage"><strong>Immagine:</strong></label>
-            <img class="rounded-corners" src="{{ asset('images/products/'.$offerta->logoOff ) }}" alt="Offerta da modificare" />
             <input type="file" id="logoOff" name="logoOff" accept="image/*" >
         </div>
         
@@ -75,9 +74,8 @@
         @endif
             
             
-
-            <button class="button">Elimina</button>
             <input type="submit" id="buttonOfferta" value="Modifica dati">
+            
         </div>
     </form>
 </div>

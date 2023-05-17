@@ -115,8 +115,9 @@ h6{
 }
 .quarter{
     float:left;
-    width:100%
-        transition: .4s ease;
+    width:100%;
+    transition: .4s ease;
+    cursor: pointer;
 }
 
 .quarter:hover{
@@ -278,6 +279,7 @@ footer,header,main,nav{
     border:none;
     display:block;
     outline:0;
+    cursor: pointer;
 }
 
 .bar .button{
@@ -324,7 +326,7 @@ button{
 }
 
 .inline-block{
-    display:inline-block
+    display:inline-block;
 }
 .vectorlogo{
     height:52px;
@@ -707,6 +709,7 @@ footerF{
 }
 .footer-menu{
     float: right;
+    cursor: pointer;
 }
 .footer-menu ul{
     display: flex;
@@ -856,7 +859,6 @@ footerF{
     grid-template-columns: 1fr 2fr; /* crea una griglia con due colonne */
     justify-content: center;
     align-items: center;
-
 }
 
 .image-azienda {
@@ -971,6 +973,7 @@ footerF{
 }
 .single-offerta {
     border: 6px solid transparent;
+    cursor: pointer;
 }
 .single-offerta:hover{
     opacity: 0.8;

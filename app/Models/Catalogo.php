@@ -50,15 +50,13 @@ class Catalogo
     public function ricercaPromo($azienda = "", $descrizione = "") {
 
         if ($azienda != "" && $descrizione != "") {
-            Offerta::where('oggettoOff', 'LIKE', '%' . $descrizione . '%')
-                    ->where('azienda', 'LIKE', '%' . $azienda . '%')
-                    ->get();
+            return Offerta::where([['oggettoOff', 'LIKE', '%' . $descrizione . '%'], ['azienda', 'LIKE', '%' . $azienda . '%']])->get();
         } else if ($azienda != "" && $descrizione == "") {
             return Offerta::where('azienda', 'LIKE', '%' . $azienda . '%')->get();
         } else if ($azienda == "" && $descrizione != "") {
             return Offerta::where('oggettoOff', 'LIKE', '%' . $descrizione . '%')->get();
         } else {
-            return null;
+            return [];
         }
     }
 

@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 
 @isset($dettaglio_offerta)
+
 @foreach($dettaglio_offerta as $offerta)
 <div class="container_dettaglio_offerta">
     <div class="image">

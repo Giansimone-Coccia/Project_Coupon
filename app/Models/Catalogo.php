@@ -38,7 +38,7 @@ class Catalogo {
 
     public function getSimilarAziende($aziendaName) {
         if ($aziendaName != "") {
-            $aziendeId= Azienda::where('nome', 'LIKE', '%' . $aziendaName . '%')->select('codiceA')->get();
+            $aziendeId= Azienda::where('nome', 'LIKE', '%' . $aziendaName . '%')->select('id')->get();
             return $aziendeId->toArray();
         } else {
             return null;

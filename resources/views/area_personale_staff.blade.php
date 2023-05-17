@@ -21,6 +21,7 @@
             <a href="{{ route('modifica_profilo_utente') }}" class="parola_click1" > Modifica dati personali </a>
         </div>
         @endisset
+        <hr class="area_admin">
         <div class="container_pulsanti_staff center">
             <div class="center" >
                 <div class="inline-block">

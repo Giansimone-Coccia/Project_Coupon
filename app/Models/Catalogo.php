@@ -9,8 +9,7 @@ use DateTime;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Catalogo
- {
+class Catalogo {
 
     public function getAllAziende($paged = 8) {
         $azienda = Azienda::paginate($paged);
@@ -23,7 +22,7 @@ class Catalogo
     public function getAziende($aziendaId){
         return Azienda::where('id',$aziendaId);
     }
-    
+
     public function getPromo($aziendaId) {
         return Offerta::where('azienda', $aziendaId)->get();
     }
@@ -36,35 +35,52 @@ class Catalogo
         return Offerta::where('id', $promoId) -> get();
     }
     
-    /*public function ricercaPromo($azienda = null, $descrizione = null) {
 
-        if(!is_null($azienda) && !is_null($descrizione)) {
-            return Offerta::where([['oggettoOff', 'LIKE', '%' . $descrizione . '%'],['azienda','LIKE', '%' .  $azienda . '%']])->get();
-        } else if (!is_null($azienda) && is_null($descrizione)) {
-            return Offerta::where('azienda','LIKE', '%' . $azienda . '%')->get();
-        } else if (is_null($azienda) && !is_null($descrizione)) {
-            return Offerta::where('oggettoOff', 'LIKE', '%' . $descrizione . '%')->get();
-        }
-        else{
+    public function getSimilarAziende($aziendaName) {
+        if ($aziendaName != "") {
+            $aziendeId= Azienda::where('nome', 'LIKE', '%' . $aziendaName . '%')->select('codiceA')->get();
+            return $aziendeId->toArray();
+        } else {
             return null;
         }
-    }*/
-    
-    public function ricercaPromo($azienda = "", $descrizione = "") {
+    }
 
-        if ($azienda != "" && $descrizione != "") {
-            return Offerta::where([['oggettoOff', 'LIKE', '%' . $descrizione . '%'], ['azienda', 'LIKE', '%' . $azienda . '%']])->get();
-        } else if ($azienda != "" && $descrizione == "") {
-            return Offerta::where('azienda', 'LIKE', '%' . $azienda . '%')->get();
-        } else if ($azienda == "" && $descrizione != "") {
-            return Offerta::where('oggettoOff', 'LIKE', '%' . $descrizione . '%')->get();
+    public function ricercaPromo($aziendeId = null, $descrizione = "") {
+        
+        if ($aziendeId == null) {
+            if ($descrizione != "") {
+                return Offerta::where('oggettoOff', 'LIKE', '%' . $descrizione . '%')->get();
+            } else {
+                return null;
+            }
         } else {
-            return [];
+            $vectorPromos = [];
+            if ($descrizione != "") {
+               
+                foreach ($aziendeId as $aziendaId) {
+                    
+                    $vectorOff = Offerta::where([['oggettoOff', 'LIKE', '%' . $descrizione . '%'], ['azienda',$aziendaId]]) -> get();
+                    
+                    foreach ($vectorOff as $singleAzienda){
+                        $vectorPromos[] = $singleAzienda;
+                    } 
+                }
+                return $vectorPromos;
+            } else {
+                foreach ($aziendeId as $aziendaId) 
+                {
+                    $vectorOff = Offerta::where('azienda',$aziendaId)->get();
+                    foreach ($vectorOff as $singleAzienda) {
+                        $vectorPromos[] = $singleAzienda;
+                    }
+                }
+                return $vectorPromos;
+            }
         }
     }
 
     public function getBuono($buonoId){
-        return Buono::where('codCoupon', $buonoId) -> get()->first();
+        return Buono::where('codCoupon', $buonoId)-> get()->first();
     }
     
     public function createCoupon($codCoupon, $utenteRich, $dataScad, $offPromo) {

@@ -38,7 +38,7 @@ Route::get('/', [PublicController::class, 'allAziende'])
 Route::get('/FAQ', [DomandeController::class, 'allFAQ'])
         ->name('FAQ');
 
-Route::get('/risultati_page/{azienda}&{parola}', [PublicController::class, 'ricercaPromo'])
+Route::get('/risultati_page', [PublicController::class, 'ricercaPromo'])
         ->name('risultati_page');
 
 
@@ -74,6 +74,18 @@ Route::post('/modifica_offerta/{offertaId}', [PublicController::class, 'modifica
 
 Route::post('/modifica_profilo_utente/{username}', [UtenteController::class, 'modificaProfiloUtente'])
         ->name('modifica_profilo_utente.store');
+        
+Route::get('/crea_azienda', [PublicController::class, 'addAzienda'])
+        ->name('crea_azienda');
+
+Route::post('/crea_azienda', [PublicController::class, 'storeAzienda'])
+        ->name('crea_azienda.store');
+
+Route::get('/modifica_azienda/{codiceA}', [PublicController::class, 'viewAzienda'])
+        ->name('modifica_azienda');
+
+Route::post('/modifica_azienda/{codiceA}', [PublicController::class, 'modificaAzienda'])
+        ->name('modifica_azienda.store');
 
 
 
@@ -93,10 +105,6 @@ Route::view('/modifica_profilo_utente', 'modifica_profilo_utente')
 
 Route::view('/register', 'register')
         ->name('register');
-
-Route::view('/risultati_page', 'risultati_page')
-        ->name('risultati_page');
-
 Route::view('/area_personale_staff', 'area_personale_staff')
         ->name('area_personale_staff');
 

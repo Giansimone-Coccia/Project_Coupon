@@ -84,7 +84,7 @@
             </ul>
         @endif
 
-        <input type="submit" id="buttonOfferta" value="Crea prodotto">
+        <input type="submit" id="buttonOfferta" value="Crea Offerta">
       </form>
 
     </div>

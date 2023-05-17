@@ -16,11 +16,11 @@ class BundlesSeeder extends Seeder
     public function run()
     {
         DB::table('bundles')->insert([
-            ['promoAbb' => 'AB001', 'offertaPromo' => 'O0001'],
-            ['promoAbb' => 'AB002', 'offertaPromo' => 'O0002'],
-            ['promoAbb' => 'AB003', 'offertaPromo' => 'O0003'],
-            ['promoAbb' => 'AB004', 'offertaPromo' => 'O0004'],
-            ['promoAbb' => 'AB005', 'offertaPromo' => 'O0005']
+            ['promoAbb' => '1', 'offertaPromo' => '1'],
+            ['promoAbb' => '2', 'offertaPromo' => '2'],
+            ['promoAbb' => '3', 'offertaPromo' => '3'],
+            ['promoAbb' => '4', 'offertaPromo' => '4'],
+            ['promoAbb' => '5', 'offertaPromo' => '5']
         ]);
     }
 }

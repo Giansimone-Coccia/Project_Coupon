@@ -20,7 +20,7 @@
 <ul class="right listnone margin-top-10"> 
     <li class="bar-item max-heigth52" >
         <form method="GET" action="{{ route('risultati_page') }}">
-            <button type="submit" class="button bar-item"  >
+            <button type="submit" class="button bar-item search-lens right"  >
                 <img src="{{ asset('images/icons/search_icon.svg' ) }}" alt="Search" class="width100">
             </button>
             <input type="text" name="azienda" placeholder="Search Azienda" class="searchbar height36" name="search">

@@ -22,6 +22,7 @@ class CreateUtentiTable extends Migration
             $table->date('dataNascita');
             $table->string('email',30);
             $table->string('telefono',15);
+            $table->string('ruolo',30);
         });
     }
 

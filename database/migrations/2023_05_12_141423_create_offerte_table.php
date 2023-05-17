@@ -14,16 +14,16 @@ class CreateOfferteTable extends Migration
     public function up()
     {
         Schema::create('offerte', function (Blueprint $table) {
-            $table->string('codOfferta', 20)->primary();
+            $table->bigIncrements('id')->unsigned()->index();
             $table->string('oggettoOff',250);
             $table->string('modalita', 30);
-            $table->string('tempoFruiz',30);
+            $table->date('tempoFruiz');
             $table->string('luogoFruiz',30);
             $table->string('nomeOff',25);
             $table->text('logoOff');
-            $table->string('azienda',30);
+            $table->unsignedBigInteger('azienda');
             $table->string('utente',30);
-            $table->foreign('azienda')->references('codiceA')->on('aziende');
+            $table->foreign('azienda')->references('id')->on('aziende');
             $table->foreign('utente')->references('username')->on('utenti');
         });
     }

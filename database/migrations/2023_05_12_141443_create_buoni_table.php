@@ -16,8 +16,9 @@ class CreateBuoniTable extends Migration
         Schema::create('buoni', function (Blueprint $table) {
             $table->string('codCoupon', 20);
             $table->date('dataScad');
-            $table->string('offPromo',20)->primary();
-            $table->string('utenteRich',20)->primary();
+            $table->unsignedBigInteger('offPromo');
+            $table->string('utenteRich',20);
+            $table->primary(['offPromo','utenteRich']);
             $table->foreign('utenteRich')->references('username')->on('utenti');
         });
     }

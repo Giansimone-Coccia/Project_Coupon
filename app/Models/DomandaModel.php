@@ -12,4 +12,9 @@ class DomandaModel
     public function getAllFaq(){ 
         return Domanda:: get();
     }
+    
+    public function getFaq($faqId){
+        return Domanda::where('id',$faqId)->first();
+    }
+    
 }

@@ -34,10 +34,29 @@ class DomandeController extends Controller
         $faq = new Domanda;
         $faq->fill($request->validated());
         $faq->dataPub = date('yy-m-d');
-        $faq->utente = 'UC0005';
+        $faq->utente = '5';
         $faq->save();
        
         return redirect('FAQ');
     }
     
+    public function viewFaq($id){
+        $faq = $this->_FAQModel->getFaq($id);
+        
+        return view('modifica_faq')
+                -> with('faq', $faq);
+    }
+    
+    public function modificaFaq(NuovaFaqRequest $request, $id) {
+        
+        $faq = $this->_FAQModel->getFaq($id);
+
+        $requestVal = $request->validated();
+        $faq->update($requestVal);
+        $faq->dataPub = date('yy-m-d');
+        $faq->utente = '5';
+        $faq->save();
+     
+        return redirect('FAQ');
+    }
 }

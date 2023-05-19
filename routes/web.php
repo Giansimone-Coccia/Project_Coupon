@@ -58,6 +58,8 @@ Route::get('/dettaglio_offerta/{promoId}', [PublicController::class, 'getPromoDe
 
 
 
+
+
 /*User*/
 
 Route::get('/user', [PubliController::class, 'start'])
@@ -71,6 +73,8 @@ Route::get('/area_personale_utente/{username}/lista_coupon/{usernameUtente}', [U
 
 Route::get('/coupon/{codOfferta}', [PublicController::class, 'getBuono'])
         ->name('coupon')->middleware('can:isUser');
+
+
 
 
 
@@ -109,8 +113,30 @@ Route::get('/mostra_aziende_area_personale', [PublicController::class, 'allAzien
 Route::get('/mostra_promo_da_modificare/{aziendaId}', [PublicController::class, 'getOfferteAdmin'])
         ->name('mostra_promo_da_modificare')->middleware('can:isAdmin');
 
+Route::get('/crea_faq', [DomandeController::class, 'addFaq'])
+        ->name('crea_faq')->middleware('can:isAdmin');
+
+Route::post('/crea_faq', [DomandeController::class, 'storeFaq'])
+        ->name('crea_faq.store')->middleware('can:isAdmin');
+
+Route::get('/modifica_faq/{id}', [DomandeController::class, 'viewFaq'])
+        ->name('modifica_azienda')->middleware('can:isAdmin');
+
+Route::post('/modifica_faq/{id}', [DomandeController::class, 'modificaFaq'])
+        ->name('modifica_faq.store')->middleware('can:isAdmin');
+
+Route::get('/crea_membro_staff', [UtenteController::class, 'addMembroStaff'])
+        ->name('crea_membro_staff')->middleware('can:isAdmin');
+
+Route::post('/crea_membro_staff', [UtenteController::class, 'storeMembroStaff'])
+        ->name('crea_membro_staff.store')->middleware('can:isAdmin');
+
+Route::get('/mostra_membri_staff', [UtenteController::class, 'allStaffAdmin'])
+        ->name('mostra_membri_staff')->middleware('can:isAdmin');//da sistemare con l'autenticazione
 
 
+
+        
 /*Staff*/
 
 Route::get('/crea_offerta', [PublicController::class, 'addOfferta'])

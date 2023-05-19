@@ -17,9 +17,9 @@ class CreateBuoniTable extends Migration
             $table->string('codCoupon', 20);
             $table->date('dataScad');
             $table->unsignedBigInteger('offPromo');
-            $table->string('utenteRich',20);
+            $table->unsignedBigInteger('utenteRich');
             $table->primary(['offPromo','utenteRich']);
-            $table->foreign('utenteRich')->references('username')->on('utenti');
+            $table->foreign('utenteRich')->references('id')->on('users');
         });
     }
 

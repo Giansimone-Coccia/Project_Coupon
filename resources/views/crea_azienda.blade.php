@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'Dettaglio offerta')
+@section('title', 'Crea azienda')
 
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >

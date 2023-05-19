@@ -30,7 +30,7 @@
             </div>
             <div class="center">
                 <div class="inline-block">
-                    <button class="pulsanti_staff" onclick="window.location.href = '/';"> Mostra le mie aziende</button>
+                    <button class="pulsanti_staff" onclick="window.location.href = '{{ route('mostra_aziende_area_personale')}}';";"> Gestisci offerte</button>
                 </div>
             </div>
 

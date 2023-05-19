@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\DomandaModel;
+use App\Models\Resources\Domanda;
 use Illuminate\Http\Request;
+use App\Http\Requests\NuovaFaqRequest;
 
 class DomandeController extends Controller
 {
@@ -20,5 +22,41 @@ class DomandeController extends Controller
 
         return view('FAQ')
                 ->with('FAQs', $FAQs);
+    }
+    
+    public function addFaq(){
+
+        return view('crea_faq');
+    }
+    
+    public function storeFaq(NuovaFaqRequest $request) {
+        
+        $faq = new Domanda;
+        $faq->fill($request->validated());
+        $faq->dataPub = date('yy-m-d');
+        $faq->utente = '5';
+        $faq->save();
+       
+        return redirect('FAQ');
+    }
+    
+    public function viewFaq($id){
+        $faq = $this->_FAQModel->getFaq($id);
+        
+        return view('modifica_faq')
+                -> with('faq', $faq);
+    }
+    
+    public function modificaFaq(NuovaFaqRequest $request, $id) {
+        
+        $faq = $this->_FAQModel->getFaq($id);
+
+        $requestVal = $request->validated();
+        $faq->update($requestVal);
+        $faq->dataPub = date('yy-m-d');
+        $faq->utente = '5';
+        $faq->save();
+     
+        return redirect('FAQ');
     }
 }

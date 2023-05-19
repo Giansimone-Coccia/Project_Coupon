@@ -3,9 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/database/seeders/OfferteSeeder.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/routes/auth.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Requests/Auth/LoginRequest.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/resources/views/crea_faq.blade.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Models/Resources/Offerta.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Requests/ModificaAziendaRequest.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/resources/views/crea_offerta.blade.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Requests/ModificaOffertaRequest.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/database/seeders/PromozioniSeeder.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Controllers/PublicController.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/routes/web.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Requests/NuovaAziendaRequest.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/database/seeders/DomandeSeeder.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Controllers/DomandeController.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/database/migrations/2023_05_12_125515_create_users_table.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Requests/ModificaFaqRequest.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Requests/NuovaFaqRequest.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Models/Resources/Domanda.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/public/css/style.css</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/resources/views/modifica_faq.blade.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/database/seeders/UsersSeeder.php</file>
         </group>
     </open-files>
 </project-private>

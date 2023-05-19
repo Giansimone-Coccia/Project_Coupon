@@ -97,6 +97,11 @@ Route::get('/mostra_aziende_area_personale', [PublicController::class, 'allAzien
 Route::get('/mostra_promo_da_modificare/{aziendaId}', [PublicController::class, 'getOfferteAdmin'])
         ->name('mostra_promo_da_modificare');
 
+Route::get('/area_personale_staff/{userId}', [UtenteController::class, 'getInfoStaff'])
+        ->name('area_personale_staff');
+
+
+
 
 Route::view('/chi_siamo', 'chi_siamo')
         ->name('chi_siamo');
@@ -110,11 +115,7 @@ Route::view('/modifica_profilo_utente', 'modifica_profilo_utente')
 
 Route::view('/register', 'register')
         ->name('register');
-Route::view('/area_personale_staff', 'area_personale_staff')
-        ->name('area_personale_staff');
 
-Route::view('/area_personale_admin', 'area_personale_admin')
-        ->name('area_personale_admin');
 
 Route::get('/crea_membro_staff', [UtenteController::class, 'addMembroStaff'])
         ->name('crea_membro_staff');

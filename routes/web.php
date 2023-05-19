@@ -121,6 +121,12 @@ Route::view('/register', 'register')
         ->name('register');
 
 
+Route::get('/crea_membro_staff', [UtenteController::class, 'addMembroStaff'])
+        ->name('crea_membro_staff');
+
+Route::post('/crea_membro_staff', [UtenteController::class, 'storeMembroStaff'])
+        ->name('crea_membro_staff.store');
+
 
 
 

@@ -20,7 +20,7 @@ class Offerta extends Model
     }
     
     public function offUtente() {
-        return $this->hasOne(Utente::class, 'username', 'utente'); //Il secondo della classe corrente
+        return $this->hasOne(User::class, 'id', 'utente'); //Il secondo della classe corrente
     }
     
 }

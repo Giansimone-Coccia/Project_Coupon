@@ -14,7 +14,7 @@ class Domanda extends Model
     protected $fillable = ['domanda', 'risposta', 'datPub', 'utente'];
     
     public function faqUtente() {
-      return $this->hasOne(Utente::class, 'username', 'utente');
+      return $this->hasOne(User::class, 'id', 'utente');
     }
     
 }

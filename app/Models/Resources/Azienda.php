@@ -17,6 +17,6 @@ class Azienda extends Model
     
     
     public function aziendaUtente() {
-      return $this->hasOne(Utente::class, 'username', 'utente');
+      return $this->hasOne(User::class, 'id', 'utente');
     }
 }

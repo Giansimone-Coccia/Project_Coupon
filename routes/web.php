@@ -106,6 +106,13 @@ Route::get('/crea_faq', [DomandeController::class, 'addFaq'])
 Route::post('/crea_faq', [DomandeController::class, 'storeFaq'])
         ->name('crea_faq.store');
 
+Route::get('/modifica_faq/{id}', [DomandeController::class, 'viewFaq'])
+        ->name('modifica_azienda');
+
+Route::post('/modifica_faq/{id}', [DomandeController::class, 'modificaFaq'])
+        ->name('modifica_faq.store');
+
+
 
 Route::view('/chi_siamo', 'chi_siamo')
         ->name('chi_siamo');
@@ -127,6 +134,7 @@ Route::get('/crea_membro_staff', [UtenteController::class, 'addMembroStaff'])
 Route::post('/crea_membro_staff', [UtenteController::class, 'storeMembroStaff'])
         ->name('crea_membro_staff.store');
 
-
+Route::get('/mostra_membri_staff', [UtenteController::class, 'allStaffAdmin'])
+        ->name('mostra_membri_staff');//da sistemare con l'autenticazione
 
 

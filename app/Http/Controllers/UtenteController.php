@@ -79,5 +79,13 @@ class UtenteController extends Controller
 
         return redirect('/');
     }
+
+    public function allStaffAdmin(){
+        
+        $staff = $this->_UtenteModel->getAllStaff();
+
+        return view('mostra_membri_staff')
+                        ->with('allStaffAdmin', $staff);
+    }
    
 }

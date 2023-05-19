@@ -13,7 +13,7 @@ class UtenteModel
         return User::where('username', $username)->get();
     }
     
-    public function setNewDatiUtente($username, $password = "", $nome = "", $cognome = "", $genere = "", $dataNascita = "1900-01-01", $email="", $telefono="", $ruolo=""){
+    public function setNewDatiUser($username, $password = "", $nome = "", $cognome = "", $genere = "", $dataNascita = "1900-01-01", $email="", $telefono="", $ruolo=""){
             
         if ($password!=""){ 
             User::where('username', $username)->update([
@@ -65,8 +65,13 @@ class UtenteModel
         }
     }
     
-    public function getCouponUtente($usernameUtente) {
-        return Buono::where('utenteRich', $usernameUtente)->get();
+    public function getCouponUser($usernameUser) {
+        return Buono::where('userRich', $usernameUser)->get();
+    }
+
+    public function getAllStaff() {
+        $staff = User::where('ruolo','staff')->get();
+        return $staff;
     }
     
 }

@@ -116,6 +116,12 @@ Route::view('/area_personale_staff', 'area_personale_staff')
 Route::view('/area_personale_admin', 'area_personale_admin')
         ->name('area_personale_admin');
 
+Route::get('/crea_membro_staff', [UtenteController::class, 'addMembroStaff'])
+        ->name('crea_membro_staff');
+
+Route::post('/crea_membro_staff', [UtenteController::class, 'storeMembroStaff'])
+        ->name('crea_membro_staff.store');
+
 
 
 

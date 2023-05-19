@@ -13,7 +13,7 @@ class Domanda extends Model
     
     
     public function faqUtente() {
-      return $this->hasOne(Utente::class, 'username', 'utente');
+      return $this->hasOne(User::class, 'id', 'utente');
     }
     
 }

@@ -18,8 +18,8 @@ class CreatePromozioniTable extends Migration
             $table->string('codOff',20);
             $table->date('dataScad');
             $table->integer('percSconto');
-            $table->string('utente',20);
-            $table->foreign('utente')->references('username')->on('utenti');
+            $table->unsignedBigInteger('utente');
+            $table->foreign('utente')->references('id')->on('users');
         });
     }
 

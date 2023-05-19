@@ -15,11 +15,11 @@ class CreateDomandeTable extends Migration
     {
         Schema::create('domande', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned()->index();
-            $table->string('domanda',100);
+            $table->string('domanda',255);
             $table->string('risposta', 255);
             $table->date('dataPub');
-            $table->string('utente',20);
-            $table->foreign('utente')->references('username')->on('utenti');
+            $table->unsignedBigInteger('utente');
+            $table->foreign('utente')->references('id')->on('users');
         });
     }
 

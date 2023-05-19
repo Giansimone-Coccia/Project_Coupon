@@ -19,6 +19,6 @@ class Buono extends Model
     }
     
     public function couponUtente() {
-        return $this->hasOne(Utente::class, 'username', 'utenteRich'); //Il secondo della classe corrente
+        return $this->hasOne(User::class, 'id', 'utenteRich'); //Il secondo della classe corrente
     }
 }

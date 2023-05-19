@@ -15,6 +15,7 @@ class Catalogo {
         $azienda = Azienda::paginate($paged);
         return $azienda;
     }
+    
 
     public function getAziendaById($aziendaId){
         return Azienda::where('id',$aziendaId)->first();

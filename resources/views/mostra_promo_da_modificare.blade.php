@@ -7,20 +7,20 @@
 
 <div class="main content padding" style="max-width: 1300px; margin-top: 150px;">
     <div class="couponlist" align="center">
-        <h1 style="font-weight: 300">Lista delle aziende che puoi gestire:</h1>
+        <h1 style="font-weight: 300">Lista delle offerte dell'azienda {{$azienda->nome}}:</h1>
         
+        @isset($allOfferteAzienda)
+        @foreach($allOfferteAzienda as $offerta)
         <div class="coupon coupon-no-hover">
-            <img src="{{ asset('images/companies/Conad.png') }}" class ="rounded-corners" alt="Logo offerta">
-            <h3><span>Nome Promozione:</span>ii</h3>
+            <img src="{{ asset('images/products/' . $offerta->logoOff) }}" class ="rounded-corners" alt="Logo offerta">
+            <h3><span>Nome azienda:</span>{{$offerta->nomeOff}}</h3>
             <ul>
-                <li><strong>Info:</strong> 12/12/2023 </li>
-                <li><strong>Info:</strong>Irubare</li>
-                <li><strong>Info:</strong> 123456</li>
-            </ul>
-                <li><button class="pulsanti_staff">Elimina</button></li>
-                <li><button class="pulsanti_staff">Modifica</button></li>
+                <button class="pulsanti_staff" > Modifica </button>
+                <button class="pulsanti_staff"> Elimina </button>
             </ul>
         </div>
+        @endforeach
+        @endisset
        
     </div>
 </div>

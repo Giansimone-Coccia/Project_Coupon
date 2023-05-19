@@ -36,6 +36,14 @@ class PublicController extends Controller
                         ->with('allAziende', $aziende);
     }
     
+    public function allAziendeAdmin(){
+        
+        $aziende = $this->_catalogModel-> getAllAziende();
+
+        return view('mostra_aziende_area_personale')
+                        ->with('allAziendeAdmin', $aziende);
+    }
+    
     public function getAzienda($aziendaId){
         
         $azienda = $this->_catalogModel-> getAziende($aziendaId)->first();
@@ -44,6 +52,16 @@ class PublicController extends Controller
         return view('offerte_azienda')
                         ->with('azienda', $azienda)
                         ->with('promos', $promos);
+    }
+    
+    public function getOfferteAdmin($aziendaId){
+        
+        $azienda = $this->_catalogModel-> getAziende($aziendaId)->first();
+        $offerte= $this->_catalogModel->getPromo($aziendaId);
+
+        return view('mostra_promo_da_modificare')
+                        ->with('azienda', $azienda)
+                        ->with('allOfferteAzienda', $offerte);
     }
     
     

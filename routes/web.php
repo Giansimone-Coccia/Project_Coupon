@@ -91,6 +91,11 @@ Route::post('/modifica_azienda/{codiceA}', [PublicController::class, 'modificaAz
 Route::get('/area_personale_admin/{username}', [UtenteController::class, 'getInfoAdmin'])
         ->name('area_personale_admin');
 
+Route::get('/mostra_aziende_area_personale', [PublicController::class, 'allAziendeAdmin'])
+        ->name('mostra_aziende_area_personale');/*con gli helper usiamo questa pagina sia per admin che staff*/
+
+Route::get('/mostra_promo_da_modificare/{aziendaId}', [PublicController::class, 'getOfferteAdmin'])
+        ->name('mostra_promo_da_modificare');
 
 
 Route::view('/chi_siamo', 'chi_siamo')
@@ -110,10 +115,6 @@ Route::view('/area_personale_staff', 'area_personale_staff')
 
 Route::view('/area_personale_admin', 'area_personale_admin')
         ->name('area_personale_admin');
-
-Route::view('/mostra_aziende_area_personale', 'mostra_aziende_area_personale')
-        ->name('mostra_aziende_area_personale');/*con gli helper usiamo questa pagina sia per admin che staff*/
-
 
 
 

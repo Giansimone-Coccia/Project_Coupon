@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UtenteModel 
 {
-    public function getInfoUser($username){
+    public function getInfoUtente($username){
         return User::where('username', $username)->get();
     }
     

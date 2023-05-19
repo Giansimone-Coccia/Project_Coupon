@@ -124,7 +124,7 @@ class PublicController extends Controller
         $offerta = new Offerta;
         $offerta->fill($request->validated());
         $offerta->logoOff = $imageName;
-        $offerta->utente = 'US0005';
+        $offerta->utente = Auth::user()->id;
         $offerta->save();
        
 
@@ -175,7 +175,7 @@ class PublicController extends Controller
         $azienda = new Azienda;
         $azienda->fill($request->validated());
         $azienda->image = $imageName;
-        $azienda->utente = 'US0001';
+        $azienda->utente = Auth::user()->id;
         $azienda->save();
 
 

@@ -34,7 +34,7 @@
             </div>
             <div class="center">
                 <div class="inline-block">
-                    <button class="pulsanti_staff" onclick="window.location.href = '/';"> Lista Aziende </button>
+                    <button class="pulsanti_staff" onclick="window.location.href = '{{ route('mostra_aziende_area_personale')}}';"> Lista Aziende </button>
                 </div>
             </div>
 

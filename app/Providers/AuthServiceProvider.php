@@ -32,9 +32,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('isUser', function ($user) {
             return $user->hasRole('user');
         });
-
-        Gate::define('show-discount', function ($user) {
-            return $user->hasRole(['user', 'admin']);
+        
+        Gate::define('isStaff', function ($user) {
+            return $user->hasRole('staff');
         });
     }
 }

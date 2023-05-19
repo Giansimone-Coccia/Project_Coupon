@@ -23,6 +23,10 @@ class PublicController extends Controller
         $this->_catalogModel = new Catalogo;
     }
     
+    public function start(){
+        return view('start');
+    }
+    
     public function index() {
         return view('area_personale_utente');
     }

@@ -26,8 +26,7 @@ class PublicController extends Controller
     public function index() {
         return view('area_personale_utente');
     }
-    
-   
+      
     public function allAziende(){
         
         $aziende = $this->_catalogModel-> getAllAziende();
@@ -64,7 +63,6 @@ class PublicController extends Controller
                         ->with('allOfferteAzienda', $offerte);
     }
     
-    
     public function getPromoDetails($promoId){
         $promoDetails= $this->_catalogModel->getPromo($promoId);
         return view('dettaglio_offerta')
@@ -87,7 +85,6 @@ class PublicController extends Controller
                         ->with('buono', $buono)
                         ->with('offerta', $offertaDetails);
     }
-    
     
     public function addOfferta(){
         
@@ -184,7 +181,6 @@ class PublicController extends Controller
         return redirect('/');
     }
    
-    
     public function viewAzienda($codiceA) {
         $azienda= $this->_catalogModel->getAziendaById($codiceA);
         return view('modifica_azienda')

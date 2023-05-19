@@ -100,7 +100,11 @@ Route::get('/mostra_promo_da_modificare/{aziendaId}', [PublicController::class, 
 Route::get('/area_personale_staff/{userId}', [UtenteController::class, 'getInfoStaff'])
         ->name('area_personale_staff');
 
+Route::get('/crea_faq', [DomandeController::class, 'addFaq'])
+        ->name('crea_faq');
 
+Route::post('/crea_faq', [DomandeController::class, 'storeFaq'])
+        ->name('crea_faq.store');
 
 
 Route::view('/chi_siamo', 'chi_siamo')

@@ -11,6 +11,7 @@ class Domanda extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
     
+    protected $fillable = ['domanda', 'risposta', 'datPub', 'utente'];
     
     public function faqUtente() {
       return $this->hasOne(Utente::class, 'username', 'utente');

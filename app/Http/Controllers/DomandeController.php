@@ -34,7 +34,7 @@ class DomandeController extends Controller
         $faq = new Domanda;
         $faq->fill($request->validated());
         $faq->dataPub = date('yy-m-d');
-        $faq->utente = 'UC0005';
+        $faq->utente = Auth::user()->id;
         $faq->save();
        
         return redirect('FAQ');

@@ -127,6 +127,7 @@ Route::get('/crea_membro_staff', [UtenteController::class, 'addMembroStaff'])
 Route::post('/crea_membro_staff', [UtenteController::class, 'storeMembroStaff'])
         ->name('crea_membro_staff.store');
 
-
+Route::get('/mostra_membri_staff', [UtenteController::class, 'allStaffAdmin'])
+        ->name('mostra_membri_staff');//da sistemare con l'autenticazione
 
 

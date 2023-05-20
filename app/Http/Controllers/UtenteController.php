@@ -87,5 +87,13 @@ class UtenteController extends Controller
         return view('mostra_membri_staff')
                         ->with('allStaffAdmin', $staff);
     }
+    
+    public function modificaProfUtente(){
+        
+        $utente = $this->_UtenteModel->getAllStaff;
+
+        return view('mostra_membri_staff')
+                        ->with('allStaffAdmin', $staff);
+    }
    
 }

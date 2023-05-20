@@ -94,6 +94,13 @@ class UtenteController extends Controller
 
         return view('mostra_membri_staff')
                         ->with('allStaffAdmin', $staff);
+
+    public function allRegisteredUsers(){
+        
+        $ruser = $this->_UtenteModel->getAllUserR();
+
+        return view('mostra_utenti_registrati')
+                        ->with('allRegisteredUsers', $ruser);
     }
    
 }

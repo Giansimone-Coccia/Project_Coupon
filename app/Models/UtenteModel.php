@@ -73,5 +73,10 @@ class UtenteModel
         $staff = User::where('ruolo','staff')->get();
         return $staff;
     }
+
+    public function getAllUserR() {
+        $ruser = User::where('ruolo','user')->get();
+        return $ruser;
+    }
     
 }

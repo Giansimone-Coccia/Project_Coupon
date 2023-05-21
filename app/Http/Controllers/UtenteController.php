@@ -93,7 +93,7 @@ class UtenteController extends Controller
         $utente = $this->_UtenteModel->getAllStaff;
 
         return view('mostra_membri_staff')
-                        ->with('allStaffAdmin', $staff);
+    ->with('allStaffAdmin', $staff);}
 
     public function allRegisteredUsers(){
         

@@ -3,12 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/resources/views/lista_coupon.blade.php</file>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/resources/views/register.blade.php</file>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/app/Http/Controllers/Auth/RegisteredUserController.php</file>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/app/Http/Controllers/Auth/AuthenticatedSessionController.php</file>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/resources/views/auth/register.blade.php</file>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/resources/views/auth/login.blade.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Models/Catalogo.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/resources/views/mostra_membri_staff.blade.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Models/User.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Requests/ModificaFaqRequest.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/resources/views/mostra_aziende_area_personale.blade.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Models/DomandaModel.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Controllers/PublicController.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/resources/views/modifica_offerta.blade.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Controllers/UtenteController.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/routes/web.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/resources/views/modifica_faq.blade.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Controllers/DomandeController.php</file>
         </group>
     </open-files>
 </project-private>

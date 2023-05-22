@@ -47,7 +47,7 @@ class User extends Authenticatable
     ];
     
     public function hasRole($ruolo) {
-        $ruoolo = (array)$ruolo;
+        $ruolo = (array)$ruolo;
         return in_array($this->ruolo, $ruolo);
     }
 

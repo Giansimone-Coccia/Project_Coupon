@@ -34,7 +34,8 @@ class RegisteredUserController extends Controller {
         $request->validate([
             'nome' => ['required', 'string', 'max:30'],
             'cognome' => ['required', 'string', 'max:30'],
-            'genere' => ['required', 'char'],
+            /*'genere' => ['required', 'char'],*/
+            'genere' => ['required', 'in:M,F,N'],
             'dataNascita' => ['required', 'date'],
             'telefono' => ['required', 'string', 'max:15'],
             'email' => ['required', 'string', 'email', 'max:30', 'unique:users'],

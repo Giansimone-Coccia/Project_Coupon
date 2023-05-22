@@ -7,13 +7,14 @@
 
 
     <div class="creazioneOfferta">
-      <form class="productForm" id="modProfUtente" name="modProfUtente" enctype="multipart/form-data" method="post" action="{{route('modifica_profilo_utente.store', ['id'=>{{Auth::user()->id}}])}}">
+
+      <form class="productForm" id="modProfUtente" name="modProfUtente" enctype="multipart/form-data" method="POST" action="{{route('modifica_profilo_utente.store')}}">
         @csrf
         <h1>Modifica dati personali e password</h1>
         <hr>
 
         <label for="productName">Nome:</label>
-        <input type="text" id="nome" name="nome" value="{{old('nome')}}" >
+        <input type="text" id="nome" name="nome" value="{{Auth::user()->nome}}" >
         
         @if ($errors->first('nome'))
             <ul class="errors">
@@ -24,7 +25,7 @@
         @endif
 
         <label for="productName">Cognome:</label>
-        <input type="text" id="cognome" name="cognome" value="{{old('cognome')}}" >
+        <input type="text" id="cognome" name="cognome" value="{{Auth::user()->cognome}}" >
         
         @if ($errors->first('cognome'))
             <ul class="errors">
@@ -35,7 +36,7 @@
         @endif
         
         <label for="productName">Username:</label>
-        <input type="text" id="username" name="username" value="{{old('username')}}" >
+        <input type="text" id="username" name="username" value="{{Auth::user()->username}}" >
         
         @if ($errors->first('username'))
             <ul class="errors">
@@ -46,7 +47,7 @@
         @endif
 
         {{ Form::label('password', 'Password:') }}
-        {{ Form::password('password', ['id' => 'password', 'value' => old('password')]) }}
+        {{ Form::password('password', ['id' => 'password', 'value' => Auth::user()->password]) }}
 
         @if ($errors->first('password'))
             <ul class="errors">
@@ -57,7 +58,7 @@
         @endif
 
         {{ Form::label('password_confirmation', 'Conferma Password:') }}
-        {{ Form::password('password_confirmation', ['id' => 'password_confirmation', 'value' => old('password_confirmation')]) }}
+        {{ Form::password('password_confirmation', ['id' => 'password_confirmation', 'value' => Auth::user()->password]) }}
 
         @if ($errors->first('password_confirmation'))
             <ul class="errors">
@@ -68,7 +69,7 @@
         @endif
 
         <label for="productName">Email:</label>
-        <input type="text" id="email" name="email" value="{{old('email')}}" >
+        <input type="text" id="email" name="email" value="{{Auth::user()->email}}" >
         
         @if ($errors->first('email'))
             <ul class="errors">
@@ -79,22 +80,22 @@
         @endif
 
         <label for="productName">Numero di telefono:</label>
-        <input type="text" id="nTelefono" name="nTelefono" value="{{old('nTelefono')}}" >
+        <input type="text" id="telefono" name="telefono" value="{{Auth::user()->telefono}}" >
         
-        @if ($errors->first('nTelefono'))
+        @if ($errors->first('telefono'))
             <ul class="errors">
-            @foreach ($errors->get('nTelefono') as $message)
+            @foreach ($errors->get('telefono') as $message)
                 <li>{{ $message }}</li>
             @endforeach
             </ul>
         @endif
 
         <label for="productName">Data di nascita:</label>
-        <input type="date" id="dNascita" name="dNascita" value="{{old('dNascita')}}" >
+        <input type="date" id="dataNascita" name="dataNascita" value="{{Auth::user()->dataNascita}}" >
         
-        @if ($errors->first('dNascita'))
+        @if ($errors->first('dataNascita'))
             <ul class="errors">
-            @foreach ($errors->get('dNascita') as $message)
+            @foreach ($errors->get('dataNascita') as $message)
                 <li>{{ $message }}</li>
             @endforeach
             </ul>
@@ -102,9 +103,9 @@
 
         <label for="genere">Genere:</label>
         <select id="genere" name="genere">
-            <option value="maschio" {{ old('genere') === 'maschio' ? 'selected' : '' }}>Maschio</option>
-            <option value="femmina" {{ old('genere') === 'femmina' ? 'selected' : '' }}>Femmina</option>
-            <option value="altro" {{ old('genere') === 'altro' ? 'selected' : '' }}>Altro</option>
+            <option value="M" {{ Auth::user()->genere === 'M' ? 'selected' : '' }}>Maschio</option>
+            <option value="F" {{ Auth::user()->genere === 'F' ? 'selected' : '' }}>Femmina</option>
+            <option value="N" {{ Auth::user()->genere === 'N' ? 'selected' : '' }}>Altro</option>
         </select>
         
         @if ($errors->has('genere'))
@@ -114,8 +115,7 @@
             @endforeach
             </ul>
         @endif
-
-        <input type="submit" id="confirmationButton" value="Modifica">
+            {{ Form::submit('Modifica', ['class' => 'confirmationButton']) }}
       </form>
 
     </div>

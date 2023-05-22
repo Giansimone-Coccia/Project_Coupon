@@ -10,6 +10,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class UtenteModel 
 {
+    
+    protected $fillable = [
+        'nome',
+        'cognome',
+        'genere',
+        'dataNascita',
+        'email',
+        'telefono',
+        'username',
+        'password',
+    ];
+    
     /*Probabilmente da eliminare*/
     public function getInfoUtente($id){
         return User::where('id', $id)->get();

@@ -101,7 +101,7 @@ Route::post('/crea_azienda', [PublicController::class, 'storeAzienda'])
 Route::get('/area_personale_admin/{username}', [UtenteController::class, 'getInfoAdmin'])
         ->name('area_personale_admin');
 
-Route::get('/modifica_profilo_utente', [UtenteController::class, 'modificaProfiloUtente'])
+Route::get('/modifica_profilo_utente', [UtenteController::class, 'viewModProfUtente'])
         ->name('modifica_profilo_utente');
 
 Route::post('/modifica_profilo_utente', [UtenteController::class, 'modificaProfiloUtente'])

@@ -7,6 +7,7 @@ use App\Models\Resources\Buono;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class UtenteModel 
 {
     /*Probabilmente da eliminare*/
@@ -72,8 +73,8 @@ class UtenteModel
         }
     }
     
-    public function getCouponUser() {
-        return Buono::where('userRich', Auth::user()->id)->get();
+    public function getCouponUser($id) {
+        return Buono::where('utenteRich', $id)->get();
     }
 
     public function getAllStaff() {

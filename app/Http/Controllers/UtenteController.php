@@ -6,6 +6,7 @@ use App\Models\UtenteModel;
 use App\Models\Catalogo;
 use App\Models\Resources\Azienda;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ModificaProfiloUtenteRequest;
 
 
@@ -42,10 +43,11 @@ class UtenteController extends Controller
                         ->with('utenti', $staff);
     }
     
+
     
     public function getCouponUtente(){
         
-        $couponUtente = $this->_UtenteModel->getCouponUser();
+        $couponUtente = $this->_UtenteModel->getCouponUser(Auth::user()->id);
         
         foreach ($couponUtente as $coupon) {
             $couponOfferta = $this->_Catalogo->getOffertaById($coupon->offPromo);  //con questo si lega ad ogni coupon la corrispettiva offerta

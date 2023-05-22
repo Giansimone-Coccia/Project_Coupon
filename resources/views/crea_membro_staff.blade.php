@@ -80,22 +80,22 @@
         @endif
 
         <label for="productName">Numero di telefono:</label>
-        <input type="text" id="nTelefono" name="nTelefono" value="{{old('nTelefono')}}" >
+        <input type="text" id="telefono" name="telefono" value="{{old('telefono')}}" >
         
-        @if ($errors->first('nTelefono'))
+        @if ($errors->first('telefono'))
             <ul class="errors">
-            @foreach ($errors->get('nTelefono') as $message)
+            @foreach ($errors->get('telefono') as $message)
                 <li>{{ $message }}</li>
             @endforeach
             </ul>
         @endif
 
         <label for="productName">Data di nascita:</label>
-        <input type="date" id="dNascita" name="dNascita" value="{{old('dNascita')}}" >
+        <input type="date" id="dataNascita" name="dataNascita" value="{{old('dataNascita')}}" >
         
-        @if ($errors->first('dNascita'))
+        @if ($errors->first('dataNascita'))
             <ul class="errors">
-            @foreach ($errors->get('dNascita') as $message)
+            @foreach ($errors->get('dataNascita') as $message)
                 <li>{{ $message }}</li>
             @endforeach
             </ul>
@@ -103,9 +103,9 @@
 
         <label for="genere">Genere:</label>
         <select id="genere" name="genere">
-            <option value="maschio" {{ old('genere') === 'maschio' ? 'selected' : '' }}>Maschio</option>
-            <option value="femmina" {{ old('genere') === 'femmina' ? 'selected' : '' }}>Femmina</option>
-            <option value="altro" {{ old('genere') === 'altro' ? 'selected' : '' }}>Altro</option>
+            <option value="M" {{ old('genere') === 'M' ? 'selected' : '' }}>Maschio</option>
+            <option value="F" {{ old('genere') === 'F' ? 'selected' : '' }}>Femmina</option>
+            <option value="N" {{ old('genere') === 'N' ? 'selected' : '' }}>Non specificare</option>
         </select>
         
         @if ($errors->has('genere'))

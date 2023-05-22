@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\UtenteModel;
 use App\Models\Catalogo;
+use App\Models\User;
 use App\Models\Resources\Azienda;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ModificaProfiloUtenteRequest;
+use App\Http\Requests\NuovoMembroStaffRequest;
 
 
 class UtenteController extends Controller
@@ -42,10 +45,11 @@ class UtenteController extends Controller
                         ->with('utenti', $staff);
     }
     
+
     
     public function getCouponUtente(){
         
-        $couponUtente = $this->_UtenteModel->getCouponUser();
+        $couponUtente = $this->_UtenteModel->getCouponUser(Auth::user()->id);
         
         foreach ($couponUtente as $coupon) {
             $couponOfferta = $this->_Catalogo->getOffertaById($coupon->offPromo);  //con questo si lega ad ogni coupon la corrispettiva offerta
@@ -78,9 +82,12 @@ class UtenteController extends Controller
                         ->with('aziende', $aziende);
     }
 
-    public function storeMembroStaff(NuovaOffertaRequest $request) {
-
-
+    public function storeMembroStaff(NuovoMembroStaffRequest $request) {
+        $staff = new User;
+        $staff->fill($request->validated());
+        $staff->ruolo = 'staff';
+        $staff->password = bcrypt($request->password);
+        $staff->save();
         return redirect('/');
     }
 

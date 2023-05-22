@@ -8,10 +8,9 @@
     <div class="container_area_utente">
         <h1>Area Personale</h1>
         <h2>Informazioni personali</h2>
-        @isset($utenti)
         <div class="section_area_utente">
             <p><strong>Nome Utente:</strong> {{Auth::user()->username}}</p>
-            <p><strong>Email:</strong> {{Auth::useruth::us()->email}}</p>
+            <p><strong>Email:</strong> {{Auth::user()->email}}</p>
             <p><strong>Nome:</strong> {{Auth::user()->nome}}</p>
             <p><strong>Genere:</strong> {{Auth::user()->genere}} </p>
             <p><strong>Password:</strong> {{Auth::user()->password}}</p>
@@ -23,7 +22,6 @@
 
         <h2>Coupon Riscattati</h2>
         <p> <a onclick="window.location.href = '{{ route('lista_coupon') }}';" class="parola_click"> Clicca qui </a> per visualizzare tutti i coupon riscattati</p>
-        @endisset
     </div>
 </div>
 @endsection

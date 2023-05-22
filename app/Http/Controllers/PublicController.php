@@ -105,12 +105,17 @@ class PublicController extends Controller
         
         $aziendeId = $this->_catalogModel->getSimilarAziende($aziendaName);
         $promos = $this->_catalogModel->ricercaPromo($aziendeId, $descrizione);
+        
+        
+        
 
         if ($promos!=null) {
             return view('risultati_page')
-                            ->with('promos', $promos);
+                            ->with('promos', $promos)
+                            ->with('aziendaSearch', 'Risultati con Azienda: "'.$aziendaName.'"')
+                            ->with('descSearch', 'Risultati con Descrizione: "'.$descrizione .'"');
         } 
-        if ($promos ==null) {
+        else {
             return view('risultati_page')
                             ->with('message', 'Nessuna promozione trovata.');
         }

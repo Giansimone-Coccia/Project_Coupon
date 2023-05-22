@@ -15,22 +15,24 @@
                 padding:20px
             }
         </style>
+    </head>
+    <body>
 
         <!-- end #header -->
-    <nav class="top">
-        <div class="white xlarge bar topmenu">
-            @include('layouts/_navpublic')
+        <nav class="top">
+            <div class="white xlarge bar topmenu">
+                @include('layouts/_navpublic')
+            </div>
+        </nav>
+
+        <!-- end #menu -->
+        <div class="margin-top-62">
+            @yield('content')
         </div>
-    </nav>
 
-    <!-- end #menu -->
-    <div class="margin-top-62">
-        @yield('content')
-    </div>
+        <!-- end #content -->
+        <footer>
 
-    <!-- end #content -->
-    <footer>
-        
             <div class="footer-content padding-top-16">
 
                 <img src="{{ asset('images/logo/coupon-logo.svg') }}" alt="logo" width="150" height="150">
@@ -52,8 +54,8 @@
                 </div>
             </div>
 
-    </footer>
-    <!-- end #footer -->
-</div>
+        </footer>
+        <!-- end #footer -->
+    </div>
 </body>
 </html>

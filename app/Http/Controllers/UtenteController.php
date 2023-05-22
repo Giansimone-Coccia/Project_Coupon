@@ -74,10 +74,12 @@ class UtenteController extends Controller
         $utente = Auth::user();
 
         $requestVal = $request->validated();
-        if ($request->filled('password')) {
-            $utente->password = bcrypt($request->password);
-        }        
+                
         $utente -> update($requestVal);
+        if ($request->filled('password')) {
+            $utente->password = Hash::make($request->password);
+        }
+        $utente->save();
 
 
         return redirect('/area_personale_utente');

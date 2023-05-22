@@ -19,7 +19,7 @@
         
         @isset($promos)
         
-        <div class="container-azienda border-top-grey">
+        <div class="container-azienda border-top-grey padding-top-16">
             <div class="row-offerte">
 
 

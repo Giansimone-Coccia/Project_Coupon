@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\UtenteModel;
 use App\Models\Catalogo;
+use App\Models\User;
 use App\Models\Resources\Azienda;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\ModificaProfiloUtenteRequest;
+use App\Http\Requests\NuovoMembroStaffRequest;
 
 
 class UtenteController extends Controller
@@ -78,9 +80,11 @@ class UtenteController extends Controller
                         ->with('aziende', $aziende);
     }
 
-    public function storeMembroStaff(NuovaOffertaRequest $request) {
-
-
+    public function storeMembroStaff(NuovoMembroStaffRequest $request) {
+        $staff = new User;
+        $staff->fill($request->validated());
+        $staff->ruolo = 'staff';
+        $staff->save();
         return redirect('/');
     }
 

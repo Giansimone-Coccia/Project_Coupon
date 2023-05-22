@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class NuovaOffertaRequest extends FormRequest {
+class NuovoMembroStaffRequest extends FormRequest {
 
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +23,17 @@ class NuovaOffertaRequest extends FormRequest {
      *
      * @return array
      */
-    public function rules() {
+    public function rules()
+    {
         return [
-            
+            'nome' => 'required|string|max:255',
+            'cognome' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'genere' => 'required|in:M,F,N',
+            'dataNascita' => 'required|date',
+            'telefono' => 'nullable|string|max:255',
+            'username' => 'required|string|max:255|unique:users,username',
+            'password' => 'required|string|min:8',
         ];
     }
 

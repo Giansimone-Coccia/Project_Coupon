@@ -11,8 +11,12 @@
         <hr>
         <div class="image-mod-off">
             <label for="offertaImage"><strong>Immagine:</strong></label>
-            <input type="file" id="logoOff" name="logoOff" accept="image/*" >
+            <img id="previewImage" class="rounded-corners" src="{{ asset('images/products/' .$offerta->logoOff) }}" alt="Offerta da modificare" />
+            <input type="file" id="logoOff" name="logoOff" accept="image/*" onchange="previewFile(event)" required>
         </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{{ asset('js/changePreview.js') }}"></script>
         
         @if ($errors->first('logoOff'))
             <ul class="errors">

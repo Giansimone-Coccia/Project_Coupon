@@ -16,6 +16,13 @@ class Catalogo {
         return $azienda;
     }
     
+    public function couponCount() {
+        return Buono::count();
+    }
+    
+    public function couponCountXUsers($userId) {
+        return Buono::where('utenteRich', $userId)->count();
+    }
 
     public function getAziendaById($aziendaId){
         return Azienda::where('id',$aziendaId)->first();

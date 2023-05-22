@@ -30,13 +30,13 @@ class UtenteController extends Controller
         return view('area_personale_utente');
     }
     
-    public function getInfoAdmin($username){
+    public function getInfoAdmin(){
+        $coupon = $this->_Catalogo->couponCount();
         
-        $admin = $this->_UtenteModel->getInfoUtente($username)->first();
-
         return view('area_personale_admin')
-                        ->with('admin', $admin);
+            ->with('numCoupon', $coupon);
     }
+    
     
     public function getInfoStaff($username){
         
@@ -120,10 +120,15 @@ class UtenteController extends Controller
 
     public function allRegisteredUsers(){
         
-        $ruser = $this->_UtenteModel->getAllUserR();
+        $ruserTot = $this->_UtenteModel->getAllUserR();
+        foreach($ruserTot as $ruser){
+            $numCoupon[] = $this->_Catalogo -> couponCountXUsers($ruser->id);
+            
+        }
 
         return view('mostra_utenti_registrati')
-                        ->with('allRegisteredUsers', $ruser);
+                        ->with('allRegisteredUsers', $ruserTot)
+                        ->with('numCoupon', $numCoupon);
     }
    
 }

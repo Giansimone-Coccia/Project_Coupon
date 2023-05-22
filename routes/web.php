@@ -62,11 +62,8 @@ Route::get('/dettaglio_offerta/{promoId}', [PublicController::class, 'getPromoDe
 
 /*User*/
 
-Route::get('/user', [PublicController::class, 'start'])
-        ->name('user')->middleware('can:isUser');
-
 Route::get('/area_personale_utente', [UtenteController::class, 'getInfoUtente'])
-        ->name('area_personale_utente');
+        ->name('area_personale_utente')->middleware('can:isUser');
 
 Route::get('/area_personale_utente/lista_coupon', [UtenteController::class, 'getCouponUtente'])
         ->name('lista_coupon');
@@ -80,11 +77,6 @@ Route::get('/coupon/{codOfferta}', [PublicController::class, 'getBuono'])
 
 /*Admin*/
 
-Route::get('/admin', [PublicController::class, 'start'])
-        ->name('admin');
-
-Route::view('/area_personale_admin', 'area_personale_admin')
-        ->name('area_personale_admin');
 
 Route::get('/modifica_azienda/{codiceA}', [PublicController::class, 'viewAzienda'])
         ->name('modifica_azienda');
@@ -98,8 +90,8 @@ Route::get('/crea_azienda', [PublicController::class, 'addAzienda'])
 Route::post('/crea_azienda', [PublicController::class, 'storeAzienda'])
         ->name('crea_azienda.store');
 
-Route::get('/area_personale_admin/{username}', [UtenteController::class, 'getInfoAdmin'])
-        ->name('area_personale_admin');
+Route::get('/area_personale_admin', [UtenteController::class, 'getInfoAdmin'])
+        ->name('area_personale_admin')->middleware('can:isAdmin');;
 
 Route::get('/modifica_profilo_utente', [UtenteController::class, 'viewModProfUtente'])
         ->name('modifica_profilo_utente');
@@ -154,8 +146,5 @@ Route::get('/modifica_offerta/{offertaId}', [PublicController::class, 'viewOffer
 Route::post('/modifica_offerta/{offertaId}', [PublicController::class, 'modificaOfferta'])
         ->name('modifica_offerta.store');
 
-Route::get('/staff', [PublicController::class, 'start'])
-        ->name('staff'); 
-
 Route::view('/area_personale_staff', 'area_personale_staff')
-        ->name('area_personale_staff');
+        ->name('area_personale_staff')->middleware('can:isStaff');;

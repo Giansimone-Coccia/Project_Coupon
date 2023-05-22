@@ -2,17 +2,22 @@
     <li class="bar-item vectorlogo">
         <img src="{{ asset('images/logo/coupon-logo.svg' ) }}" alt="Logo" class="width100 height100" onclick="window.location.href = '{{ route('start') }}';">
     </li>
-    <!--
+    @can('isAdmin')
+    <li><a href="{{ route('admin') }}" class="button bar-item right" title="Home Admin">Home Admin</a></li>
+    @endcan
+    @can('isUser')
+    <li><a href="{{ route('user') }}" class="button bar-item right" title="Home User">Home User</a></li>
+    @endcan
     @auth
-        <li class="button bar-item right" onclick="window.location.href = '{{ route('area_personale_utente') }}';">Area personale</li>
-        <li class="button bar-item right" onclick="window.location.href = '{{ route('logout') }}';">Logout</li>
+    <li class="button bar-item right" onclick="window.location.href = '{{ route('area_personale_utente') }}';">Area personale</li>
+    <li><a href="" title="Esci dal sito" class="button bar-item right" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
     @endauth
     @guest
-        <li class="button bar-item right" onclick="window.location.href = '{{ route('login') }}';">Login</li>
-    @endguest
-    -->
-    <li class="button bar-item right" onclick="window.location.href = '{{ route('area_personale_utente') }}';">Area personale</li>
     <li class="button bar-item right" onclick="window.location.href = '{{ route('login') }}';">Login</li>
+    @endguest
     <li class="button bar-item right" onclick="window.location.href = '{{ route('FAQ') }}';">FAQ</li>
     <li class="button bar-item right" onclick="window.location.href = '{{ route('chi_siamo') }}';">Chi siamo</li>
 </ul>

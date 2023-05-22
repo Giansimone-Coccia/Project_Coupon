@@ -86,6 +86,7 @@ class UtenteController extends Controller
         $staff = new User;
         $staff->fill($request->validated());
         $staff->ruolo = 'staff';
+        $staff->password = bcrypt($request->password);
         $staff->save();
         return redirect('/');
     }

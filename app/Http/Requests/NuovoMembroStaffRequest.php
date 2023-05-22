@@ -33,7 +33,7 @@ class NuovoMembroStaffRequest extends FormRequest {
             'dataNascita' => 'required|date',
             'telefono' => 'nullable|string|max:255',
             'username' => 'required|string|max:255|unique:users,username',
-            'password' => 'required|string|min:8',
+            'password' => 'required|string',
         ];
     }
 

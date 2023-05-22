@@ -65,7 +65,7 @@
 
                     <div  class="input-box">
                         {{ Form::label('dataNascita', 'Data di Nascita') }}
-                        {{ Form::text('dataNascita', '', ['id' => 'dataNascita']) }}
+                        {{ Form::date('dataNascita', '', ['id' => 'dataNascita']) }}
                         @if ($errors->first('dataNascita'))
                         <ul class="errors">
                             @foreach ($errors->get('dataNascita') as $message)

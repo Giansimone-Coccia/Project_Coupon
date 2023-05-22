@@ -7,6 +7,7 @@ use App\Models\Catalogo;
 use App\Models\Resources\Azienda;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\ModificaProfiloUtenteRequest;
 
 
@@ -59,17 +60,25 @@ class UtenteController extends Controller
                 ->with('couponOfferta', $couponOfferta); 
         }
         
+        public function viewModProfUtente() {
+            
+            return view('modifica_profilo_utente');
+            
+        }    
+        
     public function modificaProfiloUtente(ModificaProfiloUtenteRequest $request) {
         // Verifica l'autenticazione o l'autorizzazione dell'utente se necessario
 
         $utente = Auth::user();
+
         $requestVal = $request->validated();
+        if ($request->filled('password')) {
+            $utente->password = bcrypt($request->password);
+        }        
+        $utente -> update($requestVal);
 
-        $utente->update($requestVal);
-        $utente->fill($requestVal);
-        $utente->save();
 
-        return redirect('/');
+        return redirect('/area_personale_utente');
     }
 
     public function addMembroStaff(){

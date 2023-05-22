@@ -4,117 +4,120 @@
 
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-<script src="../js/campoVuoto.js"></script>
-<div class="body_modProfile">
-    <div class="container-modify-profile">
-        <div class="title">Modifica dati personali e password</div>
-        <div class="content">
-            <form action="#" id="form">
-                @csrf
-                <div class="user-details">
-                    <div class="input-box">
-                        <span class="details">Password attuale</span>
-                        <input type="text" id="password" name="password" value="{{old('password')}}" placeholder="Inserisci la tua password">
-                        @if ($errors->first('password'))
-                            <ul class="errors">
-                            @foreach ($errors->get('password') as $message)
-                                <li>{{ $message }}</li>
-                            @endforeach
-                            </ul>
-                        @endif
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Nuova password</span>
-                        <input type="text" id="password" name="password" value="{{old('password')}}" placeholder="Inserisci nuova password">
-                        @if ($errors->first('password'))
-                            <ul class="errors">
-                            @foreach ($errors->get('password') as $message)
-                                <li>{{ $message }}</li>
-                            @endforeach
-                            </ul>
-                        @endif
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Nuova email</span>
-                        <input type="text" id="email" name="email" value="{{old('email')}}" placeholder="Inserisci nuova email">
-                        @if ($errors->first('email'))
-                            <ul class="errors">
-                            @foreach ($errors->get('email') as $message)
-                                <li>{{ $message }}</li>
-                            @endforeach
-                            </ul>
-                        @endif
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Nuovo numero</span>
-                        <input type="text" id="telefono" name="telefono" value="{{old('telefono')}}" placeholder="Inserisci nuovo numero">
-                        @if ($errors->first('telefono'))
-                            <ul class="errors">
-                            @foreach ($errors->get('telefono') as $message)
-                                <li>{{ $message }}</li>
-                            @endforeach
-                            </ul>
-                        @endif
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Nuova data di nascita</span>
-                        <input type="text" id="dataNascita" name="dataNascita" value="{{old('dataNascita')}}" placeholder="Inserisci nuova data">
-                        @if ($errors->first('dataNascita'))
-                            <ul class="errors">
-                            @foreach ($errors->get('dataNascita') as $message)
-                                <li>{{ $message }}</li>
-                            @endforeach
-                            </ul>
-                        @endif
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Password attuale</span>
-                        <input type="text" placeholder="Inserisci la tua password">
-                        @if ($errors->first('telefono'))
-                            <ul class="errors">
-                            @foreach ($errors->get('telefono') as $message)
-                                <li>{{ $message }}</li>
-                            @endforeach
-                            </ul>
-                        @endif
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Conferma nuova password</span>
-                        <input type="text" placeholder="Conferma password">
-                        @if ($errors->first('telefono'))
-                            <ul class="errors">
-                            @foreach ($errors->get('telefono') as $message)
-                                <li>{{ $message }}</li>
-                            @endforeach
-                            </ul>
-                        @endif
-                    </div>
-                </div>
-                <div class="gender-details">
-                    <input type="radio" name="gender" id="dot-1">
-                    <input type="radio" name="gender" id="dot-2">
-                    <input type="radio" name="gender" id="dot-3">
-                    <span class="gender-title">Genere</span>
-                    <div class="category">
-                        <label for="dot-1">
-                            <span class="dot one"></span>
-                            <span class="gender">Maschio</span>
-                        </label>
-                        <label for="dot-2">
-                            <span class="dot two"></span>
-                            <span class="gender">Femmina</span>
-                        </label>
-                        <label for="dot-3">
-                            <span class="dot three"></span>
-                            <span class="gender">Preferisco non specificare</span>
-                        </label>
-                    </div>
-                    <div class="button">
-                    <input type="submit" value="Modifica">
-                    </div>
-                </div>
-            </form>
-        </div>
+
+
+    <div class="creazioneOfferta">
+      <form class="productForm" id="modProfUtente" name="modProfUtente" enctype="multipart/form-data" method="post" action="{{route('modifica_profilo_utente.store', ['id'=>{{Auth::user()->id}}])}}">
+        @csrf
+        <h1>Modifica dati personali e password</h1>
+        <hr>
+
+        <label for="productName">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{old('nome')}}" >
+        
+        @if ($errors->first('nome'))
+            <ul class="errors">
+            @foreach ($errors->get('nome') as $message)
+                <li>{{ $message }}</li>
+            @endforeach
+            </ul>
+        @endif
+
+        <label for="productName">Cognome:</label>
+        <input type="text" id="cognome" name="cognome" value="{{old('cognome')}}" >
+        
+        @if ($errors->first('cognome'))
+            <ul class="errors">
+            @foreach ($errors->get('cognome') as $message)
+                <li>{{ $message }}</li>
+            @endforeach
+            </ul>
+        @endif
+        
+        <label for="productName">Username:</label>
+        <input type="text" id="username" name="username" value="{{old('username')}}" >
+        
+        @if ($errors->first('username'))
+            <ul class="errors">
+            @foreach ($errors->get('username') as $message)
+                <li>{{ $message }}</li>
+            @endforeach
+            </ul>
+        @endif
+
+        {{ Form::label('password', 'Password:') }}
+        {{ Form::password('password', ['id' => 'password', 'value' => old('password')]) }}
+
+        @if ($errors->first('password'))
+            <ul class="errors">
+            @foreach ($errors->get('password') as $message)
+                <li>{{ $message }}</li>
+            @endforeach
+            </ul>
+        @endif
+
+        {{ Form::label('password_confirmation', 'Conferma Password:') }}
+        {{ Form::password('password_confirmation', ['id' => 'password_confirmation', 'value' => old('password_confirmation')]) }}
+
+        @if ($errors->first('password_confirmation'))
+            <ul class="errors">
+            @foreach ($errors->get('password_confirmation') as $message)
+                <li>{{ $message }}</li>
+            @endforeach
+            </ul>
+        @endif
+
+        <label for="productName">Email:</label>
+        <input type="text" id="email" name="email" value="{{old('email')}}" >
+        
+        @if ($errors->first('email'))
+            <ul class="errors">
+            @foreach ($errors->get('email') as $message)
+                <li>{{ $message }}</li>
+            @endforeach
+            </ul>
+        @endif
+
+        <label for="productName">Numero di telefono:</label>
+        <input type="text" id="nTelefono" name="nTelefono" value="{{old('nTelefono')}}" >
+        
+        @if ($errors->first('nTelefono'))
+            <ul class="errors">
+            @foreach ($errors->get('nTelefono') as $message)
+                <li>{{ $message }}</li>
+            @endforeach
+            </ul>
+        @endif
+
+        <label for="productName">Data di nascita:</label>
+        <input type="date" id="dNascita" name="dNascita" value="{{old('dNascita')}}" >
+        
+        @if ($errors->first('dNascita'))
+            <ul class="errors">
+            @foreach ($errors->get('dNascita') as $message)
+                <li>{{ $message }}</li>
+            @endforeach
+            </ul>
+        @endif
+
+        <label for="genere">Genere:</label>
+        <select id="genere" name="genere">
+            <option value="maschio" {{ old('genere') === 'maschio' ? 'selected' : '' }}>Maschio</option>
+            <option value="femmina" {{ old('genere') === 'femmina' ? 'selected' : '' }}>Femmina</option>
+            <option value="altro" {{ old('genere') === 'altro' ? 'selected' : '' }}>Altro</option>
+        </select>
+        
+        @if ($errors->has('genere'))
+            <ul class="errors">
+            @foreach ($errors->get('genere') as $message)
+                <li>{{ $message }}</li>
+            @endforeach
+            </ul>
+        @endif
+
+        <input type="submit" id="confirmationButton" value="Modifica">
+      </form>
+
     </div>
-</div>
+
 @endsection

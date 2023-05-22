@@ -34,7 +34,7 @@
             </ul>
         @endif
         
-        <label for="productMode">localizzazione:</label>
+        <label for="productMode">Localizzazione:</label>
         <input type="text" id="localizzazione" name="localizzazione" value="{{$azienda->localizzazione}}" >
         
         @if ($errors->first('localizzazione'))

@@ -9,64 +9,71 @@ use Illuminate\Database\Eloquent\Model;
 
 class UtenteModel 
 {
-    public function getInfoUtente($username){
-        return User::where('username', $username)->get();
+    /*Probabilmente da eliminare*/
+    public function getInfoUtente($id){
+        return User::where('id', $id)->get();
     }
     
-    public function setNewDatiUser($username, $password = "", $nome = "", $cognome = "", $genere = "", $dataNascita = "1900-01-01", $email="", $telefono="", $ruolo=""){
-            
+    /*Probabilmente da eliminare*/
+    public function setNewDatiUser($id, $username="", $password = "", $nome = "", $cognome = "", $genere = "", $dataNascita = "1900-01-01", $email="", $telefono="", $ruolo=""){
+        
+        if ($username!=""){ 
+            User::where('id', $id)->update([
+                'username' => $username
+            ]);
+        }
+        
         if ($password!=""){ 
-            User::where('username', $username)->update([
+            User::where('id', $id)->update([
                 'password' => $password
             ]);
         }
         
         if ($nome!=""){ 
-            User::where('username', $username)->update([
+            User::where('id', $id)->update([
                 'nome' => $nome
             ]);
         }
         
         if ($cognome!=""){ 
-            User::where('username', $username)->update([
+            User::where('id', $id)->update([
                 'cognome' => $cognome
             ]);
         }
         
         if ($genere!=""){ 
-            User::where('username', $username)->update([
+            User::where('id', $id)->update([
                 'genere' => $genere
             ]);
         }
         
-        if ($dataNascita!=""){ 
-            User::where('username', $username)->update([
+        if ($dataNascita!="1900-01-01"){ 
+            User::where('id', $id)->update([
                 'dataNascita' => $dataNascita
             ]);
         }
-      
+        
         if ($email!=""){ 
-            User::where('username', $username)->update([
+            User::where('id', $id)->update([
                 'email' => $email
             ]);
         }
         
-        
         if ($telefono!=""){ 
-            User::where('username', $username)->update([
+            User::where('id', $id)->update([
                 'telefono' => $telefono
             ]);
         }
         
         if ($ruolo!=""){ 
-            User::where('username', $username)->update([
+            User::where('id', $id)->update([
                 'ruolo' => $ruolo
             ]);
         }
     }
     
-    public function getCouponUser($usernameUser) {
-        return Buono::where('userRich', $usernameUser)->get();
+    public function getCouponUser() {
+        return Buono::where('userRich', Auth::user()->id)->get();
     }
 
     public function getAllStaff() {

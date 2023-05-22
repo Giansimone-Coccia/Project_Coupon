@@ -12,6 +12,23 @@
         <h1>Modifica azienda</h1>
         <hr>
 
+        <div class="image-mod-off">
+        <label for="productImage">Immagine:</label>
+        <img id="previewImage" class="rounded-corners" src="{{ asset('images/companies/' .$azienda->image) }}" alt="Azienda da modificare" />
+        <input type="file" id="image" name="image" accept="image/*" onchange="previewFile(event)" required>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{{ asset('js/changePreview.js') }}"></script>
+        
+        @if ($errors->first('image'))
+            <ul class="errors">
+            @foreach ($errors->get('image') as $message)
+                <li>{{ $message }}</li>
+            @endforeach
+            </ul>
+        @endif
+
         <label for="productName">Nome azienda:</label>
         <input type="text" id="nome" name="nome" value="{{$azienda->nome}}" >
         
@@ -63,17 +80,6 @@
         @if ($errors->first('tipologia'))
             <ul class="errors">
             @foreach ($errors->get('tipologia') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
-
-        <label for="productImage">Immagine:</label>
-        <input type="file" id="image" name="image" accept="image/*" >
-        
-        @if ($errors->first('image'))
-            <ul class="errors">
-            @foreach ($errors->get('image') as $message)
                 <li>{{ $message }}</li>
             @endforeach
             </ul>

@@ -62,8 +62,8 @@ Route::get('/dettaglio_offerta/{promoId}', [PublicController::class, 'getPromoDe
 
 /*User*/
 
-Route::get('/user', [PubliController::class, 'start'])
-        ->name('user');
+Route::get('/user', [PublicController::class, 'start'])
+        ->name('user')->middleware('can:isUser');
 
 Route::get('/area_personale_utente/{username}', [UtenteController::class, 'getInfoUtente'])
         ->name('area_personale_utente');  

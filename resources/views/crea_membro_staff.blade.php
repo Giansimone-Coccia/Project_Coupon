@@ -46,9 +46,9 @@
             </ul>
         @endif
 
-        <label for="productName">Password:</label>
-        <input type="password" id="password" name="password" value="{{old('password')}}" >
-        
+        {{ Form::label('password', 'Password:') }}
+        {{ Form::password('password', ['id' => 'password', 'value' => old('password')]) }}
+
         @if ($errors->first('password'))
             <ul class="errors">
             @foreach ($errors->get('password') as $message)
@@ -57,9 +57,9 @@
             </ul>
         @endif
 
-        <label for="productName">Conferma Password:</label>
-        <input type="password" id="password_confirmation" name="password_confirmation" value="{{old('password_confirmation')}}" >
-        
+        {{ Form::label('password_confirmation', 'Conferma Password:') }}
+        {{ Form::password('password_confirmation', ['id' => 'password_confirmation', 'value' => old('password_confirmation')]) }}
+
         @if ($errors->first('password_confirmation'))
             <ul class="errors">
             @foreach ($errors->get('password_confirmation') as $message)

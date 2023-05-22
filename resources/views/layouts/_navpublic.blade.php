@@ -11,7 +11,7 @@
         <li class="button bar-item right" onclick="window.location.href = '{{ route('login') }}';">Login</li>
     @endguest
     -->
-    <li class="button bar-item right" onclick="window.location.href = '{{ route('area_personale_utente', ['UC0001']) }}';">Area personale</li>
+    <li class="button bar-item right" onclick="window.location.href = '{{ route('area_personale_utente') }}';">Area personale</li>
     <li class="button bar-item right" onclick="window.location.href = '{{ route('login') }}';">Login</li>
     <li class="button bar-item right" onclick="window.location.href = '{{ route('FAQ') }}';">FAQ</li>
     <li class="button bar-item right" onclick="window.location.href = '{{ route('chi_siamo') }}';">Chi siamo</li>

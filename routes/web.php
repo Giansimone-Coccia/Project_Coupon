@@ -65,10 +65,10 @@ Route::get('/dettaglio_offerta/{promoId}', [PublicController::class, 'getPromoDe
 Route::get('/user', [PublicController::class, 'start'])
         ->name('user')->middleware('can:isUser');
 
-Route::get('/area_personale_utente/{username}', [UtenteController::class, 'getInfoUtente'])
-        ->name('area_personale_utente');  
+Route::get('/area_personale_utente', [UtenteController::class, 'getInfoUtente'])
+        ->name('area_personale_utente');
 
-Route::get('/area_personale_utente/{username}/lista_coupon/{usernameUtente}', [UtenteController::class, 'getCouponUtente'])
+Route::get('/area_personale_utente/lista_coupon', [UtenteController::class, 'getCouponUtente'])
         ->name('lista_coupon');
 
 Route::get('/coupon/{codOfferta}', [PublicController::class, 'getBuono'])
@@ -86,9 +86,6 @@ Route::get('/admin', [PublicController::class, 'start'])
 Route::view('/area_personale_admin', 'area_personale_admin')
         ->name('area_personale_admin');
 
-Route::post('/modifica_profilo_utente/{username}', [UtenteController::class, 'modificaProfiloUtente'])
-        ->name('modifica_profilo_utente.store');
-
 Route::get('/modifica_azienda/{codiceA}', [PublicController::class, 'viewAzienda'])
         ->name('modifica_azienda');
 
@@ -104,8 +101,11 @@ Route::post('/crea_azienda', [PublicController::class, 'storeAzienda'])
 Route::get('/area_personale_admin/{username}', [UtenteController::class, 'getInfoAdmin'])
         ->name('area_personale_admin');
 
-Route::view('/modifica_profilo_utente', 'modifica_profilo_utente')
+Route::get('/modifica_profilo_utente', [UtenteController::class, 'modificaProfiloUtente'])
         ->name('modifica_profilo_utente');
+
+Route::post('/modifica_profilo_utente', [UtenteController::class, 'modificaProfiloUtente'])
+        ->name('modifica_profilo_utente.store');
 
 Route::get('/mostra_aziende_area_personale', [PublicController::class, 'allAziendeAdmin'])
         ->name('mostra_aziende_area_personale');/*con gli helper usiamo questa pagina sia per admin che staff*/
@@ -132,7 +132,10 @@ Route::post('/crea_membro_staff', [UtenteController::class, 'storeMembroStaff'])
         ->name('crea_membro_staff.store');
 
 Route::get('/mostra_membri_staff', [UtenteController::class, 'allStaffAdmin'])
-        ->name('mostra_membri_staff');//da sistemare con l'autenticazione
+        ->name('mostra_membri_staff');
+
+Route::get('/mostra_utenti_registrati', [UtenteController::class, 'allRegisteredUsers'])
+        ->name('mostra_utenti_registrati');
 
 
 

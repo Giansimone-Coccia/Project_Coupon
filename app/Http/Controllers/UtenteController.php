@@ -19,12 +19,11 @@ class UtenteController extends Controller
         $this->_Catalogo = new Catalogo;
     }
     
-    public function getInfoUtente($username){
+    public function getInfoUtente(){
         
-        $utenti = $this->_UtenteModel->getInfoUtente($username)->first();
+        //$utenti = $this->_UtenteModel->getInfoUtente(Auth::user()->id)->first();
 
-        return view('area_personale_utente')
-                        ->with('utenti', $utenti);
+        return view('area_personale_utente');
     }
     
     public function getInfoAdmin($username){
@@ -44,9 +43,9 @@ class UtenteController extends Controller
     }
     
     
-    public function getCouponUtente($usernameUtente){
+    public function getCouponUtente(){
         
-        $couponUtente = $this->_UtenteModel->getCouponUtente($usernameUtente);
+        $couponUtente = $this->_UtenteModel->getCouponUser();
         
         foreach ($couponUtente as $coupon) {
             $couponOfferta = $this->_Catalogo->getOffertaById($coupon->offPromo);  //con questo si lega ad ogni coupon la corrispettiva offerta
@@ -58,9 +57,14 @@ class UtenteController extends Controller
                 ->with('couponOfferta', $couponOfferta); 
         }
         
-    public function modificaProfiloUtente($username, ModificaProfiloUtenteRequest $request) {
-        $utente = $this->_UtenteModel->getInfoUtente($username);
-        $utente->fill($request->validated());
+    public function modificaProfiloUtente(ModificaProfiloUtenteRequest $request) {
+        // Verifica l'autenticazione o l'autorizzazione dell'utente se necessario
+
+        $utente = Auth::user();
+        $requestVal = $request->validated();
+
+        $utente->update($requestVal);
+        $utente->fill($requestVal);
         $utente->save();
 
         return redirect('/');
@@ -86,6 +90,22 @@ class UtenteController extends Controller
 
         return view('mostra_membri_staff')
                         ->with('allStaffAdmin', $staff);
+    }
+    
+    public function modificaProfUtente(){
+        
+        $utente = $this->_UtenteModel->getAllStaff;
+
+        return view('mostra_membri_staff')
+                        ->with('allStaffAdmin', $staff);
+    }
+
+    public function allRegisteredUsers(){
+        
+        $ruser = $this->_UtenteModel->getAllUserR();
+
+        return view('mostra_utenti_registrati')
+                        ->with('allRegisteredUsers', $ruser);
     }
    
 }

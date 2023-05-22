@@ -156,6 +156,13 @@ h6{
 .open-faq{
     cursor: pointer;
 }
+.marging-16-top-bot{
+        margin: 16px 0px 16px 0px
+}
+
+.margin-bottom-16{
+    margin-bottom: 16px
+}
 
 .margin-top-10{
     margin-top: 10px
@@ -310,14 +317,15 @@ button{
 }
 
 .search-lens:hover{
-    background-color: transparent!important;   
+    background-color: transparent!important;
 }
 
 .search-lens{
-    background-color: transparent;   
+    background-color: transparent;
 }
 .button:hover{
-    color:#212A3E;!important
+    color:#212A3E;
+    !important
     background-color:#F1F6F9
 }
 .black,.hover-black:hover{
@@ -1155,16 +1163,16 @@ form .button input:hover{
     background-color: #4f5f80
 }
 .user-details {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center; /* Aggiungi questa riga per centrare verticalmente gli elementi */
-  margin: 20px 0 12px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; /* Aggiungi questa riga per centrare verticalmente gli elementi */
+    margin: 20px 0 12px 0;
 }
 
 .user-details .button {
-  width: 100%;
-  text-align: right; /* Allinea il contenuto a destra */
+    width: 100%;
+    text-align: right; /* Allinea il contenuto a destra */
 }
 @media(max-width: 584px){
     .container-register{
@@ -1394,7 +1402,7 @@ select {
     color: #394867;
 }
 
- .pulsanti_staff{
+.pulsanti_staff{
     width: 150px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -1424,126 +1432,126 @@ select {
 }
 
 
-    .creazioneOfferta input[type="submit"]:hover {
-      background-color: #F1F6F9;
-      color: #394867;
-    }
-    
+.creazioneOfferta input[type="submit"]:hover {
+    background-color: #F1F6F9;
+    color: #394867;
+}
+
 .modificaOfferta {
-  font-family: Arial, sans-serif;
-  color: #333;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 .modOffertaForm h1 {
-  color: #394867;
-  text-align: center;
+    color: #394867;
+    text-align: center;
 }
 
 .modOffertaForm hr {
-  border-width: 3px;
-  border-color: #394867;
+    border-width: 3px;
+    border-color: #394867;
 }
 
 .modOffertaForm {
-  max-width: 800px;
-  margin: 100px auto;
-  padding: 30px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-  overflow: auto; /* Aggiunge lo scroll se il contenuto è più grande del form */
-  margin-bottom: 20px;
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    overflow: auto; /* Aggiunge lo scroll se il contenuto è più grande del form */
+    margin-bottom: 20px;
 }
 
 .modOffertaForm .button {
-  background-color: #394867;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 19px;
-  float: right; /* Sposta il pulsante a destra */
-  margin-left: 15px;
+    background-color: #394867;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 19px;
+    float: right; /* Sposta il pulsante a destra */
+    margin-left: 15px;
 }
 
 .modOffertaForm .button:hover {
-  background-color: #F1F6F9;
-  color: #394867;
+    background-color: #F1F6F9;
+    color: #394867;
 }
 
 .modificaOfferta label {
-  display: block;
-  margin-top: 10px;
+    display: block;
+    margin-top: 10px;
 }
 
 .modificaOfferta input[type="text"],
 select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 16px;
-  margin-top: 5px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-top: 5px;
 }
 
 .modificaOfferta textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 16px;
-  margin-top: 5px;
-  resize: vertical; /* Consenti il ridimensionamento verticale */
-  min-height: 100px; /* Altezza minima per evitare di sforare il bordo */
-  overflow-y: auto; /* Aggiungi scroll interno quando necessario */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-top: 5px;
+    resize: vertical; /* Consenti il ridimensionamento verticale */
+    min-height: 100px; /* Altezza minima per evitare di sforare il bordo */
+    overflow-y: auto; /* Aggiungi scroll interno quando necessario */
 }
 
 .modificaOfferta input[type="file"] {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
 .modificaOfferta input[type="submit"] {
-  background-color: #394867;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 20px;
-  float: right; /* Sposta il pulsante a destra */
+    background-color: #394867;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    float: right; /* Sposta il pulsante a destra */
 }
 
 .modificaOfferta input[type="submit"]:hover {
-  background-color: #F1F6F9;
-  color: #394867;
+    background-color: #F1F6F9;
+    color: #394867;
 }
 
 .image-mod-off {
-  text-align: center;
+    text-align: center;
 }
 
 .image-mod-off img {
-  width: 80%;
-  height: auto;
-  border: 2px solid #9BA4B5;
-  padding: 10px;
+    width: 80%;
+    height: auto;
+    border: 2px solid #9BA4B5;
+    padding: 10px;
 }
 
 .image-mod-off label {
-  display: block;
-  margin-top: 10px;
-  text-align: left;
+    display: block;
+    margin-top: 10px;
+    text-align: left;
 }
 
 .image-mod-off input[type="file"] {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
 .refAggiungi{

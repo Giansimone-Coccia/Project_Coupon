@@ -49,6 +49,9 @@
     height:auto
 }
 
+.anchor{
+}
+
 h1,h2,h3,h4,h5,h6{
     font-family:"Segoe UI",Arial,sans-serif;
     font-weight:400;
@@ -667,6 +670,7 @@ footerF{
     padding-top: 40px;
     color: #fff;
 }
+
 .footer-content{
     margin-top: 62px;
     background: #394867;
@@ -1600,3 +1604,18 @@ select {
 .refAggiungi{
     font-size: 20px;
 }
+
+.scaduto-banner{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+
+

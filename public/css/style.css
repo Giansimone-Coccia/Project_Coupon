@@ -568,8 +568,6 @@ button{
     flex: 2;
     margin-top: 110px;
     margin-right: 50px;
-
-
 }
 
 .info h2 {
@@ -603,6 +601,47 @@ button{
     color: #C0C0C0;
     letter-spacing: 0.2px;
 
+}
+
+.info button#reedem{
+
+    border-radius: 12px;
+    margin-top: 30px;
+    width: 100%;
+    border: none;
+    padding: 18px;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #394867;
+    color: #FFFFFF;
+    letter-spacing: 0.2px;
+    transition: all 0.3s ease;
+}
+
+.container_dettaglio_offerta button#reedem:hover{
+    transform: scale(0.98);
+    background-color: #51668e;
+}
+
+.info button#unredeemable{
+
+    border-radius: 12px;
+    margin-top: 30px;
+    width: 100%;
+    border: none;
+    padding: 18px;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #FAA0A0;
+    color: #000000;
+    letter-spacing: 0.2px;
+    transition: all 0.3s ease;
+}
+
+.info button#unredeemable:hover{
+    cursor: not-allowed;
 }
 
 /*footer.css*/

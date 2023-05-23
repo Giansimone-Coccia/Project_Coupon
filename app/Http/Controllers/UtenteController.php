@@ -130,5 +130,23 @@ class UtenteController extends Controller
                         ->with('allRegisteredUsers', $ruserTot)
                         ->with('numCoupon', $numCoupon);
     }
+    
+    public function viewMembroStaff($staffId) {
+        $membro = $this->_UtenteModel->getInfoUtente($staffId);
+        return view('modifica_membro_staff')
+                        ->with('membro', $membro);
+    }
+    
+    public function modificaMembroStaff($staffId, ModificaOffertaRequest $request) {
+        $membro = $this->_UtenteModel->getInfoUtente($staffId);
+        
+        $requestVal = $request->validated();
+        $membro ->update($requestVal);
+        $membro->save();
+        
+        return redirect('/');
+        //senza la definizione di primary key non va la modifica
+        
+    }
    
 }

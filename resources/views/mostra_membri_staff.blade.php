@@ -15,7 +15,7 @@
             <h3><span>Nome:</span>{{$staff->nome}}</h3>
             <h3><span>Cognome:</span>{{$staff->cognome}}</h3>
             <ul>
-                <button class="pulsanti_staff"> Modifica </button>
+                <button class="pulsanti_staff" onclick="window.location.href = '{{ route('modifica_membro_staff', ['staffId' => $staff->id]) }}'; event.stopPropagation();"> Modifica </button>
                 <button class="pulsanti_staff"> Elimina </button>
             </ul>
         </div>

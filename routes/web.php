@@ -99,6 +99,12 @@ Route::get('/modifica_profilo_utente', [UtenteController::class, 'viewModProfUte
 Route::post('/modifica_profilo_utente', [UtenteController::class, 'modificaProfiloUtente'])
         ->name('modifica_profilo_utente.store');
 
+Route::get('/modifica_membro_staff/{staffId}', [UtenteController::class, 'viewMembroStaff'])
+        ->name('modifica_membro_staff');
+
+Route::post('/modifica_membro_staff/{staffId}', [UtenteController::class, 'modificaMembroStaff'])
+        ->name('modifica_membro_staff.store');
+
 Route::get('/mostra_aziende_area_personale', [PublicController::class, 'allAziendeAdmin'])
         ->name('mostra_aziende_area_personale');/*con gli helper usiamo questa pagina sia per admin che staff*/
 

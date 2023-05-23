@@ -49,6 +49,9 @@
     height:auto
 }
 
+.anchor{
+}
+
 h1,h2,h3,h4,h5,h6{
     font-family:"Segoe UI",Arial,sans-serif;
     font-weight:400;
@@ -568,8 +571,6 @@ button{
     flex: 2;
     margin-top: 110px;
     margin-right: 50px;
-
-
 }
 
 .info h2 {
@@ -597,12 +598,51 @@ button{
     border: none;
     padding: 18px;
     font-family: 'Rubik', sans-serif;
-    cursor: pointer;
     text-transform: uppercase;
     background: #e8e9ec;
     color: #C0C0C0;
     letter-spacing: 0.2px;
+}
 
+.info button#reedem{
+
+    border-radius: 12px;
+    margin-top: 30px;
+    width: 100%;
+    border: none;
+    padding: 18px;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #394867;
+    color: #FFFFFF;
+    letter-spacing: 0.2px;
+    transition: all 0.3s ease;
+}
+
+.container_dettaglio_offerta button#reedem:hover{
+    transform: scale(0.98);
+    background-color: #51668e;
+}
+
+.info button#unredeemable{
+
+    border-radius: 12px;
+    margin-top: 30px;
+    width: 100%;
+    border: none;
+    padding: 18px;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #FAA0A0;
+    color: #000000;
+    letter-spacing: 0.2px;
+    transition: all 0.3s ease;
+}
+
+.info button#unredeemable:hover{
+    cursor: not-allowed;
 }
 
 /*footer.css*/
@@ -628,6 +668,7 @@ footerF{
     padding-top: 40px;
     color: #fff;
 }
+
 .footer-content{
     margin-top: 62px;
     background: #394867;
@@ -892,7 +933,6 @@ footerF{
 .rounded-corners{
 
     border-radius: 10px; /* Imposta il valore appropriato per arrotondare completamente l'immagine */
-
 }
 
 
@@ -912,6 +952,10 @@ footerF{
     text-align: left;
 }
 
+.couponlist img{
+    padding-left: 4%;
+}
+
 .coupon {
     display: flex;
     align-items: center;
@@ -922,6 +966,7 @@ footerF{
     max-width: 900px;
     transition: .4s ease;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
 }
 
 .coupon:hover{
@@ -1592,3 +1637,17 @@ select {
         display: flex;
         justify-content: center;
     }
+.scaduto-banner{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+
+

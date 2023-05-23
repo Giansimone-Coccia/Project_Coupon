@@ -66,10 +66,23 @@ class PublicController extends Controller {
                         ->with('allOfferteAzienda', $offerte);
     }
 
-    public function getPromoDetails($promoId) {
-        $promoDetails = $this->_catalogModel->getPromo($promoId);
+    public function getBuono($offertaId){
+        $offertaDetails=$this->_catalogModel->getOffertaById($offertaId);
+        $codiceBuono = $this->_catalogModel->generaCodBuono();
+        $dataScad = $this->_catalogModel->generaDataScadenzaBuono();
+        //$buonoDetails= $this->_catalogModel->createCoupon($codiceBuono, 'UC0002', $dataScad, $offertaDetails->codOfferta);
+        $buono = $this->_catalogModel->getBuonoOfferta($offertaId);
+        return view('coupon')
+                        ->with('buono', $buono)
+                        ->with('offerta', $offertaDetails);
+    }
+    
+    public function getPromoDetails($promoId){
+        $promoDetails= $this->_catalogModel->getPromo($promoId);
+        $buono=$this->_catalogModel->getBuonoOfferta($promoId);
         return view('dettaglio_offerta')
-                        ->with('dettaglio_offerta', $promoDetails);
+                        ->with('dettaglio_offerta', $promoDetails)
+                        ->with('buono', $buono);
     }
 
     public function getOffertaById($promoId) {
@@ -78,21 +91,10 @@ class PublicController extends Controller {
                         ->with('dettaglio_offerta', $promoDetails);
     }
 
-    public function getBuono($offertaId) {
-        $offertaDetails = $this->_catalogModel->getOffertaById($offertaId);
-        $codiceBuono = $this->_catalogModel->generaCodBuono();
-        $dataScad = $this->_catalogModel->generaDataScadenzaBuono();
-        //$buonoDetails= $this->_catalogModel->createCoupon($codiceBuono, 'UC0002', $dataScad, $offertaDetails->codOfferta);
-        $buono = $this->_catalogModel->getBuono('1');
-        return view('coupon')
-                        ->with('buono', $buono)
-                        ->with('offerta', $offertaDetails);
-    }
-
-    public function addOfferta() {
-
-        $aziende = $this->_catalogModel->getAllAziende();
-
+    
+    public function addOfferta(){
+        
+        $aziende = $this->_catalogModel-> getAllAziende();
         return view('crea_offerta')
                         ->with('aziende', $aziende);
     }

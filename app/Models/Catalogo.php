@@ -17,6 +17,14 @@ class Catalogo {
         $azienda = Azienda::paginate($paged);
         return $azienda;
     }
+    
+    public function couponCount() {
+        return Buono::count();
+    }
+    
+    public function couponCountXUsers($userId) {
+        return Buono::where('utenteRich', $userId)->count();
+    }
 
     public function getAziendaById($aziendaId) {
         return Azienda::where('id', $aziendaId)->first();
@@ -84,6 +92,12 @@ class Catalogo {
         return Buono::where('codCoupon', $buonoId)->get()->first();
     }
 
+    public function getBuonoOfferta($offertaId){
+        return Buono::where('offPromo', $offertaId)->get()->first();
+
+    }
+
+    
     public function createCoupon($codCoupon, $utenteRich, $dataScad, $offPromo) {
         Buono::create([
             'codCoupon' => $codCoupon,

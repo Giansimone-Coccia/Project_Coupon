@@ -12,11 +12,11 @@
     @can('isUser')
     <li class="button bar-item right" onclick="window.location.href = '{{ route('area_personale_utente') }}';">Area Utente</li>
     @endcan
-    @can('isAdmin')
-    <li class="button bar-item right" onclick="window.location.href = '{{ route('area_personale_staff') }}';">Area Admin</li>
-    @endcan
     @can('isStaff')
-    <li class="button bar-item right" onclick="window.location.href = '{{ route('area_personale_admin') }}';">Area Staff</li>
+    <li class="button bar-item right" onclick="window.location.href = '{{ route('area_personale_staff') }}';">Area Staff</li>
+    @endcan
+    @can('isAdmin')
+    <li class="button bar-item right" onclick="window.location.href = '{{ route('area_personale_admin') }}';">Area Admin</li>
     @endcan
    
     @guest

@@ -36,6 +36,7 @@
                     <div class="single-offerta " onclick="window.location.href = '{{ route('dettaglio_offerta', [$azienda->id, $promo->id]) }}';">
                         <div class="inline-block">
                             <div class="centerimagesoffers">
+                                @include('helpers/productDate', ['dataScadenza' => $promo->tempoFruiz])
                                 <img class = "rounded-corners width100" src="{{ asset('images/products/' . $promo->logoOff) }}" alt="Offerta azienda"/>
                             </div>
                             <h3>{{$promo->nomeOff}}</h3>

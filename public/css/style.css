@@ -892,7 +892,6 @@ footerF{
 .rounded-corners{
 
     border-radius: 10px; /* Imposta il valore appropriato per arrotondare completamente l'immagine */
-
 }
 
 
@@ -912,6 +911,10 @@ footerF{
     text-align: left;
 }
 
+.couponlist img{
+    padding-left: 4%;
+}
+
 .coupon {
     display: flex;
     align-items: center;
@@ -922,6 +925,7 @@ footerF{
     max-width: 900px;
     transition: .4s ease;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
 }
 
 .coupon:hover{

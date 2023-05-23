@@ -598,12 +598,10 @@ button{
     border: none;
     padding: 18px;
     font-family: 'Rubik', sans-serif;
-    cursor: pointer;
     text-transform: uppercase;
     background: #e8e9ec;
     color: #C0C0C0;
     letter-spacing: 0.2px;
-
 }
 
 .info button#reedem{

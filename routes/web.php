@@ -113,6 +113,12 @@ Route::get('/mostra_aziende_area_personale', [PublicController::class, 'allAzien
 Route::get('/mostra_promo_da_modificare/{aziendaId}', [PublicController::class, 'getOfferteAdmin'])
         ->name('mostra_promo_da_modificare');
 
+Route::post('/elimina_azienda/{aziendaId}', [PublicController::class, 'eliminaAzienda'])
+        ->name('elimina_azienda.store');
+
+Route::post('/elimina_membri_staff/{staffId}', [UtenteController::class, 'eliminaStaff'])
+        ->name('elimina_membri_staff.store');
+
 Route::get('/crea_faq', [DomandeController::class, 'addFaq'])
         ->name('crea_faq');
 
@@ -153,6 +159,9 @@ Route::get('/modifica_offerta/{offertaId}', [PublicController::class, 'viewOffer
 
 Route::post('/modifica_offerta/{offertaId}', [PublicController::class, 'modificaOfferta'])
         ->name('modifica_offerta.store');
+
+Route::post('/elimina_offerta/{offertaId}', [PublicController::class, 'eliminaOfferta'])
+        ->name('elimina_offerta.store');
 
 Route::get('/staff', [PublicController::class, 'start'])
         ->name('staff'); 

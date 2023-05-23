@@ -4,11 +4,18 @@
 
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ asset('js/pop-up.js') }}"></script>
 
-<div class="main content padding" style="max-width: 1300px; margin-top: 150px;">
+
+
+<div class="overlay" id="overlay"></div>
+
+<div id = "listaOfferte" class="main content padding" style="max-width: 1300px; margin-top: 150px;">
+
     <div class="couponlist" align="center">
         <h1 style="font-weight: 300">Lista delle offerte dell'azienda {{$azienda->nome}}:</h1>
-        
+
         @isset($allOfferteAzienda)
         @foreach($allOfferteAzienda as $offerta)
         <div class="coupon" onclick="window.location.href = '{{ route('dettaglio_offerta', [$azienda->id,$offerta->id]) }}';" >
@@ -16,12 +23,27 @@
             <h3><span>Nome azienda:</span>{{$offerta->nomeOff}}</h3>
             <ul>
                 <button class="pulsanti_staff" onclick="window.location.href = '{{ route('modifica_offerta', [$offerta->id]) }}'; event.stopPropagation();" > Modifica </button>
-                <button class="pulsanti_staff"> Elimina </button>
+                <button id="deleteBtn" class="pulsanti_staff" onclick=" event.stopPropagation();"> Elimina </button>
             </ul>
+        </div>
+        
+        <div class="popup center" id="confirmPopup">
+            <h3>Sei sicuro di voler eliminare questo coupon?<h3>
+                    <div class="button-box">
+                        <div>
+                            <form method="post" action="{{route('elimina_offerta.store', ['offertaId' => $offerta->id])}}">
+                                @csrf
+                                <button  type="submit" class="pulsanti_staff" id="yesBtn">Sì</button>
+                            </form>
+                        </div>
+                        <div class="margin-left-10">
+                            <button type="" class="pulsanti_staff" id="noBtn">No</button>
+                        </div>
+                    </div>
         </div>
         @endforeach
         @endisset
-       
+
     </div>
 </div>
 @endsection

@@ -125,5 +125,15 @@ class UtenteController extends Controller
         return view('mostra_utenti_registrati')
                         ->with('allRegisteredUsers', $ruser);
     }
+    
+    public function eliminaStaff($staffId) {
+        
+        $staff = $this->_UtenteModel->getInfoUtente($staffId)->first();
+
+        $staff->delete();
+
+        return route('mostra_membri_staff');
+        //senza la definizione di primary key non va la modifica
+    }
    
 }

@@ -17,25 +17,25 @@
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="{{ asset('js/changePreview.js') }}"></script>
-        
+
         @if ($errors->first('logoOff'))
-            <ul class="errors">
+        <ul class="errors">
             @foreach ($errors->get('logoOff') as $message)
-                <li>{{ $message }}</li>
+            <li>{{ $message }}</li>
             @endforeach
-            </ul>
+        </ul>
         @endif
 
         <div class="form-section">
             <label for="offertaDescrizione">Descrizione:</label>
             <input type="text" id="oggettoOff" name="oggettoOff" value="{{$offerta->oggettoOff}}"></input>
-            
+
             @if ($errors->first('oggettoOff'))
-                <ul class="errors">
+            <ul class="errors">
                 @foreach ($errors->get('oggettoOff') as $message)
-                    <li>{{ $message }}</li>
+                <li>{{ $message }}</li>
                 @endforeach
-                </ul>
+            </ul>
             @endif
 
             <label for="offertaModalita">Modalità di fruizione:</label>
@@ -43,43 +43,43 @@
                 <option value="">Seleziona modalità</option>
                 <option value="Modalità 1"> Online </option>
                 <option value="Modalità 2"> In Negozio </option>
-             </select>
+            </select>
 
             <label for="offertaScadenza">Scadenza:</label>
             <input type="date" id="tempoFruiz" name="tempoFruiz" value="{{$offerta->tempoFruiz}}" >
             @if ($errors->first('tempoFruiz'))
-                <ul class="errors">
+            <ul class="errors">
                 @foreach ($errors->get('tempoFruiz') as $message)
-                    <li>{{ $message }}</li>
+                <li>{{ $message }}</li>
                 @endforeach
-                </ul>
+            </ul>
             @endif
 
 
             <label for="offertaNome">Nome:</label>
             <input type="text" id="nomeOff" name="nomeOff" value="{{$offerta->nomeOff}}">
             @if ($errors->first('nomeOff'))
-                <ul class="errors">
-                @foreach ($errors->get('nomeOff') as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-                </ul>
-            @endif
-            
-            <label for="productName">Luogo di fruizione:</label>
-        <input type="text" id="luogoFruiz" name="luogoFruiz" value="{{$offerta->luogoFruiz}}" >
-        
-        @if ($errors->first('luogoFruiz'))
             <ul class="errors">
-            @foreach ($errors->get('luogoFruiz') as $message)
+                @foreach ($errors->get('nomeOff') as $message)
                 <li>{{ $message }}</li>
-            @endforeach
+                @endforeach
             </ul>
-        @endif
-            
-            
+            @endif
+
+            <label for="productName">Luogo di fruizione:</label>
+            <input type="text" id="luogoFruiz" name="luogoFruiz" value="{{$offerta->luogoFruiz}}" >
+
+            @if ($errors->first('luogoFruiz'))
+            <ul class="errors">
+                @foreach ($errors->get('luogoFruiz') as $message)
+                <li>{{ $message }}</li>
+                @endforeach
+            </ul>
+            @endif
+
+
             <input type="submit" id="buttonOfferta" value="Modifica dati">
-            
+
         </div>
     </form>
 </div>

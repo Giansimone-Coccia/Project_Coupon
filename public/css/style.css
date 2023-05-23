@@ -49,6 +49,9 @@
     height:auto
 }
 
+.anchor{
+}
+
 h1,h2,h3,h4,h5,h6{
     font-family:"Segoe UI",Arial,sans-serif;
     font-weight:400;
@@ -628,6 +631,7 @@ footerF{
     padding-top: 40px;
     color: #fff;
 }
+
 .footer-content{
     margin-top: 62px;
     background: #394867;

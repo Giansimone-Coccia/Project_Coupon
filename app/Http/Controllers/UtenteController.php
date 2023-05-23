@@ -148,6 +148,14 @@ class UtenteController extends Controller
         return redirect('/');
         //senza la definizione di primary key non va la modifica
         
+    public function eliminaStaff($staffId) {
+        
+        $staff = $this->_UtenteModel->getInfoUtente($staffId)->first();
+
+        $staff->delete();
+
+        return route('mostra_membri_staff');
+        //senza la definizione di primary key non va la modifica
     }
    
 }

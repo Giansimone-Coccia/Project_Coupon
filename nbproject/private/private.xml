@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Models/Catalogo.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/resources/views/lista_coupon.blade.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/resources/views/mostra_utenti_registrati.blade.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Controllers/UtenteController.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/routes/web.php</file>
+            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/app/Http/Controllers/Auth/RegisteredUserController.php</file>
+            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/resources/views/auth/register.blade.php</file>
+            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/resources/views/auth/login.blade.php</file>
         </group>
     </open-files>
 </project-private>

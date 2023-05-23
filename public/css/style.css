@@ -36,6 +36,11 @@
 
 /*home.css*/
 
+.errors {
+    color: #f93d00;
+    font-size: 12px;
+}
+
 .centerimages{
     width:150px;
     height:150px;

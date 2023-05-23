@@ -8,13 +8,13 @@
 
     <div class="creazioneOfferta">
         
-        {{ Form::open(array('route' => ['modifica_membro_staff.store', 'id' => $membro->id], 'class' => 'productForm')) }}
+        {{ Form::open(array('route' => ['modifica_membro_staff.store', 'staffId' => $membro->id], 'class' => 'productForm')) }}
         @csrf
         <h1>Modifica membro dello staff</h1>
         <hr>
         
         {{ Form::label('nome', 'Nome:') }}
-        {{ Form::nome('nome', ['id' => 'nome', 'value' => $membro->nome]) }}
+        {{ Form::text('nome', $membro->nome, ['class' => 'input', 'id' => 'nome']) }}
         
         @if ($errors->first('nome'))
             <ul class="errors">
@@ -25,7 +25,7 @@
         @endif
 
         {{ Form::label('cognome', 'Cognome:') }}
-        {{ Form::cognome('cognome', ['id' => 'cognome', 'value' => $membro->cognome]) }}
+        {{ Form::text('cognome', $membro->cognome, ['class' => 'input', 'id' => 'cognome']) }}
         
         @if ($errors->first('cognome'))
             <ul class="errors">
@@ -36,7 +36,7 @@
         @endif
         
         {{ Form::label('username', 'Username:') }}
-        {{ Form::username('username', ['id' => 'username', 'value' => $membro->username]) }}
+        {{ Form::text('username', $membro->username, ['class' => 'input', 'id' => 'username']) }}
         
         @if ($errors->first('username'))
             <ul class="errors">
@@ -47,7 +47,7 @@
         @endif
 
         {{ Form::label('password', 'Password:') }}
-        {{ Form::password('password', ['id' => 'password', 'value' => $membro->password]) }}
+        {{ Form::password('password', ['class' => 'input', 'id' => 'password', 'value' => $membro->password]) }}
 
         @if ($errors->first('password'))
             <ul class="errors">
@@ -58,7 +58,7 @@
         @endif
 
         {{ Form::label('password_confirmation', 'Conferma Password:') }}
-        {{ Form::password('password_confirmation', ['id' => 'password_confirmation', 'value' => $membro->password]) }}
+        {{ Form::password('password_confirmation', ['class' => 'input', 'id' => 'password', 'value' => $membro->password]) }}
 
         @if ($errors->first('password_confirmation'))
             <ul class="errors">
@@ -69,7 +69,7 @@
         @endif
 
         {{ Form::label('email', 'Email:') }}
-        {{ Form::email('email', ['id' => 'email', 'value' => $membro->email]) }}
+        {{ Form::text('email', $membro->email, ['class' => 'input', 'id' => 'email']) }}
         
         @if ($errors->first('email'))
             <ul class="errors">
@@ -80,7 +80,7 @@
         @endif
 
         {{ Form::label('telefono', 'Telefono:') }}
-        {{ Form::telefono('telefono', ['id' => 'telefono', 'value' => $membro->telefono]) }}
+        {{ Form::text('telefono', $membro->telefono, ['class' => 'input', 'id' => 'telefono']) }}
         
         @if ($errors->first('telefono'))
             <ul class="errors">
@@ -91,7 +91,7 @@
         @endif
 
         {{ Form::label('dataNascita', 'Data di nascita:') }}
-        {{ Form::dataNascita('dataNascita', ['id' => 'dataNascita', 'value' => $membro->dataNascita]) }}
+        {{ Form::date('dataNascita', $membro->dataNascita, ['class' => 'input', 'id' => 'dataNascita']) }}
         
         @if ($errors->first('dataNascita'))
             <ul class="errors">
@@ -104,7 +104,7 @@
         <label for="genere">Genere:</label>
         <select id="genere" name="genere">
             <option value="M" {{ $membro->genere === 'M' ? 'selected' : '' }}>Maschio</option>
-            <option value="F" {{ $membro()->genere === 'F' ? 'selected' : '' }}>Femmina</option>
+            <option value="F" {{ $membro->genere === 'F' ? 'selected' : '' }}>Femmina</option>
             <option value="N" {{ $membro->genere === 'N' ? 'selected' : '' }}>Altro</option>
         </select>
         

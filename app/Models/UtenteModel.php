@@ -24,7 +24,7 @@ class UtenteModel
     
     /*Probabilmente da eliminare*/
     public function getInfoUtente($id){
-        return User::where('id', $id)->get();
+        return User::where('id', $id)->get()->first();
     }
     
     /*Probabilmente da eliminare*/

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\ModificaProfiloUtenteRequest;
+use App\Http\Requests\ModificaStaffRequest;
 use App\Http\Requests\NuovoMembroStaffRequest;
 
 
@@ -137,7 +138,7 @@ class UtenteController extends Controller
                         ->with('membro', $membro);
     }
     
-    public function modificaMembroStaff($staffId, ModificaOffertaRequest $request) {
+    public function modificaMembroStaff($staffId, ModificaStaffRequest $request) {
         $membro = $this->_UtenteModel->getInfoUtente($staffId);
         
         $requestVal = $request->validated();

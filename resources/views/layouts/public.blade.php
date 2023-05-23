@@ -26,7 +26,7 @@
         </nav>
 
         <!-- end #menu -->
-        <div class="margin-top-62">
+        <div class="margin-top-50">
             @yield('content')
         </div>
 

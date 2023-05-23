@@ -99,7 +99,7 @@ h6{
 }
 .dimentioncontent{
     max-width:1200px;
-    margin-top:100px;
+    margin-top:70px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
@@ -175,8 +175,8 @@ h6{
     margin-top: 32px
 }
 
-.margin-top-62{
-    margin-top: 62px
+.margin-top-50{
+    margin-top: 50px
 }
 .padding{
     padding:8px 16px!important
@@ -248,8 +248,12 @@ footer,header,main,nav{
     background-color: #F1F6F9;
     max-width:100%;
 }
+.top{
+       width:100%;
+    z-index:1 
+}
 
-.top,.bottom{
+.bottom{
     position:fixed;
     width:100%;
     z-index:1
@@ -267,10 +271,6 @@ footer,header,main,nav{
     font-size:24px!important
 }
 
-.bar{
-    width:100%;
-    overflow:hidden
-}
 .center .bar{
     display:inline-block;
     width:auto
@@ -287,6 +287,17 @@ footer,header,main,nav{
     display:block;
     outline:0;
     cursor: pointer;
+
+}
+.position-fixed{
+    position:fixed;
+}
+
+
+search-bar{
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 
 .bar .button{
@@ -300,6 +311,13 @@ footer,header,main,nav{
 .right{
     float:right!important
 }
+
+.center-search-bar{
+  width: 300px;
+  margin: 0 auto;
+
+}
+
 button,input{
     font:inherit;
     margin:0
@@ -345,14 +363,21 @@ button{
     display:inline-block;
 }
 .vectorlogo{
-    height:52px;
-    width:52px;
-    padding:3px 3px
+    height: 130px;
+    width: 300px;
+    margin-top: 10px;
+    border:none;
+    display:block;
+    outline:0;
+    cursor: pointer;
+
 }
 .topmenu{
     max-width:1200px;
-    max-height:100px;
+    max-height:1000px;
+    height:150px;
     margin:auto;
+    position: relative;
 }
 
 /*FAQ.css*/
@@ -1572,7 +1597,4 @@ select {
     font-weight: bold;
     border-radius: 5px;
 }
-
-
-
 

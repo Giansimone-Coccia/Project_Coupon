@@ -9,6 +9,7 @@ class Bundle extends Model
 {
     protected $table = 'bundles';
     protected $primaryKey = ['promoAbb','offertaPromo'];
+
     
     public $timestamps = false;
     
@@ -18,6 +19,6 @@ class Bundle extends Model
     }
     
     public function bundleOfferta() {
-      return $this->hasOne(Offerta::class, 'id', 'offertaPromo');
+      return $this->hasOne(Offerta::class, 'id', 'offertaPromo')->onDelete('set null');
     }
 }

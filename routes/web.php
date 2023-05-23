@@ -99,11 +99,23 @@ Route::get('/modifica_profilo_utente', [UtenteController::class, 'viewModProfUte
 Route::post('/modifica_profilo_utente', [UtenteController::class, 'modificaProfiloUtente'])
         ->name('modifica_profilo_utente.store');
 
+Route::get('/modifica_membro_staff/{staffId}', [UtenteController::class, 'viewMembroStaff'])
+        ->name('modifica_membro_staff');
+
+Route::post('/modifica_membro_staff/{staffId}', [UtenteController::class, 'modificaMembroStaff'])
+        ->name('modifica_membro_staff.store');
+
 Route::get('/mostra_aziende_area_personale', [PublicController::class, 'allAziendeAdmin'])
         ->name('mostra_aziende_area_personale');/*con gli helper usiamo questa pagina sia per admin che staff*/
 
 Route::get('/mostra_promo_da_modificare/{aziendaId}', [PublicController::class, 'getOfferteAdmin'])
         ->name('mostra_promo_da_modificare');
+
+Route::post('/elimina_azienda/{aziendaId}', [PublicController::class, 'eliminaAzienda'])
+        ->name('elimina_azienda.store');
+
+Route::post('/elimina_membri_staff/{staffId}', [UtenteController::class, 'eliminaStaff'])
+        ->name('elimina_membri_staff.store');
 
 Route::get('/crea_faq', [DomandeController::class, 'addFaq'])
         ->name('crea_faq');
@@ -145,6 +157,12 @@ Route::get('/modifica_offerta/{offertaId}', [PublicController::class, 'viewOffer
 
 Route::post('/modifica_offerta/{offertaId}', [PublicController::class, 'modificaOfferta'])
         ->name('modifica_offerta.store');
+
+Route::post('/elimina_offerta/{offertaId}', [PublicController::class, 'eliminaOfferta'])
+        ->name('elimina_offerta.store');
+
+Route::get('/staff', [PublicController::class, 'start'])
+        ->name('staff'); 
 
 Route::view('/area_personale_staff', 'area_personale_staff')
         ->name('area_personale_staff')->middleware('can:isStaff');;

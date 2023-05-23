@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\ModificaProfiloUtenteRequest;
+use App\Http\Requests\ModificaStaffRequest;
 use App\Http\Requests\NuovoMembroStaffRequest;
 
 
@@ -129,6 +130,32 @@ class UtenteController extends Controller
         return view('mostra_utenti_registrati')
                         ->with('allRegisteredUsers', $ruserTot)
                         ->with('numCoupon', $numCoupon);
+    }
+    
+    public function viewMembroStaff($staffId) {
+        $membro = $this->_UtenteModel->getInfoUtente($staffId);
+        return view('modifica_membro_staff')
+                        ->with('membro', $membro);
+    }
+    
+    public function modificaMembroStaff($staffId, ModificaStaffRequest $request) {
+        $membro = $this->_UtenteModel->getInfoUtente($staffId);
+        
+        $requestVal = $request->validated();
+        $membro ->update($requestVal);
+        $membro->save();
+        
+        return redirect('/');
+        //senza la definizione di primary key non va la modifica
+        
+    public function eliminaStaff($staffId) {
+        
+        $staff = $this->_UtenteModel->getInfoUtente($staffId)->first();
+
+        $staff->delete();
+
+        return route('mostra_membri_staff');
+        //senza la definizione di primary key non va la modifica
     }
    
 }

@@ -36,6 +36,11 @@
 
 /*home.css*/
 
+.errors {
+    color: #f93d00;
+    font-size: 12px;
+}
+
 .centerimages{
     width:150px;
     height:150px;
@@ -47,6 +52,9 @@
 .imageunder{
     max-width:100%;
     height:auto
+}
+
+.anchor{
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -593,8 +601,6 @@ button{
     flex: 2;
     margin-top: 110px;
     margin-right: 50px;
-
-
 }
 
 .info h2 {
@@ -622,12 +628,51 @@ button{
     border: none;
     padding: 18px;
     font-family: 'Rubik', sans-serif;
-    cursor: pointer;
     text-transform: uppercase;
     background: #e8e9ec;
     color: #C0C0C0;
     letter-spacing: 0.2px;
+}
 
+.info button#reedem{
+
+    border-radius: 12px;
+    margin-top: 30px;
+    width: 100%;
+    border: none;
+    padding: 18px;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #394867;
+    color: #FFFFFF;
+    letter-spacing: 0.2px;
+    transition: all 0.3s ease;
+}
+
+.container_dettaglio_offerta button#reedem:hover{
+    transform: scale(0.98);
+    background-color: #51668e;
+}
+
+.info button#unredeemable{
+
+    border-radius: 12px;
+    margin-top: 30px;
+    width: 100%;
+    border: none;
+    padding: 18px;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #FAA0A0;
+    color: #000000;
+    letter-spacing: 0.2px;
+    transition: all 0.3s ease;
+}
+
+.info button#unredeemable:hover{
+    cursor: not-allowed;
 }
 
 /*footer.css*/
@@ -653,6 +698,7 @@ footerF{
     padding-top: 40px;
     color: #fff;
 }
+
 .footer-content{
     margin-top: 62px;
     background: #394867;
@@ -1587,6 +1633,40 @@ select {
     font-size: 20px;
 }
 
+
+   .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      height: 150px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9998;
+    }
+    
+    .margin-left-10{
+        margin-left: 10px
+    }
+    
+    .button-box{
+        display: flex;
+        justify-content: center;
+    }
 .scaduto-banner{
     position: absolute;
     top: 5px;

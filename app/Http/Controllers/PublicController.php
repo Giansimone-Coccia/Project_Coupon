@@ -79,7 +79,7 @@ class PublicController extends Controller {
     }
     
     public function getPromoDetails($promoId){
-        $promoDetails= $this->_catalogModel->getPromo($promoId);
+        $promoDetails= $this->_catalogModel->getPromoDetails($promoId);
         $buono=$this->_catalogModel->getBuonoOfferta($promoId);
         return view('dettaglio_offerta')
                         ->with('dettaglio_offerta', $promoDetails)

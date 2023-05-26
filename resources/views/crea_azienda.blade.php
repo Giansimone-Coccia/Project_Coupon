@@ -78,7 +78,7 @@
             @endforeach
             </ul>
         @endif
-
+        
         <input type="submit" id="buttonOfferta" value="Crea prodotto">
       </form>
 

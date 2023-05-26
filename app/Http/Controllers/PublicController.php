@@ -13,6 +13,7 @@ use App\Http\Requests\NuovaOffertaRequest;
 use App\Http\Requests\ModificaOffertaRequest;
 use App\Http\Requests\NuovaAziendaRequest;
 use App\Http\Requests\ModificaAziendaRequest;
+use Illuminate\Support\Facades\Auth;
 
 class PublicController extends Controller {
 
@@ -229,7 +230,7 @@ class PublicController extends Controller {
         $destinationPath = public_path() . '/images/companies';
         $image->move($destinationPath, $imageName);
 
-        return redirect('/');
+        return redirect('mostra_aziende_area_personale');
         //senza la definizione di primary key non va la modifica
     }
 

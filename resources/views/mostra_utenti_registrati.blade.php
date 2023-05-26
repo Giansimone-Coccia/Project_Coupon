@@ -19,7 +19,6 @@
             <h3><span>Cognome:</span>{{$ruser->cognome}}</h3>
             <h5><span>Coupon riscattati:</span> {{$numCoupon[$i++]}} </h5>
             <ul>
-                <button class="pulsanti_staff" > Modifica </button>
                 <button class="pulsanti_staff"> Elimina </button>
             </ul>
         </div>

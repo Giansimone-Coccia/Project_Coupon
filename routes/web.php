@@ -124,7 +124,7 @@ Route::post('/crea_faq', [DomandeController::class, 'storeFaq'])
         ->name('crea_faq.store');
 
 Route::get('/modifica_faq/{id}', [DomandeController::class, 'viewFaq'])
-        ->name('modifica_azienda');
+        ->name('modifica_faq');
 
 Route::post('/modifica_faq/{id}', [DomandeController::class, 'modificaFaq'])
         ->name('modifica_faq.store');

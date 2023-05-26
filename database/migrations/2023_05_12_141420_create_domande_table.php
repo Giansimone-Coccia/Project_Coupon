@@ -18,8 +18,8 @@ class CreateDomandeTable extends Migration
             $table->string('domanda',255);
             $table->string('risposta', 255);
             $table->date('dataPub');
-            $table->unsignedBigInteger('utente');
-            $table->foreign('utente')->references('id')->on('users');
+            $table->unsignedBigInteger('utente')->nullable();
+            $table->foreign('utente')->references('id')->on('users')->nullOnDelete();
         });
     }
 

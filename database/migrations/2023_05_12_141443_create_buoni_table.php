@@ -14,12 +14,12 @@ class CreateBuoniTable extends Migration
     public function up()
     {
         Schema::create('buoni', function (Blueprint $table) {
+            $table->bigIncrements('id')->unsigned()->index();
             $table->string('codCoupon', 20);
             $table->date('dataScad');
             $table->unsignedBigInteger('offPromo');
-            $table->unsignedBigInteger('utenteRich');
-            $table->primary(['offPromo','utenteRich']);
-            $table->foreign('utenteRich')->references('id')->on('users');
+            $table->unsignedBigInteger('utenteRich')->nullable();
+            $table->foreign('utenteRich')->references('id')->on('users')->nullOnDelete();
         });
     }
 

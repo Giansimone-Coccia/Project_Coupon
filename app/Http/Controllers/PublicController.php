@@ -169,31 +169,22 @@ class PublicController extends Controller {
     }
 
     public function eliminaOfferta($offertaId) {
-        $bundles = $this->_catalogModel->getBundleByComponentId($offertaId);
-
-        foreach ($bundles as $bundle) {
-            $bool=$this->_catalogModel->deleteBundle($bundle);
-        }
         $offerta = $this->_catalogModel->getOffertaById($offertaId);
+        $azienda = $offerta -> azienda;
         $offerta->delete();
+        
 
-        return route('mostra_promo_da_modificare');
+        return redirect('/mostra_aziende_area_personale');
         //senza la definizione di primary key non va la modifica
     }
     
         public function eliminaAzienda($aziendaId) {
         
-        $offerte = $this->_catalogModel->getPromo($aziendaId);
-        
-        foreach ($offerte as $offerta) {
-            $this->eliminaOfferta($offerta->id);
-        }
-        
         $azienda = $this->_catalogModel->getAziendaById($aziendaId);
 
         $azienda->delete();
 
-        return route('mostra_aziende_area_personale');
+        return redirect('/mostra_aziende_area_personale');
         //senza la definizione di primary key non va la modifica
     }
 

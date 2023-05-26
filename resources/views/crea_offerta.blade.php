@@ -9,7 +9,7 @@
     <div class="creazioneOfferta">
       <form class="productForm" id="addproduct" name="addproduct" enctype="multipart/form-data" method="post" action="{{route('crea_offerta.store')}}">
         @csrf
-        <h1>Aggiungi la tua offerta</h1>
+        <h1>Aggiungi un offerta</h1>
         <hr>
 
         <label for="productName">Nome prodotto:</label>

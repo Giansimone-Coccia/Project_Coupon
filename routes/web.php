@@ -53,7 +53,7 @@ Route::get('/offerte_azienda/{aziendaId}', [PublicController::class, 'getAzienda
 Route::get('/offerte_azienda/{aziendaId}/dettaglio_offerta/{promoId}', [PublicController::class, 'getPromoDetails'])
         ->name('dettaglio_offerta');
 
-Route::get('/dettaglio_offerta/{promoId}', [PublicController::class, 'getPromoDetails'])
+Route::get('/dettaglio_offerta/{promoId}', [PublicController::class, 'getPromoDetailsRicerca'])
         ->name('dettaglio_offerta_ricerca');
 
 

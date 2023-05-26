@@ -21,8 +21,8 @@ class CreateAziendeTable extends Migration
             $table->text('image');
             $table->string('tipologia',20);
             $table->string('descAzienda', 255);
-            $table->unsignedBigInteger('utente');
-            $table->foreign('utente')->references('id')->on('users');
+            $table->unsignedBigInteger('utente')->nullable();
+            $table->foreign('utente')->references('id')->on('users')->nullOnDelete();
         });
     }
 

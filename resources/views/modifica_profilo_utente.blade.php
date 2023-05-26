@@ -35,6 +35,7 @@
             </ul>
         @endif
         
+        @can('isAdmin')
         <label for="productName">Username:</label>
         <input type="text" id="username" name="username" value="{{Auth::user()->username}}" >
         
@@ -45,6 +46,7 @@
             @endforeach
             </ul>
         @endif
+        @endcan
 
         {{ Form::label('password', 'Password:') }}
         {{ Form::password('password', ['id' => 'password', 'value' => Auth::user()->password]) }}
@@ -67,6 +69,8 @@
             @endforeach
             </ul>
         @endif
+
+        @canany(['isUser', 'isAdmin'])
 
         <label for="productName">Email:</label>
         <input type="text" id="email" name="email" value="{{Auth::user()->email}}" >
@@ -115,6 +119,7 @@
             @endforeach
             </ul>
         @endif
+        @endcanany
             {{ Form::submit('Modifica', ['class' => 'confirmationButton']) }}
       </form>
 

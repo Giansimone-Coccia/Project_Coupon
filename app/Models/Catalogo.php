@@ -98,15 +98,16 @@ class Catalogo {
     }
 
     
-    public function createCoupon($codCoupon, $utenteRich, $dataScad, $offPromo) {
-        Buono::create([
-            'codCoupon' => $codCoupon,
-            'utenteRich' => $utenteRich,
+    public function createCoupon($codCoupon, $dataScad, $offPromo, $utenteRich) {
+        
+        return Buono::create([
+            'codCoupon' => $codCoupon,  
             'dataScad' => $dataScad,
-            'offPromo' => $offPromo
+            'offPromo' => $offPromo,
+            'utenteRich' => $utenteRich
         ]);
 
-        return Buono::where('codCoupon', $codCoupon)->get();
+        //return Buono::where('codCoupon', $codCoupon)->get();
     }
 
     public function generaCodBuono() {

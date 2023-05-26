@@ -13,7 +13,6 @@
             <p><strong>Email:</strong> {{Auth::user()->email}}</p>
             <p><strong>Nome:</strong> {{Auth::user()->nome}}</p>
             <p><strong>Genere:</strong> {{Auth::user()->genere}} </p>
-            <p><strong>Password:</strong> {{Auth::user()->password}}</p>
             <p><strong>Telefono:</strong> {{Auth::user()->telefono}}</p>
             <p><strong>Cognome:</strong> {{Auth::user()->cognome}}</p>
             <p><strong>Data Nascita:</strong> {{Auth::user()->dataNascita}}</p>

@@ -9,7 +9,7 @@
 
 <div class="overlay" id="overlay"></div>
 
-<div class="main content padding" style="max-width: 1300px; margin-top: 150px;">
+<div class="main content padding" style="max-width: 1300px; margin-top: 70px;">
     <div class="couponlist" align="center">
         <h1 style="font-weight: 300">Lista delle aziende che puoi gestire:</h1>
         @isset($allAziendeAdmin)
@@ -18,10 +18,6 @@
             
             <img src="{{ asset('images/companies/' . $azienda->image) }}" class ="rounded-corners" alt="Logo offerta" >
             <h3><span>Nome azienda:</span>{{$azienda->nome}}</h3>
-            <ul>
-                <button class="pulsanti_staff" onclick="window.location.href = '{{ route('modifica_azienda', [$azienda->id]) }}'; event.stopPropagation();"> Modifica </button>
-                <button id="deleteBtn" class="pulsanti_staff" onclick=" event.stopPropagation();"> Elimina </button>
-            </ul>
         </div>
         <!-- il popup si vede solo sul primo pulsante, la possibile causa è l'id-->
         <div class="popup center" id="confirmPopup">
@@ -42,6 +38,7 @@
         @endforeach
         @endisset
         <a class="refAggiungi" href="{{route('crea_azienda')}}"  onclick="window.location.href = '{{ route('mostra_promo_da_modificare', [$azienda->id]) }}';"> Aggiungi altre aziende</a>
+    </div>
 </div>
 @endsection
 

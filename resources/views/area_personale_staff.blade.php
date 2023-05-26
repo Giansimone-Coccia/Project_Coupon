@@ -24,12 +24,12 @@
         <div class="container_pulsanti_staff center">
             <div class="center" >
                 <div class="inline-block">
-                    <button class="pulsanti_staff" onclick="window.location.href = '/';"> Crea offerta abbinata</button>
+                    <button class="pulsanti_staff" onclick="window.location.href = '{{ route('crea_offerta')}}';"> Crea offerta</button>
                 </div>
             </div>
             <div class="center">
                 <div class="inline-block">
-                    <button class="pulsanti_staff" onclick="window.location.href = '{{ route('mostra_aziende_area_personale')}}';";"> Gestisci offerte</button>
+                    <button class="pulsanti_staff" onclick="window.location.href = '{{ route('mostra_aziende_area_personale')}}';"> Gestisci offerte</button>
                 </div>
             </div>
 

@@ -11,7 +11,6 @@
         
         <div class="section_area_utente">
             <p><strong>Nome Utente:</strong> {{Auth::user()->username}}</p>
-            <p><strong>Password:</strong> {{Auth::user()->password}}</p>
         </div>
 
         <hr class="area_admin">

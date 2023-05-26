@@ -82,7 +82,6 @@ class UtenteController extends Controller
         }
         $utente->save();
 
-
         return redirect('/area_personale_utente');
     }
 
@@ -98,7 +97,7 @@ class UtenteController extends Controller
         $staff = new User;
         $staff->fill($request->validated());
         $staff->ruolo = 'staff';
-        $staff->password = bcrypt($request->password);
+        $staff->password = Hash::make($request->password);
         $staff->save();
         return redirect('/');
     }

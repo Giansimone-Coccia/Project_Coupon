@@ -23,7 +23,7 @@
                 <button id="deleteBtn" class="pulsanti_staff" onclick=" event.stopPropagation();"> Elimina </button>
             </ul>
         </div>
-        
+        <!-- il popup si vede solo sul primo pulsante, la possibile causa è l'id-->
         <div class="popup center" id="confirmPopup">
             <h3>Sei sicuro di voler eliminare questa azienda?<h3>
                     <div class="button-box">

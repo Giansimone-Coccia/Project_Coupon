@@ -47,6 +47,7 @@
                 @endforeach
                 @endisset
             </div>
+            @include('pagination.paginator', ['paginator' => $promos])
         </div>
     </div>
 </div>

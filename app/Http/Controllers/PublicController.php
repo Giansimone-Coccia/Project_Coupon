@@ -56,6 +56,16 @@ class PublicController extends Controller {
                         ->with('azienda', $azienda)
                         ->with('promos', $promos);
     }
+    
+    public function getAllPromoAzienda($aziendaId) {
+
+        $azienda = $this->_catalogModel->getAziende($aziendaId)->first();
+        $promos = $this->_catalogModel->getPromo($aziendaId);
+
+        return view('offerte_azienda')
+                        ->with('azienda', $azienda)
+                        ->with('promos', $promos);
+    }
 
     public function getOfferteAdmin($aziendaId) {
 
@@ -105,7 +115,7 @@ class PublicController extends Controller {
     
     public function addOfferta(){
         
-        $aziende = $this->_catalogModel-> getAllAziende();
+        $aziende = $this->_catalogModel->getAllAziendeNoPaged();
         return view('crea_offerta')
                         ->with('aziende', $aziende);
     }

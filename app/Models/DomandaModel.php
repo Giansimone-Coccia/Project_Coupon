@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class DomandaModel 
 {
 
-    public function getAllFaq(){ 
-        return Domanda:: get();
+    public function getAllFaq($paged = 8){ 
+        return Domanda:: paginate($paged);
     }
     
     public function getFaq($faqId){

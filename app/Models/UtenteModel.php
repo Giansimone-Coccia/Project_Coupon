@@ -89,14 +89,14 @@ class UtenteModel
         return Buono::where('utenteRich', $id)->get();
     }
 
-    public function getAllStaff() {
-        $staff = User::where('ruolo','staff')->get();
-        return $staff;
+    public function getAllStaff($paged = 8) {
+        $staff = User::where('ruolo','staff');
+        return $staff->paginate($paged);
     }
 
-    public function getAllUserR() {
-        $ruser = User::where('ruolo','user')->get();
-        return $ruser;
+    public function getAllUserR($paged = 8) {
+        $ruser = User::where('ruolo','user');
+        return $ruser->paginate($paged);
     }
     
 }

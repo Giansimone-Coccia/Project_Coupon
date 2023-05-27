@@ -54,13 +54,13 @@ class UtenteController extends Controller
         $couponUtente = $this->_UtenteModel->getCouponUser(Auth::user()->id);
         
         foreach ($couponUtente as $coupon) {
-            $couponOfferta = $this->_Catalogo->getOffertaById($coupon->offPromo);  //con questo si lega ad ogni coupon la corrispettiva offerta
+            $couponOfferta[] = $this->_Catalogo->getOffertaById($coupon->offPromo);  //con questo si lega ad ogni coupon la corrispettiva offerta
         }
         
         
         return view('lista_coupon')
                 ->with('couponUtente', $couponUtente)
-                ->with('couponOfferta', $couponOfferta); 
+                ->with('couponOfferta', $couponOfferta);
         }
         
         public function viewModProfUtente() {

@@ -18,6 +18,11 @@ class Catalogo {
         return $azienda;
     }
     
+    public function getAllAziendeNoPaged() {
+        $azienda = Azienda::get();
+        return $azienda;
+    }
+    
     public function couponCount() {
         return Buono::count();
     }
@@ -34,8 +39,9 @@ class Catalogo {
         return Azienda::where('id', $aziendaId);
     }
 
-    public function getPromo($aziendaId) {
-        return Offerta::where('azienda', $aziendaId)->get();
+    public function getPromo($aziendaId, $paged = 8) {
+        $offerta = Offerta::where('azienda', $aziendaId);
+        return $offerta->paginate($paged);
     }
 
     public function getOffertaById($offertaId) {

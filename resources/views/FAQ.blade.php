@@ -52,9 +52,9 @@
 
                     @endforeach
                     @endisset
-
                 </div>
             </div>
+            @include('pagination.paginator', ['paginator' => $FAQs])
         </div>
     </section>
 

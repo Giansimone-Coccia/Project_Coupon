@@ -1,7 +1,7 @@
 @if ($paginator->lastPage() != 1)
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 
-<div id="pagination" class = "margin-top-10 center">
+<div id="pagination" class = "margin-Paginate center">
     {{ $paginator->firstItem() }} - {{ $paginator->lastItem() }} di {{ $paginator->total() }} ---
 
 

@@ -43,7 +43,7 @@
         </div>
         @endforeach
         @endisset
-
+        @include('pagination.paginator', ['paginator' => $allOfferteAzienda])
     </div>
 </div>
 @endsection

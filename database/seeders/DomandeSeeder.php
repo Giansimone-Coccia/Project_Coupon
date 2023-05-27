@@ -27,7 +27,13 @@ class DomandeSeeder extends Seeder
             ['domanda' => 'Dove posso trovare informazioni sulla vostra compagnia?', 'risposta' => "Nel sito è presente un'apposita sezione 'Chi siamo' in cui spieghiamo la nostra mission", 
                 'dataPub' => "2023-05-04 08:30", 'utente' => '1'],
             ['domanda' => 'Come posso registrarmi?', 'risposta' => 'Per registrarsi bisogna premere sul pulsante registrati presente nella parte alta del sito e riempire tutti i campi richiesti', 
-                'dataPub' => "2023-05-12 10:30", 'utente' => '5']
+                'dataPub' => "2023-05-12 10:30", 'utente' => '5'],
+            ['domanda' => 'Come posso trovarvi?', 'risposta' => 'Nella sezione in basso del nostro sito, cliccando sulla parola "Dove siamo" viene visualizzata una mappa che è possibile adoperare per raggiungerci nella nostra sede', 
+                'dataPub' => "2023-05-27 10:30", 'utente' => '1'],
+            ['domanda' => 'Come contattarci?', 'risposta' => 'Nella sezione in basso del nostro sito, cliccando sulla parola "Contattaci" si viene reindirizzati al client di posta elettronica con il quale è possibile inviarci una e-mail', 
+                'dataPub' => "2023-05-27 11:30", 'utente' => '2'],
+            ['domanda' => 'Come posso capire se una promozione è ancora valida?', 'risposta' => 'Le promozioni scadute sono contrassegnate sul nostro sito da una banner rosso in alto a sinistra dell immagine, con la parola "Scaduta" ad indicare che non è più possibile riscattarla ', 
+                'dataPub' => "2023-05-27 12:30", 'utente' => '3'],
             
         ]);
     }

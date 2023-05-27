@@ -13,7 +13,7 @@
         @isset($offerta)
         <div class="coupon-page">
             <div class="container-coupon">
-                <h3>{{$offerta->nomeOff}}</h3>
+                <h3>{{$buono->codCoupon}}</h3>
             </div>
             <img src="{{ asset('images/products/'.$offerta->logoOff ) }}" alt="logo.{{$offerta->nomeOff}}" style="width:100%;">
             <div class="container-coupon" style="background-color:white">
@@ -21,12 +21,11 @@
                 <p>{{$offerta->oggettoOff}}</p>
             </div>
             <div class="modalita">
-                <p>Modalità di fruizione: {{$offerta->modalita}}</p>
+                <p><strong>Modalità di fruizione: </strong> {{$offerta->modalita}}</p>
             </div>
-            <p class="utente">Utente richiedente: {{$offerta->utenteRich}}</p>
+            <p class="utente"> <strong> Utente richiedente: </strong>{{$utente->nome}} {{$utente->cognome}}</p>
             <div class="container-coupon">
-                <p>Codice promozione: <span class="promo">{{$buono->dataScad}}</span></p>
-<!--ricorda di inserire data scadenza e codice coupon -->
+                <p><strong class="promo">Data scadenza: </strong>{{$buono->dataScad}}</p>
             </div>
         </div>
         @endisset

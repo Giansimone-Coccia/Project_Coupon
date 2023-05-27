@@ -552,9 +552,10 @@ button{
 }
 
 .promo {
-    background: #ccc;
     padding: 3px;
+    color: red;
 }
+
 
 .expire {
     color: red;

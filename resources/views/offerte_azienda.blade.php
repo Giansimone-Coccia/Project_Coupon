@@ -28,27 +28,28 @@
 
         <div class="container-azienda border-top-grey margin-top-16" >
             <div class="row-offerte padding-top-16">
-                <div class="quarter">
 
-                    @isset($promos)
-                    @foreach ($promos as $promo)
 
-                    <div class="single-offerta " onclick="window.location.href = '{{ route('dettaglio_offerta', [$azienda->id, $promo->id]) }}';">
-                        <div class="inline-block">
-                            <div class="centerimagesoffers">
-                                @include('helpers/productDate', ['dataScadenza' => $promo->tempoFruiz])
-                                <img class = "rounded-corners width100" src="{{ asset('images/products/' . $promo->logoOff) }}" alt="Offerta azienda"/>
-                            </div>
-                            <h3>{{$promo->nomeOff}}</h3>
-                        </div> 
-                    </div>
-                    @endforeach
-                    @endisset
+                @isset($promos)
+                @foreach ($promos as $promo)
+
+                <div class="single-offerta quarter" onclick="window.location.href = '{{ route('dettaglio_offerta_ricerca', [$promo->id]) }}';">
+                    <div class="inline-block">
+                        <div class="centerimagesoffers">
+
+                            @include('helpers/productDate', ['dataScadenza' => $promo->tempoFruiz])
+                            <img class = "rounded-corners width100" src="{{ asset('images/products/' . $promo->logoOff) }}" alt="Offerta azienda"/>
+
+                        </div>
+                        <h3>{{$promo->nomeOff}}</h3>
+                    </div> 
                 </div>
+                @endforeach
+                @endisset
             </div>
         </div>
-
-        <!-- End page content -->
     </div>
+</div>
+
 </div>
 @endsection

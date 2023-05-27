@@ -14,7 +14,7 @@
 @endguest
 
 @can('isUser')
-@if(($currentDate < $scadenza) && ($currentUser->id != $buono->utenteRich))
+@if((($buono == Null) && ($currentDate < $scadenza)) || (($currentDate < $scadenza) && ($currentUser->id != $buono->utenteRich )))
     <button id="reedem" onclick="window.location.href = '{{ route('coupon', [$offerta->id])}}';">Riscatta</button>
 @elseif(($currentDate < $scadenza) && ($currentUser->id == $buono->utenteRich))
     <button>Già riscattato</button>

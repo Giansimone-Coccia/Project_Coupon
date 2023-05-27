@@ -57,8 +57,8 @@
         <label for="productMode">Modalità di fruizione:</label>
         <select id="modalita" name="modalita" value="{{old('modalita')}}" >
           <option value="">Seleziona modalità</option>
-          <option value="Modalità 1"> Online </option>
-          <option value="Modalità 2"> In Negozio </option>
+          <option value="Online"> Online </option>
+          <option value="In negozio"> In Negozio </option>
 
         </select>
         

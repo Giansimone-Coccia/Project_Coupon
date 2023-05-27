@@ -1,12 +1,12 @@
 @php
-    function scadenza($dataScadenza)
-    {
-        $dataAttuale = date('Y-m-d');
-        
-        return $dataScadenza < $dataAttuale;
-    }
-@endphp
+   $currentDate = date('Y-m-d');
 
-@if (scadenza($dataScadenza))
-     <div class="scaduto-banner">Scaduto</div>
+@endphp
+@if ($dataScadenza < $currentDate)
+    <div class="scaduto-banner">Scaduto</div>
 @endif
+
+
+
+
+

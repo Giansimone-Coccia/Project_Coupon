@@ -80,19 +80,19 @@ class PublicController extends Controller {
                         ->with('utente', $utente);
     }
     
-    public function getPromoDetails($aziendaId, $promoId){
-        $promoDetails= $this->_catalogModel->getPromo($aziendaId);
+    public function getPromoDetails($promoId){
+        $promoDetails= $this->_catalogModel->getPromoDetails($promoId)->first();
         $buono=$this->_catalogModel->getBuonoOfferta($promoId);
         return view('dettaglio_offerta')
-                        ->with('dettaglio_offerta', $promoDetails)
+                        ->with('offerta', $promoDetails)
                         ->with('buono', $buono);
     }
 
     public function getPromoDetailsRicerca($promoId){
-        $promoDetails= $this->_catalogModel->getPromoDetails($promoId);
+        $promoDetails= $this->_catalogModel->getPromoDetails($promoId)->first();
         $buono=$this->_catalogModel->getBuonoOfferta($promoId);
         return view('dettaglio_offerta')
-                        ->with('dettaglio_offerta', $promoDetails)
+                        ->with('offerta', $promoDetails)
                         ->with('buono', $buono);
     }
 

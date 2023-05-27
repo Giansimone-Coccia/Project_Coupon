@@ -20,7 +20,7 @@ class CreateAziendeTable extends Migration
             $table->string('ragSoc', 10);
             $table->text('image');
             $table->string('tipologia',20);
-            $table->string('descAzienda', 255);
+            $table->string('descAzienda', 1024);
             $table->unsignedBigInteger('utente')->nullable();
             $table->foreign('utente')->references('id')->on('users')->nullOnDelete();
         });

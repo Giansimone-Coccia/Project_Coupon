@@ -370,6 +370,7 @@ button{
 .inline-block{
     display:inline-block;
 }
+
 .vectorlogo{
     height: 130px;
     width: 300px;
@@ -1670,9 +1671,9 @@ select {
         justify-content: center;
     }
 .scaduto-banner{
-    position: absolute;
+    position: relative;
     top: 5px;
-    left: 5px;
+    left: 35px;
     background-color: red;
     color: white;
     padding: 5px;

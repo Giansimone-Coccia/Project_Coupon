@@ -4,10 +4,7 @@
 
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-
-@isset($dettaglio_offerta)
-
-@foreach($dettaglio_offerta as $offerta)
+@isset($offerta)
 <div class="container_dettaglio_offerta">
     <div class="image">
         <img src="{{ asset('images/products/'.$offerta->logoOff ) }}" class="rounded-corners" alt="Nome Offerta">
@@ -21,6 +18,5 @@
         @include('helpers/redeemCoupon')
     </div>
 </div>
-@endforeach
 @endisset
 @endsection

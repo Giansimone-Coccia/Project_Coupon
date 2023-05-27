@@ -18,13 +18,10 @@
 
         @isset($allOfferteAzienda)
         @foreach($allOfferteAzienda as $offerta)
-        <div class="coupon" onclick="window.location.href = '{{ route('dettaglio_offerta', [$azienda->id,$offerta->id]) }}';" >
+        <div class="coupon" onclick="window.location.href = '{{ route('dettaglio_offerta_ricerca', [$offerta->id]) }}';" >
             <img src="{{ asset('images/products/' . $offerta->logoOff) }}" class ="rounded-corners" alt="Logo offerta">
             <h3><span>Nome offerta:</span>{{$offerta->nomeOff}}</h3>
-            <ul>
-                <button class="pulsanti_staff" onclick="window.location.href = '{{ route('modifica_offerta', [$offerta->id]) }}'; event.stopPropagation();" > Modifica </button>
-                <button id="deleteBtn" class="pulsanti_staff" onclick=" event.stopPropagation();"> Elimina </button>
-            </ul>
+            @include('helpers/buttonStaff')
         </div>
         
         <div class="popup center" id="confirmPopup">

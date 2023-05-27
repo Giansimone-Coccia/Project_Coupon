@@ -18,6 +18,7 @@
             
             <img src="{{ asset('images/companies/' . $azienda->image) }}" class ="rounded-corners" alt="Logo offerta" >
             <h3><span>Nome azienda:</span>{{$azienda->nome}}</h3>
+            @include('helpers/buttonAdmin')
         </div>
         <!-- il popup si vede solo sul primo pulsante, la possibile causa è l'id-->
         <div class="popup center" id="confirmPopup">

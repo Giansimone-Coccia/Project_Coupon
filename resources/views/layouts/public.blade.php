@@ -6,8 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Bootstrap -->
+        @section('link')
         <link rel="stylesheet" type="text/css" href="{{ asset('res/css/style.css') }}" >
         <!--<script type="text/javascript" src="public/js/jquery.js"></script>-->
+        @show
+        @section('scripts')
+        @show
         <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
         <style>
             body,h1,h2,h3,h4,h5,h6 {

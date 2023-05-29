@@ -13,7 +13,7 @@
             {{ Form::open(array('route' => 'login')) }}
 
             <div class = "center">
-                <a href="{{ route('start') }}" class="link">Premi qui per tornare alla home</a>
+                <a href="{{ route('start') }}" class="link margin-top-20">Premi qui per tornare alla home</a>
             </div>          
             <h1>Login</h1>
             <div class="content">
@@ -44,7 +44,7 @@
                 <div class="button">
                     {{ Form::submit('Login', ['class' => 'input']) }}
                 </div>
-                <a href="{{ route('register') }} " class="link zero-margin">Registrati</a>
+                <a href="{{ route('register') }} " class="link">Registrati</a>
 
                 {{ Form::close() }}
             </div>

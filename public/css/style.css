@@ -356,7 +356,6 @@ button{
 }
 .button:hover{
     color:#212A3E;
-    !important
     background-color:#F1F6F9
 }
 .black,.hover-black:hover{
@@ -906,8 +905,12 @@ a.link {
     color: #007BA7;
     letter-spacing: 0.2px;
     display: inline-block;
-    margin-top: 20px;
 }
+
+.margin-top-20{
+        margin-top: 20px;
+}
+
 .login-form .action {
     display: -webkit-box;
     display: flex;

@@ -12,7 +12,7 @@
         $contatore = 0;
         @endphp
         @foreach($couponUtente as $coupon)
-        <div class="coupon">
+        <div class="coupon" onclick="window.location.href = '{{ route('coupon_riscattato', [$coupon->id]) }}';">
             <img src="{{ asset('images/products/' . $couponOfferta[$contatore]->logoOff) }}" class = "rounded-corners" alt="Logo offerta">
             <h3><span>Nome offerta:</span> {{$couponOfferta[$contatore]->nomeOff}}</h3>
             <ul>

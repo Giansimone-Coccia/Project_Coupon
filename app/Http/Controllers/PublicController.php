@@ -90,6 +90,15 @@ class PublicController extends Controller {
                         ->with('utente', $utente);
     }
     
+    public function getBuonoRiscattato($buonoId){
+        $buono = $this->_catalogModel->getBuonoById($buonoId);
+        $offertaDetails=$this->_catalogModel->getOffertaById($buono->offPromo);
+        $utente = Auth::user();
+        return view('coupon')
+                        ->with('buono', $buono)
+                        ->with('offerta', $offertaDetails)
+                        ->with('utente', $utente);
+    }
     public function getPromoDetails($promoId){
         $promoDetails= $this->_catalogModel->getPromoDetails($promoId)->first();
         $buono=$this->_catalogModel->getBuonoOfferta($promoId);

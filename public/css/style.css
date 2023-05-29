@@ -729,7 +729,6 @@ footerF{
     font-size: 14px;
     color: #cacdd2;
 }
-
 .footer-content ul {
     list-style: none;
 }
@@ -903,11 +902,9 @@ footerF{
 .login-form .input-field input:focus {
     border-color: #222;
 }
-.login-form a.link {
-    text-decoration: none;
-    color: #747474;
+a.link {
+    color: #007BA7;
     letter-spacing: 0.2px;
-    text-transform: uppercase;
     display: inline-block;
     margin-top: 20px;
 }
@@ -918,7 +915,7 @@ footerF{
     -webkit-box-direction: normal;
     flex-direction: row;
 }
-.login-form .action button {
+.login-form .action button{
     width: 100%;
     border: none;
     padding: 18px;
@@ -934,7 +931,27 @@ footerF{
     -webkit-transition: all .3s;
     transition: all .3s;
 }
+.login-form .action .button{
+    width: 100%;
+    border: none;
+    padding: 18px;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #e8e9ec;
+    color: #777;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 0;
+    letter-spacing: 0.2px;
+    outline: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
 .login-form .action button:hover {
+    background: #d8d8d8;
+}
+.login-form .action .button:hover {
     background: #d8d8d8;
 }
 .login-form .action button:nth-child(2) {
@@ -1225,6 +1242,10 @@ form .button{
 .bar-item form .button{
     height: 45px;
     margin: 0;
+}
+
+.zero-margin{
+    margin:0 !important
 }
 form .button input{
     height: 100%;

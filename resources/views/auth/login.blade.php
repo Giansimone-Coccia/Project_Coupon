@@ -41,10 +41,10 @@
                     @endif
                 </div>
 
-                <div class="action">
-                    <button onclick="location.href = '{{ route('register') }}';"><a href="{{ route('register') }}">Registrati</a></button>
-                    {{ Form::submit('Login', ['class' => 'form-btn1']) }}
+                <div class="button">
+                    {{ Form::submit('Login', ['class' => 'input']) }}
                 </div>
+                <a href="{{ route('register') }} " class="link zero-margin">Registrati</a>
 
                 {{ Form::close() }}
             </div>

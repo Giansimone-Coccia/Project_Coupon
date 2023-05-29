@@ -59,7 +59,6 @@ Route::get('/dettaglio_offerta/{promoId}', [PublicController::class, 'getPromoDe
 
 
 
-
 /*User*/
 
 Route::get('/area_personale_utente', [UtenteController::class, 'getInfoUtente'])
@@ -71,7 +70,8 @@ Route::get('/area_personale_utente/lista_coupon', [UtenteController::class, 'get
 Route::get('/coupon/{codOfferta}', [PublicController::class, 'getBuono'])
         ->name('coupon');
 
-
+Route::get('/coupon_riscattato/{buonoId}', [PublicController::class, 'getBuonoRiscattato'])
+        ->name('coupon_riscattato');
 
 
 

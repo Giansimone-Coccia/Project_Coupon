@@ -100,8 +100,12 @@ class Catalogo {
 
     public function getBuonoOfferta($offertaId){
         return Buono::where('offPromo', $offertaId)->get()->first();
-
     }
+    
+        public function getBuonoById($buonoId){
+        return Buono::where('id', $buonoId)->get()->first();
+    }
+
 
     
     public function createCoupon($codCoupon, $dataScad, $offPromo, $utenteRich) {

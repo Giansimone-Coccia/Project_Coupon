@@ -5,6 +5,10 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
+use Symfony\Component\HttpFoundation\Response;
+
 class ModificaAziendaRequest extends FormRequest {
 
     /**
@@ -25,13 +29,18 @@ class ModificaAziendaRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'nome' => 'required|max:20',
+            'nome' => 'required|string|max:20',
             'descAzienda' => 'required|max:250',
             'localizzazione' => 'required',
             'ragSoc' => 'required',
             'tipologia' => 'required',
-            'image' => 'required|image',
+            'image' => 'required|file|mimes:jpeg,png|max:1024',
         ];
+    }
+    
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
     }
 
 }

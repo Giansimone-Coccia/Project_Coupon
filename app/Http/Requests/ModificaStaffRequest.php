@@ -5,6 +5,10 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
+use Symfony\Component\HttpFoundation\Response;
+
 class ModificaStaffRequest extends FormRequest {
 
     /**
@@ -34,6 +38,11 @@ class ModificaStaffRequest extends FormRequest {
             'email' => 'required|max:30',
             'telefono' => 'required|max:15',
         ];
+    }
+    
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
     }
 
 }

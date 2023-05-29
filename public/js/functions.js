@@ -25,6 +25,7 @@ function doElemValidation(id, actionUrl, formId) {
             data: formElems,
             dataType: "json",
             error: function (data) {
+                console.log(data);
                 if (data.status === 422) {
                     var errMsgs = JSON.parse(data.responseText);
                     $("#" + id).parent().find('.errors').html(' ');

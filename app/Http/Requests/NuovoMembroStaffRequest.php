@@ -5,6 +5,10 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
+use Symfony\Component\HttpFoundation\Response;
+
 class NuovoMembroStaffRequest extends FormRequest {
 
     /**
@@ -35,6 +39,11 @@ class NuovoMembroStaffRequest extends FormRequest {
             'username' => 'required|string|max:255|unique:users,username',
             'password' => 'required|string',
         ];
+    }
+    
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
     }
 
     

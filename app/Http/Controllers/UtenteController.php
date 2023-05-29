@@ -9,6 +9,7 @@ use App\Models\Resources\Azienda;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\ModificaProfiloUtenteRequest;
 use App\Http\Requests\ModificaStaffRequest;
 use App\Http\Requests\NuovoMembroStaffRequest;
@@ -138,12 +139,13 @@ class UtenteController extends Controller
     
     public function modificaMembroStaff($staffId, ModificaStaffRequest $request) {
         $membro = $this->_UtenteModel->getInfoUtente($staffId);
-        
+
         $requestVal = $request->validated();
         $membro ->update($requestVal);
-        $membro->save();
-        
-        return redirect('/');
+        //$membro->save();
+
+        //return redirect('/');
+        return response()->json(['redirect' => route('modifica_membro_staff')]);
         //senza la definizione di primary key non va la modifica
     }
         

@@ -30,14 +30,14 @@ class ModificaStaffRequest extends FormRequest {
     public function rules() {
         return [
             'username' => 'required|max:20',
-            'password' => 'required|max:30',
+            'password' => ['required','max:30','regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/'],
             'nome' => 'required|max:30',
             'cognome' => 'required|max:30',
             'genere'=> 'required',
             'dataNascita' => 'required',
-            'email' => 'required|max:30',
-            'telefono' => 'required|max:15',
-        ];
+            'email' => ['required','max:30','regex:/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/'],
+            'telefono' => ['required', 'max:15', 'regex:/\b(?:\+39)?\s?(?:(?:(?:0|\(?\d{1,4}\)?)\s?\d{2,5}[\s\.\/]?\d{3}[\s\.\/]?\d{3,4})|(?:(?:\d{3}[\s\.\/]?){3,4}\d{2,3})|(?:(?:\d{1,4}[\s-])?\d{5}))\b/', 'min:10'],
+            ];
     }
     
     protected function failedValidation(Validator $validator)

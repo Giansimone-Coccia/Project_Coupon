@@ -145,9 +145,7 @@ class UtenteController extends Controller
         $membro ->update($requestVal);
         //$membro->save();
 
-        //return redirect('/');
-        return response()->json(['redirect' => route('modifica_membro_staff')]);
-        //senza la definizione di primary key non va la modifica
+        return response()->json(['redirect' => route('mostra_membri_staff')]);
     }
         
     public function eliminaStaff($staffId) {
@@ -157,7 +155,6 @@ class UtenteController extends Controller
         $staff->delete();
 
         return route('mostra_membri_staff');
-        //senza la definizione di primary key non va la modifica
     }
    
 }

@@ -9,6 +9,7 @@ use App\Models\Resources\Azienda;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\ModificaProfiloUtenteRequest;
 use App\Http\Requests\ModificaStaffRequest;
 use App\Http\Requests\NuovoMembroStaffRequest;
@@ -56,7 +57,6 @@ class UtenteController extends Controller
         foreach ($couponUtente as $coupon) {
             $couponOfferta[] = $this->_Catalogo->getOffertaById($coupon->offPromo);  //con questo si lega ad ogni coupon la corrispettiva offerta
         }
-        
         
         return view('lista_coupon')
                 ->with('couponUtente', $couponUtente)
@@ -139,13 +139,12 @@ class UtenteController extends Controller
     
     public function modificaMembroStaff($staffId, ModificaStaffRequest $request) {
         $membro = $this->_UtenteModel->getInfoUtente($staffId);
-        
+
         $requestVal = $request->validated();
         $membro ->update($requestVal);
-        $membro->save();
-        
-        return redirect('/');
-        //senza la definizione di primary key non va la modifica
+        //$membro->save();
+
+        return response()->json(['redirect' => route('mostra_membri_staff')]);
     }
         
     public function eliminaStaff($staffId) {
@@ -155,7 +154,6 @@ class UtenteController extends Controller
         $staff->delete();
 
         return route('mostra_membri_staff');
-        //senza la definizione di primary key non va la modifica
     }
    
 }

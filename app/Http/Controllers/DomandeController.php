@@ -37,7 +37,8 @@ class DomandeController extends Controller
         $faq->utente = Auth::user()->id;
         $faq->save();
        
-        return redirect('FAQ');
+        //return redirect('FAQ');
+        return response()->json(['redirect' => route('FAQ')]);
     }
     
     public function viewFaq($id){
@@ -57,6 +58,7 @@ class DomandeController extends Controller
         $faq->utente = '5';
         $faq->save();
      
-        return redirect('FAQ');
+        //return redirect('FAQ');
+        return response()->json(['redirect' => route('FAQ')]);
     }
 }

@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Resources\Buono;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 
 class UtenteModel 
@@ -24,7 +25,8 @@ class UtenteModel
     
     /*Probabilmente da eliminare*/
     public function getInfoUtente($id){
-        return User::where('id', $id)->get()->first();
+        //return User::where('id', $id)->get()->first();
+        return User::find($id);
     }
     
     /*Probabilmente da eliminare*/

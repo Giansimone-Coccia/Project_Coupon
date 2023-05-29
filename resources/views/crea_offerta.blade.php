@@ -2,90 +2,64 @@
 
 @section('title', 'Dettaglio offerta')
 
-@section('content')
+@section('link')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+@endsection
+
+@section('scripts')
+@parent
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ asset('js/functions.js') }}"></script>
 
 
+<script>
+$(function () {
+    var actionUrl = "{{ route('crea_offerta.store') }}";
+    var formId = 'addproduct';
+    $(":input").on('blur', function (event) {
+        var formElementId = $(this).attr('id');
+        doElemValidation(formElementId, actionUrl, formId);
+    });
+    $("#addproduct").on('submit', function (event) {
+        event.preventDefault();
+        doFormValidation(actionUrl, formId);
+    });
+});
+</script>
+@endsection
+
+@section('content')
     <div class="creazioneOfferta">
-      <form class="productForm" id="addproduct" name="addproduct" enctype="multipart/form-data" method="post" action="{{route('crea_offerta.store')}}">
+        {{ Form::open(array('route' => 'crea_offerta.store', 'id' => 'addproduct', 'class' => 'productForm')) }}
         @csrf
         <h1>Aggiungi un offerta</h1>
         <hr>
-
-        <label for="productName">Nome prodotto:</label>
-        <input type="text" id="nomeOff" name="nomeOff" value="{{old('nomeOff')}}" >
         
-        @if ($errors->first('nomeOff'))
-            <ul class="errors">
-            @foreach ($errors->get('nomeOff') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
-
-        <label for="productDescription">Descrizione:</label>
-        <input id="oggettoOff" type="text" name="oggettoOff" value="{{old('oggettoOff')}}" ></input>
+        {{ Form::label('nomeOff', 'Nome offerta', ['class' => 'label-input']) }}
+        {{ Form::text('nomeOff', '', ['class' => 'input', 'id' => 'nomeOff', 'value' => old('nomeOff')]) }}
         
-        @if ($errors->first('oggettoOff'))
-            <ul class="errors">
-            @foreach ($errors->get('oggettoOff') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
+        {{ Form::label('oggettoOff', 'Oggetto offerta', ['class' => 'label-input']) }}
+        {{ Form::text('oggettoOff', '', ['class' => 'input', 'id' => 'oggettoOff', 'value' => old('oggettoOff')]) }}
         
-        <label for="productMode">Azienda di riferimento:</label>
-        <select id="azienda" name="azienda" value="{{old('azienda')}}" >
-          <option value="">Seleziona azienda</option>
-          @foreach ($aziende as $azienda)
-          <option value="{{ $azienda->id }}" {{ old('azienda') == $azienda->id ? 'selected' : '' }} > {{$azienda->nome}} </option>
-          @endforeach
+        {{ Form::label('azienda', 'Azienda di riferimento:', ['class' => 'label-input']) }}
+        {{ Form::select('azienda', ['' => 'Seleziona azienda'] + $aziende->pluck('nome', 'id')->toArray(), old('azienda'), ['class' => 'input', 'id' => 'azienda']) }}
 
-        </select>
-
-        <label for="productExpiration">Scadenza:</label>
-        <input type="date" id="tempoFruiz" name="tempoFruiz" value="{{old('tempoFruiz')}}" >
         
-        @if ($errors->first('tempoFruiz'))
-            <ul class="errors">
-            @foreach ($errors->get('tempoFruiz') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
+        {{ Form::label('tempoFruiz', 'Tempo fruizione', ['class' => 'label-input']) }}
+        {{ Form::date('tempoFruiz', '', ['class' => 'input', 'id' => 'tempoFruiz', 'value' => old('tempoFruiz')]) }}
 
-        <label for="productMode">Modalità di fruizione:</label>
-        <select id="modalita" name="modalita" value="{{old('modalita')}}" >
-          <option value="">Seleziona modalità</option>
-          <option value="Online"> Online </option>
-          <option value="In negozio"> In Negozio </option>
-
-        </select>
+        {{ Form::label('modalita', 'Modalità di fruizione:', ['class' => 'label-input']) }}
+        {{ Form::select('modalita', ['' => 'Seleziona modalità', 'Online' => 'Online', 'In negozio' => 'In Negozio'], old('modalita'), ['class' => 'input', 'id' => 'modalita']) }}
         
-        <label for="productName">Luogo di fruizione:</label>
-        <input type="text" id="luogoFruiz" name="luogoFruiz" value="{{old('luogoFruiz')}}" >
-        
-        @if ($errors->first('luogoFruiz'))
-            <ul class="errors">
-            @foreach ($errors->get('luogoFruiz') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
+        {{ Form::label('luogoFruiz', 'Luogo fruizione', ['class' => 'label-input']) }}
+        {{ Form::text('luogoFruiz', '', ['class' => 'input', 'id' => 'luogoFruiz', 'value' => old('luogoFruiz')]) }}
 
-        <label for="productImage">Immagine:</label>
-        <input type="file" id="logoOff" name="logoOff" accept="image/*" >
-        
-        @if ($errors->first('logoOff'))
-            <ul class="errors">
-            @foreach ($errors->get('logoOff') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
+        {{ Form::label('logoOff', 'Immagine:', ['class' => 'label-input']) }}
+        {{ Form::file('logoOff', ['class' => 'input', 'id' => 'logoOff', 'accept' => 'image/*']) }}
 
-        <input type="submit" id="buttonOfferta" value="Crea Offerta">
-      </form>
+        {{ Form::submit('Aggiungi', ['class' => "buttonOfferta"]) }}
+      
+        {{ Form::close() }}
 
     </div>
 

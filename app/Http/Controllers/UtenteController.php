@@ -99,7 +99,7 @@ class UtenteController extends Controller
         $staff->ruolo = 'staff';
         $staff->password = Hash::make($request->password);
         $staff->save();
-        return redirect('/');
+        return response()->json(['redirect' => route('mostra_membri_staff')]);
     }
 
     public function allStaffAdmin(){

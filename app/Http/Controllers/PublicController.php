@@ -162,7 +162,7 @@ class PublicController extends Controller {
         $destinationPath = public_path() . '/images/products';
         $image->move($destinationPath, $imageName);
 
-        return redirect('/');
+        return response()->json(['redirect' => route('mostra_aziende_area_personale')]);
     }
 
     public function viewOfferta($offertaId) {

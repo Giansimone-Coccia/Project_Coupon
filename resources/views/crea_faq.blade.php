@@ -35,10 +35,10 @@ $(function () {
             <h1>Crea FAQ</h1>
 
                 {{ Form::label('domanda', 'Domanda', ['class' => 'label-input']) }}
-                {{ Form::text('domanda', '', ['class' => 'input', 'id' => 'domanda']) }}
+                {{ Form::text('domanda', '', ['class' => 'input', 'id' => 'domanda', 'value' => old('domanda')]) }}
          
                 {{ Form::label('risposta', 'Risposta', ['class' => 'label-input']) }}
-                {{ Form::text('risposta', '', ['class' => 'input', 'id' => 'risposta']) }}
+                {{ Form::text('risposta', '', ['class' => 'input', 'id' => 'risposta', 'value' => old('risposta')]) }}
                                    
                 {{ Form::submit('Registra', ['class' => "buttonOfferta"]) }}
             

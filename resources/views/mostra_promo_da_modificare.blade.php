@@ -5,7 +5,7 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ asset('js/pop-up.js') }}"></script>
+<script src="{{ asset('js/alert.js')  }}"></script>
 
 
 

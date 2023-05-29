@@ -32,12 +32,12 @@ class NuovoMembroStaffRequest extends FormRequest {
         return [
             'nome' => 'required|string|max:255',
             'cognome' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email|regex:/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/',
+            'email' => 'required|email|unique:users',
             'genere' => 'required|in:M,F,N',
             'dataNascita' => 'required|date',
-            'telefono' => 'nullable|string|max:255|regex:/\b(?:\+39)?\s?(?:(?:(?:0|\(?\d{1,4}\)?)\s?\d{2,5}[\s\./]?\d{3}[\s\./]?\d{3,4})|(?:(?:\d{3}[\s\./]?){3,4}\d{2,3})|(?:(?:\d{1,4}[\s-])?\d{5}))\b/|min:10',
+            'telefono' => 'nullable|string|max:255',
             'username' => 'required|string|max:255|unique:users,username',
-            'password' => 'required|string|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
+            'password' => 'required|string',
         ];
     }
     
@@ -46,4 +46,5 @@ class NuovoMembroStaffRequest extends FormRequest {
         throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
     }
 
+    
 }

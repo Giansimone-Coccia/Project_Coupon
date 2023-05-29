@@ -219,7 +219,7 @@ class PublicController extends Controller {
         $destinationPath = public_path() . '/images/companies';
         $image->move($destinationPath, $imageName);
 
-        return redirect('/');
+        return redirect('crea_azienda');
     }
 
     public function viewAzienda($codiceA) {

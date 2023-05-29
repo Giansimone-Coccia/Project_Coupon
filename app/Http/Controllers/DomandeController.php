@@ -6,6 +6,7 @@ use App\Models\DomandaModel;
 use App\Models\Resources\Domanda;
 use Illuminate\Http\Request;
 use App\Http\Requests\NuovaFaqRequest;
+use Illuminate\Support\Facades\Auth;
 
 class DomandeController extends Controller
 {
@@ -58,7 +59,6 @@ class DomandeController extends Controller
         $faq->utente = '5';
         $faq->save();
      
-        //return redirect('FAQ');
         return response()->json(['redirect' => route('FAQ')]);
     }
 }

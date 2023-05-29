@@ -5,7 +5,7 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ asset('js/pop-up.js') }}"></script>
+<script src="{{ asset('js/alert.js') }}"></script>
 
 <div class="overlay" id="overlay"></div>
 
@@ -19,23 +19,9 @@
             <img src="{{ asset('images/companies/' . $azienda->image) }}" class ="rounded-corners" alt="Logo offerta" >
             <h3><span>Nome azienda:</span>{{$azienda->nome}}</h3>
             @include('helpers/buttonAdmin')
+            
         </div>
-        <!-- il popup si vede solo sul primo pulsante, la possibile causa è l'id-->
-        <div class="popup center" id="confirmPopup">
-            <h3>Sei sicuro di voler eliminare questa azienda?<h3>
-                    <div class="button-box">
-                        <div>
-                            <form method="post" action="{{route('elimina_azienda.store', ['aziendaId' => $azienda->id])}}">
-                                @csrf
-                                <button  type="submit" class="pulsanti_staff" id="yesBtn">Sì</button>
-                            </form>
-                        </div>
-                        <div class="margin-left-10">
-                            <button type="" class="pulsanti_staff" id="noBtn">No</button>
-                        </div>
-                    </div>
-        </div>
-        
+
         @endforeach
         @endisset
         @include('pagination.paginator', ['paginator' => $allAziendeAdmin])

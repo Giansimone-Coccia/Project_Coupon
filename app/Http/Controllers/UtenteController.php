@@ -57,7 +57,6 @@ class UtenteController extends Controller
             $couponOfferta[] = $this->_Catalogo->getOffertaById($coupon->offPromo);  //con questo si lega ad ogni coupon la corrispettiva offerta
         }
         
-        
         return view('lista_coupon')
                 ->with('couponUtente', $couponUtente)
                 ->with('couponOfferta', $couponOfferta);

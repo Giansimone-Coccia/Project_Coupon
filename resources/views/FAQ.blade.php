@@ -59,10 +59,12 @@
                             <div class="card-body" style="display:none;" >
                                 <p>{{$faq->risposta}}</p>
                             </div>
+                            @can('isAdmin')
                             <div class="inline-block">
                                 <button class="pulsanti_staff" id='pulsante_modifica' onclick="window.location.href = '{{ route('modifica_faq', ['id' => $faq->id])}}';">Modifica</button>
                                 <button class="pulsanti_staff" id='pulsante_elimina' onclick="window.location.href = '{{ route('modifica_faq', ['id' => $faq->id])}}';">Elimina</button>
                             </div>
+                            @endcan
                         </div>
                     </div>
 
@@ -73,9 +75,11 @@
             @include('pagination.paginator', ['paginator' => $FAQs])
         </div>
     </section>
+    @can('isAdmin')
     <div class="aggiungiFAQAdmin center">
         <a href="{{route('crea_faq')}}">Aggiungi altre FAQ</a>
     </div>
+    @endcan
     <!-- End page content -->
 </div>
 @endsection

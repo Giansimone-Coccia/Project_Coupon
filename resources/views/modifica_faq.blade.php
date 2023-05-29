@@ -13,7 +13,7 @@
 <script>
 $(function () {
     var actionUrl = "{{ route('modifica_faq.store', ['id' => $faq->id]) }}";
-    var formId = {{$faq->id}};
+    var formId = '{{$faq->id}}';
     $(":input").on('blur', function (event) {
         var formElementId = $(this).attr('id');
         doElemValidation(formElementId, actionUrl, formId);

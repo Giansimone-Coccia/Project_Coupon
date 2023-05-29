@@ -185,8 +185,7 @@ class PublicController extends Controller {
         $destinationPath = public_path() . '/images/products';
         $image->move($destinationPath, $imageName);
 
-        return redirect('/');
-        //senza la definizione di primary key non va la modifica
+        return response()->json(['redirect' => route('mostra_aziende_area_personale')]);
     }
 
     public function eliminaOfferta($offertaId) {

@@ -91,7 +91,7 @@ Route::post('/crea_azienda', [PublicController::class, 'storeAzienda'])
         ->name('crea_azienda.store');
 
 Route::get('/area_personale_admin', [UtenteController::class, 'getInfoAdmin'])
-        ->name('area_personale_admin')->middleware('can:isAdmin');;
+        ->name('area_personale_admin')->middleware('can:isAdmin');
 
 Route::get('/modifica_profilo_utente', [UtenteController::class, 'viewModProfUtente'])
         ->name('modifica_profilo_utente');

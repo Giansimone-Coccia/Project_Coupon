@@ -57,7 +57,13 @@ Route::get('/dettaglio_offerta/{promoId}', [PublicController::class, 'getPromoDe
         ->name('dettaglio_offerta_ricerca');
 
 
+/*More types*/
 
+Route::get('/modifica_profilo_utente', [UtenteController::class, 'viewModProfUtente'])
+        ->name('modifica_profilo_utente')->middleware('can:isUser, isStaff');
+
+Route::post('/modifica_profilo_utente', [UtenteController::class, 'modificaProfiloUtente'])
+        ->name('modifica_profilo_utente.store')->middleware('can:isUser, isStaff');
 
 /*User*/
 
@@ -65,104 +71,96 @@ Route::get('/area_personale_utente', [UtenteController::class, 'getInfoUtente'])
         ->name('area_personale_utente')->middleware('can:isUser');
 
 Route::get('/area_personale_utente/lista_coupon', [UtenteController::class, 'getCouponUtente'])
-        ->name('lista_coupon');
+        ->name('lista_coupon')->middleware('can:isUser');
 
 Route::get('/coupon/{codOfferta}', [PublicController::class, 'getBuono'])
-        ->name('coupon');
+        ->name('coupon')->middleware('can:isUser');
 
-Route::get('/coupon_riscattato/{buonoId}', [PublicController::class, 'getBuonoRiscattato'])
-        ->name('coupon_riscattato');
-
-
+Route::get('/area_personale_utente/lista_coupon/coupon_riscattato/{buonoId}', [PublicController::class, 'getBuonoRiscattato'])
+        ->name('coupon_riscattato')->middleware('can:isUser');
 
 /*Admin*/
 
 
 Route::get('/modifica_azienda/{codiceA}', [PublicController::class, 'viewAzienda'])
-        ->name('modifica_azienda');
+        ->name('modifica_azienda')->middleware('can:isAdmin');
 
 Route::post('/modifica_azienda/{codiceA}', [PublicController::class, 'modificaAzienda'])
-        ->name('modifica_azienda.store');
+        ->name('modifica_azienda.store')->middleware('can:isAdmin');
 
 Route::get('/crea_azienda', [PublicController::class, 'addAzienda'])
-        ->name('crea_azienda');
+        ->name('crea_azienda')->middleware('can:isAdmin');
 
 Route::post('/crea_azienda', [PublicController::class, 'storeAzienda'])
-        ->name('crea_azienda.store');
+        ->name('crea_azienda.store')->middleware('can:isAdmin');
 
 Route::get('/area_personale_admin', [UtenteController::class, 'getInfoAdmin'])
         ->name('area_personale_admin')->middleware('can:isAdmin');
 
-Route::get('/modifica_profilo_utente', [UtenteController::class, 'viewModProfUtente'])
-        ->name('modifica_profilo_utente');
-
-Route::post('/modifica_profilo_utente', [UtenteController::class, 'modificaProfiloUtente'])
-        ->name('modifica_profilo_utente.store');
-
 Route::get('/modifica_membro_staff/{staffId}', [UtenteController::class, 'viewMembroStaff'])
-        ->name('modifica_membro_staff');
+        ->name('modifica_membro_staff')->middleware('can:isAdmin');
 
 Route::post('/modifica_membro_staff/{staffId}', [UtenteController::class, 'modificaMembroStaff'])
-        ->name('modifica_membro_staff.store');
+        ->name('modifica_membro_staff.store')->middleware('can:isAdmin');
 
 Route::get('/mostra_aziende_area_personale', [PublicController::class, 'allAziendeAdmin'])
-        ->name('mostra_aziende_area_personale');/*con gli helper usiamo questa pagina sia per admin che staff*/
+        ->name('mostra_aziende_area_personale')->middleware('can:isAdmin');/*con gli helper usiamo questa pagina sia per admin che staff*/
 
 Route::get('/mostra_promo_da_modificare/{aziendaId}', [PublicController::class, 'getOfferteAdmin'])
-        ->name('mostra_promo_da_modificare');
+        ->name('mostra_promo_da_modificare')->middleware('can:isAdmin');
 
 Route::post('/elimina_azienda/{aziendaId}', [PublicController::class, 'eliminaAzienda'])
-        ->name('elimina_azienda.store');
+        ->name('elimina_azienda.store')->middleware('can:isAdmin');
 
 Route::post('/elimina_membri_staff/{staffId}', [UtenteController::class, 'eliminaStaff'])
-        ->name('elimina_membri_staff.store');
+        ->name('elimina_membri_staff.store')->middleware('can:isAdmin');
 
 Route::get('/crea_faq', [DomandeController::class, 'addFaq'])
-        ->name('crea_faq');
+        ->name('crea_faq')->middleware('can:isAdmin');
 
 Route::post('/crea_faq', [DomandeController::class, 'storeFaq'])
-        ->name('crea_faq.store');
+        ->name('crea_faq.store')->middleware('can:isAdmin');
 
 Route::get('/modifica_faq/{id}', [DomandeController::class, 'viewFaq'])
-        ->name('modifica_faq');
+        ->name('modifica_faq')->middleware('can:isAdmin');
 
 Route::post('/modifica_faq/{id}', [DomandeController::class, 'modificaFaq'])
         ->name('modifica_faq.store');
 
 Route::get('/crea_membro_staff', [UtenteController::class, 'addMembroStaff'])
-        ->name('crea_membro_staff');
+        ->name('crea_membro_staff')->middleware('can:isAdmin');
 
 Route::post('/crea_membro_staff', [UtenteController::class, 'storeMembroStaff'])
-        ->name('crea_membro_staff.store');
+        ->name('crea_membro_staff.store')->middleware('can:isAdmin');
 
 Route::get('/mostra_membri_staff', [UtenteController::class, 'allStaffAdmin'])
-        ->name('mostra_membri_staff');
+        ->name('mostra_membri_staff')->middleware('can:isAdmin');
 
 Route::get('/mostra_utenti_registrati', [UtenteController::class, 'allRegisteredUsers'])
-        ->name('mostra_utenti_registrati');
+        ->name('mostra_utenti_registrati')->middleware('can:isAdmin');
 
-
-
-        
+      
 /*Staff*/
 
 Route::get('/crea_offerta', [PublicController::class, 'addOfferta'])
-        ->name('crea_offerta');
+        ->name('crea_offerta')->middleware('can:isStaff');
 
 Route::post('/crea_offerta', [PublicController::class, 'storeOfferta'])
-        ->name('crea_offerta.store');
+        ->name('crea_offerta.store')->middleware('can:isStaff');
 
 Route::get('/modifica_offerta/{offertaId}', [PublicController::class, 'viewOfferta'])
-        ->name('modifica_offerta');
+        ->name('modifica_offerta')->middleware('can:isStaff');
 
 Route::post('/modifica_offerta/{offertaId}', [PublicController::class, 'modificaOfferta'])
-        ->name('modifica_offerta.store');
+        ->name('modifica_offerta.store')->middleware('can:isStaff');
 
 Route::post('/elimina_offerta/{offertaId}', [PublicController::class, 'eliminaOfferta'])
-        ->name('elimina_offerta.store');
+        ->name('elimina_offerta.store')->middleware('can:isStaff');
 
 Route::get('/staff', [PublicController::class, 'start'])
-        ->name('staff'); 
+        ->name('staff')->middleware('can:isStaff'); 
 
 Route::view('/area_personale_staff', 'area_personale_staff')
-        ->name('area_personale_staff')->middleware('can:isStaff');;
+        ->name('area_personale_staff')->middleware('can:isStaff');
+
+        

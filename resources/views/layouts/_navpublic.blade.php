@@ -61,8 +61,8 @@
         <button type="submit" class="button bar-item search-lens right"  >
             <img src="{{ asset('images/icons/search_icon.svg' ) }}" alt="Search" class="width100">
         </button>
-        <input type="text" name="azienda" placeholder="Search Azienda"  class="searchbar height36" name="search" value="{{ request()->input('azienda') }}">
-        <input type="text" name="descrizione" placeholder="Search Descrizione"  class="searchbar height36" name="search" value="{{ request()->input('descrizione') }}">
+        <input type="text" name="azienda" placeholder="Cerca per Azienda"  class="searchbar height36" name="search" value="{{ request()->input('azienda') }}">
+        <input type="text" name="descrizione" placeholder="Cerca per Descrizione"  class="searchbar height36" name="search" value="{{ request()->input('descrizione') }}">
     </form>
 </li>
 

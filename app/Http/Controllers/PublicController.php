@@ -107,14 +107,6 @@ class PublicController extends Controller {
                         ->with('buono', $buono);
     }
 
-    public function getPromoDetailsRicerca($promoId){
-        $promoDetails= $this->_catalogModel->getPromoDetails($promoId)->first();
-        $buono=$this->_catalogModel->getBuonoOfferta($promoId);
-        return view('dettaglio_offerta')
-                        ->with('offerta', $promoDetails)
-                        ->with('buono', $buono);
-    }
-
     public function getOffertaById($promoId) {
         $promoDetails = $this->_catalogModel->getOffertaById($promoId);
         return view('dettaglio_offerta')

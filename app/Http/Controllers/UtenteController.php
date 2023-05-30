@@ -142,8 +142,10 @@ class UtenteController extends Controller
         $membro = $this->_UtenteModel->getInfoUtente($staffId);
 
         $requestVal = $request->validated();
+        
         $membro ->update($requestVal);
-        //$membro->save();
+        $membro->password = Hash::make($request->password);
+        $membro->save();
 
         return response()->json(['redirect' => route('mostra_membri_staff')]);
     }

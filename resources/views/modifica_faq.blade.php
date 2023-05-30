@@ -14,12 +14,12 @@
 <script>
 $(function () {
     var actionUrl = "{{ route('modifica_faq.store', ['id' => $faq->id]) }}";
-    var formId = '{{$faq->id}}';
+    var formId = 'formModificaFaq';
     $(":input").on('blur', function (event) {
         var formElementId = $(this).attr('id');
         doElemValidation(formElementId, actionUrl, formId);
     });
-    $("#{{$faq->id}}").on('submit', function (event) {
+    $("#formModificaFaq").on('submit', function (event) {
         event.preventDefault();
         doFormValidation(actionUrl, formId);
     });
@@ -30,7 +30,8 @@ $(function () {
 @section('content')
     <div class="creazioneOfferta">
 
-            {{ Form::open(array('route' => ['modifica_faq.store', 'id' => $faq->id], 'class' => 'productForm')) }}
+            {{ Form::open(array('route' => ['modifica_faq.store', 'id' => $faq->id], 'id' => 'formModificaFaq', 'class' => 'productForm')) }}
+            @csrf
             <h1>Modifica FAQ</h1>
 
                 {{ Form::label('domanda', 'Domanda', ['class' => 'label-input']) }}

@@ -54,6 +54,7 @@ class UtenteController extends Controller
         
         $couponUtente = $this->_UtenteModel->getCouponUser(Auth::user()->id);
         
+        $couponOfferta = [];
         foreach ($couponUtente as $coupon) {
             $couponOfferta[] = $this->_Catalogo->getOffertaById($coupon->offPromo);  //con questo si lega ad ogni coupon la corrispettiva offerta
         }
@@ -81,8 +82,8 @@ class UtenteController extends Controller
             $utente->password = Hash::make($request->password);
         }
         $utente->save();
-
-        return redirect('/area_personale_utente');
+        
+        return response()->json(['redirect' => route('area_personale_utente')]);
     }
 
     public function addMembroStaff(){
@@ -99,7 +100,7 @@ class UtenteController extends Controller
         $staff->ruolo = 'staff';
         $staff->password = Hash::make($request->password);
         $staff->save();
-        return redirect('/');
+        return response()->json(['redirect' => route('mostra_membri_staff')]);
     }
 
     public function allStaffAdmin(){

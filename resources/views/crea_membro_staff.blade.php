@@ -2,122 +2,70 @@
 
 @section('title', 'Crea membro staff')
 
-@section('content')
-
+@section('link')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+@endsection
+
+@section('scripts')
+@parent
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ asset('js/functions.js') }}"></script>
 
 
+<script>
+$(function () {
+    var actionUrl = "{{ route('crea_membro_staff.store') }}";
+    var formId = 'addStaffMember';
+    $(":input").on('blur', function (event) {
+        var formElementId = $(this).attr('id');
+        doElemValidation(formElementId, actionUrl, formId);
+    });
+    $("#addStaffMember").on('submit', function (event) {
+        event.preventDefault();
+        doFormValidation(actionUrl, formId);
+    });
+});
+</script>
+@endsection
+
+@section('content')
     <div class="creazioneOfferta">
-      <form class="productForm" id="addStaffMember" name="addStaffMember" enctype="multipart/form-data" method="post" action="{{route('crea_membro_staff.store')}}">
+        {{ Form::open(array('route' => 'crea_membro_staff.store', 'id' => 'addStaffMember', 'class' => 'productForm')) }}
         @csrf
         <h1>Aggiungi un membro dello staff</h1>
         <hr>
-
-        <label for="productName">Nome:</label>
-        <input type="text" id="nome" name="nome" value="{{old('nome')}}" >
         
-        @if ($errors->first('nome'))
-            <ul class="errors">
-            @foreach ($errors->get('nome') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
-
-        <label for="productName">Cognome:</label>
-        <input type="text" id="cognome" name="cognome" value="{{old('cognome')}}" >
+        {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
+        {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome', 'value' => old('nome')]) }}
         
-        @if ($errors->first('cognome'))
-            <ul class="errors">
-            @foreach ($errors->get('cognome') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
+        {{ Form::label('cognome', 'Cognome', ['class' => 'label-input']) }}
+        {{ Form::text('cognome', '', ['class' => 'input', 'id' => 'cognome', 'value' => old('cognome')]) }}
         
-        <label for="productName">Username:</label>
-        <input type="text" id="username" name="username" value="{{old('username')}}" >
-        
-        @if ($errors->first('username'))
-            <ul class="errors">
-            @foreach ($errors->get('username') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
+        {{ Form::label('username', 'Username', ['class' => 'label-input']) }}
+        {{ Form::text('username', '', ['class' => 'input', 'id' => 'username', 'value' => old('username')]) }}
 
         {{ Form::label('password', 'Password:') }}
         {{ Form::password('password', ['id' => 'password', 'value' => old('password')]) }}
 
-        @if ($errors->first('password'))
-            <ul class="errors">
-            @foreach ($errors->get('password') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
-
         {{ Form::label('password_confirmation', 'Conferma Password:') }}
         {{ Form::password('password_confirmation', ['id' => 'password_confirmation', 'value' => old('password_confirmation')]) }}
-
-        @if ($errors->first('password_confirmation'))
-            <ul class="errors">
-            @foreach ($errors->get('password_confirmation') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
-
-        <label for="productName">Email:</label>
-        <input type="text" id="email" name="email" value="{{old('email')}}" >
         
-        @if ($errors->first('email'))
-            <ul class="errors">
-            @foreach ($errors->get('email') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
-
-        <label for="productName">Numero di telefono:</label>
-        <input type="text" id="telefono" name="telefono" value="{{old('telefono')}}" >
+        {{ Form::label('email', 'Email', ['class' => 'label-input']) }}
+        {{ Form::text('email', '', ['class' => 'input', 'id' => 'email', 'value' => old('email')]) }}
         
-        @if ($errors->first('telefono'))
-            <ul class="errors">
-            @foreach ($errors->get('telefono') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
-
-        <label for="productName">Data di nascita:</label>
-        <input type="date" id="dataNascita" name="dataNascita" value="{{old('dataNascita')}}" >
+        {{ Form::label('telefono', 'Telefono', ['class' => 'label-input']) }}
+        {{ Form::text('telefono', '', ['class' => 'input', 'id' => 'telefono', 'value' => old('telefono')]) }}
         
-        @if ($errors->first('dataNascita'))
-            <ul class="errors">
-            @foreach ($errors->get('dataNascita') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
+        {{ Form::label('dataNascita', 'Data di nascita', ['class' => 'label-input']) }}
+        {{ Form::date('dataNascita', '', ['class' => 'input', 'id' => 'dataNascita', 'value' => old('dataNascita')]) }}
 
-        <label for="genere">Genere:</label>
-        <select id="genere" name="genere">
-            <option value="M" {{ old('genere') === 'M' ? 'selected' : '' }}>Maschio</option>
-            <option value="F" {{ old('genere') === 'F' ? 'selected' : '' }}>Femmina</option>
-            <option value="N" {{ old('genere') === 'N' ? 'selected' : '' }}>Non specificare</option>
-        </select>
+        {{ Form::label('genere', 'Genere', ['class' => 'label-input']) }}
+        {{ Form::select('genere', ['M' => 'Maschio', 'F' => 'Femmina', 'N' => 'Non specificare'], old('genere'), ['class' => 'input', 'id' => 'genere']) }}
+
         
-        @if ($errors->has('genere'))
-            <ul class="errors">
-            @foreach ($errors->get('genere') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
-
-        <input type="submit" id="buttonOfferta" value="Aggiungi">
-      </form>
+        {{ Form::submit('Aggiungi', ['class' => "buttonOfferta"]) }}
+      
+        {{ Form::close() }}
 
     </div>
 

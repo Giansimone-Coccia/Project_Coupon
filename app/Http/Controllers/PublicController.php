@@ -162,7 +162,7 @@ class PublicController extends Controller {
         $destinationPath = public_path() . '/images/products';
         $image->move($destinationPath, $imageName);
 
-        return redirect('/');
+        return response()->json(['redirect' => route('mostra_aziende_area_personale')]);
     }
 
     public function viewOfferta($offertaId) {
@@ -185,8 +185,7 @@ class PublicController extends Controller {
         $destinationPath = public_path() . '/images/products';
         $image->move($destinationPath, $imageName);
 
-        return redirect('/');
-        //senza la definizione di primary key non va la modifica
+        return response()->json(['redirect' => route('mostra_aziende_area_personale')]);
     }
 
     public function eliminaOfferta($offertaId) {
@@ -228,7 +227,7 @@ class PublicController extends Controller {
         $destinationPath = public_path() . '/images/companies';
         $image->move($destinationPath, $imageName);
 
-        return redirect('/');
+        return redirect('crea_azienda');
     }
 
     public function viewAzienda($codiceA) {

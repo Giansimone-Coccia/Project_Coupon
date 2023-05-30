@@ -6,6 +6,7 @@ use App\Models\DomandaModel;
 use App\Models\Resources\Domanda;
 use Illuminate\Http\Request;
 use App\Http\Requests\NuovaFaqRequest;
+use Illuminate\Support\Facades\Auth;
 
 class DomandeController extends Controller
 {
@@ -19,7 +20,6 @@ class DomandeController extends Controller
         
         $FAQs = $this->_FAQModel->getAllFaq();
         
-
         return view('FAQ')
                 ->with('FAQs', $FAQs);
     }
@@ -55,10 +55,9 @@ class DomandeController extends Controller
         $requestVal = $request->validated();
         $faq->update($requestVal);
         $faq->dataPub = date('yy-m-d');
-        $faq->utente = '5';
+        $faq->utente = Auth::user()->id;
         $faq->save();
      
-        //return redirect('FAQ');
         return response()->json(['redirect' => route('FAQ')]);
     }
 }

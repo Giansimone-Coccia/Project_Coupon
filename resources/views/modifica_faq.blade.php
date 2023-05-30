@@ -4,6 +4,7 @@
 
 @section('link')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+@endsection
 
 @section('scripts')
 @parent
@@ -12,19 +13,18 @@
 
 <script>
 $(function () {
-    var actionUrl = "{{ route('modifica_faq.store') }}";
-    var formId = {{$faq->id}};
+    var actionUrl = "{{ route('modifica_faq.store', ['id' => $faq->id]) }}";
+    var formId = '{{$faq->id}}';
     $(":input").on('blur', function (event) {
         var formElementId = $(this).attr('id');
         doElemValidation(formElementId, actionUrl, formId);
     });
-    $("{{$faq->id}}").on('submit', function (event) {
+    $("#{{$faq->id}}").on('submit', function (event) {
         event.preventDefault();
         doFormValidation(actionUrl, formId);
     });
 });
 </script>
-
 @endsection
 
 @section('content')
@@ -40,7 +40,7 @@ $(function () {
                 {{ Form::text('risposta', $faq->risposta, ['class' => 'input', 'id' => 'risposta']) }}
           
                           
-                {{ Form::submit('Registra', ['class' => "buttonOfferta"]) }}
+                {{ Form::submit('Modifica', ['class' => "buttonOfferta"]) }}
             
             {{ Form::close() }}
 

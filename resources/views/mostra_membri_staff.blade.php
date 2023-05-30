@@ -5,7 +5,8 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ asset('js/pop-up.js') }}"></script>
+<script src="{{ asset('js/alert.js') }}"></script>
+
 
 <div class="overlay" id="overlay"></div>
 
@@ -21,7 +22,7 @@
             <h3><span>Cognome:</span>{{$staff->cognome}}</h3>
             <ul>
                 <button class="pulsanti_staff" onclick="window.location.href = '{{ route('modifica_membro_staff', ['staffId' => $staff->id]) }}'; event.stopPropagation();"> Modifica </button>
-                <button class="pulsanti_staff"> Elimina </button>
+                <button class="pulsanti_staff" onclick="showConfirmationUtente();"> Elimina </button>
             </ul>
         </div>
         

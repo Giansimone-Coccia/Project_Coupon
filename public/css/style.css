@@ -1705,6 +1705,11 @@ select {
     font-size: 20px;
 }
 
+.aggiungiFAQAdmin{
+    font-size: 20px;
+    margin-top: 30px;
+}
+
 
    .popup {
       display: none;

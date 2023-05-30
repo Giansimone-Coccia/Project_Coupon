@@ -2,85 +2,67 @@
 
 @section('title', 'Modifica offerta')
 
-@section('content')
+
+@section('link')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+@endsection
+
+@section('scripts')
+@parent
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ asset('js/functions.js') }}"></script>
+<script src="{{ asset('js/changePreview.js') }}"></script>
+
+
+<script>
+$(function () {
+    var actionUrl = "{{ route('modifica_offerta.store', ['offertaId' => $offerta->id]) }}";
+    var formId = 'modificaOfferta';
+    $(":input").on('blur', function (event) {
+        var formElementId = $(this).attr('id');
+        doElemValidation(formElementId, actionUrl, formId);
+    });
+    $("#modificaOfferta").on('submit', function (event) {
+        event.preventDefault();
+        doFormValidation(actionUrl, formId);
+    });
+});
+</script>
+
+@endsection
+
+@section('content')
 <div class="modificaOfferta">
-    <form class="modOffertaForm" id="viewOfferta" name="viewOfferta" enctype="multipart/form-data" method="post" action="{{route('modifica_offerta.store', ['offertaId' => $offerta->id])}}">
-        @csrf
-        <h1>Modifica dati offerta</h1>
-        <hr>
-        <div class="image-mod-off">
-            <label for="offertaImage"><strong>Immagine:</strong></label>
-            <img id="previewImage" class="rounded-corners" src="{{ asset('images/products/' .$offerta->logoOff) }}" alt="Offerta da modificare" />
-            <input type="file" id="logoOff" name="logoOff" accept="image/*" onchange="previewFile(event)" required>
-        </div>
+    {{ Form::open(array('route' => ['modifica_offerta.store', 'offertaId' => $offerta->id], 'id' => 'modificaOfferta', 'class' => 'modOffertaForm')) }}
+    @csrf
+    <h1>Modifica dati offerta</h1>
+    <hr>
+    <div class="image-mod-off">
+        {{ Form::label('logoOff', 'Immagine:, ['class' => 'label-input']) }}
+        <img id="previewImage" class="rounded-corners" src="{{ asset('images/products/' .$offerta->logoOff) }}" alt="Offerta da modificare" />
+        {{ Form::file('logoOff', ['class' => 'input', 'id' => 'logoOff', 'accept' => 'image/*', 'onchange' => 'previewFile(event)', 'required']) }}
+    </div>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="{{ asset('js/changePreview.js') }}"></script>
+    <div class="form-section">
+        {{ Form::label('offertaDescrizione', 'Descrizione:') }}
+        {{ Form::text('oggettoOff', $offerta->oggettoOff) }}
 
-        @if ($errors->first('logoOff'))
-        <ul class="errors">
-            @foreach ($errors->get('logoOff') as $message)
-            <li>{{ $message }}</li>
-            @endforeach
-        </ul>
-        @endif
+        {{ Form::label('offertaModalita', 'Modalità di fruizione:') }}
+        {{ Form::select('modalita', ['', 'Modalità 1' => 'Online', 'Modalità 2' => 'In Negozio'], $offerta->modalita) }}
 
-        <div class="form-section">
-            <label for="offertaDescrizione">Descrizione:</label>
-            <input type="text" id="oggettoOff" name="oggettoOff" value="{{$offerta->oggettoOff}}"></input>
+        {{ Form::label('offertaScadenza', 'Scadenza:') }}
+        {{ Form::date('tempoFruiz', $offerta->tempoFruiz) }}
 
-            @if ($errors->first('oggettoOff'))
-            <ul class="errors">
-                @foreach ($errors->get('oggettoOff') as $message)
-                <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
+        {{ Form::label('offertaNome', 'Nome:') }}
+        {{ Form::text('nomeOff', $offerta->nomeOff) }}
 
-            <label for="offertaModalita">Modalità di fruizione:</label>
-            <select id="modalita" name="modalita" value="{{$offerta->modalita}}" >
-                <option value="">Seleziona modalità</option>
-                <option value="Modalità 1"> Online </option>
-                <option value="Modalità 2"> In Negozio </option>
-            </select>
+        {{ Form::label('productName', 'Luogo di fruizione:') }}
+        {{ Form::text('luogoFruiz', $offerta->luogoFruiz) }}
 
-            <label for="offertaScadenza">Scadenza:</label>
-            <input type="date" id="tempoFruiz" name="tempoFruiz" value="{{$offerta->tempoFruiz}}" >
-            @if ($errors->first('tempoFruiz'))
-            <ul class="errors">
-                @foreach ($errors->get('tempoFruiz') as $message)
-                <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
+        {{ Form::submit('Modifica dati', ['id' => 'buttonOfferta']) }}
 
-
-            <label for="offertaNome">Nome:</label>
-            <input type="text" id="nomeOff" name="nomeOff" value="{{$offerta->nomeOff}}">
-            @if ($errors->first('nomeOff'))
-            <ul class="errors">
-                @foreach ($errors->get('nomeOff') as $message)
-                <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
-
-            <label for="productName">Luogo di fruizione:</label>
-            <input type="text" id="luogoFruiz" name="luogoFruiz" value="{{$offerta->luogoFruiz}}" >
-
-            @if ($errors->first('luogoFruiz'))
-            <ul class="errors">
-                @foreach ($errors->get('luogoFruiz') as $message)
-                <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
-
-
-            <input type="submit" id="buttonOfferta" value="Modifica dati">
-
-        </div>
-    </form>
+        {{ Form::close() }}
+    </div>
+</form>
 </div>
 @endsection

@@ -75,11 +75,7 @@
             @include('pagination.paginator', ['paginator' => $FAQs])
         </div>
     </section>
-    @can('isAdmin')
-    <div class="aggiungiFAQAdmin center">
-        <a href="{{route('crea_faq')}}">Aggiungi altre FAQ</a>
-    </div>
-    @endcan
+   
     <!-- End page content -->
 </div>
 @endsection

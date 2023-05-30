@@ -4,6 +4,9 @@
 
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ asset('js/alert.js') }}"></script>
+
 
 <div class="main content padding" style="max-width: 1300px; margin-top: 150px;">
     <div class="couponlist" align="center">
@@ -21,7 +24,7 @@
             <h3><span>Cognome:</span>{{$ruser->cognome}}</h3>
             <h5><span>Coupon riscattati:</span> {{$numCoupon[$contatore++]}} </h5>
             <ul>
-                <button class="pulsanti_staff"> Elimina </button>
+                <button class="pulsanti_staff" onclick="showConfirmationUtente();"> Elimina </button>
             </ul>
         </div>
 

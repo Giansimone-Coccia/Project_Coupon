@@ -71,7 +71,6 @@ class UtenteController extends Controller
         }    
         
     public function modificaProfiloUtente(ModificaProfiloUtenteRequest $request) {
-        // Verifica l'autenticazione o l'autorizzazione dell'utente se necessario
 
         $utente = Auth::user();
         $requestVal = $request->validated();
@@ -140,7 +139,7 @@ class UtenteController extends Controller
     
     public function modificaMembroStaff($staffId, ModificaStaffRequest $request) {
         $membro = $this->_UtenteModel->getInfoUtente($staffId);
-
+        dd($membro);
         $requestVal = $request->validated();
         
         $membro ->update($requestVal);

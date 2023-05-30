@@ -24,7 +24,7 @@
                     <p><strong>Tipologia di azienda:</strong> {{$azienda->tipologia}}</p></div>
             </div>
         </div>
-        @endisset
+        
 
         <div class="container-azienda border-top-grey margin-top-16" >
             <div class="row-offerte padding-top-16">
@@ -33,7 +33,7 @@
                 @isset($promos)
                 @foreach ($promos as $promo)
 
-                <div class="single-offerta quarter" onclick="window.location.href = '{{ route('dettaglio_offerta_ricerca', [$promo->id]) }}';">
+                <div class="single-offerta quarter" onclick="window.location.href = '{{ route('dettaglio_offerta',[$promo->id,$azienda->id]) }}';">
                     <div class="inline-block">
                         <div class="centerimagesoffers">
 
@@ -49,6 +49,8 @@
             </div>
             @include('pagination.paginator', ['paginator' => $promos])
         </div>
+        
+        @endisset
     </div>
 </div>
 

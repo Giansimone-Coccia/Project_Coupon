@@ -35,7 +35,6 @@
         @endforeach
         @endisset
         @include('pagination.paginator', ['paginator' => $allStaffAdmin])
-        <a class="refAggiungi" href="{{route('crea_membro_staff')}}">Aggiungi altri memebri staff</a>
-    </div>
-    @endsection
+</div>
+@endsection
 

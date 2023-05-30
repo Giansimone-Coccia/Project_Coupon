@@ -41,7 +41,6 @@ class UsersSeeder extends Seeder
             ['username' => 'UA0001', 'password' => Hash::make('admin'), 'nome' => 'Giansimone', 'cognome' => 'Cesari', 'genere' =>'M' , 'dataNascita' => '1985-07-02','email' => "giansimonecesari@gmail.com", 'telefono' => "334323455", 'ruolo' =>'admin','created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")]
             
-
         ]);
     }
 }

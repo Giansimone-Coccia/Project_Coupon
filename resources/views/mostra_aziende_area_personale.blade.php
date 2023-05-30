@@ -36,7 +36,6 @@
         @endforeach
         @endisset
         @include('pagination.paginator', ['paginator' => $allAziendeAdmin])
-        <a class="refAggiungi" href="{{route('crea_azienda')}}"  onclick="window.location.href = '{{ route('mostra_promo_da_modificare', [$azienda->id]) }}';"> Aggiungi altre aziende</a>
     </div>
 </div>
 @endsection

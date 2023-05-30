@@ -107,14 +107,6 @@ class PublicController extends Controller {
                         ->with('buono', $buono);
     }
 
-    public function getPromoDetailsRicerca($promoId){
-        $promoDetails= $this->_catalogModel->getPromoDetails($promoId)->first();
-        $buono=$this->_catalogModel->getBuonoOfferta($promoId);
-        return view('dettaglio_offerta')
-                        ->with('offerta', $promoDetails)
-                        ->with('buono', $buono);
-    }
-
     public function getOffertaById($promoId) {
         $promoDetails = $this->_catalogModel->getOffertaById($promoId);
         return view('dettaglio_offerta')
@@ -249,8 +241,7 @@ class PublicController extends Controller {
         $destinationPath = public_path() . '/images/companies';
         $image->move($destinationPath, $imageName);
 
-        return redirect('mostra_aziende_area_personale');
-        //senza la definizione di primary key non va la modifica
+        return response()->json(['redirect' => route('mostra_aziende_area_personale')]);
     }
 
 }

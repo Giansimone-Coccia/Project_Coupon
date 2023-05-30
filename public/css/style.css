@@ -1569,7 +1569,6 @@ select {
     grid-template-columns: 1fr 1fr; /* crea una griglia con due colonne */
     justify-content: center;
     align-items: center;
-    margin-left: 15px;
 }
 
 .area_admin{

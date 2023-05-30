@@ -6,27 +6,27 @@
 
 
     @if (!$paginator->onFirstPage())
-        <a href="{{ $paginator->url(1) }}" >Inizio</a> |
+        <a href="{{ $paginator->url(1) }}" class="link" >Inizio</a> |
     @else
         Inizio |
     @endif
 
 
     @if ($paginator->currentPage() != 1)
-    <a href="{{ $paginator->previousPageUrl() }}">&lt; Precedente</a> |
+    <a href="{{ $paginator->previousPageUrl() }}" class="link">&lt; Precedente</a> |
     @else
         &lt; Precedente |
     @endif
 
 
     @if ($paginator->hasMorePages())
-        <a href="{{ $paginator->nextPageUrl() }}">Successivo &gt;</a> |
+        <a href="{{ $paginator->nextPageUrl() }}" class="link">Successivo &gt;</a> |
     @else
         Successivo &gt; |
     @endif
 
     @if ($paginator->hasMorePages())
-        <a href="{{ $paginator->url($paginator->lastPage()) }}">Fine</a>
+        <a href="{{ $paginator->url($paginator->lastPage()) }}" class="link">Fine</a>
     @else
         Fine
     @endif

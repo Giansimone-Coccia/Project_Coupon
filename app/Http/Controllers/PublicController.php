@@ -90,6 +90,15 @@ class PublicController extends Controller {
                         ->with('utente', $utente);
     }
     
+    public function getBuonoRiscattato($buonoId){
+        $buono = $this->_catalogModel->getBuonoById($buonoId);
+        $offertaDetails=$this->_catalogModel->getOffertaById($buono->offPromo);
+        $utente = Auth::user();
+        return view('coupon')
+                        ->with('buono', $buono)
+                        ->with('offerta', $offertaDetails)
+                        ->with('utente', $utente);
+    }
     public function getPromoDetails($promoId){
         $promoDetails= $this->_catalogModel->getPromoDetails($promoId)->first();
         $buono=$this->_catalogModel->getBuonoOfferta($promoId);
@@ -153,7 +162,7 @@ class PublicController extends Controller {
         $destinationPath = public_path() . '/images/products';
         $image->move($destinationPath, $imageName);
 
-        return redirect('/');
+        return response()->json(['redirect' => route('mostra_aziende_area_personale')]);
     }
 
     public function viewOfferta($offertaId) {
@@ -219,7 +228,7 @@ class PublicController extends Controller {
         $destinationPath = public_path() . '/images/companies';
         $image->move($destinationPath, $imageName);
 
-        return redirect('/');
+        return redirect('crea_azienda');
     }
 
     public function viewAzienda($codiceA) {

@@ -22,9 +22,9 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 
-<div class="main content padding" style="max-width: 1300px; margin-top: 100px;">
+<div class="main content padding faq-list" >
     <div class="page_title">
-        <h1 style="font-weight: 600">FAQ</h1>
+        <h1 class="font-weight-600">FAQ</h1>
     </div>
     <section class="faq-section padding-bottom-16">
         <div class="container">

@@ -4,9 +4,9 @@
 
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-<div class="main content padding" style="max-width: 1300px; margin-top: 70px;">
+<div class="main content padding coupons-riscattati">
     <div class="couponlist" align="center">
-        <h1 style="font-weight: 300">Lista coupon riscattati:</h1>
+        <h1 class="font-weight-300">Lista coupon riscattati:</h1>
         @isset($couponUtente)
         @php
         $contatore = 0;

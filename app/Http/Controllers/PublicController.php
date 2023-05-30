@@ -138,7 +138,7 @@ class PublicController extends Controller {
         $promos = $this->_catalogModel->ricercaPromo($aziendeId, $descrizione);
 
         if ($promos != null) {
-            return view('risultati_page')
+            return view('risultati_page' )
                             ->with('promos', $promos)
                             ->with('aziendaSearch', 'Risultati con Azienda: "' . $aziendaName . '"')
                             ->with('descSearch', 'Risultati con Descrizione: "' . $descrizione . '"');

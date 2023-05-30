@@ -20,7 +20,6 @@ class DomandeController extends Controller
         
         $FAQs = $this->_FAQModel->getAllFaq();
         
-
         return view('FAQ')
                 ->with('FAQs', $FAQs);
     }
@@ -56,7 +55,7 @@ class DomandeController extends Controller
         $requestVal = $request->validated();
         $faq->update($requestVal);
         $faq->dataPub = date('yy-m-d');
-        $faq->utente = '5';
+        $faq->utente = Auth::user()->id;
         $faq->save();
      
         return response()->json(['redirect' => route('FAQ')]);

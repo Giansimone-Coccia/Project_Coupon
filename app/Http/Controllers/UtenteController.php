@@ -152,11 +152,21 @@ class UtenteController extends Controller
         
     public function eliminaStaff($staffId) {
         
-        $staff = $this->_UtenteModel->getInfoUtente($staffId)->first();
+        $staff = $this->_UtenteModel->getInfoUtente($staffId);
 
         $staff->delete();
 
-        return route('mostra_membri_staff');
+        return redirect('/mostra_membri_staff');
     }
+    
+        public function eliminaUserRegistered($userId) {
+        
+        $userRegistered = $this->_UtenteModel->getInfoUtente($userId);
+
+        $userRegistered->delete();
+
+        return redirect('/mostra_utenti_registrati');
+    }
+   
    
 }

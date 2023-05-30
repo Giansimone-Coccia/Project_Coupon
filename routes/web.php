@@ -117,6 +117,10 @@ Route::post('/elimina_azienda/{aziendaId}', [PublicController::class, 'eliminaAz
 Route::post('/elimina_membri_staff/{staffId}', [UtenteController::class, 'eliminaStaff'])
         ->name('elimina_membri_staff.store');
 
+Route::post('/elimina_utenti_registrati/{userId}', [UtenteController::class, 'eliminaUserRegistered'])
+        ->name('elimina_utenti_registrati.store');
+
+
 Route::get('/crea_faq', [DomandeController::class, 'addFaq'])
         ->name('crea_faq');
 

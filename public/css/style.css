@@ -385,6 +385,8 @@ button{
     cursor: pointer;
 
 }
+
+
 .topmenu{
     max-width:1200px;
     max-height:1000px;
@@ -410,6 +412,7 @@ button{
     text-decoration-color: #394867;
 }
 
+.fo
 .page_title{
     color: #394867;
     margin-bottom: 45px;
@@ -450,6 +453,36 @@ button{
     background: #ccd7ed;
     padding-left: 10px;
 }
+
+.coupons-riscattati{
+    max-width: 1300px; margin-top: 70px;
+}
+
+.max-width-1300{
+    max-width: 1300px;
+}
+
+.faq-list{
+    max-width: 1300px; margin-top: 100px;
+}
+
+.font-weight-300{
+    font-weight: 300
+}
+
+.font-weight-600{
+    font-weight: 600
+}
+
+.font-size-24{
+    font-size:24px
+}
+
+
+.font-size-64{
+    font-size:64px
+}
+
 .faq .card .card-header .faq-title {
     width: 100%;
     text-align: left;
@@ -903,8 +936,15 @@ footerF{
 }
 a.link {
     color: #007BA7;
+    text-decoration: underline;
+    cursor: pointer;
     letter-spacing: 0.2px;
     display: inline-block;
+}
+
+.color-link{
+        color: #007BA7 !important;
+
 }
 
 .margin-top-20{

@@ -43,8 +43,8 @@
             </div>
         </div>
         
+        @include('pagination.paginator_ricerca', ['paginator' => $promos])
         @endisset
-
         <!-- End page content -->
     </div>
 </div>

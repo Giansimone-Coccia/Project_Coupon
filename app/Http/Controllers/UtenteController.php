@@ -74,13 +74,13 @@ class UtenteController extends Controller
         // Verifica l'autenticazione o l'autorizzazione dell'utente se necessario
 
         $utente = Auth::user();
-
         $requestVal = $request->validated();
                 
         $utente -> update($requestVal);
         if ($request->filled('password')) {
             $utente->password = Hash::make($request->password);
         }
+        
         $utente->save();
         
         return response()->json(['redirect' => route('area_personale_utente')]);

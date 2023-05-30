@@ -241,8 +241,7 @@ class PublicController extends Controller {
         $destinationPath = public_path() . '/images/companies';
         $image->move($destinationPath, $imageName);
 
-        return redirect('mostra_aziende_area_personale');
-        //senza la definizione di primary key non va la modifica
+        return response()->json(['redirect' => route('mostra_aziende_area_personale')]);
     }
 
 }

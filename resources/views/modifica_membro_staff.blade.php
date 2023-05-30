@@ -26,7 +26,6 @@ $(function () {
     });
 });
 </script>
-
 @endsection
 
 @section('content')
@@ -46,7 +45,7 @@ $(function () {
 
 
     {{ Form::label('username', 'Username:') }}
-    {{ Form::text('username', $membro->username, ['class' => 'input', 'id' => 'username']) }}
+    {{ Form::text('username', $membro->username, ['class' => 'input', 'id' => 'username', 'readonly']) }}
 
 
     {{ Form::label('password', 'Password:') }}
@@ -58,19 +57,19 @@ $(function () {
 
 
     {{ Form::label('email', 'Email:') }}
-    {{ Form::text('email', $membro->email, ['class' => 'input', 'id' => 'email']) }}
+    {{ Form::text('email', $membro->email, ['class' => 'input', 'id' => 'email', 'readonly']) }}
 
 
     {{ Form::label('telefono', 'Telefono:') }}
-    {{ Form::text('telefono', $membro->telefono, ['class' => 'input', 'id' => 'telefono']) }}
+    {{ Form::text('telefono', $membro->telefono, ['class' => 'input', 'id' => 'telefono', 'readonly']) }}
 
 
     {{ Form::label('dataNascita', 'Data di nascita:') }}
-    {{ Form::date('dataNascita', $membro->dataNascita, ['class' => 'input', 'id' => 'dataNascita']) }}
+    {{ Form::date('dataNascita', $membro->dataNascita, ['class' => 'input', 'id' => 'dataNascita', 'readonly']) }}
 
 
     {{ Form::label('genere', 'Genere:', ['class' => 'label-input']) }}
-    {{ Form::select('genere', ['M' => 'Maschio', 'F' => 'Femmina', 'N' => 'Altro'], $membro->genere, ['class' => 'input', 'id' => 'genere']) }}
+    {{ Form::select('genere', ['M' => 'Maschio', 'F' => 'Femmina', 'N' => 'Altro'], $membro->genere, ['class' => 'input', 'id' => 'genere', 'readonly']) }}
 
 
     {{ Form::submit('Modifica', ['class' => 'confirmationButton']) }}

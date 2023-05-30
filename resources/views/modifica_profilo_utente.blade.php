@@ -26,7 +26,6 @@ $(function () {
     });
 });
 </script>
-
 @endsection
 
 @section('content')
@@ -36,42 +35,38 @@ $(function () {
     @csrf
     <h1>Modifica dati personali e password</h1>
     <hr>
-
+    
+    
     {{ Form::label('nome', 'Nome:') }}
-    {{ Form::text('nome', Auth::user()->nome) }}
-
+    {{ Form::text('nome', Auth::user()->nome, ['class' => 'input', 'id' => 'nome']) }}
+    
     {{ Form::label('cognome', 'Cognome:') }}
-    {{ Form::text('cognome', Auth::user()->cognome) }}
+    {{ Form::text('cognome', Auth::user()->cognome, ['class' => 'input', 'id' => 'cognome']) }}
 
-    @can('isAdmin')
     {{ Form::label('username', 'Username:') }}
-    {{ Form::text('username', Auth::user()->username) }}
-    @endcan
+    {{ Form::text('username', Auth::user()->username, ['class' => 'input', 'id' => 'username', 'readonly']) }}
 
     {{ Form::label('password', 'Password:') }}
-    {{ Form::password('password', ['id' => 'password']) }}
+    {{ Form::password('password', ['class' => 'input', 'id' => 'password', 'value' => Auth::user()->password]) }}
 
     {{ Form::label('password_confirmation', 'Conferma Password:') }}
-    {{ Form::password('password_confirmation', ['id' => 'password_confirmation']) }}
+    {{ Form::password('password_confirmation', ['class' => 'input', 'id' => 'password_confirmation', 'value' => Auth::user()->password]) }}
 
-    @canany(['isUser', 'isAdmin'])
     {{ Form::label('email', 'Email:') }}
-    {{ Form::text('email', Auth::user()->email) }}
+    {{ Form::text('email', Auth::user()->email, ['class' => 'input', 'id' => 'email']) }}
 
-    {{ Form::label('telefono', 'Numero di telefono:') }}
-    {{ Form::text('telefono', Auth::user()->telefono) }}
+    {{ Form::label('telefono', 'Telefono:') }}
+    {{ Form::text('telefono', Auth::user()->telefono, ['class' => 'input', 'id' => 'telefono']) }}
 
     {{ Form::label('dataNascita', 'Data di nascita:') }}
-    {{ Form::date('dataNascita', Auth::user()->dataNascita) }}
+    {{ Form::date('dataNascita', Auth::user()->dataNascita, ['class' => 'input', 'id' => 'dataNascita']) }}
 
-    {{ Form::label('genere', 'Genere:') }}
-    {{ Form::select('genere', ['M' => 'Maschio', 'F' => 'Femmina', 'N' => 'Altro'], Auth::user()->genere) }}
-    @endcanany
+    {{ Form::label('genere', 'Genere:', ['class' => 'label-input']) }}
+    {{ Form::select('genere', ['M' => 'Maschio', 'F' => 'Femmina', 'N' => 'Altro'], Auth::user()->genere, ['class' => 'input', 'id' => 'genere']) }}
 
     {{ Form::submit('Modifica', ['class' => 'confirmationButton']) }}
+    
     {{ Form::close() }}
-
-
 </div>
 
 @endsection

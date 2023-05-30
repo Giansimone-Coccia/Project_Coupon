@@ -2,90 +2,64 @@
 
 @section('title', 'Modifica Azienda')
 
-@section('content')
+@section('link')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+@endsection
+
+@section('scripts')
+@parent
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ asset('js/functions.js') }}"></script>
+<script src="{{ asset('js/changePreview.js') }}"></script>
 
 
+<script>
+$(function () {
+    var actionUrl = "{{ route('modifica_azienda.store', ['codiceA' => $azienda->id]) }}";
+    var formId = 'modAzienda';
+    $(":input").on('blur', function (event) {
+        var formElementId = $(this).attr('id');
+        doElemValidation(formElementId, actionUrl, formId);
+    });
+    $("#modAzienda").on('submit', function (event) {
+        event.preventDefault();
+        doFormValidation(actionUrl, formId);
+    });
+});
+</script>
+@endsection
+
+@section('content')
     <div class="creazioneOfferta">
-      <form class="productForm" id="addproduct" name="addproduct" enctype="multipart/form-data" method="post" action="{{route('modifica_azienda.store', [$azienda->id])}}">
+        {{ Form::open(array('route' => ['modifica_azienda.store', 'codiceA' => $azienda->id], 'id' => 'modAzienda', 'class' => 'productForm')) }}
         @csrf
         <h1>Modifica azienda</h1>
         <hr>
 
         <div class="image-mod-off">
-        <label for="productImage">Immagine:</label>
+        {{ Form::label('productImage', 'Immagine:') }}
         <img id="previewImage" class="rounded-corners" src="{{ asset('images/companies/' .$azienda->image) }}" alt="Azienda da modificare" />
-        <input type="file" id="image" name="image" accept="image/*" onchange="previewFile(event)" required>
+        {{ Form::file('image', ['id' => 'image', 'accept' => 'image/*', 'onchange' => 'previewFile(event)', 'required']) }}
         </div>
+        
+        {{ Form::label('nome', 'Nome azienda:') }}
+        {{ Form::text('nome', $azienda->nome, ['class' => 'input', 'id' => 'nome']) }}
+        
+        {{ Form::label('descAzienda', 'Descrizione Azienda:') }}
+        {{ Form::text('descAzienda', $azienda->descAzienda, ['class' => 'input', 'id' => 'descAzienda']) }}
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="{{ asset('js/changePreview.js') }}"></script>
-        
-        @if ($errors->first('image'))
-            <ul class="errors">
-            @foreach ($errors->get('image') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
+        {{ Form::label('localizzazione', 'Localizzazione:') }}
+        {{ Form::text('localizzazione', $azienda->localizzazione, ['class' => 'input', 'id' => 'localizzazione']) }}
 
-        <label for="productName">Nome azienda:</label>
-        <input type="text" id="nome" name="nome" value="{{$azienda->nome}}" >
-        
-        @if ($errors->first('nome'))
-            <ul class="errors">
-            @foreach ($errors->get('nome') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
+        {{ Form::label('ragSoc', 'Ragione sociale:') }}
+        {{ Form::text('ragSoc', $azienda->ragSoc, ['class' => 'input', 'id' => 'ragSoc']) }}
 
-        <label for="productDescription">Descrizione Azienda:</label>
-        <input id="descAzienda" type="text" name="descAzienda" value="{{$azienda->descAzienda}}" ></input>
+        {{ Form::label('tipologia', 'Tipologia:') }}
+        {{ Form::text('tipologia', $azienda->tipologia, ['class' => 'input', 'id' => 'tipologia']) }}
         
-        @if ($errors->first('descAzienda'))
-            <ul class="errors">
-            @foreach ($errors->get('descAzienda') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
+        {{ Form::submit('Modifica', ['class' => 'confirmationButton']) }}
         
-        <label for="productMode">Localizzazione:</label>
-        <input type="text" id="localizzazione" name="localizzazione" value="{{$azienda->localizzazione}}" >
-        
-        @if ($errors->first('localizzazione'))
-            <ul class="errors">
-            @foreach ($errors->get('localizzazione') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
-        
-
-        <label for="productExpiration">Ragione Sociale:</label>
-        <input type="text" id="ragSoc" name="ragSoc" value="{{$azienda->ragSoc}}" >
-        
-        @if ($errors->first('ragSoc'))
-            <ul class="errors">
-            @foreach ($errors->get('ragSoc') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
-        
-        <label for="productName">Tipologia:</label>
-        <input type="text" id="tipologia" name="tipologia" value="{{$azienda->tipologia}}" >
-        
-        @if ($errors->first('tipologia'))
-            <ul class="errors">
-            @foreach ($errors->get('tipologia') as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-            </ul>
-        @endif
-
-        <input type="submit" id="buttonOfferta" value="Modifica Azienda">
+        {{ Form::close() }}
       </form>
 
     </div>

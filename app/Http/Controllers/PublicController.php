@@ -138,7 +138,7 @@ class PublicController extends Controller {
         $promos = $this->_catalogModel->ricercaPromo($aziendeId, $descrizione);
 
         if ($promos != null) {
-            return view('risultati_page')
+            return view('risultati_page' )
                             ->with('promos', $promos)
                             ->with('aziendaSearch', 'Risultati con Azienda: "' . $aziendaName . '"')
                             ->with('descSearch', 'Risultati con Descrizione: "' . $descrizione . '"');
@@ -227,7 +227,7 @@ class PublicController extends Controller {
         $destinationPath = public_path() . '/images/companies';
         $image->move($destinationPath, $imageName);
 
-        return redirect('crea_azienda');
+        return response()->json(['redirect' => route('mostra_aziende_area_personale')]);
     }
 
     public function viewAzienda($codiceA) {

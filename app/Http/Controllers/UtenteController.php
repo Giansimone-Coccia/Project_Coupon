@@ -73,13 +73,13 @@ class UtenteController extends Controller
     public function modificaProfiloUtente(ModificaProfiloUtenteRequest $request) {
 
         $utente = Auth::user();
-
         $requestVal = $request->validated();
                 
         $utente -> update($requestVal);
         if ($request->filled('password')) {
             $utente->password = Hash::make($request->password);
         }
+        
         $utente->save();
         
         return response()->json(['redirect' => route('area_personale_utente')]);
@@ -141,7 +141,9 @@ class UtenteController extends Controller
         $membro = $this->_UtenteModel->getInfoUtente($staffId);
         dd($membro);
         $requestVal = $request->validated();
+        
         $membro ->update($requestVal);
+        $membro->password = Hash::make($request->password);
         $membro->save();
 
         return response()->json(['redirect' => route('mostra_membri_staff')]);

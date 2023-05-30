@@ -16,11 +16,11 @@
             <p><strong>Telefono:</strong> {{Auth::user()->telefono}}</p>
             <p><strong>Cognome:</strong> {{Auth::user()->cognome}}</p>
             <p><strong>Data Nascita:</strong> {{Auth::user()->dataNascita}}</p>
-            <a href="{{ route('modifica_profilo_utente') }}" class="parola_click1" > Modifica dati personali </a>
+            <a href="{{ route('modifica_profilo_utente') }}" class="parola_click1 color-link" > Modifica dati personali </a>
         </div>
 
         <h2>Coupon Riscattati</h2>
-        <p> <a onclick="window.location.href = '{{ route('lista_coupon') }}';" class="parola_click"> Clicca qui </a> per visualizzare tutti i coupon riscattati</p>
+        <p> <a onclick="window.location.href = '{{ route('lista_coupon') }}';" class="parola_click color-link"> Clicca qui</a> per visualizzare tutti i coupon riscattati</p>
     </div>
 </div>
 @endsection

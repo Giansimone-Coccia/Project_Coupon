@@ -128,6 +128,7 @@ class PublicController extends Controller {
 
         $aziendeId = $this->_catalogModel->getSimilarAziende($aziendaName);
         $promos = $this->_catalogModel->ricercaPromo($aziendeId, $descrizione);
+        
 
         if ($promos != null) {
             return view('risultati_page' )

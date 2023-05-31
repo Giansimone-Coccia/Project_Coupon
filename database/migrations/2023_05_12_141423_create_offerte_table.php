@@ -21,6 +21,7 @@ class CreateOfferteTable extends Migration
             $table->string('luogoFruiz',30);
             $table->string('nomeOff',25);
             $table->text('logoOff');
+            $table->boolean('stato');
             $table->unsignedBigInteger('azienda');
             $table->unsignedBigInteger('utente')->nullable();
             $table->foreign('azienda')->references('id')->on('aziende')->onDelete('cascade');

@@ -92,7 +92,7 @@ class PublicController extends Controller {
     
     public function getBuonoRiscattato($buonoId){
         $buono = $this->_catalogModel->getBuonoById($buonoId);
-        $offertaDetails=$this->_catalogModel->getOffertaById($buono->offPromo);
+        $offertaDetails=$this->_catalogModel->getOfferteAll($buono->offPromo);
         $utente = Auth::user();
         return view('coupon')
                         ->with('buono', $buono)
@@ -148,6 +148,7 @@ class PublicController extends Controller {
         $offerta = new Offerta;
         $offerta->fill($request->validated());
         $offerta->logoOff = $imageName;
+        $offerta->stato = '1';
         $offerta->utente = Auth::user()->id;
         $offerta->save();
 
@@ -172,6 +173,7 @@ class PublicController extends Controller {
         $requestVal = $request->validated();
         $offerta->update($requestVal);
         $offerta->logoOff = $imageName;
+        $offerta->stato = '1';
         $offerta->save();
 
         $destinationPath = public_path() . '/images/products';
@@ -182,10 +184,10 @@ class PublicController extends Controller {
 
     public function eliminaOfferta($offertaId) {
         $offerta = $this->_catalogModel->getOffertaById($offertaId);
-        $azienda = $offerta -> azienda;
-        $offerta->delete();
-        
 
+        $offerta->stato = '0';
+        $offerta->save();
+        
         return redirect('/mostra_aziende_area_personale');
         //senza la definizione di primary key non va la modifica
     }

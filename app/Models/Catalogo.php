@@ -42,11 +42,18 @@ class Catalogo {
     }
 
     public function getPromo($aziendaId, $paged = 8) {
-        $offerta = Offerta::where('azienda', $aziendaId);
+        $offerta = Offerta::where('azienda', $aziendaId)
+                    ->where('stato', '1');
         return $offerta->paginate($paged);
     }
 
     public function getOffertaById($offertaId) {
+        return Offerta::where('id', $offertaId)
+                ->where('stato', '1')
+                ->first();
+    }
+    
+    public function getOfferteAll($offertaId) {
         return Offerta::where('id', $offertaId)->first();
     }
 

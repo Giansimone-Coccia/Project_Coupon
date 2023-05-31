@@ -56,15 +56,17 @@ class UtenteController extends Controller
         
         $couponOfferta = [];
         foreach ($couponUtente as $coupon) {
-            $couponOfferta[] = $this->_Catalogo->getOffertaById($coupon->offPromo);  //con questo si lega ad ogni coupon la corrispettiva offerta
+            $couponOfferta[] = $this->_Catalogo->getOfferteAll($coupon->offPromo);  //con questo si lega ad ogni coupon la corrispettiva offerta
         }
+        
+
         
         return view('lista_coupon')
                 ->with('couponUtente', $couponUtente)
                 ->with('couponOfferta', $couponOfferta);
         }
         
-        public function viewModProfUtente() {
+    public function viewModProfUtente() {
             
             return view('modifica_profilo_utente');
             

@@ -137,7 +137,7 @@ class Catalogo {
     }
 
     public function getBuonoOfferta($offertaId) {
-        return Buono::where('offPromo', $offertaId)->get()->first();
+        return Buono::where('offPromo', $offertaId)->get();
     }
 
     public function getBuonoById($buonoId) {

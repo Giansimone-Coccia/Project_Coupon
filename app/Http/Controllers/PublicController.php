@@ -101,10 +101,10 @@ class PublicController extends Controller {
     }
     public function getPromoDetails($promoId){
         $promoDetails= $this->_catalogModel->getPromoDetails($promoId)->first();
-        $buono=$this->_catalogModel->getBuonoOfferta($promoId);
+        $buoni=$this->_catalogModel->getBuonoOfferta($promoId);
         return view('dettaglio_offerta')
                         ->with('offerta', $promoDetails)
-                        ->with('buono', $buono);
+                        ->with('buoni', $buoni);
     }
 
     public function getOffertaById($promoId) {

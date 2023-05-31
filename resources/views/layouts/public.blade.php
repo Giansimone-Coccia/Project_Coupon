@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ asset('js/map.js') }}"></script>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <title>Coupon4U</title>
@@ -21,17 +24,6 @@
                 padding:20px
             }
         </style>
-        <script type="text/javascript">
-            $(document).ready(function() {
-            $('#mappa').hide();
-            $('#dove-siamo').click(function() {
-            if ($('#mappa').is(':visible')) {
-                $('#mappa').hide();
-            } else {
-                $('#mappa').show();
-            }});
-            });
-        </script>
 
     </head>
     <body>

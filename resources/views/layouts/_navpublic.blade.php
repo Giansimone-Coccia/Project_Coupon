@@ -1,29 +1,7 @@
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        toggleElementVisibility();
+<script src="{{ asset('js/navbar.js') }}"></script>
 
-        $(window).resize(function() {
-            toggleElementVisibility();
-        });
-    });
-
-    function toggleElementVisibility() {
-        var logo = $('.logo');
-        var searchbar = $('.search');
-        if ($(window).width() < 950) { // Larghezza desiderata per nascondere l'elemento
-            logo.hide();
-        } else {
-            logo.show();
-        }
-        
-        if ($(window).width() < 640) { // Larghezza desiderata per nascondere l'elemento
-            searchbar.hide();
-        } else {
-            searchbar.show();
-        }
-    }
-</script>
 <li class="vectorlogo right logo">
     <img src="{{ asset('images/logo/coupon-logo.svg' ) }}" alt="Logo" class="width100 height100" onclick="window.location.href = '{{ route('start') }}';">
 </li>

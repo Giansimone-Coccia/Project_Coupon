@@ -2,38 +2,18 @@
 
 @section('title', 'FAQ')
 
-@section('content')
 
-<script>
-    window.addEventListener('DOMContentLoaded', function () {
-    var containers = document.getElementsByClassName('card');
+@section('scripts')
+@parent
+<script src="{{ asset('js/openFAQ.js') }}"></script>
+@endsection
 
-    Array.from(containers).forEach(function (container) {
-        var question = container.querySelector('.open-faq');
-        var answer = container.querySelector('.card-body');
 
-        question.addEventListener('click', function () {
-            answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
-        });
-    });
-
-    Array.from(containers).forEach(function (container) {
-        var modify_button = container.querySelector('#pulsante_modifica');
-        var delete_button = container.querySelector('#pulsante_elimina');
-
-        modify_button.addEventListener('click', function (event) {
-            event.stopPropagation();
-        });
-
-        delete_button.addEventListener('click', function (event) {
-            event.stopPropagation();
-        });
-    });
-});
-</script>
-
+@section('link')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+@endsection
 
+@section('content')
 <div class="main content padding faq-list" >
     <div class="page_title">
         <h1 class="font-weight-600">FAQ</h1>

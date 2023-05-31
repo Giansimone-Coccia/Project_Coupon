@@ -1,4 +1,26 @@
 @section('title', 'Register')
+
+@section('scripts')
+@parent
+<script src="{{ asset('js/functions.js') }}" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+$(function () {
+    var actionUrl = "{{ route('register') }}";
+    var formId = 'formRegister';
+    $(":input").on('blur', function (event) {
+        var formElementId = $(this).attr('id');
+        doElemValidation(formElementId, actionUrl, formId);
+    });
+    $("#formRegister").on('submit', function (event) {
+        event.preventDefault();
+        doFormValidation(actionUrl, formId);
+    });
+});
+</script>
+@endsection
+
 <!DOCTYPE html>
 <html lang="it" dir="ltr">
     <head>
@@ -12,91 +34,46 @@
             <div class="title">Registrazione</div>
             <div class="content">
 
-                {{ Form::open(array('route' => 'register')) }}
+                {{ Form::open(array('route' => 'register','id' => 'formRegister')) }}
                 <div class="user-details">
 
                     <div  class="input-box">
                         {{ Form::label('nome', 'Nome') }}
                         {{ Form::text('nome', '', ['id' => 'nome']) }}
-                        @if ($errors->first('nome'))
-                        <ul class="errors">
-                            @foreach ($errors->get('nome') as $message)
-                            <li>{{ $message }}</li>
-                            @endforeach
-                        </ul>
-                        @endif
+
                     </div>
 
                     <div  class="input-box">
                         {{ Form::label('cognome', 'Cognome') }}
                         {{ Form::text('cognome', '', ['id' => 'cognome']) }}
-                        @if ($errors->first('cognome'))
-                        <ul class="errors">
-                            @foreach ($errors->get('cognome') as $message)
-                            <li>{{ $message }}</li>
-                            @endforeach
-                        </ul>
-                        @endif
+
                     </div>
 
                     <div  class="input-box">
                         {{ Form::label('email', 'Email') }}
                         {{ Form::text('email', '', ['id' => 'email']) }}
-                        @if ($errors->first('email'))
-                        <ul class="errors">
-                            @foreach ($errors->get('email') as $message)
-                            <li>{{ $message }}</li>
-                            @endforeach
-                        </ul>
-                        @endif
+
                     </div>
 
                     <div  class="input-box">
                         {{ Form::label('telefono', 'Telefono') }}
                         {{ Form::text('telefono', '', ['id' => 'telefono']) }}
-                        @if ($errors->first('telefono'))
-                        <ul class="errors">
-                            @foreach ($errors->get('telefono') as $message)
-                            <li>{{ $message }}</li>
-                            @endforeach
-                        </ul>
-                        @endif
+
                     </div>
 
                     <div  class="input-box">
                         {{ Form::label('dataNascita', 'Data di Nascita') }}
                         {{ Form::date('dataNascita', '', ['id' => 'dataNascita']) }}
-                        @if ($errors->first('dataNascita'))
-                        <ul class="errors">
-                            @foreach ($errors->get('dataNascita') as $message)
-                            <li>{{ $message }}</li>
-                            @endforeach
-                        </ul>
-                        @endif
                     </div>
 
                     <div  class="input-box">
                         {{ Form::label('username', 'Nome Utente') }}
                         {{ Form::text('username', '', ['id' => 'username']) }}
-                        @if ($errors->first('username'))
-                        <ul class="errors">
-                            @foreach ($errors->get('username') as $message)
-                            <li>{{ $message }}</li>
-                            @endforeach
-                        </ul>
-                        @endif
                     </div>
 
                     <div  class="input-box">
                         {{ Form::label('password', 'Password') }}
                         {{ Form::password('password', ['id' => 'password']) }}
-                        @if ($errors->first('password'))
-                        <ul class="errors">
-                            @foreach ($errors->get('password') as $message)
-                            <li>{{ $message }}</li>
-                            @endforeach
-                        </ul>
-                        @endif
                     </div>
 
                     <div  class="input-box">

@@ -101,18 +101,22 @@ class Catalogo {
             }
         }
 
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $perPage = $paged;
-        $offertaSlice = $vectorPromos->slice(($currentPage - 1) * $perPage, $perPage);
-        $vectorPromos = new LengthAwarePaginator(
-                $offertaSlice,
-                $vectorPromos->count(),
-                $perPage,
-                $currentPage,
-                ['path' => LengthAwarePaginator::resolveCurrentPath()]
-        );
+        if ($vectorPromos->isEmpty()) {
+            return null;
+        } else {
 
-        return $vectorPromos;
+            $currentPage = LengthAwarePaginator::resolveCurrentPage();
+            $perPage = $paged;
+            $offertaSlice = $vectorPromos->slice(($currentPage - 1) * $perPage, $perPage);
+            $vectorPromos = new LengthAwarePaginator(
+                    $offertaSlice,
+                    $vectorPromos->count(),
+                    $perPage,
+                    $currentPage,
+                    ['path' => LengthAwarePaginator::resolveCurrentPath()]
+            );
+            return $vectorPromos;
+        }
     }
 
     public function getBuono($buonoId) {

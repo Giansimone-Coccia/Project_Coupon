@@ -73,7 +73,9 @@ class Catalogo {
     public function ricercaPromo($aziendeId = null, $descrizione = "", $paged = 8) {
         if ($aziendeId == null) {
             if ($descrizione != "") {
-                $vectorPromos = Offerta::where('oggettoOff', 'LIKE', '%' . $descrizione . '%')->get();
+                $vectorPromos = Offerta::where('oggettoOff', 'LIKE', '%' . $descrizione . '%')
+                                ->where('stato','1')
+                                ->get();
             } else {
                 return null;
             }
@@ -85,7 +87,9 @@ class Catalogo {
                     $vectorOff = Offerta::where([
                                 ['oggettoOff', 'LIKE', '%' . $descrizione . '%'],
                                 ['azienda', $aziendaId]
-                            ])->get();
+                            ])
+                            ->where('stato','1')
+                            ->get();
 
                     foreach ($vectorOff as $singleAzienda) {
                         $vectorPromos->push($singleAzienda);
@@ -93,7 +97,9 @@ class Catalogo {
                 }
             } else {
                 foreach ($aziendeId as $aziendaId) {
-                    $vectorOff = Offerta::where('azienda', $aziendaId)->get();
+                    $vectorOff = Offerta::where('azienda', $aziendaId)
+                                ->where('stato','1')
+                                ->get();
                     foreach ($vectorOff as $singleAzienda) {
                         $vectorPromos->push($singleAzienda);
                     }

@@ -16,11 +16,11 @@ class Offerta extends Model
     public $timestamps = false;
     
     public function offAzienda() {
-        return $this->hasOne(Azienda::class, 'id', 'azienda'); //Il secondo della classe corrente
+        return $this->hasOne(Azienda::class, 'id', 'azienda')->onDelete('set null'); //Il secondo della classe corrente
     }
     
     public function offUtente() {
-        return $this->hasOne(User::class, 'id', 'utente'); //Il secondo della classe corrente
+        return $this->hasOne(User::class, 'id', 'utente')->onDelete('set null'); //Il secondo della classe corrente
     }
     
 }

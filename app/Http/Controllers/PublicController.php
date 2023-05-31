@@ -197,8 +197,13 @@ class PublicController extends Controller {
         
         $azienda = $this->_catalogModel->getAziendaById($aziendaId);
 
-        $azienda->delete();
+        $offerteAzienda = $this->_catalogModel->getOffertaByAzienda($aziendaId);
+        foreach ($offerteAzienda as $offerta) {
+            $offerta->stato = '0';
+            $offerta->save();
 
+        }
+        $azienda->delete();
         return redirect('/mostra_aziende_area_personale');
         //senza la definizione di primary key non va la modifica
     }

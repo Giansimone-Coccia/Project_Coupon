@@ -22,9 +22,9 @@ class CreateOfferteTable extends Migration
             $table->string('nomeOff',25);
             $table->text('logoOff');
             $table->boolean('stato');
-            $table->unsignedBigInteger('azienda');
+            $table->unsignedBigInteger('azienda')->nullable();
             $table->unsignedBigInteger('utente')->nullable();
-            $table->foreign('azienda')->references('id')->on('aziende')->onDelete('cascade');
+            $table->foreign('azienda')->references('id')->on('aziende')->nullOnDelete();
             $table->foreign('utente')->references('id')->on('users')->nullOnDelete();
         });
     }

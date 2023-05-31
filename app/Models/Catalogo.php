@@ -46,6 +46,13 @@ class Catalogo {
                     ->where('stato', '1');
         return $offerta->paginate($paged);
     }
+    
+    
+    public function getOffertaByAzienda($aziendaId) {
+        $offerta = Offerta::where('azienda', $aziendaId)
+                    ->where('stato', '1')->get();
+        return $offerta;
+    }
 
     public function getOffertaById($offertaId) {
         return Offerta::where('id', $offertaId)

@@ -11,6 +11,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('js/functions.js') }}"></script>
 <script src="{{ asset('js/changePreview.js') }}"></script>
+<script src="{{ asset('js/autoloadImg.js') }}"></script>
 
 
 <script>
@@ -39,7 +40,7 @@ $(function () {
         <div class="image-mod-off">
         {{ Form::label('productImage', 'Immagine:') }}
         <img id="previewImage" class="rounded-corners" src="{{ asset('images/companies/' .$azienda->image) }}" alt="Azienda da modificare" />
-        {{ Form::file('image', ['id' => 'image', 'accept' => 'image/*', 'onchange' => 'previewFile(event)', 'required']) }}
+        {{ Form::file('image', ['id' => 'logo', 'accept' => 'image/*', 'onchange' => 'previewFile(event)', 'required']) }}
         </div>
         
         {{ Form::label('nome', 'Nome azienda:') }}

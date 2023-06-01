@@ -3,7 +3,7 @@
     $scadenza=$offerta->tempoFruiz;
     $currentUser = Auth::user();
     
-    $bool=True;
+    $riscattato=True;
     
     if(auth()->check() && auth()->user()->can('isUser')){
         foreach($buoni as $buono){
@@ -31,9 +31,9 @@
 @endguest
 
 @can('isUser')
-@if(($currentDate < $scadenza) && ($bool ))
+@if(($currentDate < $scadenza) && ($riscattato ))
     <button id="reedem" onclick="window.location.href = '{{ route('coupon', [$offerta->id])}}';">Riscatta</button>
-@elseif(($currentDate < $scadenza) && (!$bool))
+@elseif(($currentDate < $scadenza) && (!$riscattato))
     <button>Già riscattato</button>
     <p>Visita le <a href="{{route('FAQ')}}">FAQ</a> per saperne di più!</p>
 @elseif($currentDate > $scadenza)

@@ -224,7 +224,8 @@ class PublicController extends Controller {
         $azienda->utente = Auth::user()->id;
         $azienda->save();
 
-        $destinationPath = public_path() . '/images/companies';
+        //$destinationPath = public_path() . '/images/companies';
+        $destinationPath = '/home/grp_07/www/laraProject/public/images/companies';
         $image->move($destinationPath, $imageName);
 
         return response()->json(['redirect' => route('mostra_aziende_area_personale')]);

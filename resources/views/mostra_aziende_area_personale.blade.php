@@ -30,9 +30,6 @@
            
         </div>
         
-        
-       
-
         @endforeach
         @endisset
         @include('pagination.paginator', ['paginator' => $allAziendeAdmin])

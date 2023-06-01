@@ -112,6 +112,9 @@ Route::post('/area_personale_admin/mostra_membri_staff/modifica_membro_staff/{st
 Route::post('/mostra_aziende_area_personale/elimina_azienda/{aziendaId}', [PublicController::class, 'eliminaAzienda'])
         ->name('elimina_azienda.store')->middleware('can:isAdmin');
 
+Route::post('/FAQ/elimina_faq/{faqId}', [DomandeController::class, 'eliminaFaq'])
+        ->name('elimina_faq.store')->middleware('can:isAdmin');
+
 Route::post('/area_personale_admin/mostra_membri_staff/elimina_membri_staff/{staffId}', [UtenteController::class, 'eliminaStaff'])
         ->name('elimina_membri_staff.store')->middleware('can:isAdmin');
 

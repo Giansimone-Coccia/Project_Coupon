@@ -56,7 +56,7 @@ class PublicController extends Controller {
                         ->with('azienda', $azienda)
                         ->with('promos', $promos);
     }
-    
+
     public function getAllPromoAzienda($aziendaId) {
 
         $azienda = $this->_catalogModel->getAziende($aziendaId)->first();
@@ -77,31 +77,47 @@ class PublicController extends Controller {
                         ->with('allOfferteAzienda', $offerte);
     }
 
-    public function getBuono($offertaId){
-        $offertaDetails=$this->_catalogModel->getOffertaById($offertaId);
-        $codiceBuono = $this->_catalogModel->generaCodBuono();
-        $dataScad = $this->_catalogModel->generaDataScadenzaBuono();
+    public function getBuono($offertaId) {
+        $offertaDetails = $this->_catalogModel->getOffertaById($offertaId);
         $utente = Auth::user();
-        $buono = $this->_catalogModel->createCoupon($codiceBuono, $dataScad, $offertaDetails->id, $utente->id);
+        $buoni = $this->_catalogModel->getBuonoOfferta($offertaId);
+        
+        $riscattato = True;
+        $buono = null;
+        
+        foreach ($buoni as $singleBuono) {
+            if ($singleBuono->utenteRich == $utente->id) {
+                $riscattato = False;
+                $buono = $singleBuono;
+                break;
+            }
+        }
+        
+        if ($riscattato) {
+            $codiceBuono = $this->_catalogModel->generaCodBuono();
+            $dataScad = $this->_catalogModel->generaDataScadenzaBuono();
+            $buono = $this->_catalogModel->createCoupon($codiceBuono, $dataScad, $offertaDetails->id, $utente->id);
+        }
         //$buono = $this->_catalogModel->getBuonoOfferta($offertaId);
         return view('coupon')
                         ->with('buono', $buono)
                         ->with('offerta', $offertaDetails)
                         ->with('utente', $utente);
     }
-    
-    public function getBuonoRiscattato($buonoId){
+
+    public function getBuonoRiscattato($buonoId) {
         $buono = $this->_catalogModel->getBuonoById($buonoId);
-        $offertaDetails=$this->_catalogModel->getOfferteAll($buono->offPromo);
+        $offertaDetails = $this->_catalogModel->getOfferteAll($buono->offPromo);
         $utente = Auth::user();
         return view('coupon')
                         ->with('buono', $buono)
                         ->with('offerta', $offertaDetails)
                         ->with('utente', $utente);
     }
-    public function getPromoDetails($promoId){
-        $promoDetails= $this->_catalogModel->getPromoDetails($promoId)->first();
-        $buoni=$this->_catalogModel->getBuonoOfferta($promoId);
+
+    public function getPromoDetails($promoId) {
+        $promoDetails = $this->_catalogModel->getPromoDetails($promoId)->first();
+        $buoni = $this->_catalogModel->getBuonoOfferta($promoId);
         return view('dettaglio_offerta')
                         ->with('offerta', $promoDetails)
                         ->with('buoni', $buoni);
@@ -113,9 +129,8 @@ class PublicController extends Controller {
                         ->with('dettaglio_offerta', $promoDetails);
     }
 
-    
-    public function addOfferta(){
-        
+    public function addOfferta() {
+
         $aziende = $this->_catalogModel->getAllAziendeNoPaged();
         return view('crea_offerta')
                         ->with('aziende', $aziende);
@@ -128,10 +143,9 @@ class PublicController extends Controller {
 
         $aziendeId = $this->_catalogModel->getSimilarAziende($aziendaName);
         $promos = $this->_catalogModel->ricercaPromo($aziendeId, $descrizione);
-        
 
         if ($promos != null) {
-            return view('risultati_page' )
+            return view('risultati_page')
                             ->with('promos', $promos)
                             ->with('aziendaSearch', 'Risultati con Azienda: "' . $aziendaName . '"')
                             ->with('descSearch', 'Risultati con Descrizione: "' . $descrizione . '"');
@@ -189,20 +203,19 @@ class PublicController extends Controller {
 
         $offerta->stato = '0';
         $offerta->save();
-        
+
         return redirect('/mostra_aziende_area_personale');
         //senza la definizione di primary key non va la modifica
     }
-    
-        public function eliminaAzienda($aziendaId) {
-        
+
+    public function eliminaAzienda($aziendaId) {
+
         $azienda = $this->_catalogModel->getAziendaById($aziendaId);
 
         $offerteAzienda = $this->_catalogModel->getOffertaByAzienda($aziendaId);
         foreach ($offerteAzienda as $offerta) {
             $offerta->stato = '0';
             $offerta->save();
-
         }
         $azienda->delete();
         return redirect('/mostra_aziende_area_personale');

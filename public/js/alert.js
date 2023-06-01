@@ -40,3 +40,13 @@ function showConfirmationFaq() {
     event.stopPropagation();
   }
 }
+
+function showConfirmationStaff() {
+  var result = confirm("Confermi di voler eliminare questo membro dello staff?");
+  if (result) {
+    } 
+    else {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+}

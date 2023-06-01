@@ -53,7 +53,7 @@ $(function () {
         {{ Form::select('modalita', ['', 'Modalità 1' => 'Online', 'Modalità 2' => 'In Negozio'], $offerta->modalita) }}
 
         {{ Form::label('offertaScadenza', 'Scadenza:') }}
-        {{ Form::text('offertaScadenza', $offerta->tempoFruiz, ['class' => 'input', 'id' => 'offertaScadenza']) }}
+        {{ Form::date('offertaScadenza', $offerta->tempoFruiz, ['class' => 'input', 'id' => 'offertaScadenza']) }}
 
         {{ Form::label('offertaNome', 'Nome:') }}
         {{ Form::text('offertaNome', $offerta->nomeOff, ['class' => 'input', 'id' => 'offertaNome']) }}
@@ -61,10 +61,10 @@ $(function () {
         {{ Form::label('luogoFruiz', 'Luogo di fruizione:') }}
         {{ Form::text('luogoFruiz', $offerta->luogoFruiz, ['class' => 'input', 'id' => 'luogoFruiz']) }}
 
-        {{ Form::submit('Modifica dati', ['id' => 'buttonOfferta']) }}
+        {{ Form::submit('Modifica dati') }}
 
-        {{ Form::close() }}
     </div>
-</form>
+       {{ Form::close() }}
+
 </div>
 @endsection

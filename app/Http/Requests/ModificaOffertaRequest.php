@@ -2,12 +2,14 @@
 
 namespace App\Http\Requests;
 
+
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 use Symfony\Component\HttpFoundation\Response;
+
 
 class ModificaOffertaRequest extends FormRequest {
 
@@ -31,6 +33,7 @@ class ModificaOffertaRequest extends FormRequest {
         return [
             'nomeOff' => 'required|max:20',
             'oggettoOff' => 'required|max:250',
+            'azienda' => 'required',
             'tempoFruiz' => 'required',
             'luogoFruiz'=> 'required',
             'modalita' => 'required',

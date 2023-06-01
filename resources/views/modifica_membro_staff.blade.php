@@ -75,7 +75,6 @@ $(function () {
     {{ Form::submit('Modifica', ['class' => 'confirmationButton']) }}
 
     {{ Form::close() }}
-    </form>
 
 </div>
 

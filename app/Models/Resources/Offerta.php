@@ -9,7 +9,7 @@ class Offerta extends Model
     protected $table = 'offerte';
     protected $primaryKey = 'id';
     //senza la definizione di primary key non va la modifica
-    protected $fillable = ['oggettoOff', 'modalita', 'tempoFruiz','luogoFruiz','nomeOff','azienda', 'utente'];
+    protected $fillable = ['oggettoOff', 'modalita', 'tempoFruiz','luogoFruiz','nomeOff','azienda', 'utente', 'stato'];
     
     protected $guarded = ['id'];
     

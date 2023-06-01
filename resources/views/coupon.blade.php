@@ -9,6 +9,9 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
     </head>
     <body>
+        <div class="center">
+            <p><a href="{{ URL::previous()}}">Premi qui</a> per tornare indietro!</p>
+        </div>
         @isset($buono)
         @isset($offerta)
         <div class="coupon-page">

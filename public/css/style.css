@@ -167,7 +167,9 @@ h6{
 .marging-16-top-bot{
         margin: 16px 0px 16px 0px
 }
-
+.margin-right-16{
+        margin-right: 16px
+}
 .margin-bottom-16{
     margin-bottom: 16px
 }
@@ -529,7 +531,6 @@ button{
     line-height: 28px;
     letter-spacing: 1px;
     border-top: 1px solid #F3F8FF;
-
 }
 
 .faq .card .card-body p {

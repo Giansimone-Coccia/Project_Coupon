@@ -24,7 +24,7 @@
             <h3><span>Cognome:</span>{{$ruser->cognome}}</h3>
             <h5><span>Coupon riscattati:</span> {{$numCoupon[$contatore++]}} </h5>
             <div class="button-box">
-                <div>
+                <div class="margin-right-16">
                     {{ Form::open(array('route' => ['elimina_utenti_registrati.store', 'userId' => $ruser->id], 'id' => 'Eliminaform', 'class' => 'productFormNew')) }}
                     @csrf  
                     {{ Form::submit('Elimina', ['class' => 'pulsanti_staff', 'onclick'=>'showConfirmationUtente()']) }}   

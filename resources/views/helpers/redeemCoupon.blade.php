@@ -5,11 +5,18 @@
     
     $riscattato=True;
     
-    if(Auth::check()) {
+    if(auth()->check() && auth()->user()->can('isUser')){
         foreach($buoni as $buono){
             if($buono->utenteRich == $currentUser->id)
-                $riscattato=False;
+                $bool=False;
         }
+    }
+
+    $counter=0;
+    
+    foreach($buoni as $buono){
+        if($buono->offPromo == $offerta->id)
+            ++$counter;
     }
     
 @endphp
@@ -32,4 +39,8 @@
 @elseif($currentDate > $scadenza)
     <button id="unredeemable">Scaduto</button>
 @endif
+@endcan
+
+@can('isAdmin')
+    <div class="price"><strong>Numero di coupon emessi per questa offerta:</strong> {{$counter}}</div>
 @endcan

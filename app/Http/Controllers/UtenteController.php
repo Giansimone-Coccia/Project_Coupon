@@ -14,9 +14,8 @@ use App\Http\Requests\ModificaProfiloUtenteRequest;
 use App\Http\Requests\ModificaStaffRequest;
 use App\Http\Requests\NuovoMembroStaffRequest;
 
+class UtenteController extends Controller {
 
-class UtenteController extends Controller
-{
     protected $_UtenteModel;
     protected $_Catalogo;
 
@@ -24,72 +23,68 @@ class UtenteController extends Controller
         $this->_UtenteModel = new UtenteModel;
         $this->_Catalogo = new Catalogo;
     }
-    
-    public function getInfoUtente(){
-        
+
+    public function getInfoUtente() {
+
         //$utenti = $this->_UtenteModel->getInfoUtente(Auth::user()->id)->first();
 
         return view('area_personale_utente');
     }
-    
-    public function getInfoAdmin(){
+
+    public function getInfoAdmin() {
         $coupon = $this->_Catalogo->couponCount();
-        
+
         return view('area_personale_admin')
-            ->with('numCoupon', $coupon);
+                        ->with('numCoupon', $coupon);
     }
-    
-    
-    public function getInfoStaff($username){
-        
+
+    public function getInfoStaff($username) {
+
         $staff = $this->_UtenteModel->getInfoUtente($username)->first();
 
         return view('area_personale_staff')
                         ->with('utenti', $staff);
     }
-    
 
-    
-    public function getCouponUtente(){
-        
+    public function getCouponUtente() {
+
         $couponUtente = $this->_UtenteModel->getCouponUser(Auth::user()->id);
-        
+
         $couponOfferta = [];
         foreach ($couponUtente as $coupon) {
             $couponOfferta[] = $this->_Catalogo->getOfferteAll($coupon->offPromo);  //con questo si lega ad ogni coupon la corrispettiva offerta
         }
-        
 
-        
+
+
         return view('lista_coupon')
-                ->with('couponUtente', $couponUtente)
-                ->with('couponOfferta', $couponOfferta);
-        }
-        
+                        ->with('couponUtente', $couponUtente)
+                        ->with('couponOfferta', $couponOfferta);
+    }
+
     public function viewModProfUtente() {
-            
-            return view('modifica_profilo_utente');
-            
-        }    
-        
+
+        return view('modifica_profilo_utente');
+    }
+
     public function modificaProfiloUtente(ModificaProfiloUtenteRequest $request) {
 
         $utente = Auth::user();
         $requestVal = $request->validated();
-                
-        $utente -> update($requestVal);
+
+        $utente->update($requestVal);
         if ($request->filled('password')) {
             $utente->password = Hash::make($request->password);
         }
-        
+
         $utente->save();
-        
+
         return response()->json(['redirect' => route('area_personale_utente')]);
     }
 
-    public function addMembroStaff(){
-        
-        $aziende = $this->_Catalogo-> getAllAziende();
+    public function addMembroStaff() {
+
+        $aziende = $this->_Catalogo->getAllAziende();
 
         return view('crea_membro_staff')
                         ->with('aziende', $aziende);
@@ -104,75 +99,72 @@ class UtenteController extends Controller
         return response()->json(['redirect' => route('mostra_membri_staff')]);
     }
 
-    public function allStaffAdmin(){
-        
+    public function allStaffAdmin() {
+
         $staff = $this->_UtenteModel->getAllStaff();
 
         return view('mostra_membri_staff')
                         ->with('allStaffAdmin', $staff);
     }
-    
-    public function modificaProfUtente(){
-        
+
+    public function modificaProfUtente() {
+
         $utente = $this->_UtenteModel->getAllStaff;
 
         return view('mostra_membri_staff')
                         ->with('allStaffAdmin', $staff);
     }
 
-    public function allRegisteredUsers(){
-        
+    public function allRegisteredUsers() {
+
         $ruserTot = $this->_UtenteModel->getAllUserR();
-        foreach($ruserTot as $ruser){
-            $numCoupon[] = $this->_Catalogo -> couponCountXUsers($ruser->id);
-            
+        foreach ($ruserTot as $ruser) {
+            $numCoupon[] = $this->_Catalogo->couponCountXUsers($ruser->id);
         }
 
         return view('mostra_utenti_registrati')
                         ->with('allRegisteredUsers', $ruserTot)
                         ->with('numCoupon', $numCoupon);
     }
-    
+
     public function viewMembroStaff($staffId) {
         $membro = $this->_UtenteModel->getInfoUtente($staffId);
         return view('modifica_membro_staff')
                         ->with('membro', $membro);
     }
-    
+
     public function modificaMembroStaff($staffId, ModificaStaffRequest $request) {
         $membro = $this->_UtenteModel->getInfoUtente($staffId);
         $requestVal = $request->validated();
-        
-        $membro ->update($requestVal);
+
+        $membro->update($requestVal);
         $membro->password = Hash::make($request->password);
         $membro->save();
-        
-        if(Auth::user()->hasRole('admin')){
-            return redirect('area_personale_admin/mostra_membri_staff');
-        }
-        else if(Auth::user()->hasRole('staff')){
-            return redirect('area_personale_staff/' . Auth::user()->id);
+
+        if (Auth::user()->hasRole('admin')) {
+            return redirect()->route('mostra_membri_staff');
+        } else if (Auth::user()->hasRole('staff')) {
+            return redirect()->route('area_personale_staff');
         }
         //return response()->json(['redirect' => route('mostra_membri_staff')]);
     }
-        
+
     public function eliminaStaff($staffId) {
-        
+
         $staff = $this->_UtenteModel->getInfoUtente($staffId);
 
         $staff->delete();
 
         return redirect('area_personale_admin/mostra_membri_staff');
     }
-    
-        public function eliminaUserRegistered($userId) {
-        
+
+    public function eliminaUserRegistered($userId) {
+
         $userRegistered = $this->_UtenteModel->getInfoUtente($userId);
 
         $userRegistered->delete();
 
         return redirect('area_personale_admin/mostra_utenti_registrati');
     }
-   
-   
+
 }

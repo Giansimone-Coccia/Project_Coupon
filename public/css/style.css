@@ -411,7 +411,7 @@ button{
     display: inline-block;
     font-weight: 400;
     text-decoration: underline;
-    text-decoration-color: #394867;
+
 }
 
 .fo
@@ -862,7 +862,7 @@ footerF{
 
 /*login.css*/
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 
 /**{
     margin: 0;
@@ -1171,7 +1171,7 @@ a.link {
 }
 
 /*register.css*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 
 .body_register{
     height: 100vh;

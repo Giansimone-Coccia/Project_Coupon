@@ -2,10 +2,6 @@
 
 @section('title', 'Crea membro staff')
 
-@section('link')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-@endsection
-
 @section('scripts')
 @parent
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

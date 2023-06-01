@@ -3,8 +3,6 @@
 @section('title', 'Home')
 
 @section('content')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-
 
 
 <div class="main content padding dimentioncontent" >

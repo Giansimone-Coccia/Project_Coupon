@@ -5,12 +5,9 @@
 
 @section('scripts')
 @parent
+@can('isAdmin')
 <script src="{{ asset('js/openFAQ.js') }}"></script>
-@endsection
-
-
-@section('link')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+@endcan
 @endsection
 
 @section('content')

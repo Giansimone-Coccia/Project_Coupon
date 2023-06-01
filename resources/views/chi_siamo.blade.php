@@ -3,7 +3,7 @@
 @section('title', 'Chi Siamo')
 
 @section('content')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+
 <div class=" padding-top-32">
     <div class="main content padding box-shadow max-width-1300">
 

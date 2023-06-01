@@ -2,10 +2,6 @@
 
 @section('title', 'modifica profilo utente')
 
-@section('link')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-@endsection
-
 @section('scripts')
 @parent
 <script src="{{ asset('js/functions.js') }}" ></script>

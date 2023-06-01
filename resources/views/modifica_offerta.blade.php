@@ -8,21 +8,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('js/functions.js') }}"></script>
 <script src="{{ asset('js/changePreview.js') }}"></script>
-
+<script src="{{ asset('js/autoloadImg.js') }}"></script>
 
 <script>
-$(function () {
-    var actionUrl = "{{ route('modifica_offerta.store', ['offertaId' => $offerta->id]) }}";
-    var formId = 'modificaOfferta';
-    $(":input").on('blur', function (event) {
-        var formElementId = $(this).attr('id');
-        doElemValidation(formElementId, actionUrl, formId);
+    $(function () {
+        var actionUrl = "{{ route('modifica_offerta.store', ['offertaId' => $offerta->id]) }}";
+        var formId = 'modificaOfferta';
+        $(":input").on('blur', function (event) {
+            var formElementId = $(this).attr('id');
+            doElemValidation(formElementId, actionUrl, formId);
+        });
+        $("#modificaOfferta").on('submit', function (event) {
+            event.preventDefault();
+            doFormValidation(actionUrl, formId);
+        });
     });
-    $("#modificaOfferta").on('submit', function (event) {
-        event.preventDefault();
-        doFormValidation(actionUrl, formId);
-    });
-});
 </script>
 
 @endsection
@@ -37,7 +37,7 @@ $(function () {
     <div class="image-mod-off">
         {{ Form::label('logoOff', 'Immagine:', ['class' => 'label-input']) }}
         <img id="previewImage" class="rounded-corners" src="{{ asset('images/products/' .$offerta->logoOff) }}" alt="Offerta da modificare" />
-        {{ Form::file('logoOff', ['class' => 'input', 'id' => 'logoOff', 'accept' => 'image/*', 'onchange' => 'previewFile(event)', 'required']) }}
+        {{ Form::file('logoOff', ['class' => 'input', 'id' => 'logo', 'accept' => 'image/*', 'onchange' => 'previewFile(event)', 'required']) }}
     </div>
 
 

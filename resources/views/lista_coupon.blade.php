@@ -3,8 +3,9 @@
 @section('title', 'lista_coupon')
 
 @section('content')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+@include('helpers/buttonIndietro')
 <div class="main content padding coupons-riscattati">
+
     <div class="couponlist" align="center">
         <h1 class="font-weight-300">Lista coupon riscattati:</h1>
         @isset($couponUtente)

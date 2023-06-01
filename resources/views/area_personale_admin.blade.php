@@ -3,7 +3,7 @@
 @section('title', 'Area personale admin')
 
 @section('content')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+
 <div class="body_area_personale_utente">
     <div class="container_area_utente">
         <h1>Area Personale</h1>

@@ -3,8 +3,9 @@
 @section('title', 'Offerte azienda')
 
 @section('content')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+@include('helpers/buttonIndietro')
 <div class=" padding-top-24">
+
     <div class="main content padding box-shadow" style="max-width: 1300px;">
 
         @isset($azienda)

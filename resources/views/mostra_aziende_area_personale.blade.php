@@ -4,18 +4,15 @@
 
 @section('content')
 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 
 @section('scripts')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('js/alert.js') }}"></script>
 
 @endsection
-
-
-<div class="overlay" id="overlay"></div>
-
-<div class="main content padding" style="max-width: 1300px; margin-top: 70px;">
+@include('helpers/buttonIndietro')
+<div class="main content padding max-width-1300">
+    
     <div class="couponlist" align="center">
         <h1 style="font-weight: 300">Lista delle aziende che puoi gestire:</h1>
         @isset($allAziendeAdmin)
@@ -30,9 +27,6 @@
            
         </div>
         
-        
-       
-
         @endforeach
         @endisset
         @include('pagination.paginator', ['paginator' => $allAziendeAdmin])

@@ -2,10 +2,6 @@
 
 @section('title', 'Dettaglio offerta')
 
-@section('link')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-@endsection
-
 @section('scripts')
 @parent
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -30,6 +26,7 @@ $(function () {
 
 @section('content')
     <div class="creazioneOfferta">
+        @include('helpers/buttonIndietro')
         {{ Form::open(array('route' => 'crea_offerta.store', 'id' => 'addproduct', 'class' => 'productForm')) }}
         @csrf
         <h1>Aggiungi un offerta</h1>

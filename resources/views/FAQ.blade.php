@@ -5,15 +5,13 @@
 
 @section('scripts')
 @parent
+<script src="{{ asset('js/alert.js') }}"></script>
+@can('isAdmin')
 <script src="{{ asset('js/openFAQ.js') }}"></script>
+@endcan
 @endsection
-
-
-@section('link')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-@endsection
-
 @section('content')
+
 <div class="main content padding faq-list" >
     <div class="page_title">
         <h1 class="font-weight-600">FAQ</h1>
@@ -39,12 +37,7 @@
                             <div class="card-body" style="display:none;" >
                                 <p>{{$faq->risposta}}</p>
                             </div>
-                            @can('isAdmin')
-                            <div class="inline-block">
-                                <button class="pulsanti_staff" id='pulsante_modifica' onclick="window.location.href = '{{ route('modifica_faq', ['id' => $faq->id])}}';">Modifica</button>
-                                <button class="pulsanti_staff" id='pulsante_elimina' onclick="window.location.href = '{{ route('modifica_faq', ['id' => $faq->id])}}';">Elimina</button>
-                            </div>
-                            @endcan
+                            @include('helpers/buttonFAQAdmin')
                         </div>
                     </div>
 

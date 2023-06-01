@@ -4,7 +4,6 @@ $currentUser = Auth::user();
 
 @can('isAdmin')
 
-
 <div class="button-box">
     <div>
         {{ Form::open(array('route' => ['elimina_azienda.store', 'aziendaId' => $azienda->id], 'id' => 'Eliminaform', 'class' => 'productFormNew')) }}
@@ -16,7 +15,6 @@ $currentUser = Auth::user();
         <button class="pulsanti_staff" onclick=" window.location.href = '{{ route('modifica_azienda', [$azienda->id]) }}'; event.stopPropagation()"> Modifica </button>    
     </div>
 </div>
-
 
 @endcan
 

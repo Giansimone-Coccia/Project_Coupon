@@ -2,10 +2,6 @@
 
 @section('title', 'modifica profilo utente')
 
-@section('link')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-@endsection
-
 @section('scripts')
 @parent
 <script src="{{ asset('js/functions.js') }}" ></script>
@@ -30,6 +26,7 @@ $(function () {
 
 @section('content')
 <div class="creazioneOfferta">
+    @include('helpers/buttonIndietro')
 
     {{ Form::open(array('route' => ['modifica_profilo_utente.store'], 'id' => 'modProfUtente', 'class' => 'productForm')) }}
     @csrf

@@ -2,10 +2,6 @@
 
 @section('title', 'Crea faq')
 
-@section('link')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-@endsection
-
 @section('scripts')
 @parent
 <script src="{{ asset('js/functions.js') }}" ></script>
@@ -29,6 +25,7 @@ $(function () {
 
 @section('content')
     <div class="creazioneOfferta">
+        @include('helpers/buttonIndietro')
 
             {{ Form::open(array('route' => ['modifica_faq.store', 'id' => $faq->id], 'id' => 'formModificaFaq', 'class' => 'productForm')) }}
             @csrf

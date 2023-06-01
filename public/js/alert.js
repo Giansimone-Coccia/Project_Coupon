@@ -1,5 +1,3 @@
-
-
 function showConfirmationAzienda() {
   var result = confirm("Confermi di voler eliminare questa azienda e tutte le offerte relative?");
   if (result) {
@@ -25,6 +23,26 @@ function showConfirmationOfferta(){
 function showConfirmationUtente(){
   var result = confirm("Confermi di voler eliminare questo utente?");
   
+  if (result) {
+    } 
+    else {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+}
+
+function showConfirmationFaq() {
+  var result = confirm("Confermi di voler eliminare questa FAQ?");
+  if (result) {
+    } 
+    else {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+}
+
+function showConfirmationStaff() {
+  var result = confirm("Confermi di voler eliminare questo membro dello staff?");
   if (result) {
     } 
     else {

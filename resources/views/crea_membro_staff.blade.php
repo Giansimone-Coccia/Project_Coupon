@@ -2,10 +2,6 @@
 
 @section('title', 'Crea membro staff')
 
-@section('link')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-@endsection
-
 @section('scripts')
 @parent
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -30,6 +26,7 @@ $(function () {
 
 @section('content')
     <div class="creazioneOfferta">
+        @include('helpers/buttonIndietro')
         {{ Form::open(array('route' => 'crea_membro_staff.store', 'id' => 'addStaffMember', 'class' => 'productForm')) }}
         @csrf
         <h1>Aggiungi un membro dello staff</h1>

@@ -10,7 +10,7 @@
 
         <!-- Bootstrap -->
         @section('link')
-        <link rel="stylesheet" type="text/css" href="{{ asset('res/css/style.css') }}" >
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
         <!--<script type="text/javascript" src="public/js/jquery.js"></script>-->
         @show
         @section('scripts')

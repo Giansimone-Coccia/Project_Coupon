@@ -293,6 +293,11 @@ footer,header,main,nav{
 .center{
     text-align:center!important
 }
+
+.coupon-tasto{
+    padding-top: 20px;
+}
+
 /*i bar-item dentro bar prendono ste caratteristiche*/
 .bar .bar-item{
     padding:8px 16px;
@@ -457,7 +462,7 @@ button{
 }
 
 .coupons-riscattati{
-    max-width: 1300px; margin-top: 70px;
+    max-width: 1300px; 
 }
 
 .max-width-1300{
@@ -572,6 +577,7 @@ button{
     border-radius: 15px; /* Rounded border */
     margin: 0 auto; /* Center the coupon */
     max-width: 500px;
+    margin-bottom: 50px;
 }
 
 .modalita{
@@ -604,8 +610,9 @@ button{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 20px;
-    padding: 20px;
+    margin-left: 50px;
+    margin-right:50px;
+    padding-bottom: 80px;
 }/*$*/
 
 .display-flex{
@@ -1475,12 +1482,12 @@ form .button input:hover{
 .productForm{
     max-width: 800px;
     margin: 100px auto;
+    margin-top:30px;
     padding: 30px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
     overflow: auto; /* Aggiunge lo scroll se il contenuto è più grande del form */
-    margin-bottom: 20px;
 }
 
 .productFormNew{
@@ -1556,6 +1563,28 @@ select {
     background-color: #F1F6F9;
     color: #394867;
 }
+
+.pulsante_indietro {
+    background-color: transparent;
+    color: #394867;
+    border: 2px solid #394867;
+    width: 50px; /* Regola la larghezza del pulsante in base alle tue esigenze */
+    height: 50px; /* Regola l'altezza del pulsante in base alle tue esigenze */
+    font-size: 18px;
+    border-radius: 50%; /* Rende il pulsante rotondo */
+    cursor: pointer;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pulsante_indietro:hover {
+    background-color: #F1F6F9;
+}
+
 
 .pulsanti_staff{
     width: 150px;

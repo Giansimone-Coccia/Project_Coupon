@@ -3,10 +3,10 @@
 @section('title', 'Dettaglio offerta')
 
 @section('content')
-
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 @isset($offerta)
-<div class="container_dettaglio_offerta">
+@include('helpers/buttonIndietro')
+<div class="container_dettaglio_offerta box-shadow">
+   
     <div class="image">
         <img src="{{ asset('images/products/'.$offerta->logoOff ) }}" class="rounded-corners" alt="Nome Offerta">
     </div>

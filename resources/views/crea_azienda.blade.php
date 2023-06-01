@@ -27,6 +27,7 @@ $(function () {
 
 @section('content')
     <div class="creazioneOfferta">
+        @include('helpers/buttonIndietro')
       <form class="productForm" id="addAzienda" name="addAzienda" enctype="multipart/form-data" method="post" action="{{route('crea_azienda.store')}}">
         @csrf
         <h1>Aggiungi la tua azienda</h1>

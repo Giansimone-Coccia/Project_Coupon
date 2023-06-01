@@ -26,6 +26,7 @@ $(function () {
 
 @section('content')
     <div class="creazioneOfferta">
+        @include('helpers/buttonIndietro')
 
             {{ Form::open(array('route' => 'crea_faq.store', 'id' => 'FAQform', 'class' => 'productForm')) }}
             <h1>Crea FAQ</h1>

@@ -26,6 +26,7 @@ $(function () {
 
 @section('content')
 <div class="creazioneOfferta">
+    @include('helpers/buttonIndietro')
 
     {{ Form::open(array('route' => ['modifica_profilo_utente.store'], 'id' => 'modProfUtente', 'class' => 'productForm')) }}
     @csrf

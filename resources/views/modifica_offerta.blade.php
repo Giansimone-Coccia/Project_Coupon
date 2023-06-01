@@ -29,6 +29,7 @@ $(function () {
 
 @section('content')
 <div class="modificaOfferta">
+    @include('helpers/buttonIndietro')
     {{ Form::open(array('route' => ['modifica_offerta.store', 'offertaId' => $offerta->id], 'id' => 'modificaOfferta', 'class' => 'modOffertaForm')) }}
     @csrf
     <h1>Modifica dati offerta</h1>

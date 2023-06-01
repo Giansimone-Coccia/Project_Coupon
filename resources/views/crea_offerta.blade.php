@@ -26,6 +26,7 @@ $(function () {
 
 @section('content')
     <div class="creazioneOfferta">
+        @include('helpers/buttonIndietro')
         {{ Form::open(array('route' => 'crea_offerta.store', 'id' => 'addproduct', 'class' => 'productForm')) }}
         @csrf
         <h1>Aggiungi un offerta</h1>

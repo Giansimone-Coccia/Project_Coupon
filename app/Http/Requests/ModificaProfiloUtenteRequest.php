@@ -30,7 +30,7 @@ class ModificaProfiloUtenteRequest extends FormRequest {
     public function rules() {
         return [
             'username' => 'required|max:20',
-            'password' => ['required','max:30','regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/'],
+            'password' => ['required','max:30','regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/','same:password_confirmation'],
             'password_confirmation' => ['required', 'max:30', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/', 'same:password'],
             'nome' => 'required|max:30',
             'cognome' => 'required|max:30',

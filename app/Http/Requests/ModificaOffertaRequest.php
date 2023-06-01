@@ -6,10 +6,6 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Contracts\Validation\Validator;
-use Symfony\Component\HttpFoundation\Response;
-
 
 class ModificaOffertaRequest extends FormRequest {
 
@@ -31,19 +27,13 @@ class ModificaOffertaRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'nomeOff' => 'required|max:20',
-            'oggettoOff' => 'required|max:250',
-            'azienda' => 'required',
-            'tempoFruiz' => 'required',
+            'offertaNome' => 'required|max:20',
+            'offertaDescrizione' => 'required|max:250',
+            'offertaScadenza' => 'required',
             'luogoFruiz'=> 'required',
-            'modalita' => 'required',
-            'logoOff' => 'required|file|mimes:jpeg,png|max:1024',
+            'offertaModalita' => 'required',
+            'logo' => 'required|file|max:1024',
         ];
-    }
-    
-    protected function failedValidation(Validator $validator)
-    {
-        throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
     }
 
 }

@@ -5,10 +5,6 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Contracts\Validation\Validator;
-use Symfony\Component\HttpFoundation\Response;
-
 class ModificaStaffRequest extends FormRequest {
 
     /**

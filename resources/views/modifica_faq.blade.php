@@ -25,6 +25,7 @@ $(function () {
 
 @section('content')
     <div class="creazioneOfferta">
+        @include('helpers/buttonIndietro')
 
             {{ Form::open(array('route' => ['modifica_faq.store', 'id' => $faq->id], 'id' => 'formModificaFaq', 'class' => 'productForm')) }}
             @csrf

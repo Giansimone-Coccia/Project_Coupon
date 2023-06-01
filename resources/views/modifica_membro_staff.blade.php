@@ -9,6 +9,7 @@
 @section('content')
 
 <div class="creazioneOfferta">
+    @include('helpers/buttonIndietro')
 
     {{ Form::open(array('route' => ['modifica_membro_staff.store', 'staffId' => $membro->id], 'class' => 'productForm')) }}
     @csrf

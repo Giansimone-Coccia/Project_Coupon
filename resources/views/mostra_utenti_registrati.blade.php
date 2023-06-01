@@ -7,8 +7,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('js/alert.js') }}"></script>
 
-
-<div class="main content padding" style="max-width: 1300px; margin-top: 150px;">
+@include('helpers/buttonIndietro')
+<div class="main content padding max-width-1300">
     <div class="couponlist" align="center">
         <h1 style="font-weight: 300">Lista utenti registrati:</h1>
         @isset($allRegisteredUsers)

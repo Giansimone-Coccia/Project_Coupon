@@ -5,14 +5,13 @@
 
 @section('scripts')
 @parent
+<script src="{{ asset('js/alert.js') }}"></script>
 @can('isAdmin')
 <script src="{{ asset('js/openFAQ.js') }}"></script>
 @endcan
-<script src="{{ asset('js/alert.js') }}"></script>
 @endsection
-
-
 @section('content')
+
 <div class="main content padding faq-list" >
     <div class="page_title">
         <h1 class="font-weight-600">FAQ</h1>

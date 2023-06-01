@@ -56,6 +56,10 @@ Route::get('/offerte_azienda/{aziendaId}/dettaglio_offerta/{promoId}', [PublicCo
 Route::get('/dettaglio_offerta/{promoId}', [PublicController::class, 'getPromoDetails'])
         ->name('dettaglio_offerta_ricerca');
 
+Route::get('/indietro', function () {
+    return redirect()->back();
+})->name('indietro');
+
 
 /*Rotte per più tipi di utenti*/
 

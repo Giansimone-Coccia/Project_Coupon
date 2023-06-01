@@ -8,10 +8,10 @@
     if(auth()->check() && auth()->user()->can('isUser')){
         foreach($buoni as $buono){
             if($buono->utenteRich == $currentUser->id)
-                $bool=False;
+                $riscattato=False;
         }
     }
-
+    
     $counter=0;
     
     foreach($buoni as $buono){

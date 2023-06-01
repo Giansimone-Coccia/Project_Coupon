@@ -103,11 +103,11 @@ Route::get('/mostra_aziende_area_personale/crea_azienda', [PublicController::cla
 Route::post('/mostra_aziende_area_personale/crea_azienda', [PublicController::class, 'storeAzienda'])
         ->name('crea_azienda.store')->middleware('can:isAdmin');
 
-Route::get('/area_personale_admin/mostra_membri_staff/modifica_membro_staff/{staffId}', [UtenteController::class, 'viewMembroStaff'])
-        ->name('modifica_membro_staff')->middleware('can:isAdmin');
+Route::get('/modifica_membro_staff/{staffId}', [UtenteController::class, 'viewMembroStaff'])
+        ->name('modifica_membro_staff')->middleware('can:isStaffOrAdmin');
 
-Route::post('/area_personale_admin/mostra_membri_staff/modifica_membro_staff/{staffId}', [UtenteController::class, 'modificaMembroStaff'])
-        ->name('modifica_membro_staff.store')->middleware('can:isAdmin');
+Route::post('/modifica_membro_staff/{staffId}', [UtenteController::class, 'modificaMembroStaff'])
+        ->name('modifica_membro_staff.store')->middleware('can:isStaffOrAdmin');
 
 Route::post('/mostra_aziende_area_personale/elimina_azienda/{aziendaId}', [PublicController::class, 'eliminaAzienda'])
         ->name('elimina_azienda.store')->middleware('can:isAdmin');

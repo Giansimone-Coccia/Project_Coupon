@@ -46,19 +46,6 @@ $(function () {
         {{ Form::label('password_confirmation', 'Conferma Password:') }}
         {{ Form::password('password_confirmation', ['id' => 'password_confirmation', 'value' => old('password_confirmation')]) }}
         
-        {{ Form::label('email', 'Email', ['class' => 'label-input']) }}
-        {{ Form::text('email', '', ['class' => 'input', 'id' => 'email', 'value' => old('email')]) }}
-        
-        {{ Form::label('telefono', 'Telefono', ['class' => 'label-input']) }}
-        {{ Form::text('telefono', '', ['class' => 'input', 'id' => 'telefono', 'value' => old('telefono')]) }}
-        
-        {{ Form::label('dataNascita', 'Data di nascita', ['class' => 'label-input']) }}
-        {{ Form::date('dataNascita', '', ['class' => 'input', 'id' => 'dataNascita', 'value' => old('dataNascita')]) }}
-
-        {{ Form::label('genere', 'Genere', ['class' => 'label-input']) }}
-        {{ Form::select('genere', ['M' => 'Maschio', 'F' => 'Femmina', 'N' => 'Non specificare'], old('genere'), ['class' => 'input', 'id' => 'genere']) }}
-
-        
         {{ Form::submit('Aggiungi', ['class' => "buttonOfferta"]) }}
       
         {{ Form::close() }}

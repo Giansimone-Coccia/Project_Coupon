@@ -141,14 +141,19 @@ class UtenteController extends Controller
     
     public function modificaMembroStaff($staffId, ModificaStaffRequest $request) {
         $membro = $this->_UtenteModel->getInfoUtente($staffId);
-        dd($membro);
         $requestVal = $request->validated();
         
         $membro ->update($requestVal);
         $membro->password = Hash::make($request->password);
         $membro->save();
-
-        return response()->json(['redirect' => route('mostra_membri_staff')]);
+        
+        if(Auth::user()->hasRole('admin')){
+            return redirect('area_personale_admin/mostra_membri_staff');
+        }
+        else if(Auth::user()->hasRole('staff')){
+            return redirect('area_personale_staff/' . Auth::user()->id);
+        }
+        //return response()->json(['redirect' => route('mostra_membri_staff')]);
     }
         
     public function eliminaStaff($staffId) {

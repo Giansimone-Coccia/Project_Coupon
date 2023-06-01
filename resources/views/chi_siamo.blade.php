@@ -10,7 +10,7 @@
         <div class="container_chi_siamo">
             <div class="image-about-us">
                 <div class="image-dimension">
-                    <img src="{{ asset('images/logo/coupon-logo_ChiSiamo.svg') }}" alt="logo" class="width100">  
+                    <img src="{{ asset('images/products/Logo.svg') }}" alt="logo" class="width100">  
                 </div>
             </div>
             <div class="text">

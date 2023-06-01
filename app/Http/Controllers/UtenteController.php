@@ -157,7 +157,7 @@ class UtenteController extends Controller
 
         $staff->delete();
 
-        return redirect('/mostra_membri_staff');
+        return redirect('area_personale_admin/mostra_membri_staff');
     }
     
         public function eliminaUserRegistered($userId) {
@@ -166,7 +166,7 @@ class UtenteController extends Controller
 
         $userRegistered->delete();
 
-        return redirect('/mostra_utenti_registrati');
+        return redirect('area_personale_admin/mostra_utenti_registrati');
     }
    
    

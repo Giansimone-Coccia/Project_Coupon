@@ -61,4 +61,12 @@ class DomandeController extends Controller
      
         return response()->json(['redirect' => route('FAQ')]);
     }
+    
+    public function eliminaFaq($faqId) {
+        
+        $faq = $this->_FAQModel->getFaq($faqId);
+
+        $faq->delete();
+        return redirect('/FAQ');
+    }
 }

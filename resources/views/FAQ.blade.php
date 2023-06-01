@@ -8,7 +8,9 @@
 @can('isAdmin')
 <script src="{{ asset('js/openFAQ.js') }}"></script>
 @endcan
+<script src="{{ asset('js/alert.js') }}"></script>
 @endsection
+
 
 @section('content')
 <div class="main content padding faq-list" >
@@ -36,12 +38,7 @@
                             <div class="card-body" style="display:none;" >
                                 <p>{{$faq->risposta}}</p>
                             </div>
-                            @can('isAdmin')
-                            <div class="inline-block">
-                                <button class="pulsanti_staff" id='pulsante_modifica' onclick="window.location.href = '{{ route('modifica_faq', ['id' => $faq->id])}}';">Modifica</button>
-                                <button class="pulsanti_staff" id='pulsante_elimina' onclick="window.location.href = '{{ route('modifica_faq', ['id' => $faq->id])}}';">Elimina</button>
-                            </div>
-                            @endcan
+                            @include('helpers/buttonFAQAdmin')
                         </div>
                     </div>
 

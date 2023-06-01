@@ -9,19 +9,6 @@ window.addEventListener('DOMContentLoaded', function () {
             answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
         });
     });
-
-    Array.from(containers).forEach(function (container) {
-        var modify_button = container.querySelector('#pulsante_modifica');
-        var delete_button = container.querySelector('#pulsante_elimina');
-
-        modify_button.addEventListener('click', function (event) {
-            event.stopPropagation();
-        });
-
-        delete_button.addEventListener('click', function (event) {
-            event.stopPropagation();
-        });
-    });
 });
 
 

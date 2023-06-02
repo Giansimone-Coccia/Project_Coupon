@@ -22,7 +22,7 @@
         @endphp
         @foreach($allRegisteredUsers as $ruser)
 
-        <div class="coupon">
+        <div class="coupon-no-flex">
             <div class ="open-coupon">
                 <div class="info-user">
                     <h3><span>Nome:</span> {{$ruser->nome}}</h3>

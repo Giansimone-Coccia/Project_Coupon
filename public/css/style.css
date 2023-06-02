@@ -1063,6 +1063,10 @@ a.link {
 }
 
 .coupon {
+     display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 10px;
      /*elementi distribuiti uniformemente lungo l'asse orizzonatale'*/
     margin-bottom: 20px;
     width: 80%;
@@ -1077,6 +1081,23 @@ a.link {
     background-color: #d0ddf7;
     transition: .4s ease;
 }
+
+.coupon-no-flex {
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 900px;
+    transition: .4s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+}
+
+.coupon-no-flex:hover{
+    opacity: 0.8;
+    background-color: #d0ddf7;
+    transition: .4s ease;
+}
+
+
 
 .coupon-no-hover:hover{
     opacity: 1;

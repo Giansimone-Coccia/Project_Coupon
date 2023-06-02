@@ -885,8 +885,8 @@ footerF{
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background: rgb(33,42,62);
-    background: linear-gradient(135deg, rgba(33,42,62,1) 0%, rgba(57,72,103,1) 18%, rgba(241,246,249,1) 100%);
+    background: rgb(2,84,100);
+    background: linear-gradient(120deg, rgba(2,84,100,1) 35%, rgba(229,124,35,1) 100%);
     font-family: 'Karma', sans-serif;
 }
 
@@ -1063,7 +1063,7 @@ a.link {
 }
 
 .coupon {
-     display: flex;
+    display: flex;
     align-items: center;
     justify-content: space-between; 
     padding: 10px;
@@ -1078,8 +1078,9 @@ a.link {
 
 .coupon:hover{
     opacity: 0.8;
-    background-color: #d0ddf7;
+    background-color: #fbc596;
     transition: .4s ease;
+    cursor: pointer;
 }
 
 .coupon-no-flex {
@@ -1204,8 +1205,8 @@ a.link {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background: rgb(33,42,62);
-    background: linear-gradient(135deg, rgba(33,42,62,1) 0%, rgba(57,72,103,1) 18%, rgba(241,246,249,1) 100%);
+    background: rgb(2,84,100);
+    background: linear-gradient(120deg, rgba(2,84,100,1) 35%, rgba(229,124,35,1) 100%);
 }
 
 .body_modProfile{
@@ -1329,11 +1330,11 @@ form .button input{
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background-color: #394867;
+    background-color: #E57C23;
 }
 form .button input:hover{
     transform: scale(0.98);
-    background-color: #4f5f80
+    background-color: #E8AA42;
 }
 .user-details {
     display: flex;
@@ -1584,8 +1585,8 @@ select {
 
 .pulsante_indietro {
     background-color: transparent;
-    color: #394867;
-    border: 2px solid #394867;
+    color: #025464;
+    border: 2px solid #025464;
     width: 50px; /* Regola la larghezza del pulsante in base alle tue esigenze */
     height: 50px; /* Regola l'altezza del pulsante in base alle tue esigenze */
     font-size: 18px;

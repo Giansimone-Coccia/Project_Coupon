@@ -976,7 +976,7 @@ a.link {
 }
 
 .color-link{
-    color: #007BA7 !important;
+    color: #E57C23 !important;
 
 }
 
@@ -1409,10 +1409,13 @@ form .button input:hover{
     margin: 0 auto;
     margin-top: 100px;
     padding: 20px;
-    background-color: #fff;
+    border-radius: 30px;
+    background-color: #fbfeff;
+    color: #00313b;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     margin-bottom: 60px;
 }
+
 .container_area_utente h1 {
     font-size: 32px;
     font-weight: bold;
@@ -1429,10 +1432,12 @@ form .button input:hover{
     padding: 20px 0;
 }
 
+
+
 .section_area_utente {
     margin: 5px 0;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #f1f6f8;
     border-radius: 5px;
     column-count: 2;
     column-gap: 40px;
@@ -1511,7 +1516,7 @@ form .button input:hover{
 }
 
 .productForm h1{
-    color: #025464;
+    color: #00313b;
     text-align: center;
 
 }
@@ -1527,8 +1532,9 @@ form .button input:hover{
     margin: 100px auto;
     margin-top:30px;
     padding: 30px;
-    background-color: #fff;
-    border-radius: 5px;
+    border-radius: 30px;
+    background-color: #fbfeff;
+    color: #00313b;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
     overflow: auto; /* Aggiunge lo scroll se il contenuto è più grande del form */
 }
@@ -1576,7 +1582,7 @@ select {
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 0px;
+    margin-top: 20px;
     float: right; /* Sposta il pulsante a destra */
 }
 

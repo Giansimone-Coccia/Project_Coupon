@@ -195,7 +195,7 @@ class PublicController extends Controller {
 
         $destinationPath = public_path() . '/images/products';
         $image->move($destinationPath, $imageName);
-        return redirect('/mostra_aziende_area_personale/mostra_promo_da_modificare/'. $offerta->azienda);
+        return redirect('/area_personale_admin');
     }
 
     public function eliminaOfferta($offertaId) {
@@ -264,7 +264,7 @@ class PublicController extends Controller {
         $destinationPath = public_path() . '/images/companies';
         $image->move($destinationPath, $imageName);
 
-        return response()->json(['redirect' => route('mostra_aziende_area_personale')]);
+        return response()->json(['redirect' => route('area_personale_admin')]);
     }
 
 }

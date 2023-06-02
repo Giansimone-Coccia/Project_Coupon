@@ -139,7 +139,7 @@ class UtenteController extends Controller {
         $membro->save();
 
         if (Auth::user()->hasRole('admin')) {
-            return redirect()->route('mostra_membri_staff');
+            return redirect()->route('area_personale_admin');
         } else if (Auth::user()->hasRole('staff')) {
             return redirect()->route('area_personale_staff');
         }

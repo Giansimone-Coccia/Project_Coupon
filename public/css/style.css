@@ -596,28 +596,31 @@ button{
 
 /*coupon.css*/
 .coupon-page {
-    border: 5px dotted #bbb; /* Dotted border */
+    border: 10px dashed #E57C23; /* Dotted border */
     width: 80%;
-    border-radius: 15px; /* Rounded border */
     margin: 0 auto; /* Center the coupon */
     max-width: 500px;
     margin-bottom: 50px;
+    border-radius: 10px;
+    background-color: #eab65d;
+    color: #00313b;
 }
 
 .modalita{
     padding: 2px 16px;
-    background-color: #f1f1f1;
+    background-color: #eab65d;
 }
 
 .container-coupon {
     padding: 2px 16px;
-    background-color: #f1f1f1;
+    background-color: #eab65d;
+    border-radius: 10px;
 }
 
 
 .utente {
     padding: 2px 16px;
-    background-color: white;
+    background-color: #eab65d;
 }
 
 .promo {
@@ -637,9 +640,9 @@ button{
     margin-left: 50px;
     margin-right:50px;
     padding-bottom: 80px;
-    color: #00313b;
+    border-radius: 30px;
     background-color: #fbfeff;
-    border-radius: 15px;
+    color: #00313b;
 }/*$*/
 
 .display-flex{
@@ -718,7 +721,7 @@ button{
     font-family: 'Rubik', sans-serif;
     cursor: pointer;
     text-transform: uppercase;
-    background: #394867;
+    background: #E57C23;
     color: #FFFFFF;
     letter-spacing: 0.2px;
     transition: all 0.3s ease;
@@ -726,7 +729,8 @@ button{
 
 .container_dettaglio_offerta button#reedem:hover{
     transform: scale(0.98);
-    background-color: #51668e;
+    background-color: #fbc596;
+    color: #025464;
 }
 
 .info button#unredeemable{
@@ -1103,11 +1107,14 @@ a.link {
     max-width: 900px;
     transition: .4s ease;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 15px;
+    border-radius: 30px;
+    background-color: #fbfeff;
+    color: #00313b;
+    padding-right: 30px;
 }
 
 .coupon:hover{
-    opacity: 0.8;
+    opacity: 0.9;
     background-color: #fbc596;
     transition: .4s ease;
     cursor: pointer;
@@ -1428,6 +1435,10 @@ form .button input:hover{
     margin-bottom: 60px;
 }
 
+.container_area_utente a{
+    color: #E57C23;
+}
+
 .container_area_utente h1 {
     font-size: 32px;
     font-weight: bold;
@@ -1443,8 +1454,6 @@ form .button input:hover{
     border-top: 2px solid #ccc;
     padding: 20px 0;
 }
-
-
 
 .section_area_utente {
     margin: 5px 0;
@@ -1702,8 +1711,9 @@ select {
     max-width: 800px;
     margin: 100px auto;
     padding: 30px;
-    background-color: #fff;
-    border-radius: 5px;
+    border-radius: 30px;
+    background-color: #fbfeff;
+    color: #00313b;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     overflow: auto; /* Aggiunge lo scroll se il contenuto è più grande del form */
     margin-bottom: 20px;
@@ -1784,7 +1794,7 @@ select {
 .image-mod-off img {
     width: 80%;
     height: auto;
-    border: 2px solid #9BA4B5;
+    border: 2px solid #E57C23;
     padding: 10px;
 }
 

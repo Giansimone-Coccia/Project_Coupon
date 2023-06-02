@@ -29,7 +29,7 @@
                 <div class="quarter">
                     <div class="single-offerta " onclick="window.location.href = '{{ route('dettaglio_offerta_ricerca', [$promo->id]) }}';">
                         <div class="inline-block">
-                            <div class="centerimagesoffers">
+                            <div class="centerimages">
                                 @include('helpers/productDate', ['dataScadenza' => $promo->tempoFruiz])
                                 <img class = "rounded-corners width100" src="{{ asset('images/products/' . $promo->logoOff) }}" alt="Offerta azienda"/>
                             </div>

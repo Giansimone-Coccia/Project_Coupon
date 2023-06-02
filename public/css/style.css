@@ -1118,7 +1118,7 @@ a.link {
 
 .coupon-no-flex:hover{
     opacity: 0.8;
-    background-color: #d0ddf7;
+    background-color: #fbc596;
     transition: .4s ease;
 }
 
@@ -1511,14 +1511,14 @@ form .button input:hover{
 }
 
 .productForm h1{
-    color: #394867;
+    color: #025464;
     text-align: center;
 
 }
 
 .productForm hr{
     border-width: 3px;
-    border-color:#394867;
+    border-color:#025464;
 
 }
 
@@ -1569,7 +1569,7 @@ select {
 }
 
 .creazioneOfferta input[type="submit"] {
-    background-color: #394867;
+    background-color: #E57C23;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -1581,15 +1581,15 @@ select {
 }
 
 .creazioneOfferta input[type="submit"]:hover {
-    background-color: #F1F6F9;
-    color: #394867;
+    background-color: #f7ad6d;
+    color: #025464;
 }
 
 
 /*area-personale staff*/
 
 .pulsanti_staff {
-    background-color: #394867;
+    background-color: #E57C23;
     color: #fff;
     border: none;
     padding: 10px;
@@ -1603,8 +1603,8 @@ select {
 }
 
 .pulsanti_staff:hover {
-    background-color: #F1F6F9;
-    color: #394867;
+    background-color: #f7ad6d;
+    color: #025464;
 }
 
 .pulsante_indietro {
@@ -1671,13 +1671,13 @@ select {
 }
 
 .modOffertaForm h1 {
-    color: #394867;
+    color: #025464;
     text-align: center;
 }
 
 .modOffertaForm hr {
     border-width: 3px;
-    border-color: #394867;
+    border-color: #025464;
 }
 
 .modOffertaForm {
@@ -1743,7 +1743,7 @@ select {
 }
 
 .modificaOfferta input[type="submit"] {
-    background-color: #394867;
+    background-color: #E57C23;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -1755,8 +1755,8 @@ select {
 }
 
 .modificaOfferta input[type="submit"]:hover {
-    background-color: #F1F6F9;
-    color: #394867;
+    background-color: #fbc596;
+    color: #025464;
 }
 
 .image-mod-off {

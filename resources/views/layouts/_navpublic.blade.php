@@ -27,7 +27,7 @@
     @guest
     <li class="button bar-item right" onclick="window.location.href = '{{ route('login') }}';">Login</li>
     @endguest
-    <li class="button bar-item right" onclick="window.location.href = '{{ route('FAQ') }}';">FAQ</li>
+    <li class="button bar-item right" onclick="window.location.href = '{{ route('FAQ') }}';">FAQs</li>
     <li class="button bar-item right" onclick="window.location.href = '{{ route('chi_siamo') }}';">Chi siamo</li>
     <li class="button bar-item right"onclick="window.location.href = '{{ route('start') }}';"> Home </li>
 

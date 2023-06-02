@@ -22,68 +22,68 @@
         <img id="previewImage" class="rounded-corners" src="{{ asset('images/products/' .$offerta->logoOff) }}" alt="Offerta da modificare" />
         {{ Form::file('logoOff', ['class' => 'input','id' => 'logoOff', 'accept' => 'image/*', 'onchange' => 'previewFile(event)', 'required']) }}
     </div>
-    
+
     @if ($errors->first('logoOff'))
-        <ul class="errors">
-            @foreach ($errors->get('logoOff') as $message)
-            <li>{{ $message }}</li>
-            @endforeach
-        </ul>
-        @endif
+    <ul class="errors">
+        @foreach ($errors->get('logoOff') as $message)
+        <li>{{ $message }}</li>
+        @endforeach
+    </ul>
+    @endif
 
     <div class="form-section">
 
         {{ Form::label('oggettoOff', 'Descrizione:') }}
         {{ Form::text('oggettoOff', $offerta->oggettoOff, ['class' => 'input', 'id' => 'oggettoOff']) }}
-        
+
         @if ($errors->first('oggettoOff'))
-            <ul class="errors">
-                @foreach ($errors->get('oggettoOff') as $message)
-                <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
+        <ul class="errors">
+            @foreach ($errors->get('oggettoOff') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
 
         {{ Form::label('modalita', 'Modalità di fruizione:') }}
-        {{ Form::select('modalita', ['Modalità 1' => 'Online', 'Modalità 2' => 'In Negozio'], $offerta->modalita) }}
+        {{ Form::select('modalita', ['Online' => 'Online', 'In negozio' => 'In Negozio'], $offerta->modalita) }}
 
         {{ Form::label('tempoFruiz', 'Scadenza:') }}
         {{ Form::date('tempoFruiz', $offerta->tempoFruiz, ['class' => 'input', 'id' => 'tempoFruiz']) }}
-        
-         @if ($errors->first('tempoFruiz'))
-            <ul class="errors">
-                @foreach ($errors->get('tempoFruiz') as $message)
-                <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
+
+        @if ($errors->first('tempoFruiz'))
+        <ul class="errors">
+            @foreach ($errors->get('tempoFruiz') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
 
         {{ Form::label('nomeOff', 'Nome:') }}
         {{ Form::text('nomeOff', $offerta->nomeOff, ['class' => 'input', 'id' => 'nomeOff']) }}
-        
+
         @if ($errors->first('nomeOff'))
-            <ul class="errors">
-                @foreach ($errors->get('nomeOff') as $message)
-                <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
+        <ul class="errors">
+            @foreach ($errors->get('nomeOff') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
 
         {{ Form::label('luogoFruiz', 'Luogo di fruizione:') }}
         {{ Form::text('luogoFruiz', $offerta->luogoFruiz, ['class' => 'input', 'id' => 'luogoFruiz']) }}
-        
+
         @if ($errors->first('luogoFruiz'))
-            <ul class="errors">
-                @foreach ($errors->get('luogoFruiz') as $message)
-                <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
+        <ul class="errors">
+            @foreach ($errors->get('luogoFruiz') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
 
         {{ Form::submit('Modifica dati') }}
 
     </div>
-       {{ Form::close() }}
+    {{ Form::close() }}
 
 </div>
 @endsection

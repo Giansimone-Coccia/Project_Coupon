@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use App\Models\Resources\Buono;
 
 class User extends Authenticatable
 {
@@ -46,6 +48,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function getInfoUtente($id){
+        return User::find($id);
+    }
+    
+    public function getCouponUser($id) {
+        return Buono::where('utenteRich', $id)->get();
+    }
+
+    public function getAllStaff($paged = 8) {
+        $staff = User::where('ruolo','staff');
+        return $staff->paginate($paged);
+    }
+
+    public function getAllUserR($paged = 8) {
+        $ruser = User::where('ruolo','user');
+        return $ruser->paginate($paged);
+    }
     
     public function hasRole($ruolo) {
         $ruolo = (array)$ruolo;

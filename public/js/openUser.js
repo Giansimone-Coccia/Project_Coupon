@@ -1,9 +1,9 @@
 window.addEventListener('DOMContentLoaded', function () {
-    var containers = document.getElementsByClassName('coupon');
+    var containers = document.getElementsByClassName('coupon-no-flex');
 
     Array.from(containers).forEach(function (container) {
-        var question = container.querySelector('.coupon');
-        var answer = container.querySelector('.card-body');
+        var question = container.querySelector('.open-coupon');
+        var answer = container.querySelector('.coupon-riscattati');
 
         question.addEventListener('click', function () {
             answer.style.display = answer.style.display === 'none' ? 'block' : 'none';

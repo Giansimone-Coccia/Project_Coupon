@@ -171,10 +171,10 @@ h6{
     cursor: pointer;
 }
 .marging-16-top-bot{
-        margin: 16px 0px 16px 0px
+    margin: 16px 0px 16px 0px
 }
 .margin-right-16{
-        margin-right: 16px
+    margin-right: 16px
 }
 .margin-bottom-16{
     margin-bottom: 16px
@@ -278,8 +278,8 @@ footer,header,main,nav{
 
 
 .top{
-       width:100%;
-    z-index:1 
+    width:100%;
+    z-index:1
 }
 
 .bottom{
@@ -347,8 +347,8 @@ search-bar{
 }
 
 .center-search-bar{
-  width: 300px;
-  margin: 0 auto;
+    width: 300px;
+    margin: 0 auto;
 
 }
 
@@ -478,7 +478,7 @@ button{
 }
 
 .coupons-riscattati{
-    max-width: 1300px; 
+    max-width: 1300px;
 }
 
 .max-width-1300{
@@ -486,7 +486,8 @@ button{
 }
 
 .faq-list{
-    max-width: 1300px; margin-top: 100px;
+    max-width: 1300px; 
+    margin-top: 100px;
     color: #00313b;
 }
 
@@ -901,8 +902,8 @@ footerF{
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background: rgb(33,42,62);
-    background: linear-gradient(135deg, rgba(33,42,62,1) 0%, rgba(57,72,103,1) 18%, rgba(241,246,249,1) 100%);
+    background: rgb(2,84,100);
+    background: linear-gradient(120deg, rgba(2,84,100,1) 35%, rgba(229,124,35,1) 100%);
     font-family: 'Karma', sans-serif;
 }
 
@@ -968,12 +969,12 @@ a.link {
 }
 
 .color-link{
-        color: #007BA7 !important;
+    color: #007BA7 !important;
 
 }
 
 .margin-top-20{
-        margin-top: 20px;
+    margin-top: 20px;
 }
 
 .login-form .action {
@@ -1081,22 +1082,40 @@ a.link {
 .coupon {
     display: flex;
     align-items: center;
-    justify-content: space-between; /*elementi distribuiti uniformemente lungo l'asse orizzonatale'*/
-    margin-bottom: 20px;
+    justify-content: space-between; 
     padding: 10px;
+     /*elementi distribuiti uniformemente lungo l'asse orizzonatale'*/
+    margin-bottom: 20px;
     width: 80%;
     max-width: 900px;
     transition: .4s ease;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 15px;
-    cursor: pointer;
 }
 
 .coupon:hover{
     opacity: 0.8;
+    background-color: #fbc596;
+    transition: .4s ease;
+    cursor: pointer;
+}
+
+.coupon-no-flex {
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 900px;
+    transition: .4s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+}
+
+.coupon-no-flex:hover{
+    opacity: 0.8;
     background-color: #d0ddf7;
     transition: .4s ease;
 }
+
+
 
 .coupon-no-hover:hover{
     opacity: 1;
@@ -1203,8 +1222,8 @@ a.link {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background: rgb(33,42,62);
-    background: linear-gradient(135deg, rgba(33,42,62,1) 0%, rgba(57,72,103,1) 18%, rgba(241,246,249,1) 100%);
+    background: rgb(2,84,100);
+    background: linear-gradient(120deg, rgba(2,84,100,1) 35%, rgba(229,124,35,1) 100%);
 }
 
 .body_modProfile{
@@ -1328,11 +1347,11 @@ form .button input{
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background-color: #394867;
+    background-color: #E57C23;
 }
 form .button input:hover{
     transform: scale(0.98);
-    background-color: #4f5f80
+    background-color: #E8AA42;
 }
 .user-details {
     display: flex;
@@ -1510,7 +1529,7 @@ form .button input:hover{
 .productFormNew{
     max-width: 150px;
     border-radius: 5px;
-    
+
 }
 
 .creazioneOfferta label{
@@ -1583,8 +1602,8 @@ select {
 
 .pulsante_indietro {
     background-color: transparent;
-    color: #394867;
-    border: 2px solid #394867;
+    color: #025464;
+    border: 2px solid #025464;
     width: 50px; /* Regola la larghezza del pulsante in base alle tue esigenze */
     height: 50px; /* Regola l'altezza del pulsante in base alle tue esigenze */
     font-size: 18px;
@@ -1764,39 +1783,62 @@ select {
 }
 
 
-   .popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #fff;
-      padding: 20px;
-      border: 1px solid #ccc;
-      height: 150px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      z-index: 9999;
-    }
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    height: 150px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
 
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 9998;
-    }
-    
-    .margin-left-10{
-        margin-left: 10px
-    }
-    
-    .button-box{
-        display: flex;
-        justify-content: center;
-    }
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+
+.margin-left-10{
+    margin-left: 10px
+}
+.coupon-riscattati{
+    padding: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #394867;
+    line-height: 28px;
+    letter-spacing: 1px;
+    border-top: 1px solid #F3F8FF;
+}
+.info-user{
+}
+
+.open-coupon{
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info-user h3 {
+    display: inline-block;
+    margin-right: 10px;
+}
+.button-box{
+    display: flex;
+    justify-content: center;
+}
 .scaduto-banner{
     position: relative;
     top: 5px;

@@ -27,7 +27,7 @@ class OfferteSeeder extends Seeder
             ['oggettoOff' => 'Coupon che garantisce il 10% di sconto sul prezzo del telefono HUAWEI P20 Lite', 'modalita' => 'In negozio', 'tempoFruiz' => '2023-04-20', 'luogoFruiz' => 'Ancona', 'nomeOff' => '10% di sconto', 'logoOff' => 'telefono2huawei.png','stato'=>'1','azienda' => '1', 'utente' => '4'],
             ['oggettoOff' => 'Coupon che garantisce il 50% di sconto sul prezzo dello schermo HUAWEI MateView GT 34-inch', 'modalita' => 'In negozio', 'tempoFruiz' => '2023-07-17', 'luogoFruiz' => 'Ancona', 'nomeOff' => '50% di sconto', 'logoOff' => 'schermohuawei.png','stato'=>'1','azienda' => '1', 'utente' => '5'],
             
-        ]); //lego 7, huawei 8, samsung 9, vans 10, timberland 11
+        ]);
         
     }
 }

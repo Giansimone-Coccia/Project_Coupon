@@ -13,19 +13,19 @@
 @section('content')
 <div class="modificaOfferta">
     @include('helpers/buttonIndietro')
-    {{ Form::open(array('route' => ['modifica_offerta.store', 'offertaId' => $offerta->id], 'id' => 'modificaOfferta', 'class' => 'modOffertaForm')) }}
+    {{ Form::open(array('route' => ['modifica_offerta.store', 'offertaId' => $offerta->id], 'id' => 'modificaOfferta', 'class' => 'modOffertaForm', 'enctype' => 'multipart/form-data')) }}
     @csrf
     <h1>Modifica dati offerta</h1>
     <hr>
     <div class="image-mod-off">
-        {{ Form::label('logo', 'Immagine:', ['class' => 'label-input']) }}
+        {{ Form::label('logoOff', 'Immagine:', ['class' => 'label-input']) }}
         <img id="previewImage" class="rounded-corners" src="{{ asset('images/products/' .$offerta->logoOff) }}" alt="Offerta da modificare" />
-        {{ Form::file('logo', ['class' => 'input', 'id' => 'logo', 'accept' => 'image/*', 'onchange' => 'previewFile(event)', 'required']) }}
+        {{ Form::file('logoOff', ['class' => 'input','id' => 'logoOff', 'accept' => 'image/*', 'onchange' => 'previewFile(event)', 'required']) }}
     </div>
     
-    @if ($errors->first('logo'))
+    @if ($errors->first('logoOff'))
         <ul class="errors">
-            @foreach ($errors->get('logo') as $message)
+            @foreach ($errors->get('logoOff') as $message)
             <li>{{ $message }}</li>
             @endforeach
         </ul>
@@ -33,37 +33,37 @@
 
     <div class="form-section">
 
-        {{ Form::label('offertaDescrizione', 'Descrizione:') }}
-        {{ Form::text('offertaDescrizione', $offerta->oggettoOff, ['class' => 'input', 'id' => 'offertaDescrizione']) }}
+        {{ Form::label('oggettoOff', 'Descrizione:') }}
+        {{ Form::text('oggettoOff', $offerta->oggettoOff, ['class' => 'input', 'id' => 'oggettoOff']) }}
         
-        @if ($errors->first('offertaDescrizione'))
+        @if ($errors->first('oggettoOff'))
             <ul class="errors">
-                @foreach ($errors->get('offertaDescrizione') as $message)
+                @foreach ($errors->get('oggettoOff') as $message)
                 <li>{{ $message }}</li>
                 @endforeach
             </ul>
             @endif
 
-        {{ Form::label('offertaModalita', 'Modalità di fruizione:') }}
-        {{ Form::select('offertaModalita', ['Modalità 1' => 'Online', 'Modalità 2' => 'In Negozio'], $offerta->modalita) }}
+        {{ Form::label('modalita', 'Modalità di fruizione:') }}
+        {{ Form::select('modalita', ['Modalità 1' => 'Online', 'Modalità 2' => 'In Negozio'], $offerta->modalita) }}
 
-        {{ Form::label('offertaScadenza', 'Scadenza:') }}
-        {{ Form::date('offertaScadenza', $offerta->tempoFruiz, ['class' => 'input', 'id' => 'offertaScadenza']) }}
+        {{ Form::label('tempoFruiz', 'Scadenza:') }}
+        {{ Form::date('tempoFruiz', $offerta->tempoFruiz, ['class' => 'input', 'id' => 'tempoFruiz']) }}
         
-         @if ($errors->first('offertaScadenza'))
+         @if ($errors->first('tempoFruiz'))
             <ul class="errors">
-                @foreach ($errors->get('offertaScadenza') as $message)
+                @foreach ($errors->get('tempoFruiz') as $message)
                 <li>{{ $message }}</li>
                 @endforeach
             </ul>
             @endif
 
-        {{ Form::label('offertaNome', 'Nome:') }}
-        {{ Form::text('offertaNome', $offerta->nomeOff, ['class' => 'input', 'id' => 'offertaNome']) }}
+        {{ Form::label('nomeOff', 'Nome:') }}
+        {{ Form::text('nomeOff', $offerta->nomeOff, ['class' => 'input', 'id' => 'nomeOff']) }}
         
-        @if ($errors->first('offertaNome'))
+        @if ($errors->first('nomeOff'))
             <ul class="errors">
-                @foreach ($errors->get('offertaNome') as $message)
+                @foreach ($errors->get('nomeOff') as $message)
                 <li>{{ $message }}</li>
                 @endforeach
             </ul>

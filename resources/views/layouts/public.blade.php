@@ -63,7 +63,7 @@
                 <div class="footer-menu">
                     <ul class="f-menu">
                         <li><a onclick="window.location.href = '{{ route('start') }}';">Home</a></li>
-                        <li><a onclick="window.location.href = '{{ route('chi_siamo') }}';">About</a></li>
+                        <li><a onclick="window.location.href = '{{ route('chi_siamo') }}';">Chi siamo</a></li>
                         <li><a href="mailto:info@coupon4u.it" title="Mandaci un messaggio">Contattaci</a></li>
                         <li><a class="anchor" title="Mandaci un messaggio" title="Dove siamo" id="dove-siamo">Dove siamo</a></li>
                     </ul>

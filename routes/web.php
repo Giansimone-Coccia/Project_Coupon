@@ -75,11 +75,7 @@ Route::get('/mostra_aziende_area_personale', [PublicController::class, 'allAzien
 Route::get('/mostra_aziende_area_personale/mostra_promo_da_modificare/{aziendaId}', [PublicController::class, 'getOfferteAdmin'])
         ->name('mostra_promo_da_modificare')->middleware('can:isStaffOrAdmin');
 
-Route::get('/modifica_azienda/{codiceA}', [PublicController::class, 'viewAzienda'])
-        ->name('modifica_azienda')->middleware('can:isStaffOrAdmin');//Modificare il fatto che ti obbliga a cambiare l'immagine dell'azienda
 
-Route::post('/modifica_azienda/{codiceA}', [PublicController::class, 'modificaAzienda'])
-        ->name('modifica_azienda.store')->middleware('can:isStaffOrAdmin');
 
 /*User*/
 
@@ -149,7 +145,19 @@ Route::get('/area_personale_admin/mostra_membri_staff', [UtenteController::class
 Route::get('/area_personale_admin/mostra_utenti_registrati', [UtenteController::class, 'allRegisteredUsers'])
         ->name('mostra_utenti_registrati')->middleware('can:isAdmin');
 
-      
+
+
+
+
+Route::get('/modifica_azienda/{codiceA}', [PublicController::class, 'viewAzienda'])
+        ->name('modifica_azienda')->middleware('can:isAdmin');//Modificare il fatto che ti obbliga a cambiare l'immagine dell'azienda
+
+Route::post('/modifica_azienda/{codiceA}', [PublicController::class, 'modificaAzienda'])
+        ->name('modifica_azienda.store')->middleware('can:isAdmin');//Qua prima c'era isStaffOrAdmin
+
+
+
+
 /*Staff*/
 
 Route::get('/area_personale_staff/crea_offerta', [PublicController::class, 'addOfferta'])

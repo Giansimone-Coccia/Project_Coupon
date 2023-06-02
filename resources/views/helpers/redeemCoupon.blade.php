@@ -35,7 +35,7 @@
     <button id="reedem" onclick="window.location.href = '{{ route('coupon', [$offerta->id])}}';">Riscatta</button>
 @elseif(($currentDate < $scadenza) && (!$riscattato))
     <button>Già riscattato</button>
-    <p>Visita le <a href="{{route('FAQ')}}">FAQ</a> per saperne di più!</p>
+    <p>Visita le <a href="{{route('FAQ')}}" class="link">FAQ</a> per saperne di più!</p>
 @elseif($currentDate > $scadenza)
     <button id="unredeemable">Scaduto</button>
 @endif

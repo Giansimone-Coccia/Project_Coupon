@@ -2,6 +2,11 @@
 
 @section('title', 'Dettaglio offerta')
 
+@section('scripts')
+@parent
+<script src="{{ asset('js/reloadPage.js') }}"></script>
+@endsection
+
 @section('content')
 @isset($offerta)
 @include('helpers/buttonIndietro')

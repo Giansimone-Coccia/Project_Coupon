@@ -275,6 +275,8 @@ footer,header,main,nav{
     width: 270px;
     background-color: #F1F6F9;
     max-width:100%;
+    padding:10px;
+    font-size: 14px;
 }
 
 .searchbar:focus 
@@ -594,28 +596,31 @@ button{
 
 /*coupon.css*/
 .coupon-page {
-    border: 5px dotted #bbb; /* Dotted border */
+    border: 10px dashed #E57C23; /* Dotted border */
     width: 80%;
-    border-radius: 15px; /* Rounded border */
     margin: 0 auto; /* Center the coupon */
     max-width: 500px;
     margin-bottom: 50px;
+    border-radius: 10px;
+    background-color: #eab65d;
+    color: #00313b;
 }
 
 .modalita{
     padding: 2px 16px;
-    background-color: #f1f1f1;
+    background-color: #eab65d;
 }
 
 .container-coupon {
     padding: 2px 16px;
-    background-color: #f1f1f1;
+    background-color: #eab65d;
+    border-radius: 10px;
 }
 
 
 .utente {
     padding: 2px 16px;
-    background-color: white;
+    background-color: #eab65d;
 }
 
 .promo {
@@ -635,9 +640,9 @@ button{
     margin-left: 50px;
     margin-right:50px;
     padding-bottom: 80px;
-    color: #00313b;
+    border-radius: 30px;
     background-color: #fbfeff;
-    border-radius: 15px;
+    color: #00313b;
 }/*$*/
 
 .display-flex{
@@ -716,7 +721,7 @@ button{
     font-family: 'Rubik', sans-serif;
     cursor: pointer;
     text-transform: uppercase;
-    background: #394867;
+    background: #E57C23;
     color: #FFFFFF;
     letter-spacing: 0.2px;
     transition: all 0.3s ease;
@@ -724,7 +729,8 @@ button{
 
 .container_dettaglio_offerta button#reedem:hover{
     transform: scale(0.98);
-    background-color: #51668e;
+    background-color: #fbc596;
+    color: #025464;
 }
 
 .info button#unredeemable{
@@ -915,7 +921,6 @@ footerF{
 }
 
 .login-form {
-    background: #fff;
     width: 500px;
     margin: 65px auto;
     display: -webkit-box;
@@ -923,9 +928,12 @@ footerF{
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    border-radius: 4px;
+    border-radius: 30px;
+    background-color: #fbfeff;
+    color: #00313b;
     box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
 }
+
 .login-form h1 {
     padding: 35px 35px 0 35px;
     font-weight: 300;
@@ -949,6 +957,7 @@ footerF{
     -webkit-transition: all .2s;
     transition: all .2s;
 }
+
 .login-form .input-field input::-webkit-input-placeholder {
     text-transform: uppercase;
 }
@@ -967,8 +976,9 @@ footerF{
 .login-form .input-field input:focus {
     border-color: #222;
 }
+
 a.link {
-    color: #007BA7;
+    color: #E57C23;
     text-decoration: underline;
     cursor: pointer;
     letter-spacing: 0.2px;
@@ -1097,11 +1107,14 @@ a.link {
     max-width: 900px;
     transition: .4s ease;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 15px;
+    border-radius: 30px;
+    background-color: #fbfeff;
+    color: #00313b;
+    padding-right: 30px;
 }
 
 .coupon:hover{
-    opacity: 0.8;
+    opacity: 0.9;
     background-color: #fbc596;
     transition: .4s ease;
     cursor: pointer;
@@ -1246,9 +1259,10 @@ a.link {
 .container-register{
     max-width: 700px;
     width: 100%;
-    background-color: #fff;
     padding: 25px 30px;
-    border-radius: 5px;
+    border-radius: 30px;
+    background-color: #fbfeff;
+    color: #00313b;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
 .container-register .title{
@@ -1295,8 +1309,13 @@ form .input-box span.details{
 }
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
-    border-color: #394867;
+    border-color: #025464;
 }
+
+form .gender-details input[type='radio']:checked{
+    accent-color: #E57C23;
+}
+
 form .gender-details .gender-title{
     font-size: 20px;
     font-weight: 500;
@@ -1324,7 +1343,7 @@ form .category label .dot{
 #dot-1:checked ~ .category label .one,
 #dot-2:checked ~ .category label .two,
 #dot-3:checked ~ .category label .three{
-    background: #394867;
+    background: #E57C23;
     border-color: #d9d9d9;
 }
 
@@ -1416,6 +1435,10 @@ form .button input:hover{
     margin-bottom: 60px;
 }
 
+.container_area_utente a{
+    color: #E57C23;
+}
+
 .container_area_utente h1 {
     font-size: 32px;
     font-weight: bold;
@@ -1431,8 +1454,6 @@ form .button input:hover{
     border-top: 2px solid #ccc;
     padding: 20px 0;
 }
-
-
 
 .section_area_utente {
     margin: 5px 0;
@@ -1690,8 +1711,9 @@ select {
     max-width: 800px;
     margin: 100px auto;
     padding: 30px;
-    background-color: #fff;
-    border-radius: 5px;
+    border-radius: 30px;
+    background-color: #fbfeff;
+    color: #00313b;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     overflow: auto; /* Aggiunge lo scroll se il contenuto è più grande del form */
     margin-bottom: 20px;
@@ -1772,7 +1794,7 @@ select {
 .image-mod-off img {
     width: 80%;
     height: auto;
-    border: 2px solid #9BA4B5;
+    border: 2px solid #E57C23;
     padding: 10px;
 }
 

@@ -44,10 +44,10 @@ $(function () {
     {{ Form::text('username', Auth::user()->username, ['class' => 'input', 'id' => 'username', 'readonly']) }}
 
     {{ Form::label('password', 'Password:') }}
-    {{ Form::password('password', ['class' => 'input', 'id' => 'password', 'value' => Auth::user()->password]) }}
+    {{ Form::password('password', ['class' => 'input', 'id' => 'password']) }}
 
     {{ Form::label('password_confirmation', 'Conferma Password:') }}
-    {{ Form::password('password_confirmation', ['class' => 'input', 'id' => 'password_confirmation', 'value' => Auth::user()->password]) }}
+    {{ Form::password('password_confirmation', ['class' => 'input', 'id' => 'password_confirmation']) }}
 
     {{ Form::label('email', 'Email:') }}
     {{ Form::text('email', Auth::user()->email, ['class' => 'input', 'id' => 'email']) }}

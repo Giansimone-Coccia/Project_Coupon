@@ -5,10 +5,10 @@
 
 @section('scripts')
 @parent
-<script src="{{ asset('js/alert.js') }}"></script>
 @can('isAdmin')
-<script src="{{ asset('js/openFAQ.js') }}"></script>
+<script src="{{ asset('js/alert.js') }}"></script>
 @endcan
+<script src="{{ asset('js/openFAQ.js') }}"></script>
 @endsection
 @section('content')
 

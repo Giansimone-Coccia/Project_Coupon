@@ -2,10 +2,14 @@
 
 @section('title', 'mostra utenti registrati')
 
-@section('content')
-
+@section('scripts')
+@parent
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('js/alert.js') }}"></script>
+<script src="{{ asset('js/openUser.js') }}"></script>
+@endsection
+
+@section('content')
 
 @include('helpers/buttonIndietro')
 <div class="main content padding max-width-1300">
@@ -17,19 +21,26 @@
         $contatore = 0;
         @endphp
         @foreach($allRegisteredUsers as $ruser)
-        
+
         <div class="coupon">
-            
-            <h3><span>Nome:</span>{{$ruser->nome}}</h3>
-            <h3><span>Cognome:</span>{{$ruser->cognome}}</h3>
-            <h5><span>Coupon riscattati:</span> {{$numCoupon[$contatore++]}} </h5>
-            <div class="button-box">
-                <div class="margin-right-16">
-                    {{ Form::open(array('route' => ['elimina_utenti_registrati.store', 'userId' => $ruser->id], 'id' => 'Eliminaform', 'class' => 'productFormNew')) }}
-                    @csrf  
-                    {{ Form::submit('Elimina', ['class' => 'pulsanti_staff', 'onclick'=>'showConfirmationUtente()']) }}   
-                    {{ Form::close() }}
+            <div class ="open-coupon">
+                <div class="info-user">
+                    <h3><span>Nome:</span> {{$ruser->nome}}</h3>
+                    <h3><span>Cognome:</span> {{$ruser->cognome}}</h3>
                 </div>
+
+                <div class="button-box">
+                    <div class="margin-right-16">
+                        {{ Form::open(array('route' => ['elimina_utenti_registrati.store', 'userId' => $ruser->id], 'id' => 'Eliminaform', 'class' => 'productFormNew')) }}
+                        @csrf  
+                        {{ Form::submit('Elimina', ['class' => 'pulsanti_staff', 'onclick'=>'showConfirmationUtente()']) }}   
+                        {{ Form::close() }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="coupon-riscattati" style="display:none;">
+                <h5 ><span>Coupon riscattati:</span> {{$numCoupon[$contatore++]}} </h5>
             </div>
         </div>
 
@@ -37,6 +48,6 @@
         @endisset
         @endisset
         @include('pagination.paginator', ['paginator' => $allRegisteredUsers])
-</div>
-@endsection
+    </div>
+    @endsection
 

@@ -2,18 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/xampp/htdocs/Progetto_Web/Project_Coupon/storage/logs/laravel.log</file>
-            <file>file:/C:/xampp/htdocs/Progetto_Web/Project_Coupon/database/migrations/2023_05_12_125515_create_users_table.php</file>
-            <file>file:/C:/xampp/htdocs/Progetto_Web/Project_Coupon/app/Http/Controllers/UtenteController.php</file>
-            <file>file:/C:/xampp/htdocs/Progetto_Web/Project_Coupon/app/Http/Requests/ModificaStaffRequest.php</file>
-            <file>file:/C:/xampp/htdocs/Progetto_Web/Project_Coupon/resources/views/modifica_membro_staff.blade.php</file>
-            <file>file:/C:/xampp/htdocs/Progetto_Web/Project_Coupon/app/Http/Requests/ModificaProfiloUtenteRequest.php</file>
-            <file>file:/C:/xampp/htdocs/Progetto_Web/Project_Coupon/app/Http/Requests/NuovoMembroStaffRequest.php</file>
-            <file>file:/C:/xampp/htdocs/Progetto_Web/Project_Coupon/database/seeders/UsersSeeder.php</file>
-            <file>file:/C:/xampp/htdocs/Progetto_Web/Project_Coupon/resources/views/crea_membro_staff.blade.php</file>
-            <file>file:/C:/xampp/htdocs/Progetto_Web/Project_Coupon/app/Http/Requests/ModificaFaqRequest.php</file>
-            <file>file:/C:/xampp/htdocs/Progetto_Web/Project_Coupon/resources/views/mostra_membri_staff.blade.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

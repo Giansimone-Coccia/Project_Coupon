@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UtenteModel;
 use App\Models\Catalogo;
 use App\Models\User;
 use App\Models\Resources\Azienda;
@@ -20,13 +19,11 @@ class UtenteController extends Controller {
     protected $_Catalogo;
 
     public function __construct() {
-        $this->_UtenteModel = new UtenteModel;
+        $this->_UtenteModel = new User;
         $this->_Catalogo = new Catalogo;
     }
 
     public function getInfoUtente() {
-
-        //$utenti = $this->_UtenteModel->getInfoUtente(Auth::user()->id)->first();
 
         return view('area_personale_utente');
     }

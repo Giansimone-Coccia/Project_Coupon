@@ -41,12 +41,11 @@ $(function () {
         {{ Form::label('azienda', 'Azienda di riferimento:', ['class' => 'label-input']) }}
         {{ Form::select('azienda', ['' => 'Seleziona azienda'] + $aziende->pluck('nome', 'id')->toArray(), old('azienda'), ['class' => 'input', 'id' => 'azienda']) }}
 
-        
         {{ Form::label('tempoFruiz', 'Tempo fruizione', ['class' => 'label-input']) }}
         {{ Form::date('tempoFruiz', '', ['class' => 'input', 'id' => 'tempoFruiz', 'value' => old('tempoFruiz')]) }}
 
         {{ Form::label('modalita', 'Modalità di fruizione:', ['class' => 'label-input']) }}
-        {{ Form::select('modalita', ['' => 'Seleziona modalità', 'Online' => 'Online', 'In negozio' => 'In Negozio'], old('modalita'), ['class' => 'input', 'id' => 'modalita']) }}
+        {{ Form::select('modalita', ['Online' => 'Online', 'In negozio' => 'In Negozio'], old('modalita'), ['class' => 'input', 'id' => 'modalita']) }}
         
         {{ Form::label('luogoFruiz', 'Luogo fruizione', ['class' => 'label-input']) }}
         {{ Form::text('luogoFruiz', '', ['class' => 'input', 'id' => 'luogoFruiz', 'value' => old('luogoFruiz')]) }}

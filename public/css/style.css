@@ -162,6 +162,9 @@ h6{
 }
 .content{
     max-width:980px;
+    border-radius: 30px;
+    background-color: #fbfeff;
+    color: #00313b;
 }
 
 .display-none{
@@ -187,6 +190,10 @@ h6{
 .margin-Paginate{
     margin-top: 10px;
     margin-bottom: 30px;
+}
+
+#pagination a{
+    color: #E57C23;
 }
 
 .margin-top-16{
@@ -273,7 +280,7 @@ footer,header,main,nav{
 .searchbar:focus 
 {
     outline: none;
-    border: 2px solid #4a90e2;
+    border: 2px solid #E57C23;
 }
 
 
@@ -420,8 +427,8 @@ button{
 /*FAQ.css*/
 
 .faq-section {
-    border: 3px solid #394867;
-    border-radius: 5px;
+    border: 4px solid #00313b;
+    border-radius: 15px;
     min-height: 100vh;
     padding: 8vh 0 0;
 }
@@ -434,11 +441,8 @@ button{
 
 }
 
-.fo
 .page_title{
-    color: #394867;
-    margin-bottom: 45px;
-
+    margin-bottom: 20px;
 }
 
 .faq-title p {
@@ -550,7 +554,7 @@ button{
     padding-bottom: 16px;
     font-weight: 400;
     font-size: 16px;
-    color: #394867;
+    color: #00313b;
     line-height: 28px;
     letter-spacing: 1px;
     border-top: 1px solid #F3F8FF;
@@ -631,6 +635,9 @@ button{
     margin-left: 50px;
     margin-right:50px;
     padding-bottom: 80px;
+    color: #00313b;
+    background-color: #fbfeff;
+    border-radius: 15px;
 }/*$*/
 
 .display-flex{
@@ -1179,8 +1186,8 @@ a.link {
     cursor: pointer;
 }
 .single-offerta:hover{
-    opacity: 0.8;
-    background-color: #d0ddf7;
+    opacity: 0.9;
+    background-color: #fbc596;
 }
 .container-azienda {
     position: relative;

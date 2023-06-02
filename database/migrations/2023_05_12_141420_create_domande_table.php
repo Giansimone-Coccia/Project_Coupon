@@ -15,8 +15,8 @@ class CreateDomandeTable extends Migration
     {
         Schema::create('domande', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned()->index();
-            $table->string('domanda',255);
-            $table->string('risposta', 255);
+            $table->string('domanda',1024);
+            $table->string('risposta', 2048);
             $table->date('dataPub');
             $table->unsignedBigInteger('utente')->nullable();
             $table->foreign('utente')->references('id')->on('users')->nullOnDelete();

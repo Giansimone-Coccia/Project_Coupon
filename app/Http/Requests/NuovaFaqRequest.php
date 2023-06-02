@@ -29,8 +29,8 @@ class NuovaFaqRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'domanda' => 'required|max:255',
-            'risposta' => 'required|max:255',
+            'domanda' => 'required|max:1024',
+            'risposta' => 'required|max:2048',
         ];
     }
     

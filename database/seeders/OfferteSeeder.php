@@ -27,7 +27,7 @@ class OfferteSeeder extends Seeder
             ['oggettoOff' => 'Coupon 3x2 prendi tre e paghi due su tutti i prodotti Samsung', 'modalita' => 'In negozio', 'tempoFruiz' => '2023-04-20', 'luogoFruiz' => 'Venezia', 'nomeOff' => '3x2 Samsung', 'logoOff' => 'tablet samsung.png','stato'=>'1','azienda' => '9', 'utente' => '4'],
             ['oggettoOff' => 'Coupon 3x2 prendi tre e paghi due su smartphone e tablet', 'modalita' => 'In negozio', 'tempoFruiz' => '2023-07-17', 'luogoFruiz' => 'Bari', 'nomeOff' => '3x2 Mobile', 'logoOff' => 'samsung offerta.png','stato'=>'1','azienda' => '9', 'utente' => '5'],
             
-        ]); //lego 7, huawei 8, samsung 9, vans 10, timberland 11
+        ]);
         
     }
 }

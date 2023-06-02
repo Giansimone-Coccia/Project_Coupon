@@ -34,6 +34,10 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
+body{
+    background-color:#f1f6f8;
+}
+
 /*home.css*/
 
 .errors {
@@ -109,6 +113,7 @@ h6{
     max-width:1200px;
     margin-top:70px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    background-color: #fcfcfc;
 }
 
 .dimentioncontent h1 {
@@ -129,9 +134,10 @@ h6{
 }
 
 .quarter:hover{
-    opacity: 0.8;
-    background-color: #d0ddf7;
+    opacity: 0.9;
+    background-color: #fbc596;
     transition: .4s ease;
+    border-radius: 10px;
 }
 
 @media (min-width:601px){
@@ -155,7 +161,10 @@ h6{
     margin-right:auto
 }
 .content{
-    max-width:980px
+    max-width:980px;
+    border-radius: 30px;
+    background-color: #fbfeff;
+    color: #00313b;
 }
 
 .display-none{
@@ -181,6 +190,10 @@ h6{
 .margin-Paginate{
     margin-top: 10px;
     margin-bottom: 30px;
+}
+
+#pagination a{
+    color: #E57C23;
 }
 
 .margin-top-16{
@@ -257,12 +270,20 @@ footer,header,main,nav{
 
 .searchbar
 {
-    border: 3px solid #9BA4B5;
-    border-radius: 4px;
+    border: 3px solid #ffffff;
+    border-radius: 15px;
     width: 270px;
     background-color: #F1F6F9;
     max-width:100%;
 }
+
+.searchbar:focus 
+{
+    outline: none;
+    border: 2px solid #E57C23;
+}
+
+
 .top{
     width:100%;
     z-index:1
@@ -275,7 +296,7 @@ footer,header,main,nav{
 }
 .top{
     top:0;
-    background-color: #394867;
+    background-color: #025464;
 }
 
 .white,.hover-white:hover{
@@ -362,8 +383,9 @@ button{
     background-color: transparent;
 }
 .button:hover{
-    color:#212A3E;
-    background-color:#F1F6F9
+    color:#025464;
+    background-color:#f1f6f8;
+    border-radius: 7px;
 }
 .black,.hover-black:hover{
     color:#F1F6F9!important;
@@ -405,8 +427,8 @@ button{
 /*FAQ.css*/
 
 .faq-section {
-    border: 3px solid #394867;
-    border-radius: 5px;
+    border: 4px solid #00313b;
+    border-radius: 15px;
     min-height: 100vh;
     padding: 8vh 0 0;
 }
@@ -419,11 +441,8 @@ button{
 
 }
 
-.fo
 .page_title{
-    color: #394867;
-    margin-bottom: 45px;
-
+    margin-bottom: 20px;
 }
 
 .faq-title p {
@@ -442,8 +461,8 @@ button{
     background: none;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     margin-top: 10px;
-    margin-bottom: 10px
-
+    margin-bottom: 10px;
+    border-radius: 7px;
 }
 
 .faq .card .card-header {
@@ -457,8 +476,9 @@ button{
 }
 
 .faq .card .card-header:hover {
-    background: #ccd7ed;
+    background: #fbc596;
     padding-left: 10px;
+    border-radius: 7px;
 }
 
 .coupons-riscattati{
@@ -470,8 +490,9 @@ button{
 }
 
 .faq-list{
-    max-width: 1300px;
+    max-width: 1300px; 
     margin-top: 100px;
+    color: #00313b;
 }
 
 .font-weight-300{
@@ -533,7 +554,7 @@ button{
     padding-bottom: 16px;
     font-weight: 400;
     font-size: 16px;
-    color: #394867;
+    color: #00313b;
     line-height: 28px;
     letter-spacing: 1px;
     border-top: 1px solid #F3F8FF;
@@ -614,6 +635,9 @@ button{
     margin-left: 50px;
     margin-right:50px;
     padding-bottom: 80px;
+    color: #00313b;
+    background-color: #fbfeff;
+    border-radius: 15px;
 }/*$*/
 
 .display-flex{
@@ -749,7 +773,7 @@ footerF{
 
 .footer-content{
     margin-top: 62px;
-    background: #394867;
+    background: #025464;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -818,7 +842,7 @@ footerF{
     color: aqua;
 }
 .footer-bottom{
-    background: #212A3E;
+    background: #00313b;
     width: 100vw;
     padding: 20px;
     padding-bottom: 40px;
@@ -885,8 +909,8 @@ footerF{
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background: rgb(33,42,62);
-    background: linear-gradient(135deg, rgba(33,42,62,1) 0%, rgba(57,72,103,1) 18%, rgba(241,246,249,1) 100%);
+    background: rgb(2,84,100);
+    background: linear-gradient(120deg, rgba(2,84,100,1) 35%, rgba(229,124,35,1) 100%);
     font-family: 'Karma', sans-serif;
 }
 
@@ -1063,7 +1087,7 @@ a.link {
 }
 
 .coupon {
-     display: flex;
+    display: flex;
     align-items: center;
     justify-content: space-between; 
     padding: 10px;
@@ -1078,8 +1102,9 @@ a.link {
 
 .coupon:hover{
     opacity: 0.8;
-    background-color: #d0ddf7;
+    background-color: #fbc596;
     transition: .4s ease;
+    cursor: pointer;
 }
 
 .coupon-no-flex {
@@ -1093,7 +1118,7 @@ a.link {
 
 .coupon-no-flex:hover{
     opacity: 0.8;
-    background-color: #d0ddf7;
+    background-color: #fbc596;
     transition: .4s ease;
 }
 
@@ -1161,8 +1186,8 @@ a.link {
     cursor: pointer;
 }
 .single-offerta:hover{
-    opacity: 0.8;
-    background-color: #d0ddf7;
+    opacity: 0.9;
+    background-color: #fbc596;
 }
 .container-azienda {
     position: relative;
@@ -1204,8 +1229,8 @@ a.link {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background: rgb(33,42,62);
-    background: linear-gradient(135deg, rgba(33,42,62,1) 0%, rgba(57,72,103,1) 18%, rgba(241,246,249,1) 100%);
+    background: rgb(2,84,100);
+    background: linear-gradient(120deg, rgba(2,84,100,1) 35%, rgba(229,124,35,1) 100%);
 }
 
 .body_modProfile{
@@ -1329,11 +1354,11 @@ form .button input{
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background-color: #394867;
+    background-color: #E57C23;
 }
 form .button input:hover{
     transform: scale(0.98);
-    background-color: #4f5f80
+    background-color: #E8AA42;
 }
 .user-details {
     display: flex;
@@ -1486,14 +1511,14 @@ form .button input:hover{
 }
 
 .productForm h1{
-    color: #394867;
+    color: #025464;
     text-align: center;
 
 }
 
 .productForm hr{
     border-width: 3px;
-    border-color:#394867;
+    border-color:#025464;
 
 }
 
@@ -1544,7 +1569,7 @@ select {
 }
 
 .creazioneOfferta input[type="submit"] {
-    background-color: #394867;
+    background-color: #E57C23;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -1556,15 +1581,15 @@ select {
 }
 
 .creazioneOfferta input[type="submit"]:hover {
-    background-color: #F1F6F9;
-    color: #394867;
+    background-color: #f7ad6d;
+    color: #025464;
 }
 
 
 /*area-personale staff*/
 
 .pulsanti_staff {
-    background-color: #394867;
+    background-color: #E57C23;
     color: #fff;
     border: none;
     padding: 10px;
@@ -1578,14 +1603,14 @@ select {
 }
 
 .pulsanti_staff:hover {
-    background-color: #F1F6F9;
-    color: #394867;
+    background-color: #f7ad6d;
+    color: #025464;
 }
 
 .pulsante_indietro {
     background-color: transparent;
-    color: #394867;
-    border: 2px solid #394867;
+    color: #025464;
+    border: 2px solid #025464;
     width: 50px; /* Regola la larghezza del pulsante in base alle tue esigenze */
     height: 50px; /* Regola l'altezza del pulsante in base alle tue esigenze */
     font-size: 18px;
@@ -1646,13 +1671,13 @@ select {
 }
 
 .modOffertaForm h1 {
-    color: #394867;
+    color: #025464;
     text-align: center;
 }
 
 .modOffertaForm hr {
     border-width: 3px;
-    border-color: #394867;
+    border-color: #025464;
 }
 
 .modOffertaForm {
@@ -1718,7 +1743,7 @@ select {
 }
 
 .modificaOfferta input[type="submit"] {
-    background-color: #394867;
+    background-color: #E57C23;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -1730,8 +1755,8 @@ select {
 }
 
 .modificaOfferta input[type="submit"]:hover {
-    background-color: #F1F6F9;
-    color: #394867;
+    background-color: #fbc596;
+    color: #025464;
 }
 
 .image-mod-off {

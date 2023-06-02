@@ -915,7 +915,6 @@ footerF{
 }
 
 .login-form {
-    background: #fff;
     width: 500px;
     margin: 65px auto;
     display: -webkit-box;
@@ -923,9 +922,12 @@ footerF{
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    border-radius: 4px;
+    border-radius: 30px;
+    background-color: #fbfeff;
+    color: #00313b;
     box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
 }
+
 .login-form h1 {
     padding: 35px 35px 0 35px;
     font-weight: 300;
@@ -949,6 +951,7 @@ footerF{
     -webkit-transition: all .2s;
     transition: all .2s;
 }
+
 .login-form .input-field input::-webkit-input-placeholder {
     text-transform: uppercase;
 }
@@ -967,8 +970,9 @@ footerF{
 .login-form .input-field input:focus {
     border-color: #222;
 }
+
 a.link {
-    color: #007BA7;
+    color: #E57C23;
     text-decoration: underline;
     cursor: pointer;
     letter-spacing: 0.2px;
@@ -1246,9 +1250,10 @@ a.link {
 .container-register{
     max-width: 700px;
     width: 100%;
-    background-color: #fff;
     padding: 25px 30px;
-    border-radius: 5px;
+    border-radius: 30px;
+    background-color: #fbfeff;
+    color: #00313b;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
 .container-register .title{
@@ -1295,8 +1300,13 @@ form .input-box span.details{
 }
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
-    border-color: #394867;
+    border-color: #025464;
 }
+
+form .gender-details input[type='radio']:checked{
+    accent-color: #E57C23;
+}
+
 form .gender-details .gender-title{
     font-size: 20px;
     font-weight: 500;
@@ -1324,7 +1334,7 @@ form .category label .dot{
 #dot-1:checked ~ .category label .one,
 #dot-2:checked ~ .category label .two,
 #dot-3:checked ~ .category label .three{
-    background: #394867;
+    background: #E57C23;
     border-color: #d9d9d9;
 }
 

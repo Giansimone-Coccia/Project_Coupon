@@ -5,7 +5,7 @@
 @section('content')
 
 <div class=" padding-top-32">
-    <div class="main content padding box-shadow max-width-1300">
+    <div class="main content padding padding-24 box-shadow max-width-1300">
 
         <div class="container_chi_siamo">
             <div class="image-about-us">

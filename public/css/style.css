@@ -275,6 +275,8 @@ footer,header,main,nav{
     width: 270px;
     background-color: #F1F6F9;
     max-width:100%;
+    padding:10px;
+    font-size: 14px;
 }
 
 .searchbar:focus 

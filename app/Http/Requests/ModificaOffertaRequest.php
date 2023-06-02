@@ -27,12 +27,12 @@ class ModificaOffertaRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'offertaNome' => 'required|max:20',
-            'offertaDescrizione' => 'required|max:250',
-            'offertaScadenza' => 'required',
+            'nomeOff' => 'required|max:20',
+            'oggettoOff' => 'required|max:250',
+            'tempoFruiz' => 'required',
             'luogoFruiz'=> 'required',
-            'offertaModalita' => 'required',
-            'logo' => 'required|file|max:1024',
+            'modalita' => 'required',
+            'logoOff' => 'required|file|max:1024',
         ];
     }
 

@@ -25,8 +25,8 @@
         <div class="coupon-no-flex">
             <div class ="open-coupon">
                 <div class="info-user">
-                    <h3><span>Nome:</span> {{$ruser->nome}}</h3>
-                    <h3><span>Cognome:</span> {{$ruser->cognome}}</h3>
+                    <h3><strong>Nome:</strong> {{$ruser->nome}}</h3>
+                    <h3><strong>Cognome:</strong> {{$ruser->cognome}}</h3>
                 </div>
 
                 <div class="button-box">
@@ -40,7 +40,7 @@
             </div>
 
             <div class="coupon-riscattati" style="display:none;">
-                <h5 ><span>Coupon riscattati:</span> {{$numCoupon[$contatore++]}} </h5>
+                <h5 ><strong>Coupon riscattati:</strong> {{$numCoupon[$contatore++]}} </h5>
             </div>
         </div>
 

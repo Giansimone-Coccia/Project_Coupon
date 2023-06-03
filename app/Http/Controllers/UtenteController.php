@@ -49,7 +49,7 @@ class UtenteController extends Controller {
 
         $couponOfferta = [];
         foreach ($couponUtente as $coupon) {
-            $couponOfferta[] = $this->_Catalogo->getOfferteAll($coupon->offPromo);  
+            $couponOfferta[] = $this->_Catalogo->getOfferteAll($coupon->offPromo);
         }
 
 
@@ -113,10 +113,16 @@ class UtenteController extends Controller {
     }
 
     public function allRegisteredUsers() {
-
+        $numCoupon = [];
         $ruserTot = $this->_UtenteModel->getAllUserR();
-        foreach ($ruserTot as $ruser) {
-            $numCoupon[] = $this->_Catalogo->couponCountXUsers($ruser->id);
+        if ($ruserTot->isEmpty()) {
+            $numCoupon = [];
+        } else {
+            foreach ($ruserTot as $ruser) {
+                if ($ruser != null) {
+                    $numCoupon[] = $this->_Catalogo->couponCountXUsers($ruser->id);
+                }
+            }
         }
 
         return view('mostra_utenti_registrati')

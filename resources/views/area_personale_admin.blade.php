@@ -61,7 +61,7 @@
         </div>
         <hr class="area_admin">
         @isset($numCoupon)
-        <p>Numero totale coupon emessi: {{$numCoupon}}</p>
+        <p><strong>Numero totale coupon emessi:</strong> {{$numCoupon}}</p>
         @endisset
     </div>
 </div>

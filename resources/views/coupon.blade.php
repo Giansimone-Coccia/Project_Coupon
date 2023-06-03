@@ -10,7 +10,6 @@
     </head>
     <body>
         
-        
         <div class="coupon-tasto">
             @include('helpers/buttonIndietro')
         </div>
@@ -25,11 +24,10 @@
                 <h2><b>{{$offerta->nomeOff}}</b></h2>
                 <p>{{$offerta->oggettoOff}}</p>
             </div>
-            <div class="modalita">
+            <hr>
+            <div class="info-coup">
                 <p><strong>Modalità di fruizione: </strong> {{$offerta->modalita}}</p>
-            </div>
-            <p class="utente"> <strong> Utente richiedente: </strong>{{$utente->nome}} {{$utente->cognome}}</p>
-            <div class="container-coupon">
+                <p class="utente"> <strong> Utente richiedente: </strong>{{$utente->nome}} {{$utente->cognome}}</p>
                 <p><strong class="promo">Data scadenza: </strong>{{$buono->dataScad}}</p>
             </div>
         </div>

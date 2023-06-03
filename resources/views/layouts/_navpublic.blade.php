@@ -2,7 +2,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('js/navbar.js') }}"></script>
 
-<li class="vectorlogo right logo">
+<li class="vectorlogo right">
     <img src="{{ asset('images/logo/coupon-logo.svg' ) }}" alt="Logo" class="width100 height100" onclick="window.location.href = '{{ route('start') }}';">
 </li>
 
@@ -29,11 +29,11 @@
     @endguest
     <li class="button bar-item right" onclick="window.location.href = '{{ route('FAQ') }}';">FAQs</li>
     <li class="button bar-item right" onclick="window.location.href = '{{ route('chi_siamo') }}';">Chi siamo</li>
-    <li class="button bar-item right"onclick="window.location.href = '{{ route('start') }}';"> Home </li>
+    <li class="margin-left-16 button bar-item right"onclick="window.location.href = '{{ route('start') }}';"> Home </li>
 
 </ul>
 
-<li class="bar-item search" >
+<li class="bar-item" >
     <form method="GET" action="{{ route('risultati_page') }}">
         <button type="submit" class="button bar-item search-lens right "  >
             <img src="{{ asset('images/icons/search_icon.svg' ) }}" alt="Search" class="width100">

@@ -111,9 +111,13 @@ h6{
 }
 .dimentioncontent{
     max-width:1200px;
-    margin-top:70px;
+    margin-top:50px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     background-color: #fcfcfc;
+}
+
+.margin-left-16{
+    margin-left: 16px;
 }
 
 .dimentioncontent h1 {
@@ -210,6 +214,9 @@ h6{
 .margin-top-50{
     margin-top: 50px
 }
+.margin-top-40{
+    margin-top: 40px
+}
 .padding{
     padding:8px 16px!important
 }
@@ -283,7 +290,7 @@ footer,header,main,nav{
     font-size: 15px;
 }
 
-.searchbar:focus 
+.searchbar:focus
 {
     outline: none;
     border: 2px solid #E57C23;
@@ -387,7 +394,12 @@ button{
 
 .search-lens{
     background-color: transparent;
+    padding: 0px!important;
+    height:24px !important;
+    padding-left:8px !important;
+    padding-top:8px !important;
 }
+
 .button:hover{
     color:#025464;
     background-color:#f1f6f8;
@@ -411,7 +423,7 @@ button{
 }
 
 .vectorlogo{
-    height: 130px;
+    height: 100px;
     width: 300px;
     margin-top: 10px;
     border:none;
@@ -425,7 +437,7 @@ button{
 .topmenu{
     max-width:1200px;
     max-height:1000px;
-    height:150px;
+    height:125px;
     margin:auto;
     position: relative;
 }
@@ -487,6 +499,8 @@ button{
     border-radius: 7px;
 }
 
+
+
 .coupons-riscattati{
     max-width: 1300px;
 }
@@ -496,7 +510,7 @@ button{
 }
 
 .faq-list{
-    max-width: 1300px; 
+    max-width: 1300px;
     margin-top: 100px;
     color: #00313b;
 }
@@ -1103,9 +1117,9 @@ a.link {
 .coupon {
     display: flex;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-between;
     padding: 10px;
-     /*elementi distribuiti uniformemente lungo l'asse orizzonatale'*/
+    /*elementi distribuiti uniformemente lungo l'asse orizzonatale'*/
     margin-bottom: 20px;
     width: 80%;
     max-width: 900px;

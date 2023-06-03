@@ -596,31 +596,33 @@ button{
 
 /*coupon.css*/
 .coupon-page {
-    border: 10px dashed #E57C23; /* Dotted border */
+    border: 7px dashed #025464;
     width: 80%;
     margin: 0 auto; /* Center the coupon */
     max-width: 500px;
     margin-bottom: 50px;
     border-radius: 10px;
-    background-color: #eab65d;
+    background-color: #fbc596;
     color: #00313b;
+    padding: 20px;
 }
 
-.modalita{
-    padding: 2px 16px;
-    background-color: #eab65d;
+.coupon-page hr{
+    height: 1px;
+    background-color: #00313b;
+    border: none;
 }
 
 .container-coupon {
     padding: 2px 16px;
-    background-color: #eab65d;
+    background-color: #fbc596;
     border-radius: 10px;
 }
 
 
-.utente {
+.info-coup {
     padding: 2px 16px;
-    background-color: #eab65d;
+    background-color: #f8ba84;
 }
 
 .promo {

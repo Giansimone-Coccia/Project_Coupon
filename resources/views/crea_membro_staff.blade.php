@@ -26,7 +26,7 @@ $(function () {
 
 @section('content')
     <div class="creazioneOfferta">
-        @include('helpers/buttonIndietro')
+
         {{ Form::open(array('route' => 'crea_membro_staff.store', 'id' => 'addStaffMember', 'class' => 'productForm')) }}
         @csrf
         <h1>Aggiungi un membro dello staff</h1>

@@ -3,7 +3,7 @@
 @section('title', 'Offerte azienda')
 
 @section('content')
-@include('helpers/buttonIndietro')
+
 <div class=" padding-top-24">
 
     <div class="main content padding box-shadow" style="max-width: 1300px;">

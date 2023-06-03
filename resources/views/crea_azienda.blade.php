@@ -27,7 +27,7 @@ $(function () {
 
 @section('content')
 <div class="creazioneOfferta">
-    @include('helpers/buttonIndietro')
+
     {{ Form::open(array('route' => ['crea_azienda.store'], 'id' => 'addAzienda', 'class' => 'productForm', 'enctype' => 'multipart/form-data')) }}
     @csrf
     <h1>Aggiungi la tua azienda</h1>

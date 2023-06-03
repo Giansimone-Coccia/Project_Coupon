@@ -274,5 +274,4 @@ class PublicController extends Controller {
 
         return response()->json(['redirect' => route('area_personale_admin')]);
     }
-
 }

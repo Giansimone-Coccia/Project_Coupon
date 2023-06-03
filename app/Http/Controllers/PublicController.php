@@ -81,10 +81,10 @@ class PublicController extends Controller {
         $offertaDetails = $this->_catalogModel->getOffertaById($offertaId);
         $utente = Auth::user();
         $buoni = $this->_catalogModel->getBuonoOfferta($offertaId);
-        
+
         $riscattato = True;
         $buono = null;
-        
+
         foreach ($buoni as $singleBuono) {
             if ($singleBuono->utenteRich == $utente->id) {
                 $riscattato = False;
@@ -92,7 +92,7 @@ class PublicController extends Controller {
                 break;
             }
         }
-        
+
         if ($riscattato) {
             $codiceBuono = $this->_catalogModel->generaCodBuono();
             $dataScad = $this->_catalogModel->generaDataScadenzaBuono();
@@ -168,7 +168,7 @@ class PublicController extends Controller {
 
         $destinationPath = public_path() . '/images/products';
         $image->move($destinationPath, $imageName);
-        
+
         return response()->json(['redirect' => route('mostra_aziende_area_personale')]);
     }
 
@@ -180,10 +180,10 @@ class PublicController extends Controller {
 
     public function modificaOfferta($offertaId, ModificaOffertaRequest $request) {
         $offerta = $this->_catalogModel->getOffertaById($offertaId);
-        
+
         $image = $request->file('logoOff');
         $imageName = $image->getClientOriginalName();
-        
+
         $requestVal = $request->validated();
         $offerta->logoOff = $imageName;
         $offerta->stato = '1';
@@ -192,8 +192,10 @@ class PublicController extends Controller {
         $offerta->save();
 
         $destinationPath = public_path() . '/images/products';
-        $image->move($destinationPath, $imageName);
-        return redirect('/area_personale_admin');
+        if (!file_exists($destinationPath . '/' . $imageName)) {
+            $image->move($destinationPath, $imageName);
+        }
+        return redirect('/area_personale_staff');
     }
 
     public function eliminaOfferta($offertaId) {

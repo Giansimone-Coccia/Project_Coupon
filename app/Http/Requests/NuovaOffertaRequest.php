@@ -32,7 +32,7 @@ class NuovaOffertaRequest extends FormRequest {
             'nomeOff' => 'required|max:20',
             'oggettoOff' => 'required|max:250',
             'azienda' => 'required',
-            'tempoFruiz' => 'required',
+            'tempoFruiz' => ['required','after:today'],
             'luogoFruiz'=> 'required',
             'modalita' => 'required',
             'logoOff' => 'required|file|mimes:jpeg,png|max:1024',

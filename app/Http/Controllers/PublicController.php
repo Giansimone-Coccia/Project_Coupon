@@ -166,8 +166,9 @@ class PublicController extends Controller {
         $offerta->utente = Auth::user()->id;
         $offerta->save();
 
-        $destinationPath = public_path() . '/images/products';
-        $image->move($destinationPath, $imageName);
+        if (!file_exists($destinationPath . '/' . $imageName)) {
+            $image->move($destinationPath, $imageName);
+        }
 
         return response()->json(['redirect' => route('mostra_aziende_area_personale')]);
     }
@@ -236,8 +237,10 @@ class PublicController extends Controller {
         $azienda->utente = Auth::user()->id;
         $azienda->save();
 
-        $destinationPath = '/home/grp_07/www/laraProject/public/images/companies';
-        $image->move($destinationPath, $imageName);
+        $destinationPath = public_path() . '/images/companies';
+        if (!file_exists($destinationPath . '/' . $imageName)) {
+            $image->move($destinationPath, $imageName);
+        }
 
         return response()->json(['redirect' => route('mostra_aziende_area_personale')]);
     }
@@ -259,7 +262,9 @@ class PublicController extends Controller {
         $azienda->save();
 
         $destinationPath = public_path() . '/images/companies';
-        $image->move($destinationPath, $imageName);
+        if (!file_exists($destinationPath . '/' . $imageName)) {
+            $image->move($destinationPath, $imageName);
+        }
 
         return response()->json(['redirect' => route('area_personale_admin')]);
     }

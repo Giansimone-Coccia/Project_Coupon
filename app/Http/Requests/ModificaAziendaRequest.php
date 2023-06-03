@@ -30,7 +30,7 @@ class ModificaAziendaRequest extends FormRequest {
     public function rules() {
         return [
             'nome' => 'required|string|max:20',
-            'descAzienda' => 'required|max:250',
+            'descAzienda' => 'required|max:1024',
             'localizzazione' => 'required',
             'ragSoc' => 'required',
             'tipologia' => 'required',

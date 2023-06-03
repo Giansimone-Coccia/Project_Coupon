@@ -11,7 +11,6 @@
 
 @section('content')
 
-@include('helpers/buttonIndietro')
 <div class="main content padding max-width-1300">
     <div class="couponlist" align="center">
         <h1 style="font-weight: 300">Lista utenti registrati:</h1>

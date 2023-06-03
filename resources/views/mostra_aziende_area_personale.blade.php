@@ -10,7 +10,7 @@
 <script src="{{ asset('js/alert.js') }}"></script>
 
 @endsection
-@include('helpers/buttonIndietro')
+
 <div class="main content padding max-width-1300">
     
     <div class="couponlist" align="center">

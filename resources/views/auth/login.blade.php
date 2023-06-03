@@ -15,7 +15,7 @@
             <div class = "center">
                 <a href="{{ route('start') }}" class="link margin-top-20">Premi qui per tornare alla home</a>
             </div>          
-            <h1>Login</h1>
+            <h1><strong>Login</strong></h1>
             <div class="content">
                 <div class="input-field">
                     {{ Form::label('username', 'Nome Utente') }}
@@ -44,7 +44,7 @@
                 <div class="button">
                     {{ Form::submit('Login', ['class' => 'input']) }}
                 </div>
-                <a href="{{ route('register') }} " class="link">Registrati</a>
+                <a href="{{ route('register') }} " class="link">Non hai un account? Registrati</a>
 
                 {{ Form::close() }}
             </div>

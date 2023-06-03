@@ -10,7 +10,10 @@
     </head>
     <body class="body_register">
         <div class="container-register">
-            <div class="title">Registrazione</div>
+            <div class = "center">
+                <a href="{{ route('start') }}" class="link margin-bottom-10">Premi qui per tornare alla home</a>
+            </div> 
+            <div class="title"><strong>Registrazione</strong></div>
             <div class="content">
 
                 {{ Form::open(array('route' => 'register','id' => 'formRegister')) }}

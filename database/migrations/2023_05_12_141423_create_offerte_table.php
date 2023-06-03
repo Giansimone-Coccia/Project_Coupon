@@ -18,7 +18,7 @@ class CreateOfferteTable extends Migration
             $table->string('oggettoOff',250);
             $table->string('modalita', 30);
             $table->date('tempoFruiz');
-            $table->string('luogoFruiz',30);
+            $table->string('luogoFruiz',50);
             $table->string('nomeOff',25);
             $table->text('logoOff');
             $table->boolean('stato');

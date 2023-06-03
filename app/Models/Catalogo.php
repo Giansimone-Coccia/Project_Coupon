@@ -25,6 +25,11 @@ class Catalogo {
         return $azienda;
     }
 
+    public function getAllBuoni() {
+        $buono = Buono::get();
+        return $buono;
+    }
+
     public function couponCount() {
         return Buono::count();
     }
@@ -43,23 +48,22 @@ class Catalogo {
 
     public function getPromo($aziendaId, $paged = 8) {
         $offerta = Offerta::where('azienda', $aziendaId)
-                    ->where('stato', '1');
+                ->where('stato', '1');
         return $offerta->paginate($paged);
     }
-    
-    
+
     public function getOffertaByAzienda($aziendaId) {
         $offerta = Offerta::where('azienda', $aziendaId)
-                    ->where('stato', '1')->get();
+                        ->where('stato', '1')->get();
         return $offerta;
     }
 
     public function getOffertaById($offertaId) {
         return Offerta::where('id', $offertaId)
-                ->where('stato', '1')
-                ->first();
+                        ->where('stato', '1')
+                        ->first();
     }
-    
+
     public function getOfferteAll($offertaId) {
         return Offerta::where('id', $offertaId)->first();
     }
@@ -81,8 +85,8 @@ class Catalogo {
         if ($aziendeId == null) {
             if ($descrizione != "") {
                 $vectorPromos = Offerta::where('oggettoOff', 'LIKE', '%' . $descrizione . '%')
-                                ->where('stato','1')
-                                ->get();
+                        ->where('stato', '1')
+                        ->get();
             } else {
                 return null;
             }
@@ -95,7 +99,7 @@ class Catalogo {
                                 ['oggettoOff', 'LIKE', '%' . $descrizione . '%'],
                                 ['azienda', $aziendaId]
                             ])
-                            ->where('stato','1')
+                            ->where('stato', '1')
                             ->get();
 
                     foreach ($vectorOff as $singleAzienda) {
@@ -105,8 +109,8 @@ class Catalogo {
             } else {
                 foreach ($aziendeId as $aziendaId) {
                     $vectorOff = Offerta::where('azienda', $aziendaId)
-                                ->where('stato','1')
-                                ->get();
+                            ->where('stato', '1')
+                            ->get();
                     foreach ($vectorOff as $singleAzienda) {
                         $vectorPromos->push($singleAzienda);
                     }
@@ -117,7 +121,6 @@ class Catalogo {
         if ($vectorPromos->isEmpty()) {
             return null;
         } else {
-
             $currentPage = LengthAwarePaginator::resolveCurrentPage();
             $perPage = $paged;
             $offertaSlice = $vectorPromos->slice(($currentPage - 1) * $perPage, $perPage);
@@ -152,7 +155,6 @@ class Catalogo {
                     'offPromo' => $offPromo,
                     'utenteRich' => $utenteRich
         ]);
-
     }
 
     public function generaCodBuono() {

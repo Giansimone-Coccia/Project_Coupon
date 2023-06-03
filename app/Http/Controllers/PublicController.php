@@ -94,7 +94,13 @@ class PublicController extends Controller {
         }
 
         if ($riscattato) {
+            $buoni = $this->_catalogModel->getAllBuoni();
             $codiceBuono = $this->_catalogModel->generaCodBuono();
+            foreach ($buoni as $buono) {
+                if ($codiceBuono == $buono->codCoupon) {
+                    $codiceBuono = $this->_catalogModel->generaCodBuono();
+                }
+            }
             $dataScad = $this->_catalogModel->generaDataScadenzaBuono();
             $buono = $this->_catalogModel->createCoupon($codiceBuono, $dataScad, $offertaDetails->id, $utente->id);
         }

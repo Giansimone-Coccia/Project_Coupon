@@ -5,13 +5,13 @@
     {{ $paginator->firstItem() }} - {{ $paginator->lastItem() }} di {{ $paginator->total() }} ---
 
     @if (!$paginator->onFirstPage())
-        <a href="{{ $paginator->url(1) }}" class="link">Inizio</a> |
+        <a href="{{ $paginator->appends(request()->input())->url(1) }}" class="link">Inizio</a> |
     @else
         Inizio |
     @endif
 
     @if ($paginator->currentPage() != 1)
-        <a href="{{ $paginator->previousPageUrl() }}" class="link">&lt; Precedente</a> |
+        <a href="{{ $paginator->appends(request()->input())->previousPageUrl() }}" class="link">&lt; Precedente</a> |
     @else
         &lt; Precedente |
     @endif

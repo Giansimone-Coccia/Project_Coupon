@@ -12,9 +12,11 @@
             <h4 style="font-weight: 500">{{$aziendaSearch}}<br>{{$descSearch}}</h4>
             @endisset
             @endisset
+            
             @isset($message)
             <h1 style="font-weight: 500">{{$message}}</h1>
             @endisset
+            
         </div>
         
         @isset($promos)

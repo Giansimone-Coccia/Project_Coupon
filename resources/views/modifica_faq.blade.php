@@ -32,10 +32,10 @@ $(function () {
             <h1>Modifica FAQ</h1>
 
                 {{ Form::label('domanda', 'Domanda', ['class' => 'label-input']) }}
-                {{ Form::text('domanda', $faq->domanda, ['class' => 'input', 'id' => 'domanda']) }}
+                {{ Form::textarea('domanda', $faq->domanda, ['class' => 'input', 'id' => 'domanda', 'rows' => 3]) }}
     
                 {{ Form::label('risposta', 'Risposta', ['class' => 'label-input']) }}
-                {{ Form::text('risposta', $faq->risposta, ['class' => 'input', 'id' => 'risposta']) }}
+                {{ Form::textarea('risposta', $faq->risposta, ['class' => 'input', 'id' => 'risposta', 'rows' => 3]) }}
           
                           
                 {{ Form::submit('Modifica', ['class' => "buttonOfferta"]) }}

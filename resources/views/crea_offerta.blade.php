@@ -36,7 +36,7 @@ $(function () {
         {{ Form::text('nomeOff', '', ['class' => 'input', 'id' => 'nomeOff', 'value' => old('nomeOff')]) }}
         
         {{ Form::label('oggettoOff', 'Oggetto offerta', ['class' => 'label-input']) }}
-        {{ Form::text('oggettoOff', '', ['class' => 'input', 'id' => 'oggettoOff', 'value' => old('oggettoOff')]) }}
+        {{ Form::textarea('oggettoOff', '', ['class' => 'input', 'id' => 'oggettoOff', 'value' => old('oggettoOff'), 'rows' => 3]) }}
         
         {{ Form::label('azienda', 'Azienda di riferimento:', ['class' => 'label-input']) }}
         {{ Form::select('azienda', ['' => 'Seleziona azienda'] + $aziende->pluck('nome', 'id')->toArray(), old('azienda'), ['class' => 'input', 'id' => 'azienda']) }}

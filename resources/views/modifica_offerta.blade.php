@@ -34,7 +34,7 @@
     <div class="form-section">
 
         {{ Form::label('oggettoOff', 'Descrizione:') }}
-        {{ Form::text('oggettoOff', $offerta->oggettoOff, ['class' => 'input', 'id' => 'oggettoOff']) }}
+        {{ Form::textarea('oggettoOff', $offerta->oggettoOff, ['class' => 'input', 'id' => 'oggettoOff', 'rows' => 3]) }}
 
         @if ($errors->first('oggettoOff'))
         <ul class="errors">

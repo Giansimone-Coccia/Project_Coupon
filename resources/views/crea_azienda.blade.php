@@ -37,7 +37,7 @@ $(function () {
     {{ Form::text('nome', '',['class' => 'input', 'id' => 'nome']) }}
 
     {{ Form::label('descAzienda', 'Descrizione azienda:') }}
-    {{ Form::textarea('descAzienda', '',['class' => 'input', 'id' => 'descAzienda']) }}
+    {{ Form::textarea('descAzienda', '',['class' => 'input', 'id' => 'descAzienda', 'rows' => 3]) }}
 
     {{ Form::label('localizzazione', 'Localizzazione:') }}
     {{ Form::text('localizzazione', '',['class' => 'input', 'id' => 'localizzazione']) }}

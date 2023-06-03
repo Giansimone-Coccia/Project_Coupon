@@ -22,11 +22,11 @@
                     <h2 style="font-size: 30px; font-weight: bold; " class="title-azienda" >{{$azienda->nome}}</h2>
                     <p>{{$azienda->descAzienda}}</p>
                     <p><strong>Localizzazione:</strong> {{$azienda->localizzazione}}</p>
-                    <p><strong>Tipologia di azienda:</strong> {{$azienda->tipologia}}</p></div>
+                    <p><strong>Tipologia di azienda:</strong> {{$azienda->tipologia}}</p>
+                    <p><strong>Ragione sociale:</strong> {{$azienda->ragSoc}}</p>
+                </div>
             </div>
         </div>
-        
-
         <div class="container-azienda border-top-grey margin-top-16" >
             <div class="row-offerte padding-top-16">
 
@@ -50,7 +50,7 @@
             </div>
             @include('pagination.paginator', ['paginator' => $promos])
         </div>
-        
+
         @endisset
     </div>
 </div>

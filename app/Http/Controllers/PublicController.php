@@ -98,7 +98,6 @@ class PublicController extends Controller {
             $dataScad = $this->_catalogModel->generaDataScadenzaBuono();
             $buono = $this->_catalogModel->createCoupon($codiceBuono, $dataScad, $offertaDetails->id, $utente->id);
         }
-        //$buono = $this->_catalogModel->getBuonoOfferta($offertaId);
         return view('coupon')
                         ->with('buono', $buono)
                         ->with('offerta', $offertaDetails)
@@ -170,8 +169,7 @@ class PublicController extends Controller {
         $destinationPath = public_path() . '/images/products';
         $image->move($destinationPath, $imageName);
         
-        return redirect()->route('mostra_aziende_area_personale');
-        //return response()->json(['redirect' => route('mostra_aziende_area_personale')]);
+        return response()->json(['redirect' => route('mostra_aziende_area_personale')]);
     }
 
     public function viewOfferta($offertaId) {
@@ -205,7 +203,6 @@ class PublicController extends Controller {
         $offerta->save();
 
         return redirect('/mostra_aziende_area_personale');
-        //senza la definizione di primary key non va la modifica
     }
 
     public function eliminaAzienda($aziendaId) {
@@ -219,7 +216,6 @@ class PublicController extends Controller {
         }
         $azienda->delete();
         return redirect('/mostra_aziende_area_personale');
-        //senza la definizione di primary key non va la modifica
     }
 
     public function addAzienda() {
@@ -238,7 +234,6 @@ class PublicController extends Controller {
         $azienda->utente = Auth::user()->id;
         $azienda->save();
 
-        //$destinationPath = public_path() . '/images/companies';
         $destinationPath = '/home/grp_07/www/laraProject/public/images/companies';
         $image->move($destinationPath, $imageName);
 

@@ -38,7 +38,6 @@ class DomandeController extends Controller
         $faq->utente = Auth::user()->id;
         $faq->save();
        
-        //return redirect('FAQ');
         return response()->json(['redirect' => route('FAQ')]);
     }
     

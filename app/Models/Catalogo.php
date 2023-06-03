@@ -153,7 +153,6 @@ class Catalogo {
                     'utenteRich' => $utenteRich
         ]);
 
-        //return Buono::where('codCoupon', $codCoupon)->get();
     }
 
     public function generaCodBuono() {

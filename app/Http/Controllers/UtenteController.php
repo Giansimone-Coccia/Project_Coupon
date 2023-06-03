@@ -49,7 +49,7 @@ class UtenteController extends Controller {
 
         $couponOfferta = [];
         foreach ($couponUtente as $coupon) {
-            $couponOfferta[] = $this->_Catalogo->getOfferteAll($coupon->offPromo);  //con questo si lega ad ogni coupon la corrispettiva offerta
+            $couponOfferta[] = $this->_Catalogo->getOfferteAll($coupon->offPromo);  
         }
 
 
@@ -143,7 +143,6 @@ class UtenteController extends Controller {
         } else if (Auth::user()->hasRole('staff')) {
             return redirect()->route('area_personale_staff');
         }
-        //return response()->json(['redirect' => route('mostra_membri_staff')]);
     }
 
     public function eliminaStaff($staffId) {

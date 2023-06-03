@@ -32,7 +32,6 @@
     <li class="button bar-item right"onclick="window.location.href = '{{ route('start') }}';"> Home </li>
 
 </ul>
-@if (!empty($allAziende) || !empty($promos))
 
 <li class="bar-item search" >
     <form method="GET" action="{{ route('risultati_page') }}">
@@ -43,7 +42,4 @@
         <input type="text" name="descrizione" placeholder="Cerca per Descrizione"  class="searchbar height36" name="search" value="{{ request()->input('descrizione') }}">
     </form>
 </li>
-
-
-@endif
 

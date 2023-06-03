@@ -15,9 +15,9 @@
             </div>
             <div class="text">
                 <h2 class="font-bold font-size-64"> Informazioni Generali </h2>
-                <p class="font-size-24">Il nostro sito web offre un servizio unico che consente agli utenti di ottenere coupon per una vasta gamma di prodotti provenienti da diverse aziende. La nostra sezione Home dedicata consente agli utenti di visualizzare facilmente tutte le aziende partecipanti. Una volta selezionata un'azienda specifica, è possibile consultare tutte le offerte disponibili.
+                <p class="font-size-24">Il nostro sito web offre un servizio unico che consente agli utenti di ottenere <strong>coupon</strong> per una vasta gamma di prodotti provenienti da diverse <strong>aziende</strong>. La nostra sezione <strong>Home</strong> dedicata consente agli utenti di visualizzare facilmente tutte le aziende partecipanti. Una volta selezionata un'azienda specifica, è possibile consultare tutte le <strong>offerte</strong> disponibili.
 
-                <br> Per accedere ai coupon, gli utenti devono registrarsi e effettuare il login nel nostro sito. Una volta autenticati, possono procedere all'acquisizione dei coupon desiderati. Basta semplicemente premere il pulsante "riscatta" presente nella pagina con i dettagli dell'offerta scelta. L'utente può riscattare un solo coupon per ciascuna offerta.
+                <br> Per accedere ai coupon, gli utenti devono <strong>registrarsi</strong> e effettuare il <strong>login</strong> nel nostro sito. Una volta autenticati, possono procedere all'acquisizione dei coupon desiderati. Basta semplicemente premere il pulsante "riscatta" presente nella pagina con i dettagli dell'offerta scelta. L'utente può riscattare un solo coupon per ciascuna offerta.
 
                 <br> Nell'area personale, gli utenti hanno la possibilità di modificare i propri dati personali e visualizzare un elenco completo dei coupon precedentemente riscattati. I coupon possono essere utilizzati in due modalità: stampando la pagina generata dopo aver premuto il pulsante "riscatta" e presentandola direttamente in negozio, oppure inserendo il codice online, a seconda delle istruzioni specifiche fornite per ciascuna offerta.
 

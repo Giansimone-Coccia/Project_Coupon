@@ -5,16 +5,16 @@
 @section('content')
 
 <div class="padding-top-24">
-    <div class="main content padding box-shadow " style="max-width: 1300px;">
+    <div class="main content padding box-shadow max-width-1300">
         <div class="row-offerte padding-16 ">
             @isset($aziendaSearch)
             @isset($descSearch)
-            <h4 style="font-weight: 500">{{$aziendaSearch}}<br>{{$descSearch}}</h4>
+            <h4 class="font-weight-500">{{$aziendaSearch}}<br>{{$descSearch}}</h4>
             @endisset
             @endisset
 
             @isset($message)
-            <h1 style="font-weight: 500">{{$message}}</h1>
+            <h1 class="font-weight-500">{{$message}}</h1>
             @endisset
 
         </div>

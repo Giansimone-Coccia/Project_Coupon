@@ -13,7 +13,7 @@
 
 <div class="main content padding max-width-1300">
     <div class="couponlist" align="center">
-        <h1 style="font-weight: 300">Lista utenti registrati:</h1>
+        <h1 class="font-weight-300">Lista utenti registrati:</h1>
         @isset($allRegisteredUsers)
         @isset($numCoupon)
         @php

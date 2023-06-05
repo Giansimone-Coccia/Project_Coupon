@@ -15,7 +15,7 @@
 <div id = "listaOfferte" class="main content padding max-width-1300">
 
     <div class="couponlist" align="center">
-        <h1 style="font-weight: 300">Lista delle offerte dell'azienda {{$azienda->nome}}:</h1>
+        <h1 class="font-weight-300">Lista delle offerte dell'azienda {{$azienda->nome}}:</h1>
 
         @isset($allOfferteAzienda)
         @foreach($allOfferteAzienda as $offerta)

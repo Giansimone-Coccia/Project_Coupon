@@ -19,7 +19,7 @@
             <div class="container-coupon">
                 <h3>{{$buono->codCoupon}}</h3>
             </div>
-            <img src="{{ asset('images/products/'.$offerta->logoOff ) }}" alt="logo.{{$offerta->nomeOff}}" style="width:100%;">
+            <img src="{{ asset('images/products/'.$offerta->logoOff ) }}" alt="logo.{{$offerta->nomeOff}}" class = "width100">
             <div class="container-coupon">
                 <h2><b>{{$offerta->nomeOff}}</b></h2>
                 <p>{{$offerta->oggettoOff}}</p>

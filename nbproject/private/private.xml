@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/resources/views/risultati_page.blade.php</file>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/resources/views/start.blade.php</file>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/public/css/style.css</file>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/public/js/openFAQ.js</file>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/resources/views/offerte_azienda.blade.php</file>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/public/js/openUser.js</file>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/public/js/reloadPage.js</file>
+            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/database/seeders/UsersSeeder.php</file>
+            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/app/Models/Catalogo.php</file>
+            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/resources/views/helpers/redeemCoupon.blade.php</file>
+            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/app/Http/Controllers/PublicController.php</file>
         </group>
     </open-files>
 </project-private>

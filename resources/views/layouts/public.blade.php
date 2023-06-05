@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('js/map.js') }}"></script>
+<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>

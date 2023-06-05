@@ -41,8 +41,8 @@
       
         <style type="text/css">
             @font-face {
-            font-family: 'Glacial Indifference Bold';
-            src: url(/font/GlacialIndifference-Bold.otf');
+            font-family: 'Glacial Indifference';
+            src: url('{{ asset('fonts/GlacialIndifference-Bold.otf') }}');
             font-weight: bold;
             }
         </style>

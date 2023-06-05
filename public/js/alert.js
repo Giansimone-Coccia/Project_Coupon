@@ -50,3 +50,14 @@ function showConfirmationStaff() {
     event.stopPropagation();
   }
 }
+
+function showConfirmationLogout() {
+  var result = confirm("Confermi di voler uscire dalla tua area personale?");
+  if (result) {
+      document.getElementById('logout-form').submit();
+    } 
+    else {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+}

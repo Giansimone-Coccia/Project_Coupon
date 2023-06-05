@@ -1,6 +1,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('js/navbar.js') }}"></script>
+<script src="{{ asset('js/alert.js') }}"></script>
 
 <ul>
     <li class="vectorlogo right logo">
@@ -10,7 +11,7 @@
 
 <ul class="left listnone margin-top-10 ">
     @auth
-    <li href="" title="Esci dal sito" class="button bar-item right" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</li>
+    <li href="" title="Esci dal sito" class="button bar-item right" onclick="showConfirmationLogout();">Logout</li>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         {{ csrf_field() }}
     </form>

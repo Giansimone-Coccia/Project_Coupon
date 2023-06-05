@@ -125,13 +125,13 @@ Route::post('/FAQ/crea_faq', [DomandeController::class, 'storeFaq'])
         ->name('crea_faq.store')->middleware('can:isAdmin');
 
 Route::post('/elimina_utenti_registrati/{userId}', [UtenteController::class, 'eliminaUserRegistered'])
-        ->name('elimina_utenti_registrati.store');
+        ->name('elimina_utenti_registrati.store')->middleware('can:isAdmin');
 
 Route::get('/FAQ/modifica_faq/{id}', [DomandeController::class, 'viewFaq'])
         ->name('modifica_faq')->middleware('can:isAdmin');
 
 Route::post('/FAQ/modifica_faq/{id}', [DomandeController::class, 'modificaFaq'])
-        ->name('modifica_faq.store');
+        ->name('modifica_faq.store')->middleware('can:isAdmin');
 
 Route::get('/crea_membro_staff', [UtenteController::class, 'addMembroStaff'])
         ->name('crea_membro_staff')->middleware('can:isAdmin');

@@ -13,7 +13,7 @@
 <div class="container_dettaglio_offerta box-shadow">
    
     <div class="image">
-        <img src="{{ asset('images/products/'.$offerta->logoOff ) }}" class="rounded-corners" alt="Nome Offerta">
+        <img src="{{ asset('images/products/'.$offerta->logoOff ) }}" class="rounded-corners" alt="{{$offerta->nomeOff}}">
     </div>
     <div class="info">
         <h2>{{$offerta->nomeOff}}</h2>

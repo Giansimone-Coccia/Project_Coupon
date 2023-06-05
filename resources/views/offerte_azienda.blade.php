@@ -13,7 +13,7 @@
             <div class="image-azienda">
                 <div class="inline-block">
                     <div class="centerimagesoffers">
-                        <img class = "rounded-corners" src="{{ asset('images/companies/'. $azienda->image) }}"  alt="$azienda->nome"/>                        
+                        <img class = "rounded-corners" src="{{ asset('images/companies/'. $azienda->image) }}" alt="{{$azienda->nome}}"/>                        
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                         <div class="centerimages">
 
                             @include('helpers/productDate', ['dataScadenza' => $promo->tempoFruiz])
-                            <img class = "rounded-corners width100" src="{{ asset('images/products/' . $promo->logoOff) }}" alt="Offerta azienda"/>
+                            <img class = "rounded-corners width100" src="{{ asset('images/products/' . $promo->logoOff) }}" alt="{{$promo->nomeOff}}" title="{{$promo->nomeOff}}"/>
 
                         </div>
                         <h3>{{$promo->nomeOff}}</h3>

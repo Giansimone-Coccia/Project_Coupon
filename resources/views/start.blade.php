@@ -16,7 +16,7 @@
         <div class="quarter" onclick="window.location.href = '{{ route('offerte_azienda', [$azienda->id]) }}';">
             <div class="inline-block">
                 <div class="centerimages">
-                    <img src="{{ asset('images/companies/' . $azienda->image) }}" class="width100 rounded-corners" alt="Logo azienda">              
+                    <img src="{{ asset('images/companies/' . $azienda->image) }}" class="width100 rounded-corners" alt="{{$azienda->nome}}" title="{{$azienda->nome}}">              
                 </div>
             </div>
             <h3>{{$azienda->nome}}</h3>

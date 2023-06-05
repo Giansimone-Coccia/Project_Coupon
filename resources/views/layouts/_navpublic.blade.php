@@ -37,12 +37,14 @@
 </ul>
 
 <ul>
-    <li class="bar-item search" >
+    <li class="bar-item search no-cursor" >
         <form method="GET" action="{{ route('risultati_page') }}">
             <button type="submit" class="button bar-item search-lens right"  >
                 <img src="{{ asset('images/icons/search_icon.svg' ) }}" alt="Search" class="width100">
             </button>
+            <label for="azienda" class="text-18 margin-left-16">Azienda:</label>
             <input type="text" name="azienda" placeholder="Cerca per Azienda"  class="searchbar height36" name="search" value="{{ request()->input('azienda') }}">
+            <label for="descrizione" class="text-18">Descrizione:</label>
             <input type="text" name="descrizione" placeholder="Cerca per Descrizione"  class="searchbar height36" name="search" value="{{ request()->input('descrizione') }}">
         </form>
     </li>

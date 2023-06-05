@@ -289,11 +289,15 @@ footer,header,main,nav{
     list-style-type:none
 }
 
+.text-18{
+    font-size:18px
+}
+
 .searchbar
 {
     border: 3px solid #ffffff;
     border-radius: 15px;
-    width: 300px;
+    width: 250px;
     background-color: #F1F6F9;
     max-width:100%;
     padding:10px;
@@ -428,19 +432,22 @@ button{
     height:100%;
 }
 
+.no-cursor {
+    cursor: default !important;
+  }
+
 .inline-block{
     display:inline-block;
 }
 
 .vectorlogo{
     height: 100px;
-    width: 300px;
+    width: 200px;
     margin-top: 10px;
     border:none;
     display:block;
     outline:0;
     cursor: pointer;
-
 }
 
 

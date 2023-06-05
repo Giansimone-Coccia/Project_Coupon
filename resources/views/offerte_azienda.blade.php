@@ -6,7 +6,7 @@
 
 <div class=" padding-top-24">
 
-    <div class="main content padding box-shadow" style="max-width: 1300px;">
+    <div class="main content padding box-shadow max-width-1300">
 
         @isset($azienda)
         <div class="container_offerte_azienda">
@@ -19,7 +19,7 @@
             </div>
             <div class="description padding">
                 <div>
-                    <h2 style="font-size: 30px; font-weight: bold; " class="title-azienda" >{{$azienda->nome}}</h2>
+                    <h2 class="title-azienda font-30-bold" >{{$azienda->nome}}</h2>
                     <p>{{$azienda->descAzienda}}</p>
                     <p><strong>Localizzazione:</strong> {{$azienda->localizzazione}}</p>
                     <p><strong>Tipologia di azienda:</strong> {{$azienda->tipologia}}</p>

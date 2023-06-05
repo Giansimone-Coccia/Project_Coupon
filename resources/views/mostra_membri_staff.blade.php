@@ -10,7 +10,7 @@
 
 <div class="main content padding max-width-1300">
     <div class="couponlist" align="center">
-        <h1 style="font-weight: 300">Lista membri staff:</h1>
+        <h1 class="font-weight-300">Lista membri staff:</h1>
         @isset($allStaffAdmin)
         @foreach($allStaffAdmin as $staff)
         <div class="coupon">

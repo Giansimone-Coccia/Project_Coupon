@@ -20,7 +20,8 @@
         <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
         <style>
             body,h1,h2,h3,h4,h5,h6 {
-                font-family: "Karma", sans-serif
+                font-family: "Karma", sans-serif;
+                font-weight:400;
             }
             .bar-item {
                 padding:20px

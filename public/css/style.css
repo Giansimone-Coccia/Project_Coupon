@@ -42,6 +42,14 @@ body{
 
 /*home.css*/
 
+.red{
+    color:#CC0000
+}
+
+.font-30-bold{
+    font-size: 30px;
+    font-weight: bold;
+}
 .errors {
     color: #f93d00;
     font-size: 12px;
@@ -63,11 +71,7 @@ body{
 .anchor{
 }
 
-h1,h2,h3,h4,h5,h6{
-    font-family:"Segoe UI",Arial,sans-serif;
-    font-weight:400;
-    margin:10px 0
-}
+
 hr{
     border:0;
     border-top:1px solid #eee;
@@ -111,9 +115,13 @@ h6{
 .max-heigth52{
     max-height: 52px
 }
+
+.margin-top-minus-10{
+        margin-top: -15px;
+}
 .dimentioncontent{
     max-width:1200px;
-    margin-top:50px;
+    margin-top:15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     background-color: #fcfcfc;
 }
@@ -198,7 +206,7 @@ h6{
 }
 
 .margin-Paginate{
-    margin-top: 10px;
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 
@@ -505,6 +513,10 @@ button{
 
 .coupons-riscattati{
     max-width: 1300px;
+}
+
+.font-weight-500{
+    font-weight: 500
 }
 
 .max-width-1300{

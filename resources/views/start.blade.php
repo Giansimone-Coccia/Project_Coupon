@@ -3,8 +3,10 @@
 @section('title', 'Home')
 
 @section('content')
-
-
+<div class="center margin-top-minus-10">
+    <a href="" target="_blank" class="link" >Premi quì per la documentazione del sito</a>
+</div>
+    
 <div class="main content padding dimentioncontent" >
 
     <h1 class="center"> Le nostre aziende</h1>

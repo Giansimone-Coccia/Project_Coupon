@@ -2,7 +2,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('js/navbar.js') }}"></script>
 
-<li class="vectorlogo right">
+<li class="vectorlogo right logo">
     <img src="{{ asset('images/logo/coupon-logo.svg' ) }}" alt="Logo" class="width100 height100" onclick="window.location.href = '{{ route('start') }}';">
 </li>
 
@@ -33,9 +33,9 @@
 
 </ul>
 
-<li class="bar-item" >
+<li class="bar-item search" >
     <form method="GET" action="{{ route('risultati_page') }}">
-        <button type="submit" class="button bar-item search-lens right "  >
+        <button type="submit" class="button bar-item search-lens right"  >
             <img src="{{ asset('images/icons/search_icon.svg' ) }}" alt="Search" class="width100">
         </button>
         <input type="text" name="azienda" placeholder="Cerca per Azienda"  class="searchbar height36" name="search" value="{{ request()->input('azienda') }}">

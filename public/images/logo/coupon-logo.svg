@@ -38,13 +38,6 @@
         fit-margin-bottom="0" />
     <defs
         id="defs2">
-        <style type="text/css">
-            @font-face {
-            font-family: 'Glacial Indifference';
-            src: url('{{ asset('fonts/GlacialIndifference-Bold.otf') }}');
-            font-weight: bold;
-            }
-        </style>
   
         <rect x="149.10661" y="123.78663" width="358.69989" height="74.553314" id="rect11481" />
         <rect x="216.62662" y="137.85329" width="233.50661" height="43.606655" id="rect5491" />
@@ -70,25 +63,25 @@
                 transform="matrix(1.0585178,0,0,1.0585178,-6.8555576,-2.4978103)">
                 <text
                     xml:space="preserve"
-                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6357px;line-height:1.25;font-family:'Glacial Indifference';-inkscape-font-specification:'Glacial Indifference Bold';fill:#ffffff;stroke-width:0.244308"
-                    x="72.78849"
+                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6357px;line-height:1.25;font-family:'Glacial Indifference', sans-serif;-inkscape-font-specification:'Glacial Indifference Bold';fill:#ffffff;stroke-width:0.244308"
+                    x="70.5"
                     y="72.377243"
                     id="text12983"><tspan
                     sodipodi:role="line"
                     id="tspan12981"
-                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6357px;font-family:'Glacial Indifference';-inkscape-font-specification:'Glacial Indifference Bold';fill:#ffffff;stroke-width:0.244308"
-                    x="72.78849"
+                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6357px;font-family:'Glacial Indifference', sans-serif;-inkscape-font-specification:'Glacial Indifference Bold';fill:#ffffff;stroke-width:0.244308"
+                    x="70.5"
                     y="72.377243">COUPON</tspan></text>
                 <text
                     xml:space="preserve"
-                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.8px;line-height:1.25;font-family:'Glacial Indifference';-inkscape-font-specification:'Glacial Indifference Bold';fill:#ffffff;stroke-width:0.264583"
-                    x="74.714989"
+                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.8px;line-height:1.25;font-family:'Glacial Indifference', sans-serif;-inkscape-font-specification:'Glacial Indifference Bold';fill:#ffffff;stroke-width:0.264583"
+                    x="73.5"
                     y="114.08822"
                     id="text42910"><tspan
                     sodipodi:role="line"
                     id="tspan42908"
-                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.8px;font-family:'Glacial Indifference';-inkscape-font-specification:'Glacial Indifference Bold';fill:#ffffff;stroke-width:0.264583"
-                    x="74.714989"
+                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.8px;font-family:'Glacial Indifference', sans-serif;-inkscape-font-specification:'Glacial Indifference Bold';fill:#ffffff;stroke-width:0.264583"
+                    x="73.5"
                     y="114.08822">4U</tspan></text>
             </g>
         </g>

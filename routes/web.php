@@ -145,15 +145,11 @@ Route::get('/area_personale_admin/mostra_membri_staff', [UtenteController::class
 Route::get('/area_personale_admin/mostra_utenti_registrati', [UtenteController::class, 'allRegisteredUsers'])
         ->name('mostra_utenti_registrati')->middleware('can:isAdmin');
 
-
-
-
-
 Route::get('/modifica_azienda/{codiceA}', [PublicController::class, 'viewAzienda'])
-        ->name('modifica_azienda')->middleware('can:isAdmin');//Modificare il fatto che ti obbliga a cambiare l'immagine dell'azienda
+        ->name('modifica_azienda')->middleware('can:isAdmin');
 
 Route::post('/modifica_azienda/{codiceA}', [PublicController::class, 'modificaAzienda'])
-        ->name('modifica_azienda.store')->middleware('can:isAdmin');//Qua prima c'era isStaffOrAdmin
+        ->name('modifica_azienda.store')->middleware('can:isAdmin');
 
 
 

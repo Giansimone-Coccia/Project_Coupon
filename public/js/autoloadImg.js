@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     var imagePath = $('#previewImage').attr('src')
-    var inputElement = $('#logo')[0];
+    var inputElement = $('#image')[0];
     
     $.ajax({
         url: imagePath,

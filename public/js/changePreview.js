@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#logo').change(function() {
+    $('#image').change(function() {
       var reader = new FileReader();
       
       reader.onload = function(e) {

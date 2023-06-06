@@ -26,8 +26,6 @@ class DomandeSeeder extends Seeder
                 'dataPub' => "2023-05-10 20:10", 'utente' => '4'],
             ['domanda' => 'Come posso utilizzare i coupon ottenuti? Devo stamparli o posso usarli online?', 'risposta' => "I coupon possono essere utilizzati in due modi. Puoi stampare la pagina generata dopo aver premuto il pulsante 'riscatta' e presentarla direttamente in negozio. In alternativa, alcune offerte potrebbero fornire istruzioni per riscattare il coupon online, inserendo un codice specifico durante il processo di acquisto.", 
                 'dataPub' => "2023-05-04 08:30", 'utente' => '1'],
-            ['domanda' => 'Dove posso trovare le istruzioni specifiche per riscattare i coupon?', 'risposta' => "Le istruzioni specifiche per riscattare i coupon sono disponibili nella pagina dei dettagli dell'offerta. Assicurati di leggere attentamente le istruzioni fornite per ogni coupon.", 
-                'dataPub' => "2023-05-12 10:30", 'utente' => '5'],
             ['domanda' => 'Come faccio a modificare le mie informazioni personali sul vostro sito?', 'risposta' => "Per modificare le tue informazioni personali, accedi alla tua area personale sul nostro sito. Lì troverai un'opzione per aggiornare i tuoi dati.", 
                 'dataPub' => "2023-05-27 10:30", 'utente' => '1'],
             ['domanda' => 'Posso visualizzare un elenco dei coupon che ho precedentemente riscattato?', 'risposta' => "All'interno dell'area personale, avrai accesso a un elenco completo dei coupon precedentemente riscattati. Puoi visualizzare e gestire i tuoi coupon in questa sezione.", 

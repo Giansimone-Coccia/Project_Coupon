@@ -68,6 +68,14 @@ body{
     height:auto
 }
 
+.password-info {
+  font-size: 12px;
+}
+
+.margin-zero{
+    margin: 0px !important;
+}
+
 .anchor{
 }
 

@@ -51,6 +51,8 @@
 
     {{ Form::label('password', 'Password:') }}
     {{ Form::password('password', ['class' => 'input', 'id' => 'password', 'value' => $membro->password]) }}
+    <p class="password-info">La password deve contenere almeno una minuscola, una maiuscola e un numero</p>
+
 
     @if ($errors->first('password'))
     <ul class="errors">

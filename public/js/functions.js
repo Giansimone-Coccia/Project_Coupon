@@ -29,17 +29,19 @@ function doElemValidation(id, actionUrl, formId) {
                 if (data.status === 422) {
                     var errMsgs = JSON.parse(data.responseText);
                     $("#" + id).parent().find('.errors').html(' ');
+                    
                     $("#" + id).after(getErrorHtml(errMsgs[id]));
+
                 }
             },
             contentType: false,
             processData: false
         });
     }
-    
+
     var elem = $("#" + id);
     if (elem.attr('type') === 'file') {
-    // elemento di input type=file valorizzato
+        // elemento di input type=file valorizzato
         if (elem.val() !== '') {
             inputVal = elem.get(0).files[0];
         } else {
@@ -70,6 +72,7 @@ function doFormValidation(actionUrl, formId) {
                 $.each(errMsgs, function (id) {
                     $("#" + id).parent().find('.errors').html(' ');
                     $("#" + id).after(getErrorHtml(errMsgs[id]));
+
                 });
             }
         },

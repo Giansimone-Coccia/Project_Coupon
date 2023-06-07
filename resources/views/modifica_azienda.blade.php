@@ -37,7 +37,7 @@ $(function () {
         <div class="image-mod-off">
         {{ Form::label('productImage', 'Immagine:') }}
         <img id="previewImage" class="rounded-corners" src="{{ asset('images/companies/' .$azienda->image) }}" alt="Azienda da modificare" />
-        {{ Form::file('image', ['id' => 'logo', 'accept' => 'image/*', 'onchange' => 'previewFile(event)', 'required']) }}
+        {{ Form::file('image', ['id' => 'image', 'accept' => 'image/*', 'onchange' => 'previewFile(event)', 'required']) }}
         </div>
         
         {{ Form::label('nome', 'Nome azienda:') }}

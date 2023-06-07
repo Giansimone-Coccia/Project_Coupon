@@ -32,7 +32,7 @@ class ModificaOffertaRequest extends FormRequest {
             'tempoFruiz' => 'required',
             'luogoFruiz'=> 'required',
             'modalita' => 'required',
-            'logoOff' => 'required|file|max:1024',
+            'logoOff' => 'required|file|mimes:png,jpeg|max:1024',
         ];
     }
 

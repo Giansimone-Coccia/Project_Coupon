@@ -45,6 +45,7 @@ $(function () {
 
     {{ Form::label('password', 'Password:') }}
     {{ Form::password('password', ['class' => 'input', 'id' => 'password']) }}
+    <p class="password-info">La password deve contenere almeno una minuscola, una maiuscola e un numero</p>
 
     {{ Form::label('password_confirmation', 'Conferma Password:') }}
     {{ Form::password('password_confirmation', ['class' => 'input', 'id' => 'password_confirmation']) }}

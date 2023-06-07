@@ -91,9 +91,11 @@
                         @endif
                     </div>
 
-                    <div  class="input-box">
+                    <div  class="input-box margin-zero">
                         {{ Form::label('password', 'Password') }}
                         {{ Form::password('password', ['id' => 'password']) }}
+                        <p class="password-info">La password deve contenere almeno una minuscola, una maiuscola e un numero</p>
+
                         @if ($errors->first('password'))
                         <ul class="errors">
                             @foreach ($errors->get('password') as $message)

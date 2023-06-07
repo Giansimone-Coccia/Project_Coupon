@@ -25,32 +25,34 @@ $(function () {
 @endsection
 
 @section('content')
-    <div class="creazioneOfferta">
+<div class="creazioneOfferta">
 
-        {{ Form::open(array('route' => 'crea_membro_staff.store', 'id' => 'addStaffMember', 'class' => 'productForm')) }}
-        @csrf
-        <h1>Aggiungi un membro dello staff</h1>
-        <hr>
-        
-        {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
-        {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome', 'value' => old('nome')]) }}
-        
-        {{ Form::label('cognome', 'Cognome', ['class' => 'label-input']) }}
-        {{ Form::text('cognome', '', ['class' => 'input', 'id' => 'cognome', 'value' => old('cognome')]) }}
-        
-        {{ Form::label('username', 'Username', ['class' => 'label-input']) }}
-        {{ Form::text('username', '', ['class' => 'input', 'id' => 'username', 'value' => old('username')]) }}
+    {{ Form::open(array('route' => 'crea_membro_staff.store', 'id' => 'addStaffMember', 'class' => 'productForm')) }}
+    @csrf
+    <h1>Aggiungi un membro dello staff</h1>
+    <hr>
 
-        {{ Form::label('password', 'Password:') }}
-        {{ Form::password('password', ['id' => 'password', 'value' => old('password')]) }}
+    {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
+    {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome', 'value' => old('nome')]) }}
 
-        {{ Form::label('password_confirmation', 'Conferma Password:') }}
-        {{ Form::password('password_confirmation', ['id' => 'password_confirmation', 'value' => old('password_confirmation')]) }}
-        
-        {{ Form::submit('Aggiungi', ['class' => "buttonOfferta"]) }}
-      
-        {{ Form::close() }}
+    {{ Form::label('cognome', 'Cognome', ['class' => 'label-input']) }}
+    {{ Form::text('cognome', '', ['class' => 'input', 'id' => 'cognome', 'value' => old('cognome')]) }}
 
-    </div>
+    {{ Form::label('username', 'Username', ['class' => 'label-input']) }}
+    {{ Form::text('username', '', ['class' => 'input', 'id' => 'username', 'value' => old('username')]) }}
+
+    {{ Form::label('password', 'Password:') }}
+    {{ Form::password('password', ['id' => 'password', 'value' => old('password')]) }}
+    <p class="password-info">La password deve contenere almeno una minuscola, una maiuscola e un numero</p>
+
+
+    {{ Form::label('password_confirmation', 'Conferma Password:') }}
+    {{ Form::password('password_confirmation', ['id' => 'password_confirmation', 'value' => old('password_confirmation')]) }}
+
+    {{ Form::submit('Aggiungi', ['class' => "buttonOfferta"]) }}
+
+    {{ Form::close() }}
+
+</div>
 
 @endsection

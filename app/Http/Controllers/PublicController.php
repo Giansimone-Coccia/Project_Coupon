@@ -171,7 +171,7 @@ class PublicController extends Controller {
         $offerta->stato = '1';
         $offerta->utente = Auth::user()->id;
         $offerta->save();
-        
+
         $destinationPath = public_path() . '/images/products';
         if (!file_exists($destinationPath . '/' . $imageName)) {
             $image->move($destinationPath, $imageName);
@@ -265,6 +265,7 @@ class PublicController extends Controller {
         $requestVal = $request->validated();
         $azienda->update($requestVal);
         $azienda->image = $imageName;
+
         $azienda->save();
 
         $destinationPath = public_path() . '/images/companies';
@@ -274,4 +275,5 @@ class PublicController extends Controller {
 
         return response()->json(['redirect' => route('area_personale_admin')]);
     }
+
 }

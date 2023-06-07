@@ -3,10 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/database/seeders/UsersSeeder.php</file>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/app/Models/Catalogo.php</file>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/resources/views/helpers/redeemCoupon.blade.php</file>
-            <file>file:/C:/xampp/htdocs/filePHP/Project_Coupon/app/Http/Controllers/PublicController.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Models/Catalogo.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Models/Resources/Offerta.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Requests/ModificaAziendaRequest.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Models/Resources/Azienda.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/resources/views/mostra_aziende_area_personale.blade.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Models/DomandaModel.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Requests/ModificaOffertaRequest.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Requests/ModificaProfiloUtenteRequest.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/app/Http/Controllers/PublicController.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/database/seeders/UsersSeeder.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/resources/views/modifica_profilo_utente.blade.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/prog/Project_Coupon/public/js/functions.js</file>
         </group>
     </open-files>
 </project-private>

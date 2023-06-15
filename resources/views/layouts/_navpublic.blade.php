@@ -43,7 +43,7 @@
                 <img src="{{ asset('images/icons/search_icon.svg' ) }}" alt="Search" class="width100">
             </button>
             <label for="azienda" class="text-18 margin-left-16">Azienda:</label>
-            <input type="text" name="azienda" placeholder="Cerca per Azienda"  class="searchbar height36" name="search" value="{{ request()->input('azienda') }}">
+            <input type="text" name="azienda" placeholder="Cerca per Azienda"  class="searchbar height36" name="search" value="{{ request()->input('azienda') }}"><!--Il value serve a conservare ciò che hai inserito nella barra di ricerca-->
             <label for="descrizione" class="text-18">Descrizione:</label>
             <input type="text" name="descrizione" placeholder="Cerca per Descrizione"  class="searchbar height36" name="search" value="{{ request()->input('descrizione') }}">
         </form>

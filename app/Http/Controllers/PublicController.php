@@ -163,7 +163,7 @@ class PublicController extends Controller {
     public function storeOfferta(NuovaOffertaRequest $request) {
 
         $image = $request->file('logoOff');
-        $imageName = $image->getClientOriginalName();
+        $imageName = $image->getClientOriginalName(); //serve per prendere il nome del file image
 
         $offerta = new Offerta;
         $offerta->fill($request->validated());
@@ -172,9 +172,9 @@ class PublicController extends Controller {
         $offerta->utente = Auth::user()->id;
         $offerta->save();
 
-        $destinationPath = public_path() . '/images/products';
+        $destinationPath = public_path() . '/images/products'; //definisce il path dove verrà salvataa l'immagine
         if (!file_exists($destinationPath . '/' . $imageName)) {
-            $image->move($destinationPath, $imageName);
+            $image->move($destinationPath, $imageName); //sposta l'immagine nel path di destinazione
         }
 
         return response()->json(['redirect' => route('mostra_aziende_area_personale')]);

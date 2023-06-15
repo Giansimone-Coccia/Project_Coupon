@@ -17,3 +17,6 @@ $(document).ready(function() {
         $("#overlay").fadeOut();
       });
     });
+
+
+//non è stato usato alla fine, era per la visualizzazione del popup

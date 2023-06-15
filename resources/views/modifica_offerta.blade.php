@@ -13,14 +13,16 @@
 @section('content')
 <div class="modificaOfferta">
     @include('helpers/buttonIndietro')
+    <!--laravel collective-->
     {{ Form::open(array('route' => ['modifica_offerta.store', 'offertaId' => $offerta->id], 'id' => 'modificaOfferta', 'class' => 'modOffertaForm', 'enctype' => 'multipart/form-data')) }}
     @csrf
     <h1>Modifica dati offerta</h1>
     <hr>
     <div class="image-mod-off">
-        {{ Form::label('logoOff', 'Immagine:', ['class' => 'label-input']) }}
-        <img id="previewImage" class="rounded-corners" src="{{ asset('images/products/' .$offerta->logoOff) }}" alt="Offerta da modificare" />
+        {{ Form::label('logoOff', 'Immagine:', ['class' => 'label-input']) }} 
+        <img id="previewImage" class="rounded-corners" src="{{ asset('images/products/' .$offerta->logoOff) }}" alt="Offerta da modificare" /> <!--serve per visualizzare l'immagine-->
         {{ Form::file('logoOff', ['class' => 'input','id' => 'logoOff', 'accept' => 'image/*', 'onchange' => 'previewFile(event)', 'required']) }}
+        <!--onchange => previewFile è inutile, in teoria chiama la funzione javascript previewFile ma non esiste -->
     </div>
 
     @if ($errors->first('logoOff'))
@@ -35,6 +37,8 @@
 
         {{ Form::label('oggettoOff', 'Descrizione:') }}
         {{ Form::textarea('oggettoOff', $offerta->oggettoOff, ['class' => 'input', 'id' => 'oggettoOff', 'rows' => 3]) }}
+        
+        <!--Il primo 'oggettoOff' viene utilizzato per identificare il campo quando il form viene inviato.-->
 
         @if ($errors->first('oggettoOff'))
         <ul class="errors">

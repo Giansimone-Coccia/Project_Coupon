@@ -7,7 +7,7 @@ function showConfirmationAzienda() {
     event.stopPropagation();
   }
 }
-
+//se premi ok continua il flusso che aveva iniziato la form, se premi annulla lo stoppa
 
 function showConfirmationOfferta(){
   var result = confirm("Confermi di voler eliminare questa offerta?");

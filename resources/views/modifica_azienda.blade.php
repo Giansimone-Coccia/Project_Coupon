@@ -14,10 +14,12 @@
 $(function () {
     var actionUrl = "{{ route('modifica_azienda.store', ['codiceA' => $azienda->id]) }}";
     var formId = 'modAzienda';
+    //blur, quando perdi il focus dall'elemento
     $(":input").on('blur', function (event) {
-        var formElementId = $(this).attr('id');
+        var formElementId = $(this).attr('id'); //ricava l'id dell'elemento della form su cui si verifica l'evento blur
         doElemValidation(formElementId, actionUrl, formId);
     });
+    //attiva doformvalidation sia quando avviene blur sia quando si preme sul tasto submit
     $("#modAzienda").on('submit', function (event) {
         event.preventDefault();
         doFormValidation(actionUrl, formId);

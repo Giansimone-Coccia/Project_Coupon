@@ -24,7 +24,8 @@
             <h3><span>Nome offerta:</span>{{$offerta->nomeOff}}</h3>
             @include('helpers/buttonStaff')
         </div>
-        
+ 
+        <!--non viene utilizzato-->
         <div class="popup center" id="confirmPopup">
             <h3>Sei sicuro di voler eliminare questo coupon?<h3>
                     <div class="button-box">

@@ -37,7 +37,7 @@ class ModificaAziendaRequest extends FormRequest {
             'image' => 'required|file|mimes:jpeg,png|max:1024',
         ];
     }
-    
+    //failed validation serve a tornare l'errore 422 nel caso in cui non vada a buon fine la validazione dei dati, la visualizzazione dei messagi viene gestita nel file js
     protected function failedValidation(Validator $validator)
     {
         throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));

@@ -5,7 +5,7 @@
 
 <ul>
     <li class="vectorlogo right logo">
-        <img src="{{ asset('images/logo/coupon-logo.svg' ) }}" alt="Logo" class="width100 height100" onclick="window.location.href = '{{ route('start') }}';">
+        <img src="{{ asset('images/logo/logo-dex.svg' ) }}" alt="Logo" class="width100 height100" onclick="window.location.href = '{{ route('start') }}';">
     </li>
 </ul>
 

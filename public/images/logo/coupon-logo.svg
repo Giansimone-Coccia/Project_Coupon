@@ -49,7 +49,7 @@
         id="layer1"
         transform="translate(-63.911774,-49.520832)">
         <rect
-            style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+            style="fill:none;fill-opacity:1;stroke:#00313b;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
             id="rect846"
             width="76.728996"
             height="76.729172"
@@ -63,24 +63,24 @@
                 transform="matrix(1.0585178,0,0,1.0585178,-6.8555576,-2.4978103)">
                 <text
                     xml:space="preserve"
-                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6357px;line-height:1.25;font-family:'Glacial Indifference', sans-serif;-inkscape-font-specification:'Glacial Indifference Bold';fill:#ffffff;stroke-width:0.244308"
+                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6357px;line-height:1.25;font-family:'Glacial Indifference', sans-serif;-inkscape-font-specification:'Glacial Indifference Bold';fill:#00313b;stroke-width:0.244308"
                     x="70.5"
                     y="72.377243"
                     id="text12983"><tspan
                     sodipodi:role="line"
                     id="tspan12981"
-                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6357px;font-family:'Glacial Indifference', sans-serif;-inkscape-font-specification:'Glacial Indifference Bold';fill:#ffffff;stroke-width:0.244308"
+                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6357px;font-family:'Glacial Indifference', sans-serif;-inkscape-font-specification:'Glacial Indifference Bold';fill:#00313b;stroke-width:0.244308"
                     x="70.5"
                     y="72.377243">COUPON</tspan></text>
                 <text
                     xml:space="preserve"
-                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.8px;line-height:1.25;font-family:'Glacial Indifference', sans-serif;-inkscape-font-specification:'Glacial Indifference Bold';fill:#ffffff;stroke-width:0.264583"
+                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.8px;line-height:1.25;font-family:'Glacial Indifference', sans-serif;-inkscape-font-specification:'Glacial Indifference Bold';fill:#00313b;stroke-width:0.264583"
                     x="73.5"
                     y="114.08822"
                     id="text42910"><tspan
                     sodipodi:role="line"
                     id="tspan42908"
-                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.8px;font-family:'Glacial Indifference', sans-serif;-inkscape-font-specification:'Glacial Indifference Bold';fill:#ffffff;stroke-width:0.264583"
+                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.8px;font-family:'Glacial Indifference', sans-serif;-inkscape-font-specification:'Glacial Indifference Bold';fill:#00313b;stroke-width:0.264583"
                     x="73.5"
                     y="114.08822">4U</tspan></text>
             </g>

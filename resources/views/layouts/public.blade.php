@@ -17,9 +17,9 @@
         @show  <!--fa riferimento alla sezione link da mostrare al caricamento della pagina-->
         @section('scripts') <!--quando si carica una pagina gli script della pagina caricata vengono posizionati nel punto in cui si trova questo tag-->
         @show <!--fa riferimento alla sezione script da mostrare al caricamento della pagina
-                  @show: Questa direttiva Blade viene utilizzata per indicare che la sezione 
-                  definita con @section deve essere mostrata nel punto in cui viene posizionata.
-                  Nel tuo caso, @show viene utilizzato per mostrare il link al file CSS definito 
+                  show: Questa direttiva Blade viene utilizzata per indicare che la sezione 
+                  definita con section deve essere mostrata nel punto in cui viene posizionata.
+                  Nel tuo caso, show viene utilizzato per mostrare il link al file CSS definito 
                   nella sezione link e per mostrare i script definiti nella sezione scripts.-->
         <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
 

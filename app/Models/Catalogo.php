@@ -74,8 +74,8 @@ class Catalogo {
 
     public function getSimilarAziende($aziendaName) {
         if ($aziendaName != "") {
-            $aziendeId = Azienda::where('nome', 'LIKE', '%' . $aziendaName . '%')->select('id')->get();//ottengo tutti gli id delle aziende che hanno un nome che contiene aziendaName
-            return $aziendeId->toArray();//ritorno il tutto in formato array, prima era una collection
+            $aziendeId = Azienda::where('nome', 'LIKE', '%' . $aziendaName . '%')->select('id')->get();
+            return $aziendeId->toArray();
         } else {
             return null;
         }
@@ -85,7 +85,7 @@ class Catalogo {
         if ($aziendeId == null) {
             if ($descrizione != "") {
                 $vectorPromos = Offerta::where('oggettoOff', 'LIKE', '%' . $descrizione . '%')
-                        ->where('stato', '1') //cerco offerte che siano attive e che abbiano all'interno di oggettoOff $descrizione
+                        ->where('stato', '1')
                         ->get();
             } else {
                 return null;
@@ -103,7 +103,7 @@ class Catalogo {
                             ->get();
 
                     foreach ($vectorOff as $singleAzienda) {
-                        $vectorPromos->push($singleAzienda);//metto ogni singleAzienda in vectorPromos
+                        $vectorPromos->push($singleAzienda);
                     }
                 }
             } else {
@@ -121,15 +121,15 @@ class Catalogo {
         if ($vectorPromos->isEmpty()) {
             return null;
         } else {
-            $currentPage = LengthAwarePaginator::resolveCurrentPage();//prende la pagina attuale della paginazione 
+            $currentPage = LengthAwarePaginator::resolveCurrentPage();
             $perPage = $paged;
-            $offertaSlice = $vectorPromos->slice(($currentPage - 1) * $perPage, $perPage);// serve per prendere un numero di elementi indicato dal secondo $perPage (nel nostro caso 8)a partire dall'elemento di indice ($currentPage - 1) * $perPage. Quindi cambia in base alla pagina in cui ci troviamo nella paginazione
+            $offertaSlice = $vectorPromos->slice(($currentPage - 1) * $perPage, $perPage);
             $vectorPromos = new LengthAwarePaginator(
-                    $offertaSlice,//il sottoinsieme di elementi da visualizzare nella pagina corrente.
-                    $vectorPromos->count(),//contiamo il numero totale di promozioni
-                    $perPage,//il numero di elementi da visualizzare per pagina.
-                    $currentPage,// la pagina corrente.
-                    ['path' => LengthAwarePaginator::resolveCurrentPath()]//un array associativo che specifica il percorso da utilizzare per generare i link delle pagine.
+                    $offertaSlice,
+                    $vectorPromos->count(),
+                    $perPage,
+                    $currentPage,
+                    ['path' => LengthAwarePaginator::resolveCurrentPath()]
             );
             return $vectorPromos;
         }

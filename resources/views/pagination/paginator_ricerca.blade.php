@@ -6,13 +6,6 @@
 
     @if (!$paginator->onFirstPage())
         <a href="{{ $paginator->appends(request()->input())->url(1) }}" class="link">Inizio</a> |
-        
-        <!--request()->input() restituisce un array con tutti i parametri della richiesta HTTP corrente-->
-        
-        <!--appends(request()->input()) viene chiamato sull'oggetto $paginator per aggiungere i parametri
-        della richiesta all'URL generato per il link. In pratica, questo assicura che i parametri vengano 
-        mantenuti quando si passa alla pagina successiva o si torna alla pagina precedente. -->
-        
     @else
         Inizio |
     @endif

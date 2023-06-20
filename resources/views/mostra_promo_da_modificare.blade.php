@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <button onclick="window.location.href = '{{ route('mostra_aziende_area_personale') }}';"  class="pulsante_indietro">
-<i class="fas fa-arrow-left"></i>  <!--la grafica del pulsante è importata dal link definito subito sopra, il link porta ad un file con regole di stile css-->
+<i class="fas fa-arrow-left"></i> 
 </button>
 <div id = "listaOfferte" class="main content padding max-width-1300">
 

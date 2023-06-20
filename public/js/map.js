@@ -1,7 +1,7 @@
-$(document).ready(function () {  // equivale a window.addEventListener('DOMContentLoaded' in js puro
+$(document).ready(function () {
     $('#mappa').hide();
     $('#dove-siamo').click(function () {
-        if ($('#mappa').is(':visible')) { //:visible è un selettore di jQuery che viene utilizzato per selezionare gli elementi che sono attualmente visibili nella pagina.
+        if ($('#mappa').is(':visible')) {
             $('#mappa').hide();
         } else {
             $('#mappa').show();

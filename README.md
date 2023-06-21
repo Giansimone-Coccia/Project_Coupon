@@ -8,7 +8,7 @@
 </p>
 
 ## About the Application
-This is a web app for publishing promotions by various companies. These promotions can be collected from various users registered on the site and managed by staff members of the company posting them. Language adopted: PHP, Blade, Javascript, CSS, HTML.
+This is a web app for publishing promotions by various companies. These promotions can be collected from various users registered on the site and managed by staff members of the company posting them. The is based on the framework Laravel (you can find the documentaion below). Language adopted: PHP, Blade, Javascript, CSS, HTML.
 
 ## About Laravel
 

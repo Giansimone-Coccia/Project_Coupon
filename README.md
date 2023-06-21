@@ -7,6 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## About the Application
+This is a web app for publishing promotions by various companies. These promotions can be collected from various users registered on the site and managed by staff members of the company posting them. Language adopted: PHP, Blade, Javascript, CSS, HTML.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
